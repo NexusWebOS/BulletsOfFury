@@ -1,0 +1,11 @@
+# Matching interior and exact-frame pulse
+
+Mike approved the exact traced frame and requested the inside flash in the same color as an overlay. The approved metal-frame cels remain byte-identical to pursuit_trace_exact_1115. This source adds a matching green-to-white wash over the enclosed card interior, including its ship artwork and route lettering. The other card and footer are excluded.
+
+Interior masks are derived offline: close only3px gaps in the actual metal mask, flood-fill the exterior, and retain just the enclosed center-connected region. Detached enclosed flecks are excluded. No simplified outer polygon or runtime mask defines the effect. Original masks and new interior/union masks are retained for review.
+
+Sixteen source-palette colors and18–31% blend strengths are baked into opaque RGBA source pixels. The runtime only selects/blits the complete authored frame; globalAlpha stays1 and no browser filter, glow, blend mode or procedural color effect is introduced. Fixed912x512 source, density:2 registration, even406x326 cells, static origins and four3248x652 pages remain. Source material detail remains readable.
+
+Each16-frame layered .aseprite source contains the hidden locked original, interior color wash and exact original-frame pulse. Aseprite is unavailable on this host; no editor GUI/CLI use is claimed. The retained official-format writer and independent normal-RGBA decoder validate the current compressed/linked cels, layer visibility, timing and rendered composites. Default python _BUILD_SOURCE/pursuit_overlay_1115_build.py exports the retained sources without rewriting them. Explicit --author intentionally replaces source edits with the original-pixel recipe. Source writer/decoder reuse the preserved pursuit_trace_1115 functions. The approved-frame .aseprite sources under pursuit_trace_exact_1115 remain the border authority.
+
+All64 exported cels match their retained source; frame pixels equal the approved version, interior pixels are opaque and no alpha escapes the selected card. Native Chromium keyboard/pointer, pixel-isolation and GIF playback evidence is under _shots/pursuit_overlay_1115. Runtime registry assets/pursuit_trace_art_1115.js continues to use the existing city16Trace owner and arrow clock. Current docs: docs/PURSUIT_OVERLAY_1115.md.

@@ -117,7 +117,7 @@ function glowFx(G,x,y,size,pilot){
 
 furyShipDrawPhase=function(G,x,y,size,planeH,pilot){
   if(window.SF14_OFF||!G)return base.phase.apply(this,arguments);
-  const cole=pilot==='cole',ph=G.phase;
+  const cole=false,ph=G.phase; // Same hardware and effects for every pilot.
   // tethers and the core sit under the hardware: draw them first, the plane and parts land on top
   if(ph==='charge')chargeFx(G,x,y,size,pilot,cole);
   const out=base.phase.apply(this,arguments);

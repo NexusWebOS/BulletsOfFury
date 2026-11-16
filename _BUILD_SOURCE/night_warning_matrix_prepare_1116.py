@@ -1,0 +1,18 @@
+from pathlib import Path
+R=Path(__file__).resolve().parents[1]
+s=(R/'_BUILD_SOURCE/release_qa_1116_encounters.py').read_text(encoding='utf8')
+s=s.replace('import sys,json,time','import sys,json,time\nfrom urllib.parse import urlsplit')
+s=s.replace("'_shots/release_qa_1116/encounters'","'_shots/cinema_overnight_1116/warning-matrix-current'")
+s=s.replace('errors=[];rows=[]','errors=[];rows=[];warnings=[];failed=[]')
+s=s.replace("p.on('response',", "p.on('console',lambda m:warnings.append(m.text)if m.type=='warning'else None)\n p.on('requestfailed',lambda q:failed.append({'host':urlsplit(q.url).netloc,'path':urlsplit(q.url).path,'failure':q.failure}))\n p.on('response',",1)
+s=s.replace("for diff in ['normal','hard','furious']:", "for diff in ['normal','hard']:")
+s=s.replace("e0=len(errors);start=", "e0=len(errors);w0=len(warnings);f0=len(failed);start=")
+s=s.replace("player.invuln=1e8;player._spawnClearT=1e8;playerHit._q=0;run.lives=30;", "DBGT.god=true;DBGT.speed=1;Input.clearTaps();for(const k of Object.keys(Input.keys))Input.keys[k]=false;")
+s=s.replace('BOSSMODE.start(q.stage', 'debugUnlocked=true;BOSSMODE.start(q.stage')
+s=s.replace("Input.keys[QA16Fire]=true;", "Input.keys[QA16Fire]=false;")
+s=s.replace('for i in range(60):','for i in range(120):').replace('or i==59:', 'or i==119:').replace('if i in [19,59]:','if i in [29,119]:')
+s=s.replace("row['errors']=errors[e0:]", "row['errors']=errors[e0:];row['warnings']=warnings[w0:];row['failedRequests']=failed[f0:]")
+s=s.replace('default primary held for 30 simulated seconds.', 'native GOD with no primary fire for60 simulated seconds. Collect all console warnings and failed request paths.')
+s=s.replace("'errors':errors,'scope'", "'errors':errors,'warnings':warnings,'failedRequests':failed,'scope'")
+(R/'_BUILD_SOURCE/night_warning_matrix_1116.py').write_text(s,encoding='utf8',newline='\n')
+print('Prepared Normal/Hard first-minute native warning/render matrix')

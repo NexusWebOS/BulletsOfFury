@@ -14,7 +14,7 @@ function br1110Post3(p){const L=(...v)=>br1110Beat(p,...v);return[
  L('B306',5.5,'DECKER','Bring that cell back intact. We need it for the launch generator.',{...br1110Anim('relay-recorder',{clip:[5],times:[100000]}),comic:'vertical',context:'bridge-airbase-recon',contextFrame:5}),
  L('B307',6,'COLE','We recover the launch records, secure the cell, and find out what left that pad.',{...br1110Anim('airbase-recon',{clip:[5],times:[100000]}),comic:'slash',context:'pilot',plan:true,readings:['NEXT SORTIE: AIRBASE','FLIGHT PLAN: COMPILED']})
 ];}
-function br1110Post6(p,route){const L=(...v)=>br1110Beat(p,...v),report=route==='left'?'The Harrier is down. The remaining rebel contacts are marked.':'The rebel formation is down. The remaining Harrier threat is marked.';return[
+function br1110Post6(p,route){const L=(...v)=>br1110Beat(p,...v),report=route==='left'?'The Harrier is down. The remaining Rough Rider contacts are marked.':'The Rough Riders are down. The remaining Harrier threat is marked.';return[
  L('B601',6,'TECH',report,{art:'earth-approach',ship:'return',layout:'flight',comic:'slash',context:'remaining',route,readings:['ROUTE THREAT: CLEARED','REMAINING CONTACTS: MARKED']}),
  L('B602',5.5,'COLE','All wings, check in. Bring the recorders to the analysis bench.',{art:'hangar',ship:'land',layout:'flight',comic:'stack',context:'pilot'}),
  L('B603',6,'COLE','Keep the remaining contact on the board. Decker, show me the signal that never left.',{...br1110Anim('subsurface-analysis'),comic:'backslash',context:'bridge-subsurface-scan',contextFrame:0}),

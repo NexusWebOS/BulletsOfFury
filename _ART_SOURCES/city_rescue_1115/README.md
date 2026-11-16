@@ -1,0 +1,19 @@
+# City Rescue / registered Storm Cannon exhaust - November15
+
+Five new images were generated with the built-in image_gen tool. Every original is retained as generated-*.png; exact prompts, reference roles and output IDs are in prompts.json. No SpriteCook or fallback image API was used. Actual native Storm Cannon, Harrier, five Rebel aircraft and current CP15 Juggernaut/Cole/Decker references are retained in native_references.
+
+The generator delivered a sixteen-cell still sheet, not a GIF. The16 actual ordered cells were cleaned, registered and exported to GIF/native banks. Raw sheet887x1774; proportional1/2 normalization, fixed128x256 cells, mouth64,224, binary alpha and shared32-colour palette. Low-alpha haze and disconnected dust are removed; no new animation was drawn procedurally. thruster-normalized-*.png preserves pre-palette intermediates; thruster-*.png is the clean master. Timing62,63ms alternating,16 distinct phases. The cleaned sheet is shipped as thruster-source.png.
+
+Each of16 native headings at16 native depth scales has the same16 phases:4096 exhaust cells in16 shared lossless WebP pages. All cells have even dimensions, a common source canvas/pivot per bank and shared crop. Direction/depth variants are baked offline; live code blits a chosen cell at the actual nozzle without rotating/scaling the effect. Measured model nozzle sockets172,93 /236,66 /340,66 /404,93 replace the obsolete four positions. Exhaust renders behind the existing hull.
+
+Current native northwest/west whole-hull passes and independent body-only shadow passes each retain16 cells:64 more frames. Source800x800/common400,400 pivot; four lossless pages, safe shared even crop. Capture samples the existing rotor/material clock once over its native24-phase cycle and explicitly samples all16 exhaust phases; it does not change production clocks. Shadows use body alpha at27% and exclude exhaust. Total4160 cells,20 WebP pages and6 PNG images.
+
+Menu masters are contained proportionally to912x512 with nearest-neighbour pixel sampling, displayed456x256 on the normal480x512 playfield/backing2x. Generated title, aircraft and route lettering are baked together. Logical pad prompts remain the existing authored game graphics. Album master is contained in912x512 with black side padding so its face, cover and frame remain visible.
+
+Rural master1024x1536 scales proportionally to680x1020. Its vertical reflection is appended to produce a680x2040 repeating scroll texture with identical boundary rows. This is an offline mirrored tile, not a claim that the raw generated master tiled seamlessly. Native cloud/weather/scroll owners remain; StageX keeps its urban texture.
+
+Rebuild from retained masters with python _BUILD_SOURCE/city_rescue_1115_build.py, followed by python _BUILD_SOURCE/city_rescue_1115_pack_pass.py. The second script uses retained native flight/body source cells, so no personal generated-images directory or preview server is required. Do both steps before running the game; the intermediate registry contains exhaust only. To recapture changed native hulls, first run city_rescue_1115_capture_pass.py against the local8765 server and explicitly replace the retained source cells. Verify every final image/page/registry byte with city_rescue_1115_verify_art.py; it reconstructs in memory without touching shipping assets.
+
+Runtime source city_rescue_1115.js is copied here; live owner assets/city_rescue_1115.js. Registry/manifest must change together. Production has one owner layered after FATE15 and leaves game.js/test_fl.js untouched.
+
+November15 lettering revision: Mike renamed the album Bulletalica. Built-in imagegen edited only its wordmark to BULLETALICA. Current canonical generated-album.png and album.png use this variant; original masters/references remain archived. Exact edit prompt: bulletalica-prompt.json. Rebuild metadata and manifest are synchronized. Earlier videos preserve their pre-rename artwork.

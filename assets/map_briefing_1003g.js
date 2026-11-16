@@ -27,6 +27,7 @@ function mapgReveal(copy,now,ready){
 }
 function mapgBriefingDraw(stage){
  const copy=typeof stage==='object'?stage:mapgCopy(stage);if(!copy)return;
+ if(typeof mb15BriefingDraw==='function')return mb15BriefingDraw(copy);
  const ready=XART.rdy('mapg_briefing')&&bmfReady('game')&&bmfReady('dialogue');
  const count=mapgReveal(copy,performance.now(),ready);if(!ready)return;
  const r=MAPG.rect;ctx.save();ctx.imageSmoothingEnabled=false;

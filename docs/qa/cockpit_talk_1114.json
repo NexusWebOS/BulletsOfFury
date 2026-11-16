@@ -1,0 +1,3822 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "cole mouth follows native reveal",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "name": "cole correct cockpit asset",
+        "ok": true,
+        "data": {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "cole seated cockpit visible",
+        "ok": true,
+        "data": [
+          12,
+          12,
+          552,
+          368
+        ]
+      },
+      {
+        "name": "cole idle while remote tech speaks",
+        "ok": true,
+        "data": {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "cole Stage1 cockpit hook",
+        "ok": true,
+        "data": {
+          "last": {
+            "pilot": "cole",
+            "frame": 2,
+            "key": "cp15_cole",
+            "box": [
+              12,
+              12,
+              888,
+              488
+            ],
+            "image": [
+              12,
+              12,
+              888,
+              592
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          },
+          "comic": {
+            "kind": "comic-strip",
+            "pilot": "cole",
+            "shot": "orders",
+            "time": 1.9166666666666679,
+            "panel": 1,
+            "camera": 940,
+            "wholeCockpit": true,
+            "detachedPortrait": false,
+            "text": "Flight systems, head for that jungle over there, stat!"
+          }
+        }
+      },
+      {
+        "name": "axel mouth follows native reveal",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "name": "axel correct cockpit asset",
+        "ok": true,
+        "data": {
+          "pilot": "axel",
+          "frame": 0,
+          "key": "cp15_axel",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "axel seated cockpit visible",
+        "ok": true,
+        "data": [
+          12,
+          12,
+          552,
+          368
+        ]
+      },
+      {
+        "name": "axel idle while remote tech speaks",
+        "ok": true,
+        "data": {
+          "pilot": "axel",
+          "frame": 0,
+          "key": "cp15_axel",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "axel Stage1 cockpit hook",
+        "ok": true,
+        "data": {
+          "last": {
+            "pilot": "axel",
+            "frame": 2,
+            "key": "cp15_axel",
+            "box": [
+              12,
+              12,
+              888,
+              488
+            ],
+            "image": [
+              12,
+              12,
+              888,
+              592
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          },
+          "comic": {
+            "kind": "comic-strip",
+            "pilot": "axel",
+            "shot": "orders",
+            "time": 1.9166666666666679,
+            "panel": 1,
+            "camera": 940,
+            "wholeCockpit": true,
+            "detachedPortrait": false,
+            "text": "Flight systems, head for that jungle over there, stat!"
+          }
+        }
+      },
+      {
+        "name": "freezer mouth follows native reveal",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "name": "freezer correct cockpit asset",
+        "ok": true,
+        "data": {
+          "pilot": "freezer",
+          "frame": 0,
+          "key": "cp15_freezer",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "freezer seated cockpit visible",
+        "ok": true,
+        "data": [
+          12,
+          12,
+          552,
+          368
+        ]
+      },
+      {
+        "name": "freezer idle while remote tech speaks",
+        "ok": true,
+        "data": {
+          "pilot": "freezer",
+          "frame": 0,
+          "key": "cp15_freezer",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "freezer Stage1 cockpit hook",
+        "ok": true,
+        "data": {
+          "last": {
+            "pilot": "freezer",
+            "frame": 2,
+            "key": "cp15_freezer",
+            "box": [
+              12,
+              12,
+              888,
+              488
+            ],
+            "image": [
+              12,
+              12,
+              888,
+              592
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          },
+          "comic": {
+            "kind": "comic-strip",
+            "pilot": "freezer",
+            "shot": "orders",
+            "time": 1.9166666666666679,
+            "panel": 1,
+            "camera": 940,
+            "wholeCockpit": true,
+            "detachedPortrait": false,
+            "text": "Flight systems, head for that jungle over there, stat!"
+          }
+        }
+      },
+      {
+        "name": "yuri mouth follows native reveal",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "name": "yuri correct cockpit asset",
+        "ok": true,
+        "data": {
+          "pilot": "yuri",
+          "frame": 0,
+          "key": "cp15_yuri",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "yuri seated cockpit visible",
+        "ok": true,
+        "data": [
+          12,
+          12,
+          552,
+          368
+        ]
+      },
+      {
+        "name": "yuri idle while remote tech speaks",
+        "ok": true,
+        "data": {
+          "pilot": "yuri",
+          "frame": 0,
+          "key": "cp15_yuri",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "yuri Stage1 cockpit hook",
+        "ok": true,
+        "data": {
+          "last": {
+            "pilot": "yuri",
+            "frame": 2,
+            "key": "cp15_yuri",
+            "box": [
+              12,
+              12,
+              888,
+              488
+            ],
+            "image": [
+              12,
+              12,
+              888,
+              592
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          },
+          "comic": {
+            "kind": "comic-strip",
+            "pilot": "yuri",
+            "shot": "orders",
+            "time": 1.916666666666664,
+            "panel": 1,
+            "camera": 940,
+            "wholeCockpit": true,
+            "detachedPortrait": false,
+            "text": "Flight systems, head for that jungle over there, stat!"
+          }
+        }
+      },
+      {
+        "name": "maverick mouth follows native reveal",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "name": "maverick correct cockpit asset",
+        "ok": true,
+        "data": {
+          "pilot": "maverick",
+          "frame": 0,
+          "key": "cp15_maverick",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "maverick seated cockpit visible",
+        "ok": true,
+        "data": [
+          12,
+          12,
+          552,
+          368
+        ]
+      },
+      {
+        "name": "maverick idle while remote tech speaks",
+        "ok": true,
+        "data": {
+          "pilot": "maverick",
+          "frame": 0,
+          "key": "cp15_maverick",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "maverick Stage1 cockpit hook",
+        "ok": true,
+        "data": {
+          "last": {
+            "pilot": "maverick",
+            "frame": 2,
+            "key": "cp15_maverick",
+            "box": [
+              12,
+              12,
+              888,
+              488
+            ],
+            "image": [
+              12,
+              12,
+              888,
+              592
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          },
+          "comic": {
+            "kind": "comic-strip",
+            "pilot": "maverick",
+            "shot": "orders",
+            "time": 1.916666666666664,
+            "panel": 1,
+            "camera": 940,
+            "wholeCockpit": true,
+            "detachedPortrait": false,
+            "text": "Flight systems, head for that jungle over there, stat!"
+          }
+        }
+      },
+      {
+        "name": "falva mouth follows native reveal",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "name": "falva correct cockpit asset",
+        "ok": true,
+        "data": {
+          "pilot": "falva",
+          "frame": 0,
+          "key": "cp15_falva",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "falva seated cockpit visible",
+        "ok": true,
+        "data": [
+          12,
+          12,
+          552,
+          368
+        ]
+      },
+      {
+        "name": "falva idle while remote tech speaks",
+        "ok": true,
+        "data": {
+          "pilot": "falva",
+          "frame": 0,
+          "key": "cp15_falva",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "falva Stage1 cockpit hook",
+        "ok": true,
+        "data": {
+          "last": {
+            "pilot": "falva",
+            "frame": 2,
+            "key": "cp15_falva",
+            "box": [
+              12,
+              12,
+              888,
+              488
+            ],
+            "image": [
+              12,
+              12,
+              888,
+              592
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          },
+          "comic": {
+            "kind": "comic-strip",
+            "pilot": "falva",
+            "shot": "orders",
+            "time": 1.916666666666664,
+            "panel": 1,
+            "camera": 940,
+            "wholeCockpit": true,
+            "detachedPortrait": false,
+            "text": "Flight systems, head for that jungle over there, stat!"
+          }
+        }
+      },
+      {
+        "name": "lizzie mouth follows native reveal",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "name": "lizzie correct cockpit asset",
+        "ok": true,
+        "data": {
+          "pilot": "lizzie",
+          "frame": 0,
+          "key": "cp15_lizzie",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "lizzie seated cockpit visible",
+        "ok": true,
+        "data": [
+          12,
+          12,
+          552,
+          368
+        ]
+      },
+      {
+        "name": "lizzie idle while remote tech speaks",
+        "ok": true,
+        "data": {
+          "pilot": "lizzie",
+          "frame": 0,
+          "key": "cp15_lizzie",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "lizzie Stage1 cockpit hook",
+        "ok": true,
+        "data": {
+          "last": {
+            "pilot": "lizzie",
+            "frame": 2,
+            "key": "cp15_lizzie",
+            "box": [
+              12,
+              12,
+              888,
+              488
+            ],
+            "image": [
+              12,
+              12,
+              888,
+              592
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          },
+          "comic": {
+            "kind": "comic-strip",
+            "pilot": "lizzie",
+            "shot": "orders",
+            "time": 1.916666666666664,
+            "panel": 1,
+            "camera": 940,
+            "wholeCockpit": true,
+            "detachedPortrait": false,
+            "text": "Flight systems, head for that jungle over there, stat!"
+          }
+        }
+      },
+      {
+        "name": "decker mouth follows native reveal",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "name": "decker correct cockpit asset",
+        "ok": true,
+        "data": {
+          "pilot": "decker",
+          "frame": 0,
+          "key": "cp15_decker",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "decker seated cockpit visible",
+        "ok": true,
+        "data": [
+          12,
+          12,
+          552,
+          368
+        ]
+      },
+      {
+        "name": "decker idle while remote tech speaks",
+        "ok": true,
+        "data": {
+          "pilot": "decker",
+          "frame": 0,
+          "key": "cp15_decker",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "decker Stage1 cockpit hook",
+        "ok": true,
+        "data": {
+          "last": {
+            "pilot": "decker",
+            "frame": 2,
+            "key": "cp15_decker",
+            "box": [
+              12,
+              12,
+              888,
+              488
+            ],
+            "image": [
+              12,
+              12,
+              888,
+              592
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          },
+          "comic": {
+            "kind": "comic-strip",
+            "pilot": "decker",
+            "shot": "orders",
+            "time": 1.916666666666664,
+            "panel": 1,
+            "camera": 940,
+            "wholeCockpit": true,
+            "detachedPortrait": false,
+            "text": "Flight systems, head for that jungle over there, stat!"
+          }
+        }
+      },
+      {
+        "name": "juggernaut mouth follows native reveal",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "name": "juggernaut correct cockpit asset",
+        "ok": true,
+        "data": {
+          "pilot": "juggernaut",
+          "frame": 0,
+          "key": "cp15_juggernaut",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "juggernaut seated cockpit visible",
+        "ok": true,
+        "data": [
+          12,
+          12,
+          552,
+          368
+        ]
+      },
+      {
+        "name": "juggernaut idle while remote tech speaks",
+        "ok": true,
+        "data": {
+          "pilot": "juggernaut",
+          "frame": 0,
+          "key": "cp15_juggernaut",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "name": "juggernaut Stage1 cockpit hook",
+        "ok": true,
+        "data": {
+          "last": {
+            "pilot": "juggernaut",
+            "frame": 2,
+            "key": "cp15_juggernaut",
+            "box": [
+              12,
+              12,
+              888,
+              488
+            ],
+            "image": [
+              12,
+              12,
+              888,
+              592
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          },
+          "comic": {
+            "kind": "comic-strip",
+            "pilot": "juggernaut",
+            "shot": "orders",
+            "time": 1.916666666666664,
+            "panel": 1,
+            "camera": 940,
+            "wholeCockpit": true,
+            "detachedPortrait": false,
+            "text": "Flight systems, head for that jungle over there, stat!"
+          }
+        }
+      },
+      {
+        "name": "generic radio panel uses cockpit bank",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "cole",
+            "frame": 3,
+            "key": "cp15_cole",
+            "box": [
+              388,
+              18,
+              424,
+              322
+            ],
+            "image": [
+              359,
+              18,
+              483,
+              322
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          }
+        ]
+      },
+      {
+        "name": "generic radio panel preserves hair at visible top",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "cole",
+            "frame": 3,
+            "key": "cp15_cole",
+            "box": [
+              388,
+              18,
+              424,
+              322
+            ],
+            "image": [
+              359,
+              18,
+              483,
+              322
+            ],
+            "speaking": true,
+            "family": "talking-cockpit",
+            "fixedCamera": true
+          }
+        ]
+      },
+      {
+        "name": "108 cockpit radio bindings",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "HQ portrait family retained",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "cole phoneme and idle logic",
+        "ok": true,
+        "data": {
+          "pk": "cole",
+          "out": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            0
+          ],
+          "done": 0,
+          "other": 0
+        }
+      },
+      {
+        "name": "axel phoneme and idle logic",
+        "ok": true,
+        "data": {
+          "pk": "axel",
+          "out": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            0
+          ],
+          "done": 0,
+          "other": 0
+        }
+      },
+      {
+        "name": "freezer phoneme and idle logic",
+        "ok": true,
+        "data": {
+          "pk": "freezer",
+          "out": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            0
+          ],
+          "done": 0,
+          "other": 0
+        }
+      },
+      {
+        "name": "yuri phoneme and idle logic",
+        "ok": true,
+        "data": {
+          "pk": "yuri",
+          "out": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            0
+          ],
+          "done": 0,
+          "other": 0
+        }
+      },
+      {
+        "name": "maverick phoneme and idle logic",
+        "ok": true,
+        "data": {
+          "pk": "maverick",
+          "out": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            0
+          ],
+          "done": 0,
+          "other": 0
+        }
+      },
+      {
+        "name": "falva phoneme and idle logic",
+        "ok": true,
+        "data": {
+          "pk": "falva",
+          "out": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            0
+          ],
+          "done": 0,
+          "other": 0
+        }
+      },
+      {
+        "name": "lizzie phoneme and idle logic",
+        "ok": true,
+        "data": {
+          "pk": "lizzie",
+          "out": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            0
+          ],
+          "done": 0,
+          "other": 0
+        }
+      },
+      {
+        "name": "decker phoneme and idle logic",
+        "ok": true,
+        "data": {
+          "pk": "decker",
+          "out": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            0
+          ],
+          "done": 0,
+          "other": 0
+        }
+      },
+      {
+        "name": "juggernaut phoneme and idle logic",
+        "ok": true,
+        "data": {
+          "pk": "juggernaut",
+          "out": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            0
+          ],
+          "done": 0,
+          "other": 0
+        }
+      },
+      {
+        "name": "no Chromium page/console/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "samples": [
+      {
+        "pilot": "cole",
+        "poses": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "talk": [
+          {
+            "pose": {
+              "pilot": "cole",
+              "frame": 3,
+              "key": "cp15_cole",
+              "box": [
+                12,
+                12,
+                552,
+                354
+              ],
+              "image": [
+                12,
+                12,
+                552,
+                368
+              ],
+              "speaking": true,
+              "family": "talking-cockpit",
+              "fixedCamera": true
+            },
+            "shown": 9,
+            "time": 0.733333333333386,
+            "who": "COLE"
+          }
+        ],
+        "listener": {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "pilot": "axel",
+        "poses": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "talk": [
+          {
+            "pose": {
+              "pilot": "axel",
+              "frame": 3,
+              "key": "cp15_axel",
+              "box": [
+                12,
+                12,
+                552,
+                354
+              ],
+              "image": [
+                12,
+                12,
+                552,
+                368
+              ],
+              "speaking": true,
+              "family": "talking-cockpit",
+              "fixedCamera": true
+            },
+            "shown": 9,
+            "time": 0.733333333333386,
+            "who": "AXEL"
+          }
+        ],
+        "listener": {
+          "pilot": "axel",
+          "frame": 0,
+          "key": "cp15_axel",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "pilot": "freezer",
+        "poses": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "talk": [
+          {
+            "pose": {
+              "pilot": "freezer",
+              "frame": 3,
+              "key": "cp15_freezer",
+              "box": [
+                12,
+                12,
+                552,
+                354
+              ],
+              "image": [
+                12,
+                12,
+                552,
+                368
+              ],
+              "speaking": true,
+              "family": "talking-cockpit",
+              "fixedCamera": true
+            },
+            "shown": 9,
+            "time": 0.733333333333386,
+            "who": "FREEZER"
+          }
+        ],
+        "listener": {
+          "pilot": "freezer",
+          "frame": 0,
+          "key": "cp15_freezer",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "pilot": "yuri",
+        "poses": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "talk": [
+          {
+            "pose": {
+              "pilot": "yuri",
+              "frame": 3,
+              "key": "cp15_yuri",
+              "box": [
+                12,
+                12,
+                552,
+                354
+              ],
+              "image": [
+                12,
+                12,
+                552,
+                368
+              ],
+              "speaking": true,
+              "family": "talking-cockpit",
+              "fixedCamera": true
+            },
+            "shown": 9,
+            "time": 0.733333333333386,
+            "who": "YURI"
+          }
+        ],
+        "listener": {
+          "pilot": "yuri",
+          "frame": 0,
+          "key": "cp15_yuri",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "pilot": "maverick",
+        "poses": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "talk": [
+          {
+            "pose": {
+              "pilot": "maverick",
+              "frame": 3,
+              "key": "cp15_maverick",
+              "box": [
+                12,
+                12,
+                552,
+                354
+              ],
+              "image": [
+                12,
+                12,
+                552,
+                368
+              ],
+              "speaking": true,
+              "family": "talking-cockpit",
+              "fixedCamera": true
+            },
+            "shown": 9,
+            "time": 0.733333333333386,
+            "who": "MAVERICK"
+          }
+        ],
+        "listener": {
+          "pilot": "maverick",
+          "frame": 0,
+          "key": "cp15_maverick",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "pilot": "falva",
+        "poses": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "talk": [
+          {
+            "pose": {
+              "pilot": "falva",
+              "frame": 3,
+              "key": "cp15_falva",
+              "box": [
+                12,
+                12,
+                552,
+                354
+              ],
+              "image": [
+                12,
+                12,
+                552,
+                368
+              ],
+              "speaking": true,
+              "family": "talking-cockpit",
+              "fixedCamera": true
+            },
+            "shown": 9,
+            "time": 0.733333333333285,
+            "who": "FALVA"
+          }
+        ],
+        "listener": {
+          "pilot": "falva",
+          "frame": 0,
+          "key": "cp15_falva",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "pilot": "lizzie",
+        "poses": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "talk": [
+          {
+            "pose": {
+              "pilot": "lizzie",
+              "frame": 3,
+              "key": "cp15_lizzie",
+              "box": [
+                12,
+                12,
+                552,
+                354
+              ],
+              "image": [
+                12,
+                12,
+                552,
+                368
+              ],
+              "speaking": true,
+              "family": "talking-cockpit",
+              "fixedCamera": true
+            },
+            "shown": 9,
+            "time": 0.7333333333332268,
+            "who": "LIZZIE"
+          }
+        ],
+        "listener": {
+          "pilot": "lizzie",
+          "frame": 0,
+          "key": "cp15_lizzie",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "pilot": "decker",
+        "poses": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "talk": [
+          {
+            "pose": {
+              "pilot": "decker",
+              "frame": 3,
+              "key": "cp15_decker",
+              "box": [
+                12,
+                12,
+                552,
+                354
+              ],
+              "image": [
+                12,
+                12,
+                552,
+                368
+              ],
+              "speaking": true,
+              "family": "talking-cockpit",
+              "fixedCamera": true
+            },
+            "shown": 2,
+            "time": 0.499999999999927,
+            "who": "DECKER"
+          }
+        ],
+        "listener": {
+          "pilot": "decker",
+          "frame": 0,
+          "key": "cp15_decker",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      {
+        "pilot": "juggernaut",
+        "poses": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "talk": [
+          {
+            "pose": {
+              "pilot": "juggernaut",
+              "frame": 3,
+              "key": "cp15_juggernaut",
+              "box": [
+                12,
+                12,
+                552,
+                354
+              ],
+              "image": [
+                12,
+                12,
+                552,
+                368
+              ],
+              "speaking": true,
+              "family": "talking-cockpit",
+              "fixedCamera": true
+            },
+            "shown": 9,
+            "time": 0.7333333333332268,
+            "who": "JUGGERNAUT"
+          }
+        ],
+        "listener": {
+          "pilot": "juggernaut",
+          "frame": 0,
+          "key": "cp15_juggernaut",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      }
+    ],
+    "errors": [],
+    "scope": "Native dialogue checkpoints; not campaign runs."
+  },
+  "radio": {
+    "checks": [
+      {
+        "name": "cole cockpit-sky actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_cole_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "cole",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "cole",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "cole cockpit-space actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_cole_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "cole",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "cole",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "cole cockpit-tunnel actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_cole_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "cole",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "cole",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "axel cockpit-sky actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_axel_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "axel",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "axel",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "axel cockpit-space actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_axel_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "axel",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "axel",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "axel cockpit-tunnel actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_axel_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "axel",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "axel",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "freezer cockpit-sky actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_freezer_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "freezer",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "freezer",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "freezer cockpit-space actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_freezer_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "freezer",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "freezer",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "freezer cockpit-tunnel actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_freezer_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "freezer",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "freezer",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "yuri cockpit-sky actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_yuri_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "yuri",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "yuri",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "yuri cockpit-space actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_yuri_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "yuri",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "yuri",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "yuri cockpit-tunnel actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_yuri_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "yuri",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "yuri",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "maverick cockpit-sky actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_maverick_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "maverick",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "maverick",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "maverick cockpit-space actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_maverick_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "maverick",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "maverick",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "maverick cockpit-tunnel actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_maverick_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "maverick",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "maverick",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "falva cockpit-sky actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_falva_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "falva",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "falva",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "falva cockpit-space actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_falva_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "falva",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "falva",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "falva cockpit-tunnel actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_falva_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "falva",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "falva",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "lizzie cockpit-sky actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_lizzie_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "lizzie",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "lizzie",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "lizzie cockpit-space actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_lizzie_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "lizzie",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "lizzie",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "lizzie cockpit-tunnel actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_lizzie_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "lizzie",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "lizzie",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "decker cockpit-sky actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_decker_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "decker",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "decker",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "decker cockpit-space actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_decker_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "decker",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "decker",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "decker cockpit-tunnel actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_decker_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "decker",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "decker",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "juggernaut cockpit-sky actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_juggernaut_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "juggernaut",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "juggernaut",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "juggernaut cockpit-space actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_juggernaut_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "juggernaut",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "juggernaut",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "juggernaut cockpit-tunnel actual radio blit",
+        "ok": true,
+        "data": {
+          "trace": [
+            {
+              "key": "cp15_juggernaut_84",
+              "args": [
+                0,
+                420,
+                84,
+                84,
+                47,
+                382,
+                84,
+                84
+              ]
+            }
+          ],
+          "window": {
+            "role": "crew",
+            "pilot": "juggernaut",
+            "frame": {
+              "x": 20,
+              "y": 310,
+              "w": 872,
+              "h": 172
+            },
+            "portrait": {
+              "pilot": "juggernaut",
+              "pose": 5,
+              "size": 84,
+              "x": 47,
+              "y": 382,
+              "baseline": 84,
+              "bottom": 464,
+              "bleed": 2
+            },
+            "full": "Flight systems restored. Fury Division, report in.",
+            "budget": 24,
+            "page": {
+              "index": 0,
+              "count": 1,
+              "text": "Flight systems restored. Fury Division, report in."
+            },
+            "layout": {
+              "H": 14,
+              "lines": [
+                "Flight systems restored. Fury Division, report in."
+              ],
+              "step": 18,
+              "height": 14
+            }
+          }
+        }
+      },
+      {
+        "name": "no browser or asset errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "scope": "Native dialogue-window renderer checkpoints, not campaign scenes."
+  },
+  "assets": {
+    "checks": [
+      {
+        "name": "cole even atlas geometry",
+        "ok": true
+      },
+      {
+        "name": "cole frame 0 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "cole frame 1 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "cole frame 2 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "cole frame 3 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "cole frame 4 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "cole frame 5 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "cole frame 6 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "cole frame 7 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "cole radio 48 even cells",
+        "ok": true
+      },
+      {
+        "name": "cole radio 64 even cells",
+        "ok": true
+      },
+      {
+        "name": "cole radio 84 even cells",
+        "ok": true
+      },
+      {
+        "name": "cole radio 96 even cells",
+        "ok": true
+      },
+      {
+        "name": "cole complete mouth poses",
+        "ok": true
+      },
+      {
+        "name": "axel even atlas geometry",
+        "ok": true
+      },
+      {
+        "name": "axel frame 0 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "axel frame 1 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "axel frame 2 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "axel frame 3 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "axel frame 4 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "axel frame 5 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "axel frame 6 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "axel frame 7 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "axel radio 48 even cells",
+        "ok": true
+      },
+      {
+        "name": "axel radio 64 even cells",
+        "ok": true
+      },
+      {
+        "name": "axel radio 84 even cells",
+        "ok": true
+      },
+      {
+        "name": "axel radio 96 even cells",
+        "ok": true
+      },
+      {
+        "name": "axel complete mouth poses",
+        "ok": true
+      },
+      {
+        "name": "freezer even atlas geometry",
+        "ok": true
+      },
+      {
+        "name": "freezer frame 0 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "freezer frame 1 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "freezer frame 2 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "freezer frame 3 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "freezer frame 4 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "freezer frame 5 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "freezer frame 6 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "freezer frame 7 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "freezer radio 48 even cells",
+        "ok": true
+      },
+      {
+        "name": "freezer radio 64 even cells",
+        "ok": true
+      },
+      {
+        "name": "freezer radio 84 even cells",
+        "ok": true
+      },
+      {
+        "name": "freezer radio 96 even cells",
+        "ok": true
+      },
+      {
+        "name": "freezer complete mouth poses",
+        "ok": true
+      },
+      {
+        "name": "yuri even atlas geometry",
+        "ok": true
+      },
+      {
+        "name": "yuri frame 0 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "yuri frame 1 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "yuri frame 2 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "yuri frame 3 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "yuri frame 4 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "yuri frame 5 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "yuri frame 6 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "yuri frame 7 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "yuri radio 48 even cells",
+        "ok": true
+      },
+      {
+        "name": "yuri radio 64 even cells",
+        "ok": true
+      },
+      {
+        "name": "yuri radio 84 even cells",
+        "ok": true
+      },
+      {
+        "name": "yuri radio 96 even cells",
+        "ok": true
+      },
+      {
+        "name": "yuri complete mouth poses",
+        "ok": true
+      },
+      {
+        "name": "maverick even atlas geometry",
+        "ok": true
+      },
+      {
+        "name": "maverick frame 0 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "maverick frame 1 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "maverick frame 2 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "maverick frame 3 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "maverick frame 4 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "maverick frame 5 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "maverick frame 6 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "maverick frame 7 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "maverick radio 48 even cells",
+        "ok": true
+      },
+      {
+        "name": "maverick radio 64 even cells",
+        "ok": true
+      },
+      {
+        "name": "maverick radio 84 even cells",
+        "ok": true
+      },
+      {
+        "name": "maverick radio 96 even cells",
+        "ok": true
+      },
+      {
+        "name": "maverick complete mouth poses",
+        "ok": true
+      },
+      {
+        "name": "falva even atlas geometry",
+        "ok": true
+      },
+      {
+        "name": "falva frame 0 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "falva frame 1 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "falva frame 2 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "falva frame 3 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "falva frame 4 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "falva frame 5 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "falva frame 6 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "falva frame 7 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "falva radio 48 even cells",
+        "ok": true
+      },
+      {
+        "name": "falva radio 64 even cells",
+        "ok": true
+      },
+      {
+        "name": "falva radio 84 even cells",
+        "ok": true
+      },
+      {
+        "name": "falva radio 96 even cells",
+        "ok": true
+      },
+      {
+        "name": "falva complete mouth poses",
+        "ok": true
+      },
+      {
+        "name": "lizzie even atlas geometry",
+        "ok": true
+      },
+      {
+        "name": "lizzie frame 0 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "lizzie frame 1 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "lizzie frame 2 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "lizzie frame 3 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "lizzie frame 4 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "lizzie frame 5 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "lizzie frame 6 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "lizzie frame 7 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "lizzie radio 48 even cells",
+        "ok": true
+      },
+      {
+        "name": "lizzie radio 64 even cells",
+        "ok": true
+      },
+      {
+        "name": "lizzie radio 84 even cells",
+        "ok": true
+      },
+      {
+        "name": "lizzie radio 96 even cells",
+        "ok": true
+      },
+      {
+        "name": "lizzie complete mouth poses",
+        "ok": true
+      },
+      {
+        "name": "decker even atlas geometry",
+        "ok": true
+      },
+      {
+        "name": "decker frame 0 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "decker frame 1 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "decker frame 2 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "decker frame 3 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "decker frame 4 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "decker frame 5 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "decker frame 6 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "decker frame 7 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "decker radio 48 even cells",
+        "ok": true
+      },
+      {
+        "name": "decker radio 64 even cells",
+        "ok": true
+      },
+      {
+        "name": "decker radio 84 even cells",
+        "ok": true
+      },
+      {
+        "name": "decker radio 96 even cells",
+        "ok": true
+      },
+      {
+        "name": "decker complete mouth poses",
+        "ok": true
+      },
+      {
+        "name": "juggernaut even atlas geometry",
+        "ok": true
+      },
+      {
+        "name": "juggernaut frame 0 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "juggernaut frame 1 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "juggernaut frame 2 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "juggernaut frame 3 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "juggernaut frame 4 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "juggernaut frame 5 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "juggernaut frame 6 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "juggernaut frame 7 visible RGBA cabin/body/hands stable",
+        "ok": true
+      },
+      {
+        "name": "juggernaut radio 48 even cells",
+        "ok": true
+      },
+      {
+        "name": "juggernaut radio 64 even cells",
+        "ok": true
+      },
+      {
+        "name": "juggernaut radio 84 even cells",
+        "ok": true
+      },
+      {
+        "name": "juggernaut radio 96 even cells",
+        "ok": true
+      },
+      {
+        "name": "juggernaut complete mouth poses",
+        "ok": true
+      },
+      {
+        "name": "full suite final summary",
+        "ok": true
+      },
+      {
+        "name": "full suite 8969 passing assertions",
+        "ok": true
+      },
+      {
+        "name": "full suite no new failing names",
+        "ok": true
+      }
+    ],
+    "suite": {
+      "assertions": 8969,
+      "failures": [],
+      "exitCode": 0,
+      "finalSummaryReached": true
+    }
+  },
+  "media": [
+    {
+      "file": "cole-service-datalink.mp4",
+      "decodeExitCode": 0,
+      "decodeErrors": "",
+      "audio": [
+        "[Parsed_volumedetect_0 @ 000001ffb1eb5100] mean_volume: -15.0 dB",
+        "[Parsed_volumedetect_0 @ 000001ffb1eb5100] max_volume: -2.1 dB"
+      ]
+    },
+    {
+      "file": "all-pilots-talking.mp4",
+      "decodeExitCode": 0,
+      "decodeErrors": "",
+      "audio": [
+        "[Parsed_volumedetect_0 @ 0000023a05ca6fc0] mean_volume: -15.1 dB",
+        "[Parsed_volumedetect_0 @ 0000023a05ca6fc0] max_volume: -2.3 dB"
+      ]
+    }
+  ],
+  "gameJsSha256": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+  "gameJsUnchanged": true,
+  "scope": "9 cockpit sheets and dialogue renderer wiring; scene/UI checkpoints are not campaign playthroughs.",
+  "gallery": {
+    "checks": [
+      {
+        "name": "all nine frame banks load",
+        "ok": true
+      },
+      {
+        "name": "frame preview pause works",
+        "ok": true
+      },
+      {
+        "name": "frame preview resumes",
+        "ok": true
+      },
+      {
+        "name": "native recording 0 browser playback",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 25.221333,
+          "time": 0.458476,
+          "error": null
+        }
+      },
+      {
+        "name": "native recording 1 browser playback",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 48.78,
+          "time": 0.464017,
+          "error": null
+        }
+      },
+      {
+        "name": "no page/console/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  }
+}

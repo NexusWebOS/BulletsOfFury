@@ -1,3 +1,107 @@
+## November 16, 2026 — Strict release-readiness QA (HOLD)
+
+November16 overnight cinematic QA: preserve assets/night_cinema_1116.js (reading holds, comms continuity, required-art waits and friendly radio material), night_hq_art_1116.js (approved orange-vest conference), night_city_atlas_1116.js (transparent source padding/empty end frame) and night_weather_1116.js (pixel-identical off-canvas weather culling). Current evidence: docs/CINEMA_OVERNIGHT_1116.md and _shots/cinema_overnight_1116/review.html. Core8969/0,754+5 scripts parse. Also preserve night_missile_stats_1116.js for player boss/component hit accounting; native damage/reward owners stay intact. GOD films are not human balance/campaign wins; release remains HOLD. No commit/push without Mike.
+
+
+Mike authorized comprehensive release QA and repairs. Active original BOF checkout is D:/BOF-Downloads/2026-11-14/RevG-source, not BOFII. Preserve all prior work; no commit/push/release. Current report: docs/RELEASE_READINESS_1116.md and docs/qa/release_readiness_1116.json; actual native screenshots, raw failures and review board: _shots/release_qa_1116/review.html. Portable probe recipes are _BUILD_SOURCE/release_qa_1116_*.py; applied patch recipes/backups/editable art live under _ART_SOURCES/release_qa_1116. Do not rerun historical patchers on already-patched source.
+
+Confirmed repairs: game.js preserves stable local controller seats across disconnect/reconnect; online.js captures visible Siege HUD canvases plus native mixer audio, preserves room controls/resume state, uses saved raw bindings and releases keyboard/gamepad input on blur. Standalone Stage6 preview entry no longer stalls in regular opening/crew flow (release_entry_1116.js); campaign gates unchanged. Ending full-text holds cover all nine routes; orange-vest row-B Juggernaut guitar art is bound to BOTH D1110 and C16 comic registries and actual drawn pixels verified (release_cinema_1116.js). Six preserved 512-square master poses and direct 270-square comic exports, not sixteen new poses. index.html preserves wide authored-canvas aspect against legacy fullscreen CSS, pointer registration and combat HUD restoration verified. Narrow layouts remain too small for a mobile-support claim.
+
+Evidence: baseline/final core 8,969/0 with unchanged failure names, all 749 shipping plus five inline JS parse, engine LF/tests CRLF. Native preview smoke 730 ground +135 space; 46 encounter starts (Normal1–5, Hard/Furious1–9), not complete fights. Current scoped checks: Forge29, online18, controls/modes19, ending7, followup13, four-wave carrier4, special pickups23; menu/layout/input26. Native two-context Supabase/WebRTC tests used private rooms and no public score/announcement writes. No physical 8BitDo attached; raw API tests are synthetic hardware data. Original legacy co-op237/247 and signatures45/63 remain archived with outdated fixture assumptions; current replacements certify only stated supported contracts. Initial carrier run had PF16_IDLE_BASE initialization error, not reproduced in fresh Edge isolation or full retry; do not claim it fixed. Stage8 stationary death traces to actual whole-arm swipe after intro replaces temporary protection; Stage5 earlier death not consistently reproduced. Do not force invulnerability or weaken gameplay to make smoke fixtures pass.
+
+Release remains HOLD: no full unassisted campaigns/Arcade/Boss Rush/Time Attack, all-difficulty/route/phase/achievement/hardware certification; no WAN/restrictive-NAT/TURN/long-session online certification; complete art/audio/performance/live weapon collision audit remains open. Native normal/easy campaigns intentionally end after5. Preserve Stage9 ship-to-Current Breaker, final-only rewards, mandatory StageX city rescue before7, Rough Riders naming and approved row-B cast. See report for measured frame pacing/cold-start concerns and prioritized sign-off gates.
+
+## November15 - Stage9 vehicle-to-pilot boss and scrolling dialogue
+
+Mike made Current Breaker the real Stage9 boss: Tidal Sovereign explodes, pilot ejects using the approved directional cells, then fights with his complete repeatable water arsenal. Only pilot defeat settles native rewards/exit; regular Current waves/hold are removed. Living pilot health gauge now bypasses the old fusion concealment. Pools2200/2530/2909. Freezer/other overflowing dialogue now scrolls inside the fixed box at readable font size. No archived scenes restored/removed.11 native+14 difficulty/terminal+38 media checks pass; final full8,969/0 suite/failing-name comparison and syntax pass. Current56s native-audio/HUD fight and11.6s scroll videos: _shots/stage9_pilot_1115/review.html, capture authority final-recording/. Earlier scratch takes lack final health/HUD and are historical. Docs/receipts: STAGE9_PILOT_1115.md, docs/qa/stage9_pilot_1115.json. game.js/test unchangedLF/CRLF; no commit/push.
+
+## November15 - Existing ally/sibling dialogue review
+
+Mike requested review before a possible dialogue wrap. Current 2:25 native-audio reel has34 rows/nine chapters. Separate 2:04 reel rehearses six inactive retained duo opening scripts (27 exact lines) with castB cockpit portraits; old flight staging is not recreated or reactivated. Both have chapters/transcripts and verified browser audio/seeking. Current48/48 and archive33/33 checks pass. Identified older black-vest Juggernaut guitar insert beside current orange portrait and short ending read holds. Review is not a story rewrite or completed dialogue wrap. Source hashes and game.js/test line endings unchanged. docs/ALLY_DIALOGUE_1115.md; review _shots/ally_dialogue_1115/review.html. No commit/push.
+
+## November15 - Generated geared stage briefings replace Theater Progression
+
+Mike removed the progression strip and requested generated geared frames with PixelMap letter-by-letter text. Three fixed912x300 mission/priority/reward variants, layered source and exact prompt retained. Native32cps state-clock reveal resets with selection and freezes on pause. Preserve actual reward/forge/city wrappers; the original base briefing now hands off dynamically.23 native checks, exact rebuild, syntax and full8,969/0 suite pass. Engine/test hashes and line endings unchanged. Current owner/evidence: docs/STAGE_FRAME_1115.md and docs/qa/stage_frame_1115.json. No commit/push.
+
+## November15 - User-confirmed row-B cast replaces rejected cockpit appearances
+
+Mike rejected the1114 cockpit appearances, then explicitly confirmed row B of the comparison: front-facing cast masters. Ten new built-in imagegen assets now provide all9 talking cockpits plus matching orange-vest/wraparound-shades Juggernaut Bulletalica.72 even544x364 cells/69 unique,45 WebP banks,9 layered source documents. cp15 compatibility keys point to new cockpit_castB_1115 paths/hashes; previous key-only style assertions were insufficient.94 native checks,83 new-file/pixel checks,57-file exact rebuild,30 movie/browser checks and full8,969/0 suite pass. Fresh57.90s full native-audio StageX-to7 reel visibly uses row B. Current docs/receipts: COCKPIT_CASTB_1115.md and docs/qa/cockpit_castB_1115.json. Sources/prompts: _ART_SOURCES/cockpit_castB_1115. Rejected earlier reels/sources retained as historical, not current identity authority. game.js LF/tests CRLF unchanged. No commit/push.
+
+## November15 - Juggernaut album line and current cockpit-style correction
+
+The old paired-ally selector gave Cole's album line to Decker; it now always belongs to Juggernaut. Stage7 arrival wrongly kept the technician in a workshop, selecting older front art; all post-evacuation airborne rows now use the shared current CP15 cockpit family with no older loading fallback. Earlier real HQ locations remain.94 native checks,full8,969/0 suite and 30 movie/browser checks pass. Fresh57.83s full native-audio StageX-to7 reel includes Juggernaut and current Decker/Cole, with actual recorded face-key proof. game.js LF/tests CRLF unchanged. Current docs/review: docs/CITY_STYLE_1115.md and _shots/city_style_1115/review.html. Earlier mixed-art reel is historical. No commit/push.
+
+## November15 - Matching card-interior pulse and full Stage X-to7 recording
+
+Mike added a matching baked interior wash to the approved exact-frame pulse. Current overlay builder: _BUILD_SOURCE/pursuit_overlay_1115_build.py; frame pixels remain byte-identical, arrow synchronized.64 cels,150 native checks,5 GIF browser checks, byte-exact export and full8,969/0 suite pass. Full 58.03s Cole/Furious city-debrief/Bulletalica/chibi/manual7/card/riverbank/sewer/launch movie includes native audio; 27 movie checks pass. Prepared native result checkpoint, not campaign win/combat validation. game.js LF/tests CRLF unchanged. Docs: PURSUIT_OVERLAY_1115.md and STAGEX_TO7_OVERLAY_1115.md; QA receipts under docs/qa. No commit/push.
+
+## November15 - Exact original card-frame correction
+
+Mike rejected the eight-vertex approximation. Current four overlays select the original metal frame pixels at912x512, retaining raised top plates, side steps, bottom tabs and bevel detail. Fixed density:2 registration matches the existing logical menu;16 authored phases stay synchronized with the retained arrow.24 source landmarks,64 source cels,150 native checks,5 GIF browser checks, byte-exact source rebuild and full8,969/0 suite pass. game.js LF/tests CRLF byte-identical. Current owner/evidence: docs/PURSUIT_TRACE_EXACT_1115.md and docs/qa/pursuit_trace_exact_1115.json. Prior pursuit_trace_1115 assets are historical. No commit/push.
+
+## November15 - Traced flashing pursuit-card frames
+
+Selected Hard/Furious pursuit cards now pulse along their hand-traced angled metal borders, alongside the retained16-phase arrow. Four64-total-frame baked native overlay banks, even cropped cells/static origins and layered Aseprite-format sources. No runtime outline drawing/glow/scale/opacity effect. Native menu input/routes, Rough Riders naming, Bulletalica, game.js/tests, StageX gate and existing cinematics remain. Aseprite executable unavailable here; format authoring/independent decode and native pixel proof are documented, no GUI claim. Current evidence: docs/PURSUIT_TRACE_1115.md and docs/qa/pursuit_trace_1115.json. No commit/push.
+
+## November15 - Rough Riders naming and pursuit highlight GIFs
+
+All current in-game squad references now say Rough Riders, including native radio/fallback dialogue, Stage6 reports, route briefings, achievement description, password labels and dossier text. Internal asset/encounter/save/password IDs and individual pilots remain stable. Existing native generated-menu selection is captured with real left/right input in Hard/Furious GIFs. See docs/ROUGH_RIDERS_SELECTION_1115.md and docs/qa/rough_riders_1115.json. The album remains Bulletalica. game.js has exactly three visible-label changes and remains LF; tests remain unchanged CRLF. No commit/push.
+
+## November15,2026 - Mandatory city rescue and registered Storm exhaust
+
+CITY16 supersedes FATE15's optional-city/Stage7 destination and old pursuit-menu presentation. Stage6 flies over new rural-America art; all four visible Storm nozzles carry registered16-phase exhaust with baked16-heading/16-depth banks. Actual flyover hull/shadows exported with matching exhaust. Generated Hard/Furious pursuit plates include their own typography. Cole's Stage6 Callisto/private-weapon demo is removed; preceding squad talk remains. Eight post6 beats lead to mandatory StageX city rescue. Existing real Storm/Rebel results, city opponents, exact STRM messages, medals and native rewards remain. Stage7 is gated through map/deploy/direct begin/save until verified city victory and new six-line debrief plus smiling Juggernaut Black Album insert. Native city reward continuation replaces only the obsolete S113 staged-battle insert, settles once and saves mid-debrief. Native chibi flies city-to7; player selects7 manually. Current sources/evidence/limitations: docs/CITY_RESCUE_1115.md and _ART_SOURCES/city_rescue_1115. game.js/tests unchanged; no commit/push/installer. Prior prepared Stage7 visibility concern remains outside this pass.
+
+## November15,2026 - Stage6 Crossed Fate routes and map aftermath
+
+FATE15 layers the current native Stage6 encounters/results. Furious left is STORM CANNON (internal Thunderhead); Harrier passes overhead first, then Storm with authored shadows. Storm defeat sends Harrier/Fury to the city and a Harrier crash, leaving Rebels; Rebel defeat sends Storm west and leaves the actual Furious Harrier for the city. Both exact STRM messages, generated medals, once-only200FP achievements, optional next destination and saved map progress are wired. STRM now opens Stage6 difficulty selection; BASE4 preserves Stage4 access. All11 post6 beats use current cockpit art, no stopped-orders plot or forced sewer entry. Preserve actual module/Retina/death owners, native settlement/rewards, city Harrier exclusion and optional Rival24 save extension. Current tests, recordings, limitations and source recipes: docs/CROSSED_FATE_1115.md and docs/qa/crossed_fate_1115.json. Native game.js LF/tests CRLF unchanged. Prior HQ22/kit/Chronos work preserved; no commit/push/installer. Stage7 prepared player-visibility concern remains outside this pass.
+
+## November15,2026 - Faster HQ swarm, stealth missiles and somersault exits
+
+HQ22 supersedes HQ21 timing:0.75s individual departures/0.9s spacing,7.5s first-wave beat,5 quiet seconds,0.32s enemy approach/0.24s reinforcements and ten rapid guard takedowns. Native stealth fighters visibly fire missiles; increasing survivors force Decker/Axel to warn the team, perform actual8-frame somersaults and boost SE/SW.20-cell banked exits, B42, original identities, native death/Earth/doors/walk/cheer/radar/dialogue/rewards remain.31+26 native checks,27 movie/browser checks, exact2-page/registry reproduction and full8,969/0 suite pass; game.js LF/tests CRLF unchanged. Audible43.40s updated focused HQ clip plus66.70s current Stage6-7 Harrier route. Not campaign wins. Stage7 prepared checkpoint shows terrain alone after countdown despite live player/advancing clock; retained as-is and documented for follow-up, no claim of visual gameplay handoff. Docs: docs/HQ_SWARM_1115.md, docs/STAGE67_CINEMATICS_1115.md. No commit/push/installer.
+
+## November15,2026 - Frame-by-frame banking and2x HQ departures
+
+HQ19 now uses20 baked turn/exhaust frames per actual aircraft, including B42.
+Native approved bank poses, fixed256 cells/common pivot; no flat-hull runtime
+rotation for exits. All9 pilots depart in1.3s instead of2.6s, one at a time,
+alternating SW/SE. Seven-ship beat12.6s;5 quiet seconds and six guard kills retained.
+Guard emergence/aim turns step at15Hz; Axel follows Decker at10.3 defense seconds.
+42+26 native checks,12 playback/GIF checks,full8,969/0 suite pass;10 pages/registry
+reproduce exactly. Audible53.90s focused launch-to-Stage6 checkpoint, not full win.
+Docs: docs/HQ_TURNS_1115.md; sources _ART_SOURCES/hq_turns_1115.
+Game.js/tests unchanged LF/CRLF; source only, no commit/push/installer.
+
+## November15,2026 - Proper HQ animation and guarded diagonal evacuation
+
+Mike corrected the preceding HQ19 reel. The Earth reveal now freezes its native
+starfield once settled. HQ doors physically slide in16 distinct fixed-world frames.
+All9 pilots have new8-walk/8-celebration cells using actual approved identities,
+registered384x384 and clean alpha. Existing top-down exit/walk performances remain.
+Seven first departures occur one at a time, alternating SW/SE, followed by5 quiet
+seconds. Decker/Axel emerge, shoot down6 attackers, then leave individually SE/SW;
+enemy reinforcements remain. Native destruction/rewards/Normal ending preserved.
+71+26+7 native checks,19 movie/browser checks and full8,969/0 suite pass.
+New audible137.69s cinematic checkpoint reel under _shots/hq_animation_1115.
+Docs: docs/HQ_ANIMATION_1115.md; art/prompts _ART_SOURCES/hq_animation_1115.
+Built-in imagegen with arcade-graphics/sprite-pipeline; no SpriteCook. Source only,
+game.js/tests unchanged LF/CRLF. No commit/push/installer/release.
+
+## November14-15,2026 - Revised Stage5 homecoming and Fury HQ evacuation
+
+Mike replaced the old static Chronos/Earth aftermath and post5 workshop conversation.
+HQ19 preserves real native Chronos destruction, delays Earth until the northward
+scroll, then scales the actual Furyship down southward into it. Actual selected
+aircraft/pilot land, disembark, enter closing HQ doors and walk through a full-frame
+corridor to all9 cheering crew.16-frame radar alarm/beeps,7 southbound first-wave
+launches,5 quiet seconds, increasing enemy attack and Decker/Axel escaping last.
+Existing Normal completion stays; Hard/Furious continue into the native Stage6
+opening with consistent scoped radio. Native rewards/HP/combat remain owners.
+Built-in imagegen environments; actual cast/ship performances reused. No SpriteCook.
+84+22+7 focused native checks,19 movie/browser checks,full suite8,969/0 pass.
+Audible1:57.32 revised reel under _shots/hq_return_attack_1114; old reels preserved.
+Game.js/test_fl unchanged with LF/CRLF. No commit/push/release in this pass.
+Docs: docs/HQ_RETURN_ATTACK_1114.md; sources/prompts _ART_SOURCES/hq_return_attack_1114.
+
 ## November14,2026 — Current source and complete Windows RevG on GitHub
 
 Mike authorized all changes and the current build uploaded. Full source/art
@@ -6350,3 +6454,33 @@ The true Stage 8 campaign victory now plays the new 93-shot finale through the l
 ## November 13 — Stage 8 cinematic repair
 
 Replaced the finale presentation with the canonical RD71 infector/data bomb and RD94 mechanical gates. New GPT action sheets, brown Lizzie front portraits, all speaker avatars, measured metal dialogue windows, player-paced dialogue and cold-load continuity. The same 93-shot script and native victory/death/score/unlock owners remain. Art now lives under finale_1113; the late stage8_finale_1112 entry points are revision 3. See docs/STAGE8_FINALE_REPAIR_1113.md.
+
+
+## November14 — All nine pilots talking inside their cockpits
+
+Mike requested Cole and every pilot talking inside their own ship, matching the newer comic dialogue style. CP15 adds nine generated 8-slot cockpit sheets (69 distinct poses/72 slots; opaque aviators repeat idle for blink) plus 36 small radio banks. Cole uses his approved original cockpit likeness. Native letter reveal drives mouths; idle listeners and fixed cockpit/body remain. New assets/cockpit_talk_art_1114.js and assets/cockpit_talk_1114.js load after service_link_1114 v2. Covers Stage1 jungle panel, post2 data-link, native comic radio, direct cockpit plates and small sky/space/tunnel windows. In-person HQ/workshop people retain their portrait family. Preserve the repaired service terrain bounds, existing Stage5 native death and all previous work. game.js/test_fl.js untouched; no commit/push. Full suite8969/0 exit0, native cockpit59/59, actual radio28/28, asset/suite129/129, gallery6/6; final MP4s decode cleanly with audible/unclipped letter sounds, no browser/HTTP errors. Preview: _shots/cockpit_talk_1114/review.html (port8765), with all-nine native montage and full Cole service scene. These are cinematic checkpoints, not campaign wins. Sources/prompts/rebuild/proof: docs/COCKPIT_TALK_1114.md, docs/COCKPIT_TALK_ART_1114.json, docs/qa/cockpit_talk_1114.json and _ART_SOURCES/cockpit_talk_1114.
+
+
+## November14 — Fresh full Stage3 talking-cockpit reel
+
+Mike requested the full Stage3 cutscenes with the new talking cockpit frames and lift-off. Fresh144.18s native cinematic checkpoint reel covers complete service data-link, top-down heat charge, lift-off/map, Stage3 card/fly-in and all23 HQ/prototype shots. No dialogue skipped; gameplay between arrival/HQ omitted, not a campaign clear. No game/art/test files changed; no commit/push. All captures have no browser/HTTP errors, native continuations once, final H264/AAC MP4 decode clean, audio mean-14.5/peak-1.9dB. Nine browser duration/chapter/error checks pass. Plain8765 server lacks Range and remains untouched; extra loopback preview server8766 supports206 byte ranges, verified256-byte range and all7 chapter jumps. Video:_shots/stage3_talking_1114/stage3-full-cinematics.mp4; chapter page http://127.0.0.1:8766/_shots/stage3_talking_1114/review.html ; lift-off41.505s. Sources/raws/repro and durable receipts:docs/STAGE3_TALKING_RECORDING_1114.md, docs/qa/stage3_talking_cinematics_1114.json, _BUILD_SOURCE/record_stage3_talking_1114.py, package_stage3_talking_1114.py and serve_stage3_talking_1114.py. Previous recordings preserved.
+
+
+## November14 — Satellite story, six-panel workshop and moving cinematic water
+
+Mike requested volcanic ground rumble/approaching fire wave, no ship fire ring, scrolling Stage3 water, alien-satellite distress-virus dialogue, Federation attachments500km east instead of a backup power cell, a six-panel Cole/Decker workshop/hug comic and overhead Photon Cannon test, plus a full4-to-5 film. CW16 late owner/assets/cinematic_rework_1114.js follows CP15 and preserves all native dialogue/earned3&4 upgrade, cinematics/rewards, ships, critical Stage5 assembly/combat. Three new generated banks22slots; built-in imagegen, no SpriteCook. Terrain-only bounded rumble, continuous full-width authored wave; Stage3 lake animation/motion uses render clock and matching join phase through PLAY. No game.js/test_fl edits. Native35/35, core8969/0 exit0, browser movie19/19; both final MPs decode clean, peaks-2.0/-2.1dB, no native game/asset errors. CorrectedStage3 reel214.05s, Stage4-to-5 reel92.36s with actual assembly/countdown/native gravityShipReady=true. These are full cinematic checkpoints, not campaign wins. Review:http://127.0.0.1:8766/_shots/cinematic_rework_1114/review.html . Docs/sources/prompts/rebuild/proof:docs/CINEMATIC_REWORK_1114.md, docs/CINEMATIC_REWORK_ART_1114.json, docs/qa/cinematic_rework_1114.json, _ART_SOURCES/cinematic_rework_1114, _BUILD_SOURCE/cinematic_rework_1114_*.py. Prior recordings/assets retained. No commit/push.
+
+
+## November14 — Prototype dispatch and unconverted departure
+
+Mike revised4-to-5: kit discovered in separate pieces, support Decker/Cole explains binding during ascent, network hacking continues, one pilot volunteers and kit awaits orders. KD17 late owner/assets/prototype_dispatch_1114.js follows CW16; earned4upgrade retained once, Maverick combat stats unchanged. Silent satellite/departure inserts are full-panel without dialogue boxes. New single wide satellite image uses approved two-eyed symbiote; no aircraft generated. All9 actual ship_<pilot> exports retained; departure uses native normal aircraft/glow/thrusters and moving ascent sky with steady horizontal position. Stage5 native assembly text/clocks/parts stay owned by the original system; furyIntroDialogue speaker/portrait now correctly Cole when flying Decker. New complete95.62s video:_shots/prototype_dispatch_1114/stage4-to-5-prototype-dispatch.mp4; preview http://127.0.0.1:8766/_shots/prototype_dispatch_1114/review.html . Native49/49, browser11/11, core8969/0 exit0, decode clean, audio mean-14.6/peak-1.7dB; gameplay handoff gravityShipReady=true and once-only continuations. Cinematic checkpoints, not a campaign win. game.js/test_fl untouched, older work/media retained, no commit/push. Docs/prompts/source/repro/proof:docs/PROTOTYPE_DISPATCH_1114.md, docs/PROTOTYPE_DISPATCH_ART_1114.json, docs/qa/prototype_dispatch_1114.json, _ART_SOURCES/prototype_dispatch_1114 and _BUILD_SOURCE/prototype_dispatch_1114_*.py.
+
+
+## November14 — Code-only satellite, Cole physical kit and one metal radio frame
+
+Mike has explicitly retired the physical tentacled/eyed satellite parasite; satellite corruption is purple alien code ONLY, superseding earlier orbital monster approval. KD18 aliases all3 legacy satellite keys to a new16-frame code-only bank. Cole's old AP10-only baked assembly interception is removed; all9 pilots now show the same12 native mounting pieces and SF14 effects. Departure exhaust uses cinematic time for hull/nozzle frames and pulse. Metal dialogue uses one460x84 proportional frame with original framed pav_ selection avatars; rebels rust-red, Dracodia purple chrome, CHRONOS metallic blue. Native speech/audio, assembly clocks, gameplay/rewards remain owners. Core game.js/test_fl.js untouched, LF/CRLF preserved; no commit/push. Core8969/0 exit0, native53/53, exact-avatar/viewport16/16, playback11/11; no native errors.95.63s full post4/Stage5 launch reel with audible audio and real gravityShipReady handoff, not campaign wins. Preview http://127.0.0.1:8766/_shots/kit_dialogue_1114/review.html . Source/prompt/proof/repro: docs/KIT_DIALOGUE_1114.md, docs/KIT_DIALOGUE_ART_1114.json, docs/qa/kit_dialogue_1114.json, _ART_SOURCES/kit_dialogue_1114 and _BUILD_SOURCE/kit_dialogue_1114_*.py. Old source assets retained outside active rendering.
+
+
+## November14 — Full Stage5-to6 cinematic review film
+
+Mike requested the complete current sequence. Recorded fresh Cole/Hard native cinematic checkpoints: all original Chronos death/return phases and9 team radio lines, full post5 HQ/homecoming/chaingun/upgrade/emergency scramble, native direct launch and Stage6 card/fly-in/all5 ambush radio cues through the first interactive interception. No dialogue skipped; optional result/equipment menus and combat between checkpoints omitted. Fresh isolated native defeat fixture, not a campaign win. Final140.99s H264/AAC film with audible/unclipped shared-bus game audio; strict decode clean, phase/beat coverage passes, no native game errors, browser12/12. game.js/test_fl.js/index hashes unchanged; no game/art edits or commit/push. Review http://127.0.0.1:8766/_shots/stage56_cinematics_1114/review.html . Video:_shots/stage56_cinematics_1114/stage5-to-6-full-cinematics.mp4. Notes/proof/repro: docs/STAGE56_CINEMATICS_1114.md, docs/qa/stage56_cinematics_1114.json, _BUILD_SOURCE/stage56_cinematics_1114_*.py.

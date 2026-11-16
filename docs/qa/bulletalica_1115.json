@@ -1,0 +1,29 @@
+{
+  "request": "Rename album Bulletalica",
+  "native": {
+    "state": "cutscene",
+    "id": "bulletalica-preview",
+    "shot": {
+      "shot": "CITY16-ALBUM",
+      "time": 1.7165999999999926,
+      "smiling": true,
+      "key": "city16_album"
+    },
+    "asset": {
+      "key": "city16_album",
+      "path": "assets/game/shared/cinematics/city_rescue_1115/album.png",
+      "w": 912,
+      "h": 512,
+      "sha256": "217dc176b76ea417581e3b0121a7b54b9d98547341296e0ca9a82cd5e7e231e8"
+    },
+    "ready": true
+  },
+  "errors": [],
+  "coreUnchanged": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+    "assets/city_rescue_1115.js": "a97eb39292105af58b706b7cd4e26dc30b70b035b5073c66e62ae7955f692e52"
+  },
+  "scope": "Image-only lettering edit, native album shot verified in Chromium. No gameplay/timing changes. Prior videos retain earlier lettering.",
+  "screenshot": "_shots/city_rescue_1115/bulletalica/native-album.png"
+}

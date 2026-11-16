@@ -1,6 +1,6 @@
 (()=>{'use strict';
  const $=s=>document.querySelector(s),el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
- const labels={enemy:'Field enemies',miniboss:'Minibosses',boss:'Bosses','password-boss':'Password bosses',rebel:'Rebel fighters','boss-form':'Final boss forms','boss-phase':'Boss phases','alternate-boss':'Alternate bosses'};
+ const labels={enemy:'Field enemies',miniboss:'Minibosses',boss:'Bosses','password-boss':'Password bosses',rebel:'Rough Riders','boss-form':'Final boss forms','boss-phase':'Boss phases','alternate-boss':'Alternate bosses'};
  let data,selected,api,serial=0,paused=false,sound=false,motion=[],tiles=[],lastPaint=0,motionTime=0,lastTick=0,loading=false,archiveOnly=false;
  const frame=$('#engine'),imageCache=new Map();
  const readable=s=>String(s||'').replace(/[_-]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());

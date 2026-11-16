@@ -1,0 +1,25 @@
+{
+  "generator": "built-in image_gen",
+  "prompt": "Use case: identity-preserve. Create ONE giant full-screen comic illustration for the 16-bit arcade game Bullets of Fury. One single wide landscape panel, aspect16:9, no divided panels, no captions, no text, no speech bubbles, no dialogue window, no empty rectangle, no UI. Reference1 defines the EXACT SATELLITE: white parabolic communication dish, square gold-gray central bus, two broad dark-blue/purple solar arrays, short sensor booms. Reference2 defines the approved alien symbiote: black flowing tentacles with red fissures and EXACTLY TWO ivory slit-pupil eyes; no additional eyes or forehead eyes. Scene: Earth's curved blue limb and atmosphere across the lower background, dark starfield behind. The satellite is large in foreground center-right, with the same two-eyed symbiote coiled/latching around its bus and the root of its dish. Show the alien as a sinister organic dark mass physically gripping the machine, its TWO eyes clearly readable, several thin tendrils spreading corruption along the solar panels. Violet/magenta luminous alien data squares visibly stream from the dish down toward Earth, continuing the visual language of reference1. Keep all satellite appendages, dish and the alien's head fully inside the panel with generous margins. Crisp detailed 16-bit pixel-comic art with clean ink outlines, metallic highlights, luminous neon corruption and a dramatic view of Earth. Match the game's authored art, not photorealism or 3D. No human pilots, no jets or spaceships, no weapons being fired, no border or text. Fill the whole frame with this coherent scene, not a small object pasted into black. The final scene is shown alone as one large comic frame.",
+  "source": "_ART_SOURCES/prototype_dispatch_1114/satellite-source.png",
+  "references": [
+    "satellite-approved.png",
+    "assets/game/shared/cinematics/cinematic_campaign/war_origin_0924/symbiote_two_eyes_native_0924.png"
+  ],
+  "aircraftPolicy": "No generated aircraft. Departure draws the selected pilot's actual ship_<pilot> and native glow/thruster sockets.",
+  "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-2e339a4e-2040-4ca3-82c4-8595039c4a71.png",
+  "export": {
+    "key": "kd17_satellite",
+    "path": "assets/game/shared/cinematics/prototype_dispatch_1114/satellite.webp",
+    "w": 1280,
+    "h": 720,
+    "cols": 1,
+    "frames": 1,
+    "sha256": "c660c4b9d97f50e46100ea80918447d144b946743043df7a7dee2f574b7e2779"
+  },
+  "referenceFiles": [
+    "_ART_SOURCES/prototype_dispatch_1114/satellite-approved.png",
+    "assets/game/shared/cinematics/cinematic_campaign/war_origin_0924/symbiote_two_eyes_native_0924.png"
+  ],
+  "aircraftReferences": "_ART_SOURCES/prototype_dispatch_1114/aircraft-references/manifest.json"
+}

@@ -1,0 +1,15 @@
+{
+  "key": "release16_comic_guitar",
+  "path": "assets/game/shared/cinematics/release_qa_1116/juggernaut-guitar-comic.webp",
+  "w": 270,
+  "h": 270,
+  "cols": 4,
+  "frames": 6,
+  "pivot": [
+    135,
+    135
+  ],
+  "source": "assets/game/shared/cinematics/release_qa_1116/juggernaut-guitar.webp",
+  "sourceScale": 0.52734375,
+  "sha256": "265ffde4b2a5382d43b165a67cbebd5f590510412a514a4bcd0c6de516dd4adf"
+}

@@ -1,0 +1,3 @@
+# HQ22 native guard somersault banks
+
+No new aircraft generation. Source ship_decker_so0..7 and ship_axel_so0..7 were exported from current native XART/D27 art. Each bank uses fixed256x256 cells and pivot128,128 with104px hull scale. Midframes retain native pitch silhouettes. Endpoints reuse the exact first HQ21 turn cell for flip-to-boost continuity. Registry manifest.json contains dimensions, headings, paths and SHA256. Native turn sources remain in ../hq_turns_1115. Repack with _BUILD_SOURCE/hq_swarm_1115_pack_saved.py; do not overwrite shipping sheets without comparing the resulting digests. Prior owner/index are retained. See docs/HQ_SWARM_1115.md.

@@ -1,0 +1,3666 @@
+{
+  "scope": "Native cinematic/render checks, not campaign victories. Complete post4 and Stage5 launch checkpoints, without skipping dialogue.",
+  "native": {
+    "checks": [
+      {
+        "name": "axel fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "AXEL",
+          "material": "crew",
+          "pilot": "axel",
+          "avatar": "pav_axel",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "axel framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "AXEL",
+          "material": "crew",
+          "pilot": "axel",
+          "avatar": "pav_axel",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "decker fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "DECKER",
+          "material": "crew",
+          "pilot": "decker",
+          "avatar": "pav_decker",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "decker framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "DECKER",
+          "material": "crew",
+          "pilot": "decker",
+          "avatar": "pav_decker",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "maverick fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "MAVERICK",
+          "material": "crew",
+          "pilot": "maverick",
+          "avatar": "pav_maverick",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "maverick framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "MAVERICK",
+          "material": "crew",
+          "pilot": "maverick",
+          "avatar": "pav_maverick",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "freezer fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "FREEZER",
+          "material": "crew",
+          "pilot": "freezer",
+          "avatar": "pav_freezer",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "freezer framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "FREEZER",
+          "material": "crew",
+          "pilot": "freezer",
+          "avatar": "pav_freezer",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "juggernaut fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "JUGGERNAUT",
+          "material": "crew",
+          "pilot": "juggernaut",
+          "avatar": "pav_juggernaut",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "juggernaut framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "JUGGERNAUT",
+          "material": "crew",
+          "pilot": "juggernaut",
+          "avatar": "pav_juggernaut",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "yuri fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "YURI",
+          "material": "crew",
+          "pilot": "yuri",
+          "avatar": "pav_yuri",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "yuri framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "YURI",
+          "material": "crew",
+          "pilot": "yuri",
+          "avatar": "pav_yuri",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "lizzie fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "LIZZIE",
+          "material": "crew",
+          "pilot": "lizzie",
+          "avatar": "pav_lizzie",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "lizzie framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "LIZZIE",
+          "material": "crew",
+          "pilot": "lizzie",
+          "avatar": "pav_lizzie",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "falva fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "FALVA",
+          "material": "crew",
+          "pilot": "falva",
+          "avatar": "pav_falva",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 21.59375,
+            "w": 68,
+            "h": 64.8125
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "falva framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "FALVA",
+          "material": "crew",
+          "pilot": "falva",
+          "avatar": "pav_falva",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 21.59375,
+            "w": 68,
+            "h": 64.8125
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "cole fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "COLE",
+          "material": "crew",
+          "pilot": "cole",
+          "avatar": "pav_cole",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "cole framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "COLE",
+          "material": "crew",
+          "pilot": "cole",
+          "avatar": "pav_cole",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "ROOK fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "ROOK",
+          "material": "rebel",
+          "pilot": null,
+          "avatar": "rr_portrait_rook",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "ROOK framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "ROOK",
+          "material": "rebel",
+          "pilot": null,
+          "avatar": "rr_portrait_rook",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "NYX fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "NYX",
+          "material": "rebel",
+          "pilot": null,
+          "avatar": "rr_portrait_nyx",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "NYX framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "NYX",
+          "material": "rebel",
+          "pilot": null,
+          "avatar": "rr_portrait_nyx",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "VOSS fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "VOSS",
+          "material": "rebel",
+          "pilot": null,
+          "avatar": "rr_portrait_voss",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "VOSS framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "VOSS",
+          "material": "rebel",
+          "pilot": null,
+          "avatar": "rr_portrait_voss",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "KAIA fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "KAIA",
+          "material": "rebel",
+          "pilot": null,
+          "avatar": "rr_portrait_kaia",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "KAIA framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "KAIA",
+          "material": "rebel",
+          "pilot": null,
+          "avatar": "rr_portrait_kaia",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "JACE fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "JACE",
+          "material": "rebel",
+          "pilot": null,
+          "avatar": "rr_portrait_jace",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "JACE framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "JACE",
+          "material": "rebel",
+          "pilot": null,
+          "avatar": "rr_portrait_jace",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "CHRONOS fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "CHRONOS",
+          "material": "chronos",
+          "pilot": null,
+          "avatar": "c113_neutral_68",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68,
+            "key": "c113_neutral_68",
+            "pose": "neutral"
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "CHRONOS framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "CHRONOS",
+          "material": "chronos",
+          "pilot": null,
+          "avatar": "c113_neutral_68",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68,
+            "key": "c113_neutral_68",
+            "pose": "neutral"
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "DRACODIA fixed frame and material",
+        "ok": true,
+        "data": {
+          "who": "DRACODIA",
+          "material": "dracodia",
+          "pilot": null,
+          "avatar": "dp20_dracodia_portrait",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "DRACODIA framed avatar is drawn",
+        "ok": true,
+        "data": {
+          "who": "DRACODIA",
+          "material": "dracodia",
+          "pilot": null,
+          "avatar": "dp20_dracodia_portrait",
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+            "budget": 44
+          },
+          "portraitDraw": {
+            "x": 27,
+            "y": 20,
+            "w": 68,
+            "h": 68
+          },
+          "layout": {
+            "H": 10,
+            "lines": [
+              "Hold formation. The attachment kit is",
+              "ready. We are tracing the alien signal",
+              "back to its source."
+            ],
+            "step": 13,
+            "height": 36
+          }
+        }
+      },
+      {
+        "name": "all sixteen corruption frames render distinct actual pixels",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "name": "every retired satellite key resolves to code-only source",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "axel actual exhaust animates while combat clock is idle",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "axel",
+            "key": "ship_axel",
+            "x": 240,
+            "y": 190,
+            "w": 127.23214285714286,
+            "h": 150,
+            "power": 0.684,
+            "plume": true,
+            "thrustFrame": -0.0
+          },
+          {
+            "pilot": "axel",
+            "key": "ship_axel",
+            "x": 240,
+            "y": 190,
+            "w": 127.23214285714286,
+            "h": 150,
+            "power": 0.792,
+            "plume": true,
+            "thrustFrame": 1
+          },
+          {
+            "pilot": "axel",
+            "key": "ship_axel_g1",
+            "x": 240,
+            "y": 190,
+            "w": 127.23214285714286,
+            "h": 150,
+            "power": 0.9,
+            "plume": true,
+            "thrustFrame": 2
+          },
+          {
+            "pilot": "axel",
+            "key": "ship_axel",
+            "x": 240,
+            "y": 190,
+            "w": 127.23214285714286,
+            "h": 150,
+            "power": 0.8280000000000001,
+            "plume": true,
+            "thrustFrame": 3
+          },
+          {
+            "pilot": "axel",
+            "key": "ship_axel_g2",
+            "x": 240,
+            "y": 190,
+            "w": 127.23214285714286,
+            "h": 150,
+            "power": 0.7200000000000001,
+            "plume": true,
+            "thrustFrame": 4
+          },
+          {
+            "pilot": "axel",
+            "key": "ship_axel_g2",
+            "x": 240,
+            "y": 190,
+            "w": 127.23214285714286,
+            "h": 150,
+            "power": 0.864,
+            "plume": true,
+            "thrustFrame": 5
+          }
+        ]
+      },
+      {
+        "name": "decker actual exhaust animates while combat clock is idle",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "decker",
+            "key": "ship_decker",
+            "x": 240,
+            "y": 190,
+            "w": 130.43478260869566,
+            "h": 150,
+            "power": 0.684,
+            "plume": true,
+            "thrustFrame": -0.0
+          },
+          {
+            "pilot": "decker",
+            "key": "ship_decker",
+            "x": 240,
+            "y": 190,
+            "w": 130.43478260869566,
+            "h": 150,
+            "power": 0.792,
+            "plume": true,
+            "thrustFrame": 1
+          },
+          {
+            "pilot": "decker",
+            "key": "ship_decker_g1",
+            "x": 240,
+            "y": 190,
+            "w": 130.43478260869566,
+            "h": 150,
+            "power": 0.9,
+            "plume": true,
+            "thrustFrame": 2
+          },
+          {
+            "pilot": "decker",
+            "key": "ship_decker",
+            "x": 240,
+            "y": 190,
+            "w": 130.43478260869566,
+            "h": 150,
+            "power": 0.8280000000000001,
+            "plume": true,
+            "thrustFrame": 3
+          },
+          {
+            "pilot": "decker",
+            "key": "ship_decker_g2",
+            "x": 240,
+            "y": 190,
+            "w": 130.43478260869566,
+            "h": 150,
+            "power": 0.7200000000000001,
+            "plume": true,
+            "thrustFrame": 4
+          },
+          {
+            "pilot": "decker",
+            "key": "ship_decker_g2",
+            "x": 240,
+            "y": 190,
+            "w": 130.43478260869566,
+            "h": 150,
+            "power": 0.864,
+            "plume": true,
+            "thrustFrame": 5
+          }
+        ]
+      },
+      {
+        "name": "maverick actual exhaust animates while combat clock is idle",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "maverick",
+            "key": "ship_maverick",
+            "x": 240,
+            "y": 190,
+            "w": 142.18009478672985,
+            "h": 150,
+            "power": 0.684,
+            "plume": true,
+            "thrustFrame": -0.0
+          },
+          {
+            "pilot": "maverick",
+            "key": "ship_maverick",
+            "x": 240,
+            "y": 190,
+            "w": 142.18009478672985,
+            "h": 150,
+            "power": 0.792,
+            "plume": true,
+            "thrustFrame": 1
+          },
+          {
+            "pilot": "maverick",
+            "key": "ship_maverick_g1",
+            "x": 240,
+            "y": 190,
+            "w": 142.18009478672985,
+            "h": 150,
+            "power": 0.9,
+            "plume": true,
+            "thrustFrame": 2
+          },
+          {
+            "pilot": "maverick",
+            "key": "ship_maverick",
+            "x": 240,
+            "y": 190,
+            "w": 142.18009478672985,
+            "h": 150,
+            "power": 0.8280000000000001,
+            "plume": true,
+            "thrustFrame": 3
+          },
+          {
+            "pilot": "maverick",
+            "key": "ship_maverick_g2",
+            "x": 240,
+            "y": 190,
+            "w": 142.18009478672985,
+            "h": 150,
+            "power": 0.7200000000000001,
+            "plume": true,
+            "thrustFrame": 4
+          },
+          {
+            "pilot": "maverick",
+            "key": "ship_maverick_g2",
+            "x": 240,
+            "y": 190,
+            "w": 142.18009478672985,
+            "h": 150,
+            "power": 0.864,
+            "plume": true,
+            "thrustFrame": 5
+          }
+        ]
+      },
+      {
+        "name": "freezer actual exhaust animates while combat clock is idle",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "freezer",
+            "key": "ship_freezer",
+            "x": 240,
+            "y": 190,
+            "w": 141.49484536082474,
+            "h": 150,
+            "power": 0.684,
+            "plume": true,
+            "thrustFrame": -0.0
+          },
+          {
+            "pilot": "freezer",
+            "key": "ship_freezer",
+            "x": 240,
+            "y": 190,
+            "w": 141.49484536082474,
+            "h": 150,
+            "power": 0.792,
+            "plume": true,
+            "thrustFrame": 1
+          },
+          {
+            "pilot": "freezer",
+            "key": "ship_freezer_g1",
+            "x": 240,
+            "y": 190,
+            "w": 141.49484536082474,
+            "h": 150,
+            "power": 0.9,
+            "plume": true,
+            "thrustFrame": 2
+          },
+          {
+            "pilot": "freezer",
+            "key": "ship_freezer",
+            "x": 240,
+            "y": 190,
+            "w": 141.49484536082474,
+            "h": 150,
+            "power": 0.8280000000000001,
+            "plume": true,
+            "thrustFrame": 3
+          },
+          {
+            "pilot": "freezer",
+            "key": "ship_freezer_g2",
+            "x": 240,
+            "y": 190,
+            "w": 141.49484536082474,
+            "h": 150,
+            "power": 0.7200000000000001,
+            "plume": true,
+            "thrustFrame": 4
+          },
+          {
+            "pilot": "freezer",
+            "key": "ship_freezer_g2",
+            "x": 240,
+            "y": 190,
+            "w": 141.49484536082474,
+            "h": 150,
+            "power": 0.864,
+            "plume": true,
+            "thrustFrame": 5
+          }
+        ]
+      },
+      {
+        "name": "juggernaut actual exhaust animates while combat clock is idle",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "juggernaut",
+            "key": "ship_juggernaut",
+            "x": 240,
+            "y": 190,
+            "w": 146.34146341463415,
+            "h": 150,
+            "power": 0.684,
+            "plume": true,
+            "thrustFrame": -0.0
+          },
+          {
+            "pilot": "juggernaut",
+            "key": "ship_juggernaut",
+            "x": 240,
+            "y": 190,
+            "w": 146.34146341463415,
+            "h": 150,
+            "power": 0.792,
+            "plume": true,
+            "thrustFrame": 1
+          },
+          {
+            "pilot": "juggernaut",
+            "key": "ship_juggernaut_g1",
+            "x": 240,
+            "y": 190,
+            "w": 146.34146341463415,
+            "h": 150,
+            "power": 0.9,
+            "plume": true,
+            "thrustFrame": 2
+          },
+          {
+            "pilot": "juggernaut",
+            "key": "ship_juggernaut",
+            "x": 240,
+            "y": 190,
+            "w": 146.34146341463415,
+            "h": 150,
+            "power": 0.8280000000000001,
+            "plume": true,
+            "thrustFrame": 3
+          },
+          {
+            "pilot": "juggernaut",
+            "key": "ship_juggernaut_g2",
+            "x": 240,
+            "y": 190,
+            "w": 146.34146341463415,
+            "h": 150,
+            "power": 0.7200000000000001,
+            "plume": true,
+            "thrustFrame": 4
+          },
+          {
+            "pilot": "juggernaut",
+            "key": "ship_juggernaut_g2",
+            "x": 240,
+            "y": 190,
+            "w": 146.34146341463415,
+            "h": 150,
+            "power": 0.864,
+            "plume": true,
+            "thrustFrame": 5
+          }
+        ]
+      },
+      {
+        "name": "yuri actual exhaust animates while combat clock is idle",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "yuri",
+            "key": "ship_yuri",
+            "x": 240,
+            "y": 190,
+            "w": 136.8995633187773,
+            "h": 150,
+            "power": 0.684,
+            "plume": true,
+            "thrustFrame": -0.0
+          },
+          {
+            "pilot": "yuri",
+            "key": "ship_yuri",
+            "x": 240,
+            "y": 190,
+            "w": 136.8995633187773,
+            "h": 150,
+            "power": 0.792,
+            "plume": true,
+            "thrustFrame": 1
+          },
+          {
+            "pilot": "yuri",
+            "key": "ship_yuri_g1",
+            "x": 240,
+            "y": 190,
+            "w": 136.8995633187773,
+            "h": 150,
+            "power": 0.9,
+            "plume": true,
+            "thrustFrame": 2
+          },
+          {
+            "pilot": "yuri",
+            "key": "ship_yuri",
+            "x": 240,
+            "y": 190,
+            "w": 136.8995633187773,
+            "h": 150,
+            "power": 0.8280000000000001,
+            "plume": true,
+            "thrustFrame": 3
+          },
+          {
+            "pilot": "yuri",
+            "key": "ship_yuri_g2",
+            "x": 240,
+            "y": 190,
+            "w": 136.8995633187773,
+            "h": 150,
+            "power": 0.7200000000000001,
+            "plume": true,
+            "thrustFrame": 4
+          },
+          {
+            "pilot": "yuri",
+            "key": "ship_yuri_g2",
+            "x": 240,
+            "y": 190,
+            "w": 136.8995633187773,
+            "h": 150,
+            "power": 0.864,
+            "plume": true,
+            "thrustFrame": 5
+          }
+        ]
+      },
+      {
+        "name": "lizzie actual exhaust animates while combat clock is idle",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "lizzie",
+            "key": "ship_lizzie",
+            "x": 240,
+            "y": 190,
+            "w": 138.2716049382716,
+            "h": 150,
+            "power": 0.684,
+            "plume": true,
+            "thrustFrame": -0.0
+          },
+          {
+            "pilot": "lizzie",
+            "key": "ship_lizzie",
+            "x": 240,
+            "y": 190,
+            "w": 138.2716049382716,
+            "h": 150,
+            "power": 0.792,
+            "plume": true,
+            "thrustFrame": 1
+          },
+          {
+            "pilot": "lizzie",
+            "key": "ship_lizzie_g1",
+            "x": 240,
+            "y": 190,
+            "w": 138.2716049382716,
+            "h": 150,
+            "power": 0.9,
+            "plume": true,
+            "thrustFrame": 2
+          },
+          {
+            "pilot": "lizzie",
+            "key": "ship_lizzie",
+            "x": 240,
+            "y": 190,
+            "w": 138.2716049382716,
+            "h": 150,
+            "power": 0.8280000000000001,
+            "plume": true,
+            "thrustFrame": 3
+          },
+          {
+            "pilot": "lizzie",
+            "key": "ship_lizzie_g2",
+            "x": 240,
+            "y": 190,
+            "w": 138.2716049382716,
+            "h": 150,
+            "power": 0.7200000000000001,
+            "plume": true,
+            "thrustFrame": 4
+          },
+          {
+            "pilot": "lizzie",
+            "key": "ship_lizzie_g2",
+            "x": 240,
+            "y": 190,
+            "w": 138.2716049382716,
+            "h": 150,
+            "power": 0.864,
+            "plume": true,
+            "thrustFrame": 5
+          }
+        ]
+      },
+      {
+        "name": "falva actual exhaust animates while combat clock is idle",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "falva",
+            "key": "ship_falva",
+            "x": 240,
+            "y": 190,
+            "w": 128.57142857142858,
+            "h": 150,
+            "power": 0.684,
+            "plume": true,
+            "thrustFrame": -0.0
+          },
+          {
+            "pilot": "falva",
+            "key": "ship_falva",
+            "x": 240,
+            "y": 190,
+            "w": 128.57142857142858,
+            "h": 150,
+            "power": 0.792,
+            "plume": true,
+            "thrustFrame": 1
+          },
+          {
+            "pilot": "falva",
+            "key": "ship_falva_g1",
+            "x": 240,
+            "y": 190,
+            "w": 128.57142857142858,
+            "h": 150,
+            "power": 0.9,
+            "plume": true,
+            "thrustFrame": 2
+          },
+          {
+            "pilot": "falva",
+            "key": "ship_falva",
+            "x": 240,
+            "y": 190,
+            "w": 128.57142857142858,
+            "h": 150,
+            "power": 0.8280000000000001,
+            "plume": true,
+            "thrustFrame": 3
+          },
+          {
+            "pilot": "falva",
+            "key": "ship_falva_g2",
+            "x": 240,
+            "y": 190,
+            "w": 128.57142857142858,
+            "h": 150,
+            "power": 0.7200000000000001,
+            "plume": true,
+            "thrustFrame": 4
+          },
+          {
+            "pilot": "falva",
+            "key": "ship_falva_g2",
+            "x": 240,
+            "y": 190,
+            "w": 128.57142857142858,
+            "h": 150,
+            "power": 0.864,
+            "plume": true,
+            "thrustFrame": 5
+          }
+        ]
+      },
+      {
+        "name": "cole actual exhaust animates while combat clock is idle",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "cole",
+            "key": "ship_cole",
+            "x": 240,
+            "y": 190,
+            "w": 124.78448275862068,
+            "h": 150,
+            "power": 0.684,
+            "plume": true,
+            "thrustFrame": -0.0
+          },
+          {
+            "pilot": "cole",
+            "key": "ship_cole",
+            "x": 240,
+            "y": 190,
+            "w": 124.78448275862068,
+            "h": 150,
+            "power": 0.792,
+            "plume": true,
+            "thrustFrame": 1
+          },
+          {
+            "pilot": "cole",
+            "key": "ship_cole_g1",
+            "x": 240,
+            "y": 190,
+            "w": 124.78448275862068,
+            "h": 150,
+            "power": 0.9,
+            "plume": true,
+            "thrustFrame": 2
+          },
+          {
+            "pilot": "cole",
+            "key": "ship_cole",
+            "x": 240,
+            "y": 190,
+            "w": 124.78448275862068,
+            "h": 150,
+            "power": 0.8280000000000001,
+            "plume": true,
+            "thrustFrame": 3
+          },
+          {
+            "pilot": "cole",
+            "key": "ship_cole_g2",
+            "x": 240,
+            "y": 190,
+            "w": 124.78448275862068,
+            "h": 150,
+            "power": 0.7200000000000001,
+            "plume": true,
+            "thrustFrame": 4
+          },
+          {
+            "pilot": "cole",
+            "key": "ship_cole_g2",
+            "x": 240,
+            "y": 190,
+            "w": 124.78448275862068,
+            "h": 150,
+            "power": 0.864,
+            "plume": true,
+            "thrustFrame": 5
+          }
+        ]
+      },
+      {
+        "name": "axel twelve native separate mounting parts drawn",
+        "ok": true,
+        "data": {
+          "g": {
+            "phase": "drift",
+            "t": 10.41666666666505,
+            "age": 10.41666666666505,
+            "dialogueT": 10.41666666666505,
+            "dialogueDelay": 0.42,
+            "dialogueDone": true,
+            "narrative": true,
+            "line": "COLE, Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.",
+            "chargeBand": -1,
+            "partStartAge": 3.116666666666219,
+            "partCueCount": 12
+          },
+          "draws": [
+            "wing_left_top",
+            "wing_right_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "nose_top",
+            "nose_top",
+            "nose_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "hull_top"
+          ],
+          "radio": {
+            "who": "DECKER",
+            "material": "crew",
+            "pilot": "decker",
+            "avatar": "pav_decker",
+            "frame": {
+              "x": 12,
+              "y": 12,
+              "w": 460,
+              "h": 84
+            },
+            "page": {
+              "index": 1,
+              "count": 2,
+              "text": "situations like this.",
+              "budget": 21
+            },
+            "portraitDraw": {
+              "x": 29,
+              "y": 20,
+              "w": 68,
+              "h": 68
+            },
+            "layout": {
+              "H": 8,
+              "lines": [
+                "situations like this."
+              ],
+              "step": 10,
+              "height": 8
+            }
+          }
+        }
+      },
+      {
+        "name": "decker twelve native separate mounting parts drawn",
+        "ok": true,
+        "data": {
+          "g": {
+            "phase": "drift",
+            "t": 10.41666666666505,
+            "age": 10.41666666666505,
+            "dialogueT": 10.41666666666505,
+            "dialogueDelay": 0.42,
+            "dialogueDone": true,
+            "narrative": true,
+            "line": "COLE, Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.",
+            "chargeBand": -1,
+            "partStartAge": 3.116666666666219,
+            "partCueCount": 12
+          },
+          "draws": [
+            "wing_left_top",
+            "wing_right_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "nose_top",
+            "nose_top",
+            "nose_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "hull_top"
+          ],
+          "radio": {
+            "who": "COLE",
+            "material": "crew",
+            "pilot": "cole",
+            "avatar": "pav_cole",
+            "frame": {
+              "x": 12,
+              "y": 12,
+              "w": 460,
+              "h": 84
+            },
+            "page": {
+              "index": 1,
+              "count": 2,
+              "text": "situations like this.",
+              "budget": 21
+            },
+            "portraitDraw": {
+              "x": 29,
+              "y": 20,
+              "w": 68,
+              "h": 68
+            },
+            "layout": {
+              "H": 8,
+              "lines": [
+                "situations like this."
+              ],
+              "step": 10,
+              "height": 8
+            }
+          }
+        }
+      },
+      {
+        "name": "maverick twelve native separate mounting parts drawn",
+        "ok": true,
+        "data": {
+          "g": {
+            "phase": "drift",
+            "t": 10.416666666665298,
+            "age": 10.416666666665298,
+            "dialogueT": 10.416666666665298,
+            "dialogueDelay": 0.42,
+            "dialogueDone": true,
+            "narrative": true,
+            "line": "COLE, Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.",
+            "chargeBand": -1,
+            "partStartAge": 3.116666666666219,
+            "partCueCount": 12
+          },
+          "draws": [
+            "wing_left_top",
+            "wing_right_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "nose_top",
+            "nose_top",
+            "nose_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "hull_top"
+          ],
+          "radio": {
+            "who": "DECKER",
+            "material": "crew",
+            "pilot": "decker",
+            "avatar": "pav_decker",
+            "frame": {
+              "x": 12,
+              "y": 12,
+              "w": 460,
+              "h": 84
+            },
+            "page": {
+              "index": 1,
+              "count": 2,
+              "text": "situations like this.",
+              "budget": 21
+            },
+            "portraitDraw": {
+              "x": 29,
+              "y": 20,
+              "w": 68,
+              "h": 68
+            },
+            "layout": {
+              "H": 8,
+              "lines": [
+                "situations like this."
+              ],
+              "step": 10,
+              "height": 8
+            }
+          }
+        }
+      },
+      {
+        "name": "freezer twelve native separate mounting parts drawn",
+        "ok": true,
+        "data": {
+          "g": {
+            "phase": "drift",
+            "t": 10.416666666665739,
+            "age": 10.416666666665739,
+            "dialogueT": 10.416666666665739,
+            "dialogueDelay": 0.42,
+            "dialogueDone": true,
+            "narrative": true,
+            "line": "COLE, Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.",
+            "chargeBand": -1,
+            "partStartAge": 3.116666666666219,
+            "partCueCount": 12
+          },
+          "draws": [
+            "wing_left_top",
+            "wing_right_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "nose_top",
+            "nose_top",
+            "nose_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "hull_top"
+          ],
+          "radio": {
+            "who": "DECKER",
+            "material": "crew",
+            "pilot": "decker",
+            "avatar": "pav_decker",
+            "frame": {
+              "x": 12,
+              "y": 12,
+              "w": 460,
+              "h": 84
+            },
+            "page": {
+              "index": 1,
+              "count": 2,
+              "text": "situations like this.",
+              "budget": 21
+            },
+            "portraitDraw": {
+              "x": 29,
+              "y": 20,
+              "w": 68,
+              "h": 68
+            },
+            "layout": {
+              "H": 8,
+              "lines": [
+                "situations like this."
+              ],
+              "step": 10,
+              "height": 8
+            }
+          }
+        }
+      },
+      {
+        "name": "juggernaut twelve native separate mounting parts drawn",
+        "ok": true,
+        "data": {
+          "g": {
+            "phase": "drift",
+            "t": 10.416666666666208,
+            "age": 10.416666666666208,
+            "dialogueT": 10.416666666666208,
+            "dialogueDelay": 0.42,
+            "dialogueDone": true,
+            "narrative": true,
+            "line": "COLE, Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.",
+            "chargeBand": -1,
+            "partStartAge": 3.116666666666219,
+            "partCueCount": 12
+          },
+          "draws": [
+            "wing_left_top",
+            "wing_right_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "nose_top",
+            "nose_top",
+            "nose_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "hull_top"
+          ],
+          "radio": {
+            "who": "DECKER",
+            "material": "crew",
+            "pilot": "decker",
+            "avatar": "pav_decker",
+            "frame": {
+              "x": 12,
+              "y": 12,
+              "w": 460,
+              "h": 84
+            },
+            "page": {
+              "index": 1,
+              "count": 2,
+              "text": "situations like this.",
+              "budget": 21
+            },
+            "portraitDraw": {
+              "x": 29,
+              "y": 20,
+              "w": 68,
+              "h": 68
+            },
+            "layout": {
+              "H": 8,
+              "lines": [
+                "situations like this."
+              ],
+              "step": 10,
+              "height": 8
+            }
+          }
+        }
+      },
+      {
+        "name": "yuri twelve native separate mounting parts drawn",
+        "ok": true,
+        "data": {
+          "g": {
+            "phase": "drift",
+            "t": 10.416666666666671,
+            "age": 10.416666666666671,
+            "dialogueT": 10.416666666666671,
+            "dialogueDelay": 0.42,
+            "dialogueDone": true,
+            "narrative": true,
+            "line": "COLE, Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.",
+            "chargeBand": -1,
+            "partStartAge": 3.116666666666219,
+            "partCueCount": 12
+          },
+          "draws": [
+            "wing_left_top",
+            "wing_right_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "nose_top",
+            "nose_top",
+            "nose_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "hull_top"
+          ],
+          "radio": {
+            "who": "DECKER",
+            "material": "crew",
+            "pilot": "decker",
+            "avatar": "pav_decker",
+            "frame": {
+              "x": 12,
+              "y": 12,
+              "w": 460,
+              "h": 84
+            },
+            "page": {
+              "index": 1,
+              "count": 2,
+              "text": "situations like this.",
+              "budget": 21
+            },
+            "portraitDraw": {
+              "x": 29,
+              "y": 20,
+              "w": 68,
+              "h": 68
+            },
+            "layout": {
+              "H": 8,
+              "lines": [
+                "situations like this."
+              ],
+              "step": 10,
+              "height": 8
+            }
+          }
+        }
+      },
+      {
+        "name": "lizzie twelve native separate mounting parts drawn",
+        "ok": true,
+        "data": {
+          "g": {
+            "phase": "drift",
+            "t": 10.416666666667183,
+            "age": 10.416666666667183,
+            "dialogueT": 10.416666666667183,
+            "dialogueDelay": 0.42,
+            "dialogueDone": true,
+            "narrative": true,
+            "line": "COLE, Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.",
+            "chargeBand": -1,
+            "partStartAge": 3.116666666666219,
+            "partCueCount": 12
+          },
+          "draws": [
+            "wing_left_top",
+            "wing_right_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "nose_top",
+            "nose_top",
+            "nose_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "hull_top"
+          ],
+          "radio": {
+            "who": "DECKER",
+            "material": "crew",
+            "pilot": "decker",
+            "avatar": "pav_decker",
+            "frame": {
+              "x": 12,
+              "y": 12,
+              "w": 460,
+              "h": 84
+            },
+            "page": {
+              "index": 1,
+              "count": 2,
+              "text": "situations like this.",
+              "budget": 21
+            },
+            "portraitDraw": {
+              "x": 29,
+              "y": 20,
+              "w": 68,
+              "h": 68
+            },
+            "layout": {
+              "H": 8,
+              "lines": [
+                "situations like this."
+              ],
+              "step": 10,
+              "height": 8
+            }
+          }
+        }
+      },
+      {
+        "name": "falva twelve native separate mounting parts drawn",
+        "ok": true,
+        "data": {
+          "g": {
+            "phase": "drift",
+            "t": 10.416666666667663,
+            "age": 10.416666666667663,
+            "dialogueT": 10.416666666667663,
+            "dialogueDelay": 0.42,
+            "dialogueDone": true,
+            "narrative": true,
+            "line": "COLE, Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.",
+            "chargeBand": -1,
+            "partStartAge": 3.116666666666219,
+            "partCueCount": 12
+          },
+          "draws": [
+            "wing_left_top",
+            "wing_right_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "nose_top",
+            "nose_top",
+            "nose_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "hull_top"
+          ],
+          "radio": {
+            "who": "DECKER",
+            "material": "crew",
+            "pilot": "decker",
+            "avatar": "pav_decker",
+            "frame": {
+              "x": 12,
+              "y": 12,
+              "w": 460,
+              "h": 84
+            },
+            "page": {
+              "index": 1,
+              "count": 2,
+              "text": "situations like this.",
+              "budget": 21
+            },
+            "portraitDraw": {
+              "x": 29,
+              "y": 20,
+              "w": 68,
+              "h": 68
+            },
+            "layout": {
+              "H": 8,
+              "lines": [
+                "situations like this."
+              ],
+              "step": 10,
+              "height": 8
+            }
+          }
+        }
+      },
+      {
+        "name": "cole twelve native separate mounting parts drawn",
+        "ok": true,
+        "data": {
+          "g": {
+            "phase": "drift",
+            "t": 10.416666666668112,
+            "age": 10.416666666668112,
+            "dialogueT": 10.416666666668112,
+            "dialogueDelay": 0.42,
+            "dialogueDone": true,
+            "narrative": true,
+            "line": "COLE, Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.",
+            "chargeBand": -1,
+            "partStartAge": 3.116666666666219,
+            "partCueCount": 12
+          },
+          "draws": [
+            "wing_left_top",
+            "wing_right_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "nose_top",
+            "nose_top",
+            "nose_top",
+            "engine_left_top",
+            "engine_right_top",
+            "hull_top",
+            "hull_top"
+          ],
+          "radio": {
+            "who": "DECKER",
+            "material": "crew",
+            "pilot": "decker",
+            "avatar": "pav_decker",
+            "frame": {
+              "x": 12,
+              "y": 12,
+              "w": 460,
+              "h": 84
+            },
+            "page": {
+              "index": 1,
+              "count": 2,
+              "text": "situations like this.",
+              "budget": 21
+            },
+            "portraitDraw": {
+              "x": 29,
+              "y": 20,
+              "w": 68,
+              "h": 68
+            },
+            "layout": {
+              "H": 8,
+              "lines": [
+                "situations like this."
+              ],
+              "step": 10,
+              "height": 8
+            }
+          }
+        }
+      },
+      {
+        "name": "zero page console HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "samples": [
+      {
+        "who": "AXEL",
+        "material": "crew",
+        "pilot": "axel",
+        "avatar": "pav_axel",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "DECKER",
+        "material": "crew",
+        "pilot": "decker",
+        "avatar": "pav_decker",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "MAVERICK",
+        "material": "crew",
+        "pilot": "maverick",
+        "avatar": "pav_maverick",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "FREEZER",
+        "material": "crew",
+        "pilot": "freezer",
+        "avatar": "pav_freezer",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "JUGGERNAUT",
+        "material": "crew",
+        "pilot": "juggernaut",
+        "avatar": "pav_juggernaut",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "YURI",
+        "material": "crew",
+        "pilot": "yuri",
+        "avatar": "pav_yuri",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "LIZZIE",
+        "material": "crew",
+        "pilot": "lizzie",
+        "avatar": "pav_lizzie",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "FALVA",
+        "material": "crew",
+        "pilot": "falva",
+        "avatar": "pav_falva",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 21.59375,
+          "w": 68,
+          "h": 64.8125
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "COLE",
+        "material": "crew",
+        "pilot": "cole",
+        "avatar": "pav_cole",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "ROOK",
+        "material": "rebel",
+        "pilot": null,
+        "avatar": "rr_portrait_rook",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "NYX",
+        "material": "rebel",
+        "pilot": null,
+        "avatar": "rr_portrait_nyx",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "VOSS",
+        "material": "rebel",
+        "pilot": null,
+        "avatar": "rr_portrait_voss",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "KAIA",
+        "material": "rebel",
+        "pilot": null,
+        "avatar": "rr_portrait_kaia",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "JACE",
+        "material": "rebel",
+        "pilot": null,
+        "avatar": "rr_portrait_jace",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "CHRONOS",
+        "material": "chronos",
+        "pilot": null,
+        "avatar": "c113_neutral_68",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68,
+          "key": "c113_neutral_68",
+          "pose": "neutral"
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      },
+      {
+        "who": "DRACODIA",
+        "material": "dracodia",
+        "pilot": null,
+        "avatar": "dp20_dracodia_portrait",
+        "frame": {
+          "x": 10,
+          "y": 12,
+          "w": 460,
+          "h": 84
+        },
+        "page": {
+          "index": 0,
+          "count": 1,
+          "text": "Hold formation. The attachment kit is ready. We are tracing the alien signal back to its source.",
+          "budget": 44
+        },
+        "portraitDraw": {
+          "x": 27,
+          "y": 20,
+          "w": 68,
+          "h": 68
+        },
+        "layout": {
+          "H": 10,
+          "lines": [
+            "Hold formation. The attachment kit is",
+            "ready. We are tracing the alien signal",
+            "back to its source."
+          ],
+          "step": 13,
+          "height": 36
+        }
+      }
+    ],
+    "errors": []
+  },
+  "finalNative": {
+    "checks": [
+      {
+        "name": "axel native portrait pixels match selection avatar",
+        "ok": true,
+        "data": {
+          "avatar": "pav_axel",
+          "total": 18496,
+          "bad": 0,
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          }
+        }
+      },
+      {
+        "name": "decker native portrait pixels match selection avatar",
+        "ok": true,
+        "data": {
+          "avatar": "pav_decker",
+          "total": 18496,
+          "bad": 0,
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          }
+        }
+      },
+      {
+        "name": "maverick native portrait pixels match selection avatar",
+        "ok": true,
+        "data": {
+          "avatar": "pav_maverick",
+          "total": 18496,
+          "bad": 0,
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          }
+        }
+      },
+      {
+        "name": "freezer native portrait pixels match selection avatar",
+        "ok": true,
+        "data": {
+          "avatar": "pav_freezer",
+          "total": 18496,
+          "bad": 0,
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          }
+        }
+      },
+      {
+        "name": "juggernaut native portrait pixels match selection avatar",
+        "ok": true,
+        "data": {
+          "avatar": "pav_juggernaut",
+          "total": 18496,
+          "bad": 0,
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          }
+        }
+      },
+      {
+        "name": "yuri native portrait pixels match selection avatar",
+        "ok": true,
+        "data": {
+          "avatar": "pav_yuri",
+          "total": 18496,
+          "bad": 0,
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          }
+        }
+      },
+      {
+        "name": "lizzie native portrait pixels match selection avatar",
+        "ok": true,
+        "data": {
+          "avatar": "pav_lizzie",
+          "total": 18496,
+          "bad": 0,
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          }
+        }
+      },
+      {
+        "name": "falva native portrait pixels match selection avatar",
+        "ok": true,
+        "data": {
+          "avatar": "pav_falva",
+          "total": 18496,
+          "bad": 0,
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          }
+        }
+      },
+      {
+        "name": "cole native portrait pixels match selection avatar",
+        "ok": true,
+        "data": {
+          "avatar": "pav_cole",
+          "total": 18496,
+          "bad": 0,
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "w": 460,
+            "h": 84
+          }
+        }
+      },
+      {
+        "name": "OPENING 480 shared proportional frame is centered and bounded",
+        "ok": true,
+        "data": {
+          "x": 10,
+          "y": 415,
+          "w": 460,
+          "h": 84
+        }
+      },
+      {
+        "name": "OPENING 912 shared proportional frame is centered and bounded",
+        "ok": true,
+        "data": {
+          "x": 19,
+          "y": 339,
+          "w": 874,
+          "h": 159.6
+        }
+      },
+      {
+        "name": "CUTSCENE 480 shared proportional frame is centered and bounded",
+        "ok": true,
+        "data": {
+          "x": 10,
+          "y": 415,
+          "w": 460,
+          "h": 84
+        }
+      },
+      {
+        "name": "CUTSCENE 912 shared proportional frame is centered and bounded",
+        "ok": true,
+        "data": {
+          "x": 19,
+          "y": 339,
+          "w": 874,
+          "h": 159.6
+        }
+      },
+      {
+        "name": "VICTORY 480 shared proportional frame is centered and bounded",
+        "ok": true,
+        "data": {
+          "x": 10,
+          "y": 415,
+          "w": 460,
+          "h": 84
+        }
+      },
+      {
+        "name": "VICTORY 912 shared proportional frame is centered and bounded",
+        "ok": true,
+        "data": {
+          "x": 19,
+          "y": 339,
+          "w": 874,
+          "h": 159.6
+        }
+      },
+      {
+        "name": "no final viewport browser errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "browser": {
+    "checks": [
+      {
+        "name": "complete video geometry and duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 95.630013
+        }
+      },
+      {
+        "name": "The prototype kit is in separate pieces decoded chapter playback",
+        "ok": true,
+        "data": 0.054362
+      },
+      {
+        "name": "How the pieces bind during ascent decoded chapter playback",
+        "ok": true,
+        "data": 11.121029
+      },
+      {
+        "name": "Animated code-only satellite corruption decoded chapter playback",
+        "ok": true,
+        "data": 29.654362
+      },
+      {
+        "name": "Awaiting your orders decoded chapter playback",
+        "ok": true,
+        "data": 48.287695
+      },
+      {
+        "name": "Original aircraft departure decoded chapter playback",
+        "ok": true,
+        "data": 59.854362
+      },
+      {
+        "name": "Stage 5 ascent decoded chapter playback",
+        "ok": true,
+        "data": 66.630013
+      },
+      {
+        "name": "Cole\u2019s twelve-piece kit assembly decoded chapter playback",
+        "ok": true,
+        "data": 82.230013
+      },
+      {
+        "name": "Space launch decoded chapter playback",
+        "ok": true,
+        "data": 90.99668
+      },
+      {
+        "name": "byte-range seeking",
+        "ok": true
+      },
+      {
+        "name": "no browser/page/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "suite": {
+    "passed": 8969,
+    "failingNames": [],
+    "baselineFailingNames": [],
+    "newFailures": [],
+    "exitCode": 0
+  },
+  "recording": {
+    "pilot": "cole",
+    "difficulty": "normal",
+    "source": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+    "scope": "Complete native cinematic checkpoints, no dialogue skips; gameplay between scenes omitted. Not campaign playthroughs.",
+    "clips": [
+      {
+        "seconds": 66.67670000001789,
+        "frames": 4157,
+        "peak": 0.6768304109573364,
+        "stages": [
+          {
+            "at": 0.017200000017881394,
+            "tag": "cutscene:B401:::"
+          },
+          {
+            "at": 6.480200000017882,
+            "tag": "cutscene:KIT4-02:::"
+          },
+          {
+            "at": 11.1205,
+            "tag": "cutscene:POST4-02:::"
+          },
+          {
+            "at": 16.656200000017883,
+            "tag": "cutscene:KIT4-04:::"
+          },
+          {
+            "at": 24.19280000001192,
+            "tag": "cutscene:CW4-03:::"
+          },
+          {
+            "at": 29.632600000023842,
+            "tag": "cutscene:B403:satellite::"
+          },
+          {
+            "at": 36.40040000000596,
+            "tag": "cutscene:POST4-05:satellite::"
+          },
+          {
+            "at": 41.840400000005964,
+            "tag": "cutscene:POST4-06:satellite::"
+          },
+          {
+            "at": 48.272300000011924,
+            "tag": "cutscene:POST4-07:satellite::"
+          },
+          {
+            "at": 54.70470000001788,
+            "tag": "cutscene:KIT4-11:satellite::"
+          },
+          {
+            "at": 59.84110000002384,
+            "tag": "cutscene:POST4-10:departure::"
+          },
+          {
+            "at": 66.60910000002384,
+            "tag": "title::departure::"
+          }
+        ],
+        "last": {
+          "cinema": {
+            "mode": "departure",
+            "planes": [
+              {
+                "pilot": "cole",
+                "key": "ship_cole",
+                "x": 456,
+                "y": 153.51999999999998,
+                "w": 123.12068965517241,
+                "h": 148,
+                "power": 0.92,
+                "plume": true,
+                "thrustFrame": 115
+              }
+            ],
+            "unconverted": true,
+            "gravityReady": false,
+            "scroll": 5382.199999999998,
+            "time": 6.751999999999997,
+            "shot": "POST4-10",
+            "caption": false,
+            "dialogueBox": false,
+            "pilot": "cole"
+          },
+          "custom": {
+            "mode": "departure",
+            "planes": [
+              {
+                "pilot": "cole",
+                "key": "ship_cole",
+                "x": 456,
+                "y": 153.51999999999998,
+                "w": 123.12068965517241,
+                "h": 148,
+                "power": 0.92,
+                "plume": true,
+                "thrustFrame": 115
+              }
+            ],
+            "unconverted": true,
+            "gravityReady": false,
+            "scroll": 5382.199999999998,
+            "time": 6.751999999999997,
+            "shot": "POST4-10",
+            "caption": false,
+            "dialogueBox": false,
+            "pilot": "cole"
+          },
+          "service": null,
+          "fury": null
+        },
+        "part": "post4",
+        "expectedBeats": [
+          {
+            "id": "B401",
+            "who": "COLE",
+            "text": "Team, we found it! The prototype attachments are here, but... they're all in separate pieces?",
+            "duration": 6.460000000000001,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "KIT4-02",
+            "who": "COLE",
+            "text": "Decker, do you know anything about this?",
+            "duration": 4.633333333333334,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-02",
+            "who": "DECKER",
+            "text": "They're meant to bind to your ship as you begin to fly off into space.",
+            "duration": 5.533333333333333,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "KIT4-04",
+            "who": "DECKER",
+            "text": "The Federation has been having me work on this binding technology. The pieces attach to your aircraft during ascent.",
+            "duration": 7.53,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW4-03",
+            "who": "DECKER",
+            "text": "The airbase caught another uplink. Look at what attacked that dish.",
+            "duration": 5.433333333333334,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "B403",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 6.76,
+            "panel": null,
+            "mode": "satellite"
+          },
+          {
+            "id": "POST4-05",
+            "who": "DECKER",
+            "text": "And whatever attacked that dish is still hacking our networks!",
+            "duration": 5.426666666666668,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-06",
+            "who": "COLE",
+            "text": "Then we have no choice. One of us will have to go straight for it and get to the bottom of this.",
+            "duration": 6.430000000000001,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-07",
+            "who": "DECKER",
+            "text": "Well, whoever decides to go, just let the team know the kit is ready. Awaiting your orders, sir!",
+            "duration": 6.430000000000001,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "KIT4-11",
+            "who": "COLE",
+            "text": "Team, the kit is ready. One last check, then I'm going up.",
+            "duration": 5.133333333333334,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-10",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 6.76,
+            "panel": null,
+            "mode": "departure"
+          }
+        ],
+        "errors": [],
+        "end": {
+          "state": "title",
+          "stage": 4,
+          "done": true,
+          "returns": 1,
+          "gravityReady": false
+        }
+      },
+      {
+        "seconds": 29.0415,
+        "frames": 1796,
+        "peak": 0.7135626673698425,
+        "stages": [
+          {
+            "at": 0.016200000017881393,
+            "tag": "intro::::active"
+          },
+          {
+            "at": 3.6004000000059606,
+            "tag": "launch::::active"
+          },
+          {
+            "at": 3.617300000011921,
+            "tag": "launch:::sky:drift"
+          },
+          {
+            "at": 15.60090000000596,
+            "tag": "launch:::assembly:charge"
+          },
+          {
+            "at": 19.760200000017882,
+            "tag": "launch:::assembly:scatter"
+          },
+          {
+            "at": 20.5925,
+            "tag": "launch:::assembly:snap"
+          },
+          {
+            "at": 21.24830000001192,
+            "tag": "launch:::assembly:pixelglow"
+          },
+          {
+            "at": 22.17609999999404,
+            "tag": "launch:::assembly:whiteout"
+          },
+          {
+            "at": 22.68880000001192,
+            "tag": "launch:::assembly:reveal"
+          },
+          {
+            "at": 23.552700000017882,
+            "tag": "launch:::load:active"
+          },
+          {
+            "at": 24.35609999999404,
+            "tag": "launch:::countdown:active"
+          },
+          {
+            "at": 28.208200000017882,
+            "tag": "play:::countdown:active"
+          }
+        ],
+        "last": {
+          "cinema": null,
+          "custom": null,
+          "service": null,
+          "fury": {
+            "t": 24.46210000002353,
+            "scroll": 24462.100000023842,
+            "phase": "countdown",
+            "pt": 3.8521000000238437,
+            "lastT": 24.46210000002353,
+            "build": true,
+            "space": true,
+            "num": 1,
+            "go": true,
+            "ship": {
+              "x": 240,
+              "y": 399.36,
+              "size": 48
+            },
+            "white": 0
+          }
+        },
+        "part": "arrival5",
+        "expectedBeats": [],
+        "errors": [],
+        "end": {
+          "state": "play",
+          "stage": 5,
+          "done": false,
+          "returns": 0,
+          "gravityReady": true
+        }
+      }
+    ],
+    "errors": [],
+    "combined": {
+      "file": "stage4-to-5-code-and-kit.mp4",
+      "duration": 95.63,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "The prototype kit is in separate pieces"
+        },
+        {
+          "start": 11.1205,
+          "title": "How the pieces bind during ascent"
+        },
+        {
+          "start": 29.632600000023842,
+          "title": "Animated code-only satellite corruption"
+        },
+        {
+          "start": 48.272300000011924,
+          "title": "Awaiting your orders"
+        },
+        {
+          "start": 59.84110000002384,
+          "title": "Original aircraft departure"
+        },
+        {
+          "start": 66.61,
+          "title": "Stage 5 ascent"
+        },
+        {
+          "start": 82.21090000000596,
+          "title": "Cole\u2019s twelve-piece kit assembly"
+        },
+        {
+          "start": 90.96609999999404,
+          "title": "Space launch"
+        }
+      ],
+      "sha256": "0dbd07c84b9599194a7d85714a1ef78f969e6741bd176f84e1de57da6baddfd7",
+      "decodeErrors": [],
+      "audio": [
+        "[Parsed_volumedetect_0 @ 000001c0381f6e00] mean_volume: -14.6 dB",
+        "[Parsed_volumedetect_0 @ 000001c0381f6e00] max_volume: -2.0 dB"
+      ]
+    }
+  },
+  "coreHashes": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f"
+  }
+}

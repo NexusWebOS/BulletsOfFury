@@ -1,0 +1,20 @@
+{
+  "bank": "beam_coupling_tail",
+  "frame": 5,
+  "key": "tc119_page_155",
+  "path": "assets/game/levels/stage_06/boss/thunderhead_reactor_1105/page_155.png",
+  "sha256": "7348a7b12581ea64af7c2dbf43b4ac8df8ab7542d0ac34e5ae1d6e8f840d3909",
+  "before": [
+    556,
+    0,
+    2,
+    2
+  ],
+  "after": [
+    92,
+    0,
+    2,
+    2
+  ],
+  "proof": "Existing end frame is entirely beyond the source page and draws no pixels. The replacement rectangle is wholly transparent; destination offsets, original page and every visible frame remain unchanged."
+}

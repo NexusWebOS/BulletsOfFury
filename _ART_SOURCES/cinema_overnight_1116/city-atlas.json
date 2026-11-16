@@ -1,0 +1,103 @@
+{
+  "owner": "_BUILD_SOURCE/night_city_atlas_build_1116.py",
+  "normalization": "Transparent page padding to the maximum declared cell extent, rounded even. All original RGBA pixels and every source rectangle, pivot, heading, depth and animation count remain unchanged. This does not reconstruct or claim missing authored ink.",
+  "affectedCells": 20,
+  "changes": [
+    {
+      "oldKey": "city16_thrusters_d0",
+      "key": "nqa16_city16_thrusters_d0",
+      "source": "assets/game/shared/cinematics/city_rescue_1115/thrusters-d0.webp",
+      "sourceSHA256": "695ee97886e761531756418882de768ddf9cce30b0d98f030b67c962cd0e75c2",
+      "sourceSize": [
+        2016,
+        718
+      ],
+      "path": "assets/game/shared/cinematics/cinema_overnight_1116/city-thrusters-d0.webp",
+      "sha256": "9d47f55774028a337d839ad7de9a3272af9bd7a8b84d2bde6afb3aae397effcc",
+      "size": [
+        2016,
+        720
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "sourcePixelsUnchanged": true,
+      "editableLosslessSource": "_ART_SOURCES/cinema_overnight_1116/city-thrusters-d0.png"
+    },
+    {
+      "oldKey": "city16_thrusters_d5",
+      "key": "nqa16_city16_thrusters_d5",
+      "source": "assets/game/shared/cinematics/city_rescue_1115/thrusters-d5.webp",
+      "sourceSHA256": "2de9e2e167ec32bdc373ead8c1ce30e7ecc469235a4b67dcd5d3d4a459c585f5",
+      "sourceSize": [
+        1856,
+        558
+      ],
+      "path": "assets/game/shared/cinematics/cinema_overnight_1116/city-thrusters-d5.webp",
+      "sha256": "0ae047d5fdd978a3ee6981a68d5da2093e190f5d698dc471b2e389cc8d41a223",
+      "size": [
+        1856,
+        560
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "sourcePixelsUnchanged": true,
+      "editableLosslessSource": "_ART_SOURCES/cinema_overnight_1116/city-thrusters-d5.png"
+    },
+    {
+      "oldKey": "city16_thrusters_d7",
+      "key": "nqa16_city16_thrusters_d7",
+      "source": "assets/game/shared/cinematics/city_rescue_1115/thrusters-d7.webp",
+      "sourceSHA256": "fdd27173a80d8581745a072957e6b8650f305a6afdb729d6b9f903d7b02ae1f3",
+      "sourceSize": [
+        1880,
+        502
+      ],
+      "path": "assets/game/shared/cinematics/cinema_overnight_1116/city-thrusters-d7.webp",
+      "sha256": "850e7821486ae882084e80a152bfdc1dc8bebe9fd7e5a2fb520cc0c6f05df596",
+      "size": [
+        1880,
+        504
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "sourcePixelsUnchanged": true,
+      "editableLosslessSource": "_ART_SOURCES/cinema_overnight_1116/city-thrusters-d7.png"
+    },
+    {
+      "oldKey": "city16_thrusters_d14",
+      "key": "nqa16_city16_thrusters_d14",
+      "source": "assets/game/shared/cinematics/city_rescue_1115/thrusters-d14.webp",
+      "sourceSHA256": "20a408dd42c41a944ddddef51d942661b07bdebd10707a13710267cc4d8143c4",
+      "sourceSize": [
+        1840,
+        158
+      ],
+      "path": "assets/game/shared/cinematics/cinema_overnight_1116/city-thrusters-d14.webp",
+      "sha256": "bde2b11462d46fd7805d195ddd535c3f90ac5da7dd41d093632e8f6459658df2",
+      "size": [
+        1840,
+        160
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "sourcePixelsUnchanged": true,
+      "editableLosslessSource": "_ART_SOURCES/cinema_overnight_1116/city-thrusters-d14.png"
+    }
+  ]
+}

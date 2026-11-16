@@ -1,0 +1,30 @@
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+import sys,json
+R=Path(__file__).resolve().parents[1];O=R/'_shots/cinema_overnight_1116/contracts';O.mkdir(parents=True,exist_ok=True);sys.path.insert(0,str(R/'_BUILD_SOURCE'));import shoot
+checks=[];errors=[];playback=[]
+def ck(n,v,d=None):checks.append({'name':n,'ok':bool(v),'data':d});print(('PASS 'if v else'FAIL ')+n,flush=True)
+with sync_playwright()as w:
+ b=w.chromium.launch(args=['--no-sandbox','--autoplay-policy=no-user-gesture-required']);p=b.new_page(viewport={'width':1440,'height':1000});p.set_default_timeout(180000)
+ p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text)if m.type=='error'else None);p.on('response',lambda r:errors.append(str(r.status)+' '+r.url)if r.status>=400 else None)
+ p.goto('http://127.0.0.1:8765/index.html?night-contracts=1116');p.wait_for_function('window.__bofFrames>6');p.evaluate(shoot.TRAP_RAF)
+ pilots=p.evaluate('PILOTS.map(p=>p.key)');ids=p.evaluate("Object.keys(C16_STORY.scenes).filter(id=>id!=='opening')")
+ p.evaluate("()=>{BOFOnline.submitScore=()=>{};run.mode='campaign';diffKey='hard';Input.clearTaps();Input.mouse.down=false;window.NightCueCalls=[];const play=Snd.play;Snd.play=function(name,...a){NightCueCalls.push({name,shot:BOFCinematicDirector.current?.beats[BOFCinematicDirector.current.i]?.id});return play.call(this,name,...a);};}")
+ for pk in pilots:
+  for scene in ids:
+   p.evaluate("q=>{BOFCinematicDirector.cancel();D1110.paused=false;coopOn=false;run.pilot=q.pk;pilotIndex=PILOTS.findIndex(p=>p.key===q.pk);run.stage=q.scene==='post-2'?2:q.scene==='post-5'?5:q.scene==='post-6'?6:3;window.NightDone=0;window.NightRows=c16Rows(q.scene,q.pk,'left');Input.clearTaps();Input.mouse.down=false;d1110Play('night-contract-'+q.scene,NightRows,()=>{NightDone++;setState(GS.TITLE);});}",{'pk':pk,'scene':scene})
+   p.wait_for_function('()=>d1110Ready(BOFCinematicDirector.current.d1110Keys||[])',polling=50)
+   # Exercise the actual production director, exact native typewriter and callbacks.
+   # Draw at four frames/sec; simulation ticks60Hz. This is not a video or human run.
+   q=p.evaluate("""async()=>{const expected=NightRows.map(b=>b.id),holds={},seen=[],s0=BOFCinematicDirector.current;let t=0,frame=0;while(BOFCinematicDirector.current&&t<1800){const s=BOFCinematicDirector.current,b=s.beats[s.i];if(!seen.includes(b.id))seen.push(b.id);if(s.shown>=b.text.length&&b.text)holds[b.id]=(holds[b.id]||0)+1/60;BOFCinematicDirector.tick(1/60);if(BOFCinematicDirector.current&&frame%15===0)BOFCinematicDirector.draw();t+=1/60;frame++;if(frame%120===0)await new Promise(r=>setTimeout(r,0));}const done=NightDone;BOFCinematicDirector.finish();BOFCinematicDirector.advance();return{expected,seen,holds,done,afterRepeat:NightDone,elapsed:t,finite:seen.length===expected.length};}""")
+   playback.append({'pilot':pk,'scene':scene,**q});ck(pk+' '+scene+' native director reaches every shot and callback exactly once',q['expected']==q['seen']and q['done']==q['afterRepeat']==1,q if not(q['expected']==q['seen']and q['done']==1)else None)
+  # Real logical input pulses: reveal then next, pause then Start skip.
+  p.evaluate("pk=>{BOFCinematicDirector.cancel();run.pilot=pk;pilotIndex=PILOTS.findIndex(p=>p.key===pk);NightDone=0;NightRows=c16Rows('post-3',pk).slice(0,2);d1110Play('night-input',NightRows,()=>{NightDone++;setState(GS.TITLE);});}",pk);p.wait_for_function('()=>d1110Ready(BOFCinematicDirector.current.d1110Keys)',polling=50)
+  q=p.evaluate("()=>{const s=BOFCinematicDirector.current;for(let i=0;i<30;i++)BOFCinematicDirector.tick(1/60);D1110.paused=true;const a={t:s.t,age:s.age,shown:s.shown,i:s.i};for(let i=0;i<120;i++)BOFCinematicDirector.tick(1/60);const paused=JSON.stringify(a)===JSON.stringify({t:s.t,age:s.age,shown:s.shown,i:s.i});D1110.paused=false;Input.injectTap('j');BOFCinematicDirector.tick(1/60);const reveal=s.i===0&&s.shown===s.beats[0].text.length;Input.clearTaps();Input.injectTap('j');BOFCinematicDirector.tick(1/60);const next=s.i===1;Input.clearTaps();Input.injectTap('enter');BOFCinematicDirector.tick(1/60);BOFCinematicDirector.finish();return{paused,reveal,next,done:NightDone};}");ck(pk+' pause/reveal/next/skip contract',q['paused']and q['reveal']and q['next']and q['done']==1,q)
+  p.evaluate("pk=>{run.pilot=pk;pilotIndex=PILOTS.findIndex(p=>p.key===pk);d1110Play('night-label',c16Rows('post-1',pk),()=>{});}",pk);p.wait_for_function('()=>d1110Ready(BOFCinematicDirector.current.d1110Keys)',polling=50)
+  p.evaluate("()=>{const s=BOFCinematicDirector.current;s.i=1;s.t=2;s.age=10;s.shown=s.beats[1].text.length;d1110Visual(s.beats[1],s);}");p.locator('#screen').screenshot(path=str(O/(pk+'-flight-system.png')))
+ ck('all active post1 replies are the onboard flight system',p.evaluate("()=>PILOTS.every(({key})=>{const rows=c16Rows('post-1',key);return rows.filter(b=>b.id==='POST1-02'||b.id==='POST1-04').every(b=>b.who==='FLIGHT SYSTEM'&&b.kind==='insert'&&b.bank==='warp-drive')})"))
+ ck('arrival4 no longer requests the removed power cell',p.evaluate("()=>PILOTS.every(({key})=>!c16Rows('arrival-4',key).some(b=>/power cell|get the cell/i.test(b.text)))"))
+ ck('physical HQ evacuation timings remain the requested native values',p.evaluate("()=>{diffKey='hard';const rows=c16Rows('post-5','cole');return rows.find(b=>b.hq19==='launch').duration===7.5&&rows.find(b=>b.hq19==='quiet').duration===5&&rows.find(b=>b.hq19==='escape').duration===3.4;}"))
+ ck('no page console or asset errors',not errors,errors);b.close()
+(O/'report.json').write_text(json.dumps({'checks':checks,'playback':playback,'errors':errors,'scope':'All9 pilots and14 current runtime row sets: production director at60Hz with actual drawing at4Hz, full automatic line traversal and exactly-once callback. Actual logical reveal/advance/skip/pause pulses. Prepared director fixtures; no full campaign/transition or audible real-time movie claim.'},indent=2),encoding='utf8');print(json.dumps({'passed':sum(c['ok']for c in checks),'failed':sum(not c['ok']for c in checks),'errors':errors}),flush=True)

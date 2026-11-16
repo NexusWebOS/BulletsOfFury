@@ -1,0 +1,5733 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "ship is stage9 first form",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "Current reserved for boss and no early progression hold",
+        "ok": true,
+        "data": {
+          "tag": false,
+          "spawn": false,
+          "pending": false,
+          "hp": 4400,
+          "max": 4400
+        }
+      },
+      {
+        "name": "native ship damage starts ejection without completion or rewards",
+        "ok": true,
+        "data": {
+          "phase": "eject",
+          "dead": false,
+          "defeated": false,
+          "rewards": {
+            "award": 0,
+            "mist": 0,
+            "forge": 0
+          },
+          "n": 1
+        }
+      },
+      {
+        "name": "pilot is live boss with synchronized HP and Retina/space target",
+        "ok": true,
+        "data": {
+          "phase": "pilot",
+          "hp": 2200,
+          "max": 2200,
+          "actorHP": 2200,
+          "inEnemies": false,
+          "locks": 1,
+          "space": 1,
+          "x": 334.6332207578811,
+          "y": 198.8022074458755
+        }
+      },
+      {
+        "name": "boss weapons damage and flash current body",
+        "ok": true,
+        "data": {
+          "loss": 20,
+          "flash": 0.12,
+          "host": 2180,
+          "actor": 2180
+        }
+      },
+      {
+        "name": "real boss retains water book and loops instead of fleeing",
+        "ok": true,
+        "data": {
+          "phases": [
+            "grenades",
+            "flight-launch",
+            "flight-turn",
+            "flight-exit",
+            "flight-warn-n",
+            "flight-n",
+            "flight-warn-s",
+            "flight-s",
+            "marble",
+            "marble-settle",
+            "reform",
+            "tidal-charge",
+            "tidal",
+            "depth-launch",
+            "depth-turn",
+            "depth-exit",
+            "depth-arrive",
+            "depth-settle",
+            "depth-charge",
+            "depth-spin",
+            "depth-linger",
+            "depth-return-exit",
+            "front-arrive",
+            "flight-return",
+            "grenade-charge"
+          ],
+          "end": {
+            "phase": "grenades",
+            "cycles": 1,
+            "hp": 2180,
+            "dead": false,
+            "defeated": false,
+            "t": 40.11666666666567
+          }
+        }
+      },
+      {
+        "name": "Retina missiles damage the real pilot pool",
+        "ok": true,
+        "data": {
+          "loss": 45,
+          "hp": 2135,
+          "actor": 2135
+        }
+      },
+      {
+        "name": "physical missile roller counter reaches boss pool in depth",
+        "ok": true,
+        "data": {
+          "loss": 22,
+          "host": 2113,
+          "actor": 2113
+        }
+      },
+      {
+        "name": "only pilot defeat ends boss and awards exactly once",
+        "ok": true,
+        "data": {
+          "dead": true,
+          "defeated": true,
+          "phase": "defeat",
+          "rewards": {
+            "award": 1,
+            "mist": 1,
+            "forge": 1
+          },
+          "hazards": 0,
+          "n": 1
+        }
+      },
+      {
+        "name": "Freezer overflow scrolls to reveal final line inside original box",
+        "ok": true,
+        "data": {
+          "samples": [
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 0,
+              "offset": 0,
+              "target": 0,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            },
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 20,
+              "offset": 0,
+              "target": 0,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [
+                {
+                  "row": 0,
+                  "text": "No idea, man. It's l",
+                  "y": 404
+                }
+              ],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            },
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 50,
+              "offset": 0,
+              "target": 0,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [
+                {
+                  "row": 0,
+                  "text": "No idea, man. It's like they all started acting li",
+                  "y": 404
+                }
+              ],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            },
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 80,
+              "offset": 0,
+              "target": 0,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [
+                {
+                  "row": 0,
+                  "text": "No idea, man. It's like they all started acting like",
+                  "y": 404
+                },
+                {
+                  "row": 1,
+                  "text": "they had minds of their own",
+                  "y": 426
+                }
+              ],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            },
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 110,
+              "offset": 0,
+              "target": 0,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [
+                {
+                  "row": 0,
+                  "text": "No idea, man. It's like they all started acting like",
+                  "y": 404
+                },
+                {
+                  "row": 1,
+                  "text": "they had minds of their own and took over out of",
+                  "y": 426
+                },
+                {
+                  "row": 2,
+                  "text": "nowhere!",
+                  "y": 448
+                }
+              ],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            },
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 140,
+              "offset": 0,
+              "target": 0,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [
+                {
+                  "row": 0,
+                  "text": "No idea, man. It's like they all started acting like",
+                  "y": 404
+                },
+                {
+                  "row": 1,
+                  "text": "they had minds of their own and took over out of",
+                  "y": 426
+                },
+                {
+                  "row": 2,
+                  "text": "nowhere! We've got to warn the others,",
+                  "y": 448
+                }
+              ],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            },
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 170,
+              "offset": 18,
+              "target": 18,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [
+                {
+                  "row": 1,
+                  "text": "they had minds of their own and took over out of",
+                  "y": 408
+                },
+                {
+                  "row": 2,
+                  "text": "nowhere! We've got to warn the others, but our comm",
+                  "y": 430
+                },
+                {
+                  "row": 3,
+                  "text": "systems are down",
+                  "y": 452
+                }
+              ],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            },
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 200,
+              "offset": 18,
+              "target": 18,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [
+                {
+                  "row": 1,
+                  "text": "they had minds of their own and took over out of",
+                  "y": 408
+                },
+                {
+                  "row": 2,
+                  "text": "nowhere! We've got to warn the others, but our comm",
+                  "y": 430
+                },
+                {
+                  "row": 3,
+                  "text": "systems are down. The bastards probably took o",
+                  "y": 452
+                }
+              ],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            },
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 224,
+              "offset": 40,
+              "target": 40,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [
+                {
+                  "row": 2,
+                  "text": "nowhere! We've got to warn the others, but our comm",
+                  "y": 408
+                },
+                {
+                  "row": 3,
+                  "text": "systems are down. The bastards probably took our",
+                  "y": 430
+                },
+                {
+                  "row": 4,
+                  "text": "whole operation down!",
+                  "y": 452
+                }
+              ],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            },
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 224,
+              "offset": 40,
+              "target": 40,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [
+                {
+                  "row": 2,
+                  "text": "nowhere! We've got to warn the others, but our comm",
+                  "y": 408
+                },
+                {
+                  "row": 3,
+                  "text": "systems are down. The bastards probably took our",
+                  "y": 430
+                },
+                {
+                  "row": 4,
+                  "text": "whole operation down!",
+                  "y": 452
+                }
+              ],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            },
+            {
+              "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+              "budget": 224,
+              "offset": 40,
+              "target": 40,
+              "max": 40,
+              "rows": [
+                "No idea, man. It's like they all started acting like",
+                "they had minds of their own and took over out of",
+                "nowhere! We've got to warn the others, but our comm",
+                "systems are down. The bastards probably took our",
+                "whole operation down!"
+              ],
+              "visible": [
+                {
+                  "row": 2,
+                  "text": "nowhere! We've got to warn the others, but our comm",
+                  "y": 408
+                },
+                {
+                  "row": 3,
+                  "text": "systems are down. The bastards probably took our",
+                  "y": 430
+                },
+                {
+                  "row": 4,
+                  "text": "whole operation down!",
+                  "y": 452
+                }
+              ],
+              "box": {
+                "x": 81,
+                "y": 395,
+                "w": 752,
+                "h": 66
+              },
+              "height": 18,
+              "step": 22,
+              "scene": "scroll-freezer-review",
+              "shot": "SCROLL-FREEZER"
+            }
+          ]
+        }
+      },
+      {
+        "name": "no page console or HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "snapshots": {
+      "ejection-2": {
+        "phase": "eject",
+        "t": 0.2833333333333333,
+        "actor": null,
+        "hp": 1,
+        "max": 4400
+      },
+      "ejection-9": {
+        "phase": "eject",
+        "t": 0.9833333333333347,
+        "actor": {
+          "x": 340,
+          "y": 155,
+          "phase": "flight-launch"
+        },
+        "hp": 2200,
+        "max": 2200
+      },
+      "ejection-18": {
+        "phase": "eject",
+        "t": 1.8833333333333315,
+        "actor": {
+          "x": 473.4099679909631,
+          "y": 296.02985267529624,
+          "phase": "flight-exit"
+        },
+        "hp": 2200,
+        "max": 2200
+      },
+      "ejection-29": {
+        "phase": "eject",
+        "t": 2.9833333333333276,
+        "actor": {
+          "x": 340,
+          "y": 196,
+          "phase": "flight-return"
+        },
+        "hp": 2200,
+        "max": 2200
+      },
+      "ejection-40": {
+        "phase": "pilot",
+        "t": 0.7166666666666672,
+        "actor": {
+          "x": 334.8591263049904,
+          "y": 198.53712253239374,
+          "phase": "grenade-charge"
+        },
+        "hp": 2200,
+        "max": 2200
+      }
+    },
+    "phases": {
+      "grenades": {
+        "phase": "grenades",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 1.2166666666666672
+      },
+      "flight-launch": {
+        "phase": "flight-launch",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 6.21666666666665
+      },
+      "flight-turn": {
+        "phase": "flight-turn",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 6.716666666666648
+      },
+      "flight-exit": {
+        "phase": "flight-exit",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 7.016666666666647
+      },
+      "flight-warn-n": {
+        "phase": "flight-warn-n",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 7.616666666666645
+      },
+      "flight-n": {
+        "phase": "flight-n",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 8.51666666666667
+      },
+      "flight-warn-s": {
+        "phase": "flight-warn-s",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 9.816666666666734
+      },
+      "flight-s": {
+        "phase": "flight-s",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 10.716666666666779
+      },
+      "marble": {
+        "phase": "marble",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 12.016666666666843
+      },
+      "marble-settle": {
+        "phase": "marble-settle",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 16.416666666667016
+      },
+      "reform": {
+        "phase": "reform",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 17.116666666666976
+      },
+      "tidal-charge": {
+        "phase": "tidal-charge",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 19.01666666666687
+      },
+      "tidal": {
+        "phase": "tidal",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 19.916666666666817
+      },
+      "depth-launch": {
+        "phase": "depth-launch",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 23.7166666666666
+      },
+      "depth-turn": {
+        "phase": "depth-turn",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 24.216666666666573
+      },
+      "depth-exit": {
+        "phase": "depth-exit",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 24.516666666666556
+      },
+      "depth-arrive": {
+        "phase": "depth-arrive",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 25.416666666666504
+      },
+      "depth-settle": {
+        "phase": "depth-settle",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 26.416666666666448
+      },
+      "depth-charge": {
+        "phase": "depth-charge",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 26.91666666666642
+      },
+      "depth-spin": {
+        "phase": "depth-spin",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 28.016666666666357
+      },
+      "depth-linger": {
+        "phase": "depth-linger",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 34.11666666666601
+      },
+      "depth-return-exit": {
+        "phase": "depth-return-exit",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 36.41666666666588
+      },
+      "front-arrive": {
+        "phase": "front-arrive",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 37.21666666666584
+      },
+      "flight-return": {
+        "phase": "flight-return",
+        "cycles": 0,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 38.71666666666575
+      },
+      "grenade-charge": {
+        "phase": "grenade-charge",
+        "cycles": 1,
+        "hp": 2180,
+        "dead": false,
+        "defeated": false,
+        "t": 39.11666666666573
+      }
+    },
+    "scope": "Native prepared encounter tests, not unassisted campaign wins. Only ship/pilot health depletion uses scripted native damage. Full pilot arsenal advances at native clocks; dialogue uses exact retained Freezer text."
+  },
+  "extended": {
+    "checks": [
+      {
+        "name": "normal pilot handoff, safe body and separate destruction owner",
+        "ok": true,
+        "data": {
+          "phase": "pilot",
+          "targets": 1,
+          "contact": false,
+          "shipFX": true,
+          "hostFX": false
+        }
+      },
+      {
+        "name": "normal native primary damages humanoid without Retina",
+        "ok": true,
+        "data": {
+          "hpStart": 2200,
+          "end": {
+            "phase": "tidal-charge",
+            "hp": 0,
+            "dead": true,
+            "t": 18.60000000000002,
+            "score": 45250
+          },
+          "phases": [
+            "grenade-charge",
+            "grenades",
+            "flight-launch",
+            "flight-turn",
+            "flight-exit",
+            "flight-warn-n",
+            "flight-n",
+            "flight-warn-s",
+            "flight-s",
+            "marble",
+            "marble-settle",
+            "reform",
+            "tidal-charge"
+          ]
+        }
+      },
+      {
+        "name": "normal final explosion and repeat-defeat guard",
+        "ok": true,
+        "data": {
+          "dead": true,
+          "scoreStable": true,
+          "finalFX": true,
+          "shipFX": true
+        }
+      },
+      {
+        "name": "normal native death timer and stage-clear continue",
+        "ok": true,
+        "data": {
+          "state": "flyover",
+          "dying": 5.799999999999985,
+          "ending": 5.816666666666651,
+          "phase": "defeat"
+        }
+      },
+      {
+        "name": "hard pilot handoff, safe body and separate destruction owner",
+        "ok": true,
+        "data": {
+          "phase": "pilot",
+          "targets": 1,
+          "contact": false,
+          "shipFX": true,
+          "hostFX": false
+        }
+      },
+      {
+        "name": "hard native primary damages humanoid without Retina",
+        "ok": true,
+        "data": {
+          "hpStart": 2530,
+          "end": {
+            "phase": "tidal",
+            "hp": 0,
+            "dead": true,
+            "t": 19.599999999999962,
+            "score": 45250
+          },
+          "phases": [
+            "grenade-charge",
+            "grenades",
+            "flight-launch",
+            "flight-turn",
+            "flight-exit",
+            "flight-warn-n",
+            "flight-n",
+            "flight-warn-s",
+            "flight-s",
+            "marble",
+            "marble-settle",
+            "reform",
+            "tidal-charge",
+            "tidal"
+          ]
+        }
+      },
+      {
+        "name": "hard final explosion and repeat-defeat guard",
+        "ok": true,
+        "data": {
+          "dead": true,
+          "scoreStable": true,
+          "finalFX": true,
+          "shipFX": true
+        }
+      },
+      {
+        "name": "hard native death timer and stage-clear continue",
+        "ok": true,
+        "data": {
+          "state": "flyover",
+          "dying": 5.799999999999985,
+          "ending": 5.816666666666651,
+          "phase": "defeat"
+        }
+      },
+      {
+        "name": "furious pilot handoff, safe body and separate destruction owner",
+        "ok": true,
+        "data": {
+          "phase": "pilot",
+          "targets": 1,
+          "contact": false,
+          "shipFX": true,
+          "hostFX": false
+        }
+      },
+      {
+        "name": "furious native primary damages humanoid without Retina",
+        "ok": true,
+        "data": {
+          "hpStart": 2909,
+          "end": {
+            "phase": "depth-launch",
+            "hp": 0,
+            "dead": true,
+            "t": 23.599999999999735,
+            "score": 45500
+          },
+          "phases": [
+            "grenade-charge",
+            "grenades",
+            "flight-launch",
+            "flight-turn",
+            "flight-exit",
+            "flight-warn-n",
+            "flight-n",
+            "flight-warn-s",
+            "flight-s",
+            "marble",
+            "marble-settle",
+            "reform",
+            "tidal-charge",
+            "tidal",
+            "depth-launch"
+          ]
+        }
+      },
+      {
+        "name": "furious final explosion and repeat-defeat guard",
+        "ok": true,
+        "data": {
+          "dead": true,
+          "scoreStable": true,
+          "finalFX": true,
+          "shipFX": true
+        }
+      },
+      {
+        "name": "furious native death timer and stage-clear continue",
+        "ok": true,
+        "data": {
+          "state": "flyover",
+          "dying": 5.799999999999985,
+          "ending": 5.816666666666651,
+          "phase": "defeat"
+        }
+      },
+      {
+        "name": "shared15 percent difficulty HP ladder",
+        "ok": true,
+        "data": {
+          "normal": 2200,
+          "hard": 2530,
+          "furious": 2909
+        }
+      },
+      {
+        "name": "no console or page errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "pools": {
+      "normal": 2200,
+      "hard": 2530,
+      "furious": 2909
+    },
+    "timelines": {
+      "normal": [
+        {
+          "phase": "grenade-charge",
+          "hp": 2159.0800000000017,
+          "dead": false,
+          "t": 0.09999999999999964,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2134.4800000000023,
+          "dead": false,
+          "t": 0.1999999999999993,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2093.560000000004,
+          "dead": false,
+          "t": 0.2999999999999994,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2093.560000000004,
+          "dead": false,
+          "t": 0.399999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2093.560000000004,
+          "dead": false,
+          "t": 0.49999999999999867,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2052.640000000006,
+          "dead": false,
+          "t": 0.5999999999999983,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2052.640000000006,
+          "dead": false,
+          "t": 0.699999999999998,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1987.1200000000047,
+          "dead": false,
+          "t": 0.7999999999999976,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1987.1200000000047,
+          "dead": false,
+          "t": 0.8999999999999972,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1946.2000000000037,
+          "dead": false,
+          "t": 0.9999999999999969,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1946.2000000000037,
+          "dead": false,
+          "t": 1.0999999999999965,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1905.2800000000027,
+          "dead": false,
+          "t": 1.1999999999999962,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1905.2800000000027,
+          "dead": false,
+          "t": 1.2999999999999958,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1839.7600000000016,
+          "dead": false,
+          "t": 1.3999999999999955,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1839.7600000000016,
+          "dead": false,
+          "t": 1.4999999999999951,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1798.8400000000006,
+          "dead": false,
+          "t": 1.5999999999999948,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1798.8400000000006,
+          "dead": false,
+          "t": 1.6999999999999944,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1798.8400000000006,
+          "dead": false,
+          "t": 1.799999999999994,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1757.9199999999996,
+          "dead": false,
+          "t": 1.8999999999999937,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1733.3199999999995,
+          "dead": false,
+          "t": 1.9999999999999933,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1692.3999999999985,
+          "dead": false,
+          "t": 2.099999999999993,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1692.3999999999985,
+          "dead": false,
+          "t": 2.1999999999999926,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1651.4799999999975,
+          "dead": false,
+          "t": 2.2999999999999923,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1651.4799999999975,
+          "dead": false,
+          "t": 2.399999999999992,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1610.5599999999965,
+          "dead": false,
+          "t": 2.4999999999999916,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1594.1599999999964,
+          "dead": false,
+          "t": 2.599999999999991,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1553.2399999999955,
+          "dead": false,
+          "t": 2.699999999999991,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1553.2399999999955,
+          "dead": false,
+          "t": 2.7999999999999905,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1512.3199999999945,
+          "dead": false,
+          "t": 2.89999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1512.3199999999945,
+          "dead": false,
+          "t": 2.99999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1512.3199999999945,
+          "dead": false,
+          "t": 3.0999999999999894,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1454.9999999999934,
+          "dead": false,
+          "t": 3.199999999999989,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1454.9999999999934,
+          "dead": false,
+          "t": 3.2999999999999887,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1414.0799999999924,
+          "dead": false,
+          "t": 3.3999999999999884,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1414.0799999999924,
+          "dead": false,
+          "t": 3.499999999999988,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1373.1599999999914,
+          "dead": false,
+          "t": 3.5999999999999877,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1373.1599999999914,
+          "dead": false,
+          "t": 3.6999999999999873,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1315.8399999999904,
+          "dead": false,
+          "t": 3.799999999999987,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1315.8399999999904,
+          "dead": false,
+          "t": 3.8999999999999866,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1274.9199999999894,
+          "dead": false,
+          "t": 3.9999999999999862,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1274.9199999999894,
+          "dead": false,
+          "t": 4.099999999999985,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1233.9999999999884,
+          "dead": false,
+          "t": 4.199999999999985,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1233.9999999999884,
+          "dead": false,
+          "t": 4.29999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1217.5999999999883,
+          "dead": false,
+          "t": 4.399999999999995,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1176.6799999999873,
+          "dead": false,
+          "t": 4.5,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1176.6799999999873,
+          "dead": false,
+          "t": 4.600000000000005,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1135.7599999999863,
+          "dead": false,
+          "t": 4.70000000000001,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1135.7599999999863,
+          "dead": false,
+          "t": 4.800000000000015,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1094.8399999999854,
+          "dead": false,
+          "t": 4.90000000000002,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1078.4399999999853,
+          "dead": false,
+          "t": 5.000000000000025,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1037.5199999999843,
+          "dead": false,
+          "t": 5.10000000000003,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1037.5199999999843,
+          "dead": false,
+          "t": 5.200000000000035,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 996.5999999999843,
+          "dead": false,
+          "t": 5.30000000000004,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 996.5999999999843,
+          "dead": false,
+          "t": 5.400000000000045,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 955.6799999999847,
+          "dead": false,
+          "t": 5.50000000000005,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 931.0799999999846,
+          "dead": false,
+          "t": 5.600000000000055,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 931.0799999999846,
+          "dead": false,
+          "t": 5.70000000000006,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 890.159999999985,
+          "dead": false,
+          "t": 5.800000000000065,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 890.159999999985,
+          "dead": false,
+          "t": 5.90000000000007,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 849.2399999999853,
+          "dead": false,
+          "t": 6.000000000000075,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 849.2399999999853,
+          "dead": false,
+          "t": 6.10000000000008,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 791.9199999999856,
+          "dead": false,
+          "t": 6.2000000000000846,
+          "score": 0
+        },
+        {
+          "phase": "flight-turn",
+          "hp": 791.9199999999856,
+          "dead": false,
+          "t": 6.3000000000000895,
+          "score": 0
+        },
+        {
+          "phase": "flight-turn",
+          "hp": 750.999999999986,
+          "dead": false,
+          "t": 6.4000000000000945,
+          "score": 0
+        },
+        {
+          "phase": "flight-turn",
+          "hp": 750.999999999986,
+          "dead": false,
+          "t": 6.5000000000000995,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 730.5399999999862,
+          "dead": false,
+          "t": 6.6000000000001044,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 6.700000000000109,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 6.800000000000114,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 6.900000000000119,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 7.000000000000124,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 7.100000000000129,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 7.200000000000134,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 7.300000000000139,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 7.400000000000144,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 7.500000000000149,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 7.600000000000154,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 7.700000000000159,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 7.800000000000164,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 7.900000000000169,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 8.000000000000174,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 8.100000000000179,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 8.200000000000184,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 8.300000000000189,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 710.0799999999864,
+          "dead": false,
+          "t": 8.400000000000194,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 644.5599999999866,
+          "dead": false,
+          "t": 8.500000000000199,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 644.5599999999866,
+          "dead": false,
+          "t": 8.600000000000204,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 603.639999999987,
+          "dead": false,
+          "t": 8.700000000000209,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 603.639999999987,
+          "dead": false,
+          "t": 8.800000000000214,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 603.639999999987,
+          "dead": false,
+          "t": 8.900000000000219,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 603.639999999987,
+          "dead": false,
+          "t": 9.000000000000224,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 603.639999999987,
+          "dead": false,
+          "t": 9.100000000000229,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 603.639999999987,
+          "dead": false,
+          "t": 9.200000000000234,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 603.639999999987,
+          "dead": false,
+          "t": 9.300000000000239,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 562.7199999999874,
+          "dead": false,
+          "t": 9.400000000000244,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 562.7199999999874,
+          "dead": false,
+          "t": 9.500000000000249,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 528.6199999999877,
+          "dead": false,
+          "t": 9.600000000000254,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 521.7999999999878,
+          "dead": false,
+          "t": 9.700000000000259,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 521.7999999999878,
+          "dead": false,
+          "t": 9.800000000000264,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 480.8799999999876,
+          "dead": false,
+          "t": 9.900000000000269,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 472.6799999999876,
+          "dead": false,
+          "t": 10.000000000000274,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 415.35999999998734,
+          "dead": false,
+          "t": 10.100000000000279,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 415.35999999998734,
+          "dead": false,
+          "t": 10.200000000000284,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 374.43999999998704,
+          "dead": false,
+          "t": 10.300000000000288,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 308.91999999998677,
+          "dead": false,
+          "t": 10.400000000000293,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 267.99999999998647,
+          "dead": false,
+          "t": 10.500000000000298,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 267.99999999998647,
+          "dead": false,
+          "t": 10.600000000000303,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 202.47999999998652,
+          "dead": false,
+          "t": 10.700000000000308,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 161.55999999998656,
+          "dead": false,
+          "t": 10.800000000000313,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 104.23999999998662,
+          "dead": false,
+          "t": 10.900000000000318,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 104.23999999998662,
+          "dead": false,
+          "t": 11.000000000000323,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 55.11999999998666,
+          "dead": false,
+          "t": 11.100000000000328,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 55.11999999998666,
+          "dead": false,
+          "t": 11.200000000000333,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 11.300000000000338,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 11.400000000000343,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 11.500000000000348,
+          "score": 0
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 11.600000000000353,
+          "score": 0
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 11.700000000000358,
+          "score": 0
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 11.800000000000363,
+          "score": 0
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 11.900000000000368,
+          "score": 0
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 12.000000000000373,
+          "score": 0
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 12.100000000000378,
+          "score": 0
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 12.200000000000381,
+          "score": 0
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 12.300000000000376,
+          "score": 0
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 12.40000000000037,
+          "score": 0
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 12.500000000000364,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 12.600000000000358,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 12.700000000000353,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 12.800000000000347,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 12.900000000000341,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 13.000000000000336,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 13.10000000000033,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 13.200000000000324,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 13.300000000000319,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 13.400000000000313,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 13.500000000000307,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 13.600000000000302,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 13.700000000000296,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 13.80000000000029,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 13.900000000000285,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 14.000000000000279,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 14.100000000000273,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 14.200000000000268,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 14.300000000000262,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 14.400000000000256,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 14.50000000000025,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 14.600000000000245,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 14.700000000000239,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 14.800000000000233,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 14.900000000000228,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 15.000000000000222,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 15.100000000000216,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 15.20000000000021,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 15.300000000000205,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 15.4000000000002,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 15.500000000000194,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 15.600000000000188,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 15.700000000000182,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 15.800000000000177,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 15.90000000000017,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 16.000000000000167,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 16.10000000000016,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 16.200000000000156,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 16.30000000000015,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 16.400000000000144,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 16.50000000000014,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 16.600000000000133,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 16.700000000000127,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 16.80000000000012,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 16.900000000000116,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 17.00000000000011,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 17.100000000000104,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 17.2000000000001,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 17.300000000000093,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 17.400000000000087,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 17.50000000000008,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 17.600000000000076,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 17.70000000000007,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 17.800000000000065,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 17.90000000000006,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 18.000000000000053,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 18.100000000000048,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 18.200000000000042,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 18.300000000000036,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 18.40000000000003,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 14.19999999998668,
+          "dead": false,
+          "t": 18.500000000000025,
+          "score": 250
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 0,
+          "dead": true,
+          "t": 18.60000000000002,
+          "score": 45250
+        }
+      ],
+      "hard": [
+        {
+          "phase": "grenade-charge",
+          "hp": 2489.0800000000017,
+          "dead": false,
+          "t": 0.09999999999999964,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2464.4800000000023,
+          "dead": false,
+          "t": 0.1999999999999993,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2423.560000000004,
+          "dead": false,
+          "t": 0.2999999999999994,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2423.560000000004,
+          "dead": false,
+          "t": 0.399999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2423.560000000004,
+          "dead": false,
+          "t": 0.49999999999999867,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2382.640000000006,
+          "dead": false,
+          "t": 0.5999999999999983,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2382.640000000006,
+          "dead": false,
+          "t": 0.699999999999998,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2317.120000000008,
+          "dead": false,
+          "t": 0.7999999999999976,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2317.120000000008,
+          "dead": false,
+          "t": 0.8999999999999972,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2276.20000000001,
+          "dead": false,
+          "t": 0.9999999999999969,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2276.20000000001,
+          "dead": false,
+          "t": 1.0999999999999965,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2235.2800000000116,
+          "dead": false,
+          "t": 1.1999999999999962,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2235.2800000000116,
+          "dead": false,
+          "t": 1.2999999999999958,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2169.760000000014,
+          "dead": false,
+          "t": 1.3999999999999955,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2169.760000000014,
+          "dead": false,
+          "t": 1.4999999999999951,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2128.8400000000156,
+          "dead": false,
+          "t": 1.5999999999999948,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2128.8400000000156,
+          "dead": false,
+          "t": 1.6999999999999944,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2128.8400000000156,
+          "dead": false,
+          "t": 1.799999999999994,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2087.9200000000174,
+          "dead": false,
+          "t": 1.8999999999999937,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2071.5200000000177,
+          "dead": false,
+          "t": 1.9999999999999933,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2030.600000000018,
+          "dead": false,
+          "t": 2.099999999999993,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2030.600000000018,
+          "dead": false,
+          "t": 2.1999999999999926,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1989.6800000000171,
+          "dead": false,
+          "t": 2.2999999999999923,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1989.6800000000171,
+          "dead": false,
+          "t": 2.399999999999992,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1948.7600000000161,
+          "dead": false,
+          "t": 2.4999999999999916,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1932.360000000016,
+          "dead": false,
+          "t": 2.599999999999991,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1891.440000000015,
+          "dead": false,
+          "t": 2.699999999999991,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1891.440000000015,
+          "dead": false,
+          "t": 2.7999999999999905,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1850.520000000014,
+          "dead": false,
+          "t": 2.89999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1850.520000000014,
+          "dead": false,
+          "t": 2.99999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1850.520000000014,
+          "dead": false,
+          "t": 3.0999999999999894,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1793.200000000013,
+          "dead": false,
+          "t": 3.199999999999989,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1793.200000000013,
+          "dead": false,
+          "t": 3.2999999999999887,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1752.280000000012,
+          "dead": false,
+          "t": 3.3999999999999884,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1752.280000000012,
+          "dead": false,
+          "t": 3.499999999999988,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1711.360000000011,
+          "dead": false,
+          "t": 3.5999999999999877,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1711.360000000011,
+          "dead": false,
+          "t": 3.6999999999999873,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1654.04000000001,
+          "dead": false,
+          "t": 3.799999999999987,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1654.04000000001,
+          "dead": false,
+          "t": 3.8999999999999866,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1613.120000000009,
+          "dead": false,
+          "t": 3.9999999999999862,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1613.120000000009,
+          "dead": false,
+          "t": 4.099999999999985,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1572.200000000008,
+          "dead": false,
+          "t": 4.199999999999985,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1572.200000000008,
+          "dead": false,
+          "t": 4.29999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1555.800000000008,
+          "dead": false,
+          "t": 4.399999999999995,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1514.880000000007,
+          "dead": false,
+          "t": 4.5,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1514.880000000007,
+          "dead": false,
+          "t": 4.600000000000005,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1473.960000000006,
+          "dead": false,
+          "t": 4.70000000000001,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1473.960000000006,
+          "dead": false,
+          "t": 4.800000000000015,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1433.040000000005,
+          "dead": false,
+          "t": 4.90000000000002,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1416.6400000000049,
+          "dead": false,
+          "t": 5.000000000000025,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1375.720000000004,
+          "dead": false,
+          "t": 5.10000000000003,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1375.720000000004,
+          "dead": false,
+          "t": 5.200000000000035,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1334.800000000003,
+          "dead": false,
+          "t": 5.30000000000004,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1334.800000000003,
+          "dead": false,
+          "t": 5.400000000000045,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1293.880000000002,
+          "dead": false,
+          "t": 5.50000000000005,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1277.4800000000018,
+          "dead": false,
+          "t": 5.600000000000055,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1277.4800000000018,
+          "dead": false,
+          "t": 5.70000000000006,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 1236.5600000000009,
+          "dead": false,
+          "t": 5.800000000000065,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 1236.5600000000009,
+          "dead": false,
+          "t": 5.90000000000007,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 1195.6399999999999,
+          "dead": false,
+          "t": 6.000000000000075,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 1195.6399999999999,
+          "dead": false,
+          "t": 6.10000000000008,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 1138.3199999999988,
+          "dead": false,
+          "t": 6.2000000000000846,
+          "score": 0
+        },
+        {
+          "phase": "flight-turn",
+          "hp": 1138.3199999999988,
+          "dead": false,
+          "t": 6.3000000000000895,
+          "score": 0
+        },
+        {
+          "phase": "flight-turn",
+          "hp": 1097.3999999999978,
+          "dead": false,
+          "t": 6.4000000000000945,
+          "score": 0
+        },
+        {
+          "phase": "flight-turn",
+          "hp": 1097.3999999999978,
+          "dead": false,
+          "t": 6.5000000000000995,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1097.3999999999978,
+          "dead": false,
+          "t": 6.6000000000001044,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 6.700000000000109,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 6.800000000000114,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 6.900000000000119,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 7.000000000000124,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 7.100000000000129,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 7.200000000000134,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 7.300000000000139,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 7.400000000000144,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 7.500000000000149,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 7.600000000000154,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 7.700000000000159,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 7.800000000000164,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 7.900000000000169,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 8.000000000000174,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 8.100000000000179,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1056.4799999999968,
+          "dead": false,
+          "t": 8.200000000000184,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1029.1999999999962,
+          "dead": false,
+          "t": 8.300000000000189,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1029.1999999999962,
+          "dead": false,
+          "t": 8.400000000000194,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 963.6799999999964,
+          "dead": false,
+          "t": 8.500000000000199,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 963.6799999999964,
+          "dead": false,
+          "t": 8.600000000000204,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 922.7599999999968,
+          "dead": false,
+          "t": 8.700000000000209,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 922.7599999999968,
+          "dead": false,
+          "t": 8.800000000000214,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 922.7599999999968,
+          "dead": false,
+          "t": 8.900000000000219,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 922.7599999999968,
+          "dead": false,
+          "t": 9.000000000000224,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 922.7599999999968,
+          "dead": false,
+          "t": 9.100000000000229,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 922.7599999999968,
+          "dead": false,
+          "t": 9.200000000000234,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 922.7599999999968,
+          "dead": false,
+          "t": 9.300000000000239,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 881.8399999999972,
+          "dead": false,
+          "t": 9.400000000000244,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 881.8399999999972,
+          "dead": false,
+          "t": 9.500000000000249,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 847.7399999999975,
+          "dead": false,
+          "t": 9.600000000000254,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 840.9199999999976,
+          "dead": false,
+          "t": 9.700000000000259,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 840.9199999999976,
+          "dead": false,
+          "t": 9.800000000000264,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 799.999999999998,
+          "dead": false,
+          "t": 9.900000000000269,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 783.5999999999979,
+          "dead": false,
+          "t": 10.000000000000274,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 734.4799999999982,
+          "dead": false,
+          "t": 10.100000000000279,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 734.4799999999982,
+          "dead": false,
+          "t": 10.200000000000284,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 693.5599999999986,
+          "dead": false,
+          "t": 10.300000000000288,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 628.0399999999988,
+          "dead": false,
+          "t": 10.400000000000293,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 587.1199999999992,
+          "dead": false,
+          "t": 10.500000000000298,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 587.1199999999992,
+          "dead": false,
+          "t": 10.600000000000303,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 521.5999999999995,
+          "dead": false,
+          "t": 10.700000000000308,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 480.67999999999927,
+          "dead": false,
+          "t": 10.800000000000313,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 423.359999999999,
+          "dead": false,
+          "t": 10.900000000000318,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 423.359999999999,
+          "dead": false,
+          "t": 11.000000000000323,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 374.2399999999987,
+          "dead": false,
+          "t": 11.100000000000328,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 374.2399999999987,
+          "dead": false,
+          "t": 11.200000000000333,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 11.300000000000338,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 11.400000000000343,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 11.500000000000348,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 11.600000000000353,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 11.700000000000358,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 11.800000000000363,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 11.900000000000368,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 12.000000000000373,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 12.100000000000378,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 12.200000000000381,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 12.300000000000376,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 12.40000000000037,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 12.500000000000364,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 12.600000000000358,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 12.700000000000353,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 12.800000000000347,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 12.900000000000341,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 13.000000000000336,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 13.10000000000033,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 13.200000000000324,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 13.300000000000319,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 13.400000000000313,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 13.500000000000307,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 13.600000000000302,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 13.700000000000296,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 13.80000000000029,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 13.900000000000285,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 14.000000000000279,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 14.100000000000273,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 14.200000000000268,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 14.300000000000262,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 14.400000000000256,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 14.50000000000025,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 14.600000000000245,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 14.700000000000239,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 14.800000000000233,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 14.900000000000228,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 15.000000000000222,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 15.100000000000216,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 15.20000000000021,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 15.300000000000205,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 15.4000000000002,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 15.500000000000194,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 15.600000000000188,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 15.700000000000182,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 15.800000000000177,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 15.90000000000017,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 16.000000000000167,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 16.10000000000016,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 16.200000000000156,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 16.30000000000015,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 16.400000000000144,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 16.50000000000014,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 16.600000000000133,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 16.700000000000127,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 16.80000000000012,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 16.900000000000116,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 17.00000000000011,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 17.100000000000104,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 17.2000000000001,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 17.300000000000093,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 17.400000000000087,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 17.50000000000008,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 17.600000000000076,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 17.70000000000007,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 17.800000000000065,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 17.90000000000006,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 18.000000000000053,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 18.100000000000048,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 18.200000000000042,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 18.300000000000036,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 18.40000000000003,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 333.3199999999984,
+          "dead": false,
+          "t": 18.500000000000025,
+          "score": 250
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 226.8799999999981,
+          "dead": false,
+          "t": 18.60000000000002,
+          "score": 250
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 226.8799999999981,
+          "dead": false,
+          "t": 18.700000000000014,
+          "score": 250
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 161.35999999999817,
+          "dead": false,
+          "t": 18.800000000000008,
+          "score": 250
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 161.35999999999817,
+          "dead": false,
+          "t": 18.900000000000002,
+          "score": 250
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 120.43999999999821,
+          "dead": false,
+          "t": 18.999999999999996,
+          "score": 250
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 120.43999999999821,
+          "dead": false,
+          "t": 19.09999999999999,
+          "score": 250
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 79.51999999999825,
+          "dead": false,
+          "t": 19.199999999999985,
+          "score": 250
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 79.51999999999825,
+          "dead": false,
+          "t": 19.29999999999998,
+          "score": 250
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 13.99999999999826,
+          "dead": false,
+          "t": 19.399999999999974,
+          "score": 250
+        },
+        {
+          "phase": "tidal",
+          "hp": 13.99999999999826,
+          "dead": false,
+          "t": 19.499999999999968,
+          "score": 250
+        },
+        {
+          "phase": "tidal",
+          "hp": 0,
+          "dead": true,
+          "t": 19.599999999999962,
+          "score": 45250
+        }
+      ],
+      "furious": [
+        {
+          "phase": "grenade-charge",
+          "hp": 2868.0800000000017,
+          "dead": false,
+          "t": 0.09999999999999964,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2843.4800000000023,
+          "dead": false,
+          "t": 0.1999999999999993,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2802.560000000004,
+          "dead": false,
+          "t": 0.2999999999999994,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2802.560000000004,
+          "dead": false,
+          "t": 0.399999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenade-charge",
+          "hp": 2802.560000000004,
+          "dead": false,
+          "t": 0.49999999999999867,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2761.640000000006,
+          "dead": false,
+          "t": 0.5999999999999983,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2761.640000000006,
+          "dead": false,
+          "t": 0.699999999999998,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2696.120000000008,
+          "dead": false,
+          "t": 0.7999999999999976,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2696.120000000008,
+          "dead": false,
+          "t": 0.8999999999999972,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2655.20000000001,
+          "dead": false,
+          "t": 0.9999999999999969,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2655.20000000001,
+          "dead": false,
+          "t": 1.0999999999999965,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2614.2800000000116,
+          "dead": false,
+          "t": 1.1999999999999962,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2614.2800000000116,
+          "dead": false,
+          "t": 1.2999999999999958,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2548.760000000014,
+          "dead": false,
+          "t": 1.3999999999999955,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2548.760000000014,
+          "dead": false,
+          "t": 1.4999999999999951,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2507.8400000000156,
+          "dead": false,
+          "t": 1.5999999999999948,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2507.8400000000156,
+          "dead": false,
+          "t": 1.6999999999999944,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2507.8400000000156,
+          "dead": false,
+          "t": 1.799999999999994,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2466.9200000000174,
+          "dead": false,
+          "t": 1.8999999999999937,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2450.5200000000177,
+          "dead": false,
+          "t": 1.9999999999999933,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2409.6000000000195,
+          "dead": false,
+          "t": 2.099999999999993,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2409.6000000000195,
+          "dead": false,
+          "t": 2.1999999999999926,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2368.680000000021,
+          "dead": false,
+          "t": 2.2999999999999923,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2368.680000000021,
+          "dead": false,
+          "t": 2.399999999999992,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2327.760000000023,
+          "dead": false,
+          "t": 2.4999999999999916,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2311.3600000000233,
+          "dead": false,
+          "t": 2.599999999999991,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2270.440000000025,
+          "dead": false,
+          "t": 2.699999999999991,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2270.440000000025,
+          "dead": false,
+          "t": 2.7999999999999905,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2229.520000000027,
+          "dead": false,
+          "t": 2.89999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2229.520000000027,
+          "dead": false,
+          "t": 2.99999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2229.520000000027,
+          "dead": false,
+          "t": 3.0999999999999894,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2172.200000000029,
+          "dead": false,
+          "t": 3.199999999999989,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2172.200000000029,
+          "dead": false,
+          "t": 3.2999999999999887,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2131.2800000000307,
+          "dead": false,
+          "t": 3.3999999999999884,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2131.2800000000307,
+          "dead": false,
+          "t": 3.499999999999988,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2090.3600000000324,
+          "dead": false,
+          "t": 3.5999999999999877,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2090.3600000000324,
+          "dead": false,
+          "t": 3.6999999999999873,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2033.0400000000334,
+          "dead": false,
+          "t": 3.799999999999987,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 2033.0400000000334,
+          "dead": false,
+          "t": 3.8999999999999866,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1992.1200000000324,
+          "dead": false,
+          "t": 3.9999999999999862,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1992.1200000000324,
+          "dead": false,
+          "t": 4.099999999999985,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1951.2000000000314,
+          "dead": false,
+          "t": 4.199999999999985,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1951.2000000000314,
+          "dead": false,
+          "t": 4.29999999999999,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1934.8000000000313,
+          "dead": false,
+          "t": 4.399999999999995,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1893.8800000000303,
+          "dead": false,
+          "t": 4.5,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1893.8800000000303,
+          "dead": false,
+          "t": 4.600000000000005,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1852.9600000000294,
+          "dead": false,
+          "t": 4.70000000000001,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1852.9600000000294,
+          "dead": false,
+          "t": 4.800000000000015,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1812.0400000000284,
+          "dead": false,
+          "t": 4.90000000000002,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1795.6400000000283,
+          "dead": false,
+          "t": 5.000000000000025,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1754.7200000000273,
+          "dead": false,
+          "t": 5.10000000000003,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1754.7200000000273,
+          "dead": false,
+          "t": 5.200000000000035,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1713.8000000000263,
+          "dead": false,
+          "t": 5.30000000000004,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1713.8000000000263,
+          "dead": false,
+          "t": 5.400000000000045,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1672.8800000000253,
+          "dead": false,
+          "t": 5.50000000000005,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1656.4800000000253,
+          "dead": false,
+          "t": 5.600000000000055,
+          "score": 0
+        },
+        {
+          "phase": "grenades",
+          "hp": 1656.4800000000253,
+          "dead": false,
+          "t": 5.70000000000006,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 1615.5600000000243,
+          "dead": false,
+          "t": 5.800000000000065,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 1615.5600000000243,
+          "dead": false,
+          "t": 5.90000000000007,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 1574.6400000000233,
+          "dead": false,
+          "t": 6.000000000000075,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 1574.6400000000233,
+          "dead": false,
+          "t": 6.10000000000008,
+          "score": 0
+        },
+        {
+          "phase": "flight-launch",
+          "hp": 1517.3200000000222,
+          "dead": false,
+          "t": 6.2000000000000846,
+          "score": 0
+        },
+        {
+          "phase": "flight-turn",
+          "hp": 1517.3200000000222,
+          "dead": false,
+          "t": 6.3000000000000895,
+          "score": 0
+        },
+        {
+          "phase": "flight-turn",
+          "hp": 1476.4000000000212,
+          "dead": false,
+          "t": 6.4000000000000945,
+          "score": 0
+        },
+        {
+          "phase": "flight-turn",
+          "hp": 1476.4000000000212,
+          "dead": false,
+          "t": 6.5000000000000995,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1476.4000000000212,
+          "dead": false,
+          "t": 6.6000000000001044,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 6.700000000000109,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 6.800000000000114,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 6.900000000000119,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 7.000000000000124,
+          "score": 0
+        },
+        {
+          "phase": "flight-exit",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 7.100000000000129,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 7.200000000000134,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 7.300000000000139,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 7.400000000000144,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 7.500000000000149,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 7.600000000000154,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 7.700000000000159,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 7.800000000000164,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 7.900000000000169,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 8.000000000000174,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 8.100000000000179,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1435.4800000000203,
+          "dead": false,
+          "t": 8.200000000000184,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1408.2000000000196,
+          "dead": false,
+          "t": 8.300000000000189,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1408.2000000000196,
+          "dead": false,
+          "t": 8.400000000000194,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1342.6800000000185,
+          "dead": false,
+          "t": 8.500000000000199,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1342.6800000000185,
+          "dead": false,
+          "t": 8.600000000000204,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1301.7600000000175,
+          "dead": false,
+          "t": 8.700000000000209,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1301.7600000000175,
+          "dead": false,
+          "t": 8.800000000000214,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1301.7600000000175,
+          "dead": false,
+          "t": 8.900000000000219,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1301.7600000000175,
+          "dead": false,
+          "t": 9.000000000000224,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1301.7600000000175,
+          "dead": false,
+          "t": 9.100000000000229,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1301.7600000000175,
+          "dead": false,
+          "t": 9.200000000000234,
+          "score": 0
+        },
+        {
+          "phase": "flight-n",
+          "hp": 1301.7600000000175,
+          "dead": false,
+          "t": 9.300000000000239,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 1260.8400000000165,
+          "dead": false,
+          "t": 9.400000000000244,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 1260.8400000000165,
+          "dead": false,
+          "t": 9.500000000000249,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 1226.7400000000157,
+          "dead": false,
+          "t": 9.600000000000254,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 1219.9200000000155,
+          "dead": false,
+          "t": 9.700000000000259,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 1219.9200000000155,
+          "dead": false,
+          "t": 9.800000000000264,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 1179.0000000000146,
+          "dead": false,
+          "t": 9.900000000000269,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 1170.8000000000145,
+          "dead": false,
+          "t": 10.000000000000274,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 1121.6800000000135,
+          "dead": false,
+          "t": 10.100000000000279,
+          "score": 0
+        },
+        {
+          "phase": "flight-warn-s",
+          "hp": 1121.6800000000135,
+          "dead": false,
+          "t": 10.200000000000284,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 1080.7600000000125,
+          "dead": false,
+          "t": 10.300000000000288,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 1015.2400000000114,
+          "dead": false,
+          "t": 10.400000000000293,
+          "score": 0
+        },
+        {
+          "phase": "flight-s",
+          "hp": 974.3200000000118,
+          "dead": false,
+          "t": 10.500000000000298,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 974.3200000000118,
+          "dead": false,
+          "t": 10.600000000000303,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 908.800000000012,
+          "dead": false,
+          "t": 10.700000000000308,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 867.8800000000124,
+          "dead": false,
+          "t": 10.800000000000313,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 810.5600000000127,
+          "dead": false,
+          "t": 10.900000000000318,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 810.5600000000127,
+          "dead": false,
+          "t": 11.000000000000323,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 761.440000000013,
+          "dead": false,
+          "t": 11.100000000000328,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 761.440000000013,
+          "dead": false,
+          "t": 11.200000000000333,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 11.300000000000338,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 11.400000000000343,
+          "score": 250
+        },
+        {
+          "phase": "flight-s",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 11.500000000000348,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 11.600000000000353,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 11.700000000000358,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 11.800000000000363,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 11.900000000000368,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 12.000000000000373,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 12.100000000000378,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 12.200000000000381,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 12.300000000000376,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 12.40000000000037,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 12.500000000000364,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 12.600000000000358,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 12.700000000000353,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 12.800000000000347,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 12.900000000000341,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 13.000000000000336,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 13.10000000000033,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 13.200000000000324,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 13.300000000000319,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 13.400000000000313,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 13.500000000000307,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 13.600000000000302,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 13.700000000000296,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 13.80000000000029,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 13.900000000000285,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 14.000000000000279,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 14.100000000000273,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 14.200000000000268,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 14.300000000000262,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 14.400000000000256,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 14.50000000000025,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 14.600000000000245,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 14.700000000000239,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 14.800000000000233,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 14.900000000000228,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 15.000000000000222,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 15.100000000000216,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 15.20000000000021,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 15.300000000000205,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 15.4000000000002,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 15.500000000000194,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 15.600000000000188,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 15.700000000000182,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 15.800000000000177,
+          "score": 250
+        },
+        {
+          "phase": "marble",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 15.90000000000017,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 16.000000000000167,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 16.10000000000016,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 16.200000000000156,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 16.30000000000015,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 16.400000000000144,
+          "score": 250
+        },
+        {
+          "phase": "marble-settle",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 16.50000000000014,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 16.600000000000133,
+          "score": 250
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 16.700000000000127,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 16.80000000000012,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 16.900000000000116,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 17.00000000000011,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 17.100000000000104,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 17.2000000000001,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 17.300000000000093,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 17.400000000000087,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 17.50000000000008,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 17.600000000000076,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 17.70000000000007,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 17.800000000000065,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 17.90000000000006,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 18.000000000000053,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 18.100000000000048,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 18.200000000000042,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 18.300000000000036,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 18.40000000000003,
+          "score": 500
+        },
+        {
+          "phase": "reform",
+          "hp": 720.5200000000134,
+          "dead": false,
+          "t": 18.500000000000025,
+          "score": 500
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 614.080000000014,
+          "dead": false,
+          "t": 18.60000000000002,
+          "score": 500
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 614.080000000014,
+          "dead": false,
+          "t": 18.700000000000014,
+          "score": 500
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 548.5600000000143,
+          "dead": false,
+          "t": 18.800000000000008,
+          "score": 500
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 548.5600000000143,
+          "dead": false,
+          "t": 18.900000000000002,
+          "score": 500
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 507.64000000001454,
+          "dead": false,
+          "t": 18.999999999999996,
+          "score": 500
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 507.64000000001454,
+          "dead": false,
+          "t": 19.09999999999999,
+          "score": 500
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 466.72000000001424,
+          "dead": false,
+          "t": 19.199999999999985,
+          "score": 500
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 466.72000000001424,
+          "dead": false,
+          "t": 19.29999999999998,
+          "score": 500
+        },
+        {
+          "phase": "tidal-charge",
+          "hp": 401.200000000014,
+          "dead": false,
+          "t": 19.399999999999974,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 401.200000000014,
+          "dead": false,
+          "t": 19.499999999999968,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 360.2800000000137,
+          "dead": false,
+          "t": 19.599999999999962,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 360.2800000000137,
+          "dead": false,
+          "t": 19.699999999999957,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 319.3600000000134,
+          "dead": false,
+          "t": 19.79999999999995,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 319.3600000000134,
+          "dead": false,
+          "t": 19.899999999999945,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 294.7600000000134,
+          "dead": false,
+          "t": 19.99999999999994,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 253.84000000001313,
+          "dead": false,
+          "t": 20.099999999999934,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 253.84000000001313,
+          "dead": false,
+          "t": 20.19999999999993,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 212.92000000001318,
+          "dead": false,
+          "t": 20.299999999999923,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 212.92000000001318,
+          "dead": false,
+          "t": 20.399999999999917,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 172.00000000001322,
+          "dead": false,
+          "t": 20.49999999999991,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 147.40000000001325,
+          "dead": false,
+          "t": 20.599999999999905,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 20.6999999999999,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 20.799999999999894,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 20.89999999999989,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 20.999999999999883,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 21.099999999999877,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 21.19999999999987,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 21.299999999999866,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 21.39999999999986,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 21.499999999999854,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 21.59999999999985,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 21.699999999999843,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 21.799999999999837,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 21.89999999999983,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 21.999999999999826,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 22.09999999999982,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 22.199999999999815,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 22.29999999999981,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 22.399999999999803,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 106.48000000001329,
+          "dead": false,
+          "t": 22.499999999999797,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 82.8400000000133,
+          "dead": false,
+          "t": 22.599999999999792,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 66.64000000001329,
+          "dead": false,
+          "t": 22.699999999999786,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 66.64000000001329,
+          "dead": false,
+          "t": 22.79999999999978,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 66.64000000001329,
+          "dead": false,
+          "t": 22.899999999999775,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 43.0000000000133,
+          "dead": false,
+          "t": 22.99999999999977,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 43.0000000000133,
+          "dead": false,
+          "t": 23.099999999999763,
+          "score": 500
+        },
+        {
+          "phase": "tidal",
+          "hp": 43.0000000000133,
+          "dead": false,
+          "t": 23.199999999999758,
+          "score": 500
+        },
+        {
+          "phase": "depth-launch",
+          "hp": 19.360000000013315,
+          "dead": false,
+          "t": 23.299999999999752,
+          "score": 500
+        },
+        {
+          "phase": "depth-launch",
+          "hp": 19.360000000013315,
+          "dead": false,
+          "t": 23.399999999999746,
+          "score": 500
+        },
+        {
+          "phase": "depth-launch",
+          "hp": 19.360000000013315,
+          "dead": false,
+          "t": 23.49999999999974,
+          "score": 500
+        },
+        {
+          "phase": "depth-launch",
+          "hp": 0,
+          "dead": true,
+          "t": 23.599999999999735,
+          "score": 45500
+        }
+      ]
+    },
+    "scope": "Native primary-input damage, three difficulty handoffs/final destruction and exact once-only terminal score. Player invulnerable; terminal cleanup uses native scripted damage when needed. Not campaign-win or complete balance certification."
+  },
+  "media": {
+    "checks": [
+      {
+        "name": "both recordings complete with native audio",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "capture preserved shipping hashes",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "recorded Ship destruction and ejection",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "recorded Current Breaker \u2014 alternating grenades",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "recorded Warned flight pass",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "recorded Liquid orb and radial grenades",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "recorded Hand-shoved tidal waves",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "recorded Background water rollers",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "recorded Final pilot defeat",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "recorded Native stage clear",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "actual boss9 music progressed during combat",
+        "ok": true,
+        "data": [
+          {
+            "t": 2.2935999999940395,
+            "src": "http://127.0.0.1:8765/assets/game/levels/stage_09/audio/music/Level9b.mp3",
+            "time": 2.290667,
+            "paused": false
+          },
+          {
+            "t": 5.090699999988079,
+            "src": "http://127.0.0.1:8765/assets/game/levels/stage_09/audio/music/Level9b.mp3",
+            "time": 5.08,
+            "paused": false
+          },
+          {
+            "t": 7.075400000005961,
+            "src": "http://127.0.0.1:8765/assets/game/levels/stage_09/audio/music/Level9b.mp3",
+            "time": 7.069333,
+            "paused": false
+          }
+        ]
+      },
+      {
+        "name": "pilot health gauge and native side HUD captured",
+        "ok": true,
+        "data": [
+          {
+            "t": 2.2935999999940395,
+            "phase": "ship",
+            "visible": true,
+            "painted": true,
+            "hp": 320,
+            "max": 4400,
+            "layers": [
+              "screen",
+              "siege-left",
+              "siege-right"
+            ]
+          },
+          {
+            "t": 5.090699999988079,
+            "phase": "eject",
+            "visible": false,
+            "painted": true,
+            "hp": 2200,
+            "max": 2200,
+            "layers": [
+              "screen",
+              "siege-left",
+              "siege-right"
+            ]
+          },
+          {
+            "t": 7.075400000005961,
+            "phase": "pilot",
+            "visible": true,
+            "painted": true,
+            "hp": 2200,
+            "max": 2200,
+            "layers": [
+              "screen",
+              "siege-left",
+              "siege-right"
+            ]
+          },
+          {
+            "t": 9.202800000011921,
+            "phase": "pilot",
+            "visible": true,
+            "painted": true,
+            "hp": 1915.5100000000027,
+            "max": 2200,
+            "layers": [
+              "screen",
+              "siege-left",
+              "siege-right"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "fight full movie decode",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "fight audible decoded native audio",
+        "ok": true,
+        "data": [
+          "[Parsed_volumedetect_0 @ 000001ae8d153740] mean_volume: -14.2 dB",
+          "[Parsed_volumedetect_0 @ 000001ae8d153740] max_volume: -1.0 dB"
+        ]
+      },
+      {
+        "name": "recorded long dialogue scroll advances with text",
+        "ok": true,
+        "data": {
+          "maxOffset": 40
+        }
+      },
+      {
+        "name": "freezer full movie decode",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "freezer audible decoded native audio",
+        "ok": true,
+        "data": [
+          "[Parsed_volumedetect_0 @ 0000018763686dc0] mean_volume: -14.8 dB",
+          "[Parsed_volumedetect_0 @ 0000018763686dc0] max_volume: -2.5 dB"
+        ]
+      },
+      {
+        "name": "fight browser geometry/duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "d": 56.52
+        }
+      },
+      {
+        "name": "browser chapter Tidal Sovereign \u2014 terminal vehicle checkpoint",
+        "ok": true,
+        "data": 0.033333
+      },
+      {
+        "name": "browser chapter Ship destruction and ejection",
+        "ok": true,
+        "data": 2.533333
+      },
+      {
+        "name": "browser chapter Current Breaker \u2014 alternating grenades",
+        "ok": true,
+        "data": 6.9
+      },
+      {
+        "name": "browser chapter Warned flight pass",
+        "ok": true,
+        "data": 13.366667
+      },
+      {
+        "name": "browser chapter Liquid orb and radial grenades",
+        "ok": true,
+        "data": 17.766667
+      },
+      {
+        "name": "browser chapter Hand-shoved tidal waves",
+        "ok": true,
+        "data": 25.6
+      },
+      {
+        "name": "browser chapter Background water rollers",
+        "ok": true,
+        "data": 33.566667
+      },
+      {
+        "name": "browser chapter Final pilot defeat",
+        "ok": true,
+        "data": 46.4
+      },
+      {
+        "name": "browser chapter Native stage clear",
+        "ok": true,
+        "data": 55.866667
+      },
+      {
+        "name": "fight browser decoded audio",
+        "ok": true,
+        "data": 0.7381089925765991
+      },
+      {
+        "name": "fight HTTP206 seek",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "freezer browser geometry/duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "d": 11.58
+        }
+      },
+      {
+        "name": "browser chapter Freezer \u2014 original full dialogue",
+        "ok": true,
+        "data": 0.033333
+      },
+      {
+        "name": "browser chapter Overflow scrolls upward",
+        "ok": true,
+        "data": 5.6
+      },
+      {
+        "name": "freezer browser decoded audio",
+        "ok": true,
+        "data": 0.7037793397903442
+      },
+      {
+        "name": "freezer HTTP206 seek",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "review page has no overflow",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "no recording/review page console or HTTP errors",
+        "ok": true,
+        "data": []
+      },
+      {
+        "name": "full8969 suite and failing-name comparison",
+        "ok": true,
+        "data": {
+          "passed": 8969,
+          "beforeFailures": [],
+          "afterFailures": [],
+          "summary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ===="
+        }
+      },
+      {
+        "name": "shipping source still matches capture",
+        "ok": true,
+        "data": null
+      }
+    ],
+    "errors": [],
+    "movies": {
+      "fight": {
+        "file": "stage9-ship-to-pilot.mp4",
+        "duration": 56.52,
+        "chapters": [
+          {
+            "start": 0,
+            "title": "Tidal Sovereign \u2014 terminal vehicle checkpoint"
+          },
+          {
+            "start": 2.515300000011921,
+            "title": "Ship destruction and ejection"
+          },
+          {
+            "start": 6.866699999988079,
+            "title": "Current Breaker \u2014 alternating grenades"
+          },
+          {
+            "start": 13.33430000001192,
+            "title": "Warned flight pass"
+          },
+          {
+            "start": 17.748199999988078,
+            "title": "Liquid orb and radial grenades"
+          },
+          {
+            "start": 25.566900000005962,
+            "title": "Hand-shoved tidal waves"
+          },
+          {
+            "start": 33.5385,
+            "title": "Background water rollers"
+          },
+          {
+            "start": 46.37080000001192,
+            "title": "Final pilot defeat"
+          },
+          {
+            "start": 55.85919999998808,
+            "title": "Native stage clear"
+          }
+        ],
+        "sha256": "f2c21e995df64686419e227cfc67ff564bcef17385c1ef5da848f862337ea82e",
+        "audio": [
+          "[Parsed_volumedetect_0 @ 000001ae8d153740] mean_volume: -14.2 dB",
+          "[Parsed_volumedetect_0 @ 000001ae8d153740] max_volume: -1.0 dB"
+        ]
+      },
+      "freezer": {
+        "file": "freezer-text-scroll.mp4",
+        "duration": 11.58,
+        "chapters": [
+          {
+            "start": 0,
+            "title": "Freezer \u2014 original full dialogue"
+          },
+          {
+            "start": 5.568599999994039,
+            "title": "Overflow scrolls upward"
+          }
+        ],
+        "sha256": "53cbfb7cd85c5e799391917babbb746aa835735ab57b317b83a80dfb6a65e774",
+        "audio": [
+          "[Parsed_volumedetect_0 @ 0000018763686dc0] mean_volume: -14.8 dB",
+          "[Parsed_volumedetect_0 @ 0000018763686dc0] max_volume: -2.5 dB"
+        ]
+      }
+    },
+    "suite": {
+      "passed": 8969,
+      "beforeFailures": [],
+      "afterFailures": [],
+      "summary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ===="
+    },
+    "scope": "Prepared terminal ship-health checkpoint, scripted native terminal damage on the two forms, untouched pilot AI clocks, brief real primary input and native full death/flyover/stage-clear. Player invulnerable. Not a campaign win or full balance certification. Freezer uses exact inactive retained dialogue as a current native comic rehearsal."
+  },
+  "unchangedCore": {
+    "assets/game.js": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce",
+    "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f"
+  },
+  "runtime": {
+    "assets/current_breaker_1102.js": "7a39d31983783eea9897dd30668074c78913624eaa01644ab85bd21243469f04",
+    "assets/stage9_pilot_1115.js": "a4d5f6a95ea6b574b5282bfa6aa5b4c91190131229611640935679ee1d9c603f",
+    "assets/dialogue_scroll_1115.js": "7851b72740e1ec49655ed8a81352dfc409010810936392b0ab797fc57a8bfaee",
+    "index.html": "2cccdabd2f8d377fba6200d7c5685e144f39673f19e9963bfb1abbf7659c5dfa"
+  },
+  "review": "_shots/stage9_pilot_1115/review.html"
+}

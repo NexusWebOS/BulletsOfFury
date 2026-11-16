@@ -97,8 +97,8 @@ const BOFCinematicDirector=(()=>{
    L('cole','Incoming fighters! They followed us home. Decker, keep the radar alive. Axel, cover the hangars!',{bg:'hq10_background_01',duration:7}),
    L('decker','Red contacts everywhere! Fury flight, scramble! We cannot let them reach the command center.',{bg:'hq10_background_02',duration:15,interactive:'hq-radar'}),
    L('cole','Decker and Axel, defend HQ. Everyone else, take the sky. Five ships on my wing!',{bg:'hq10_background_03',duration:7.5})];
-  if(stage===6)return [L(p,r==='left'?'The Harrier is finished. What happened to the rebel squad?':'Rebel Fury is down. I wish they had listened.'),
-   L(c,r==='left'?'They scattered toward the central core while we took the carrier. Their signals are marked on the map as Stage X contacts.':'All five rebel signals are gone. There will be no Stage X pursuit of this squad.'),
+  if(stage===6)return [L(p,r==='left'?'The Harrier is finished. What happened to the Rough Riders?':'The Rough Riders are down. I wish they had listened.'),
+   L(c,r==='left'?'They scattered toward the central core while we took the carrier. Their signals are marked on the map as Stage X contacts.':'All five Rough Rider signals are gone. There will be no Stage X pursuit of this squad.'),
    ...(r==='left'?[L(c,'Stage X is optional. Choose a contact and two wingmen at the central core. They kept the stolen gear, so expect an upgraded fight.'),L(p,'Keep those contacts marked. First tell me what is moving beneath the city.')]:[L(c,'The other threat has not stopped. I am reading a separate signature beneath the city.')]),
    L(p,'And HotWire and Phoenix?'),L(c,'Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.'),...U,
    L('decker','I traced the alien signal beneath the city. Take us down along the river, under the iron bridge.',{bg:'cin_story_city_descent'}),
@@ -118,8 +118,8 @@ const BOFCinematicDirector=(()=>{
   line(p,'You are not getting past me.'),line('chronos','A generous offer, refused. Very well. Show me how long your defiance lasts.')
  ];}
  function routeScript(side,p=lead()) {const c=contact(p);return side==='left'?[
-  line(c,'The Harrier is heading left. That carrier can keep launching fighters until we bring it down.'),line(p,'I am taking the carrier. Keep the rebels on radar.'),line(c,'If they escape this fight, we can pursue their Stage X contacts at the central core. Choose two wingmen when you go.'),line(p,'Understood. Fury flight, split formation. Left wing, on me.')]:[
-  line(c,'Right side: Voss and his old unit. They took the gear from our forward depot.'),line(p,'They called us the Fury crew like we were strangers. What happened to them?'),line(c,'HotWire and Phoenix warned us before their last mission. Neither has checked in since.'),line(p,'Then we get answers here. Right wing, on me.')];}
+  line(c,'The Harrier is heading left. That carrier can keep launching fighters until we bring it down.'),line(p,'I am taking the carrier. Keep the Rough Riders on radar.'),line(c,'If they escape this fight, we can pursue their Stage X contacts at the central core. Choose two wingmen when you go.'),line(p,'Understood. Fury flight, split formation. Left wing, on me.')]:[
+  line(c,'Right side: the Rough Riders. Voss and his unit took the gear from our forward depot.'),line(p,'They called us the Fury crew like we were strangers. What happened to them?'),line(c,'HotWire and Phoenix warned us before their last mission. Neither has checked in since.'),line(p,'Then we get answers here. Right wing, on me.')];}
  function rebelScript(p=lead(),key){const c=contact(p);if(key)return [
   line(c,'Stage X contact confirmed: '+key.toUpperCase()+'. Your two wingmen are with you. This is the signal we marked after the Harrier fight.'),
   line(key,'You chose the carrier. You should have left us out of this.'),line(p,'You took our weapons and threatened our people. Stand down. We can still end this.'),

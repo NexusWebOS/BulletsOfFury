@@ -1,0 +1,362 @@
+[
+  {
+    "pilot": "cole",
+    "bank": -0.72,
+    "key": "ship_cole_pv0",
+    "w": 193,
+    "h": 232,
+    "file": "ship_cole_pv0.png"
+  },
+  {
+    "pilot": "cole",
+    "bank": -0.25,
+    "key": "ship_cole_pv1",
+    "w": 193,
+    "h": 232,
+    "file": "ship_cole_pv1.png"
+  },
+  {
+    "pilot": "cole",
+    "bank": 0,
+    "key": "ship_cole",
+    "w": 193,
+    "h": 232,
+    "file": "ship_cole.png"
+  },
+  {
+    "pilot": "cole",
+    "bank": 0.25,
+    "key": "ship_cole_pv3",
+    "w": 193,
+    "h": 232,
+    "file": "ship_cole_pv3.png"
+  },
+  {
+    "pilot": "cole",
+    "bank": 0.72,
+    "key": "ship_cole_pv4",
+    "w": 193,
+    "h": 232,
+    "file": "ship_cole_pv4.png"
+  },
+  {
+    "pilot": "axel",
+    "bank": -0.72,
+    "key": "ship_axel_pv4",
+    "w": 190,
+    "h": 224,
+    "file": "ship_axel_pv4.png"
+  },
+  {
+    "pilot": "axel",
+    "bank": -0.25,
+    "key": "ship_axel_pv3",
+    "w": 190,
+    "h": 224,
+    "file": "ship_axel_pv3.png"
+  },
+  {
+    "pilot": "axel",
+    "bank": 0,
+    "key": "ship_axel",
+    "w": 190,
+    "h": 224,
+    "file": "ship_axel.png"
+  },
+  {
+    "pilot": "axel",
+    "bank": 0.25,
+    "key": "ship_axel_pv1",
+    "w": 190,
+    "h": 224,
+    "file": "ship_axel_pv1.png"
+  },
+  {
+    "pilot": "axel",
+    "bank": 0.72,
+    "key": "ship_axel_pv0",
+    "w": 190,
+    "h": 224,
+    "file": "ship_axel_pv0.png"
+  },
+  {
+    "pilot": "decker",
+    "bank": -0.72,
+    "key": "ship_decker_pv4",
+    "w": 200,
+    "h": 230,
+    "file": "ship_decker_pv4.png"
+  },
+  {
+    "pilot": "decker",
+    "bank": -0.25,
+    "key": "ship_decker_pv3",
+    "w": 200,
+    "h": 230,
+    "file": "ship_decker_pv3.png"
+  },
+  {
+    "pilot": "decker",
+    "bank": 0,
+    "key": "ship_decker",
+    "w": 200,
+    "h": 230,
+    "file": "ship_decker.png"
+  },
+  {
+    "pilot": "decker",
+    "bank": 0.25,
+    "key": "ship_decker_pv1",
+    "w": 200,
+    "h": 230,
+    "file": "ship_decker_pv1.png"
+  },
+  {
+    "pilot": "decker",
+    "bank": 0.72,
+    "key": "ship_decker_pv0",
+    "w": 200,
+    "h": 230,
+    "file": "ship_decker_pv0.png"
+  },
+  {
+    "pilot": "maverick",
+    "bank": -0.72,
+    "key": "ship_maverick_pv0",
+    "w": 200,
+    "h": 211,
+    "file": "ship_maverick_pv0.png"
+  },
+  {
+    "pilot": "maverick",
+    "bank": -0.25,
+    "key": "ship_maverick_pv1",
+    "w": 200,
+    "h": 211,
+    "file": "ship_maverick_pv1.png"
+  },
+  {
+    "pilot": "maverick",
+    "bank": 0,
+    "key": "ship_maverick",
+    "w": 200,
+    "h": 211,
+    "file": "ship_maverick.png"
+  },
+  {
+    "pilot": "maverick",
+    "bank": 0.25,
+    "key": "ship_maverick_pv3",
+    "w": 200,
+    "h": 211,
+    "file": "ship_maverick_pv3.png"
+  },
+  {
+    "pilot": "maverick",
+    "bank": 0.72,
+    "key": "ship_maverick_pv4",
+    "w": 200,
+    "h": 211,
+    "file": "ship_maverick_pv4.png"
+  },
+  {
+    "pilot": "freezer",
+    "bank": -0.72,
+    "key": "ship_freezer_pv4",
+    "w": 183,
+    "h": 194,
+    "file": "ship_freezer_pv4.png"
+  },
+  {
+    "pilot": "freezer",
+    "bank": -0.25,
+    "key": "ship_freezer_pv3",
+    "w": 183,
+    "h": 194,
+    "file": "ship_freezer_pv3.png"
+  },
+  {
+    "pilot": "freezer",
+    "bank": 0,
+    "key": "ship_freezer",
+    "w": 183,
+    "h": 194,
+    "file": "ship_freezer.png"
+  },
+  {
+    "pilot": "freezer",
+    "bank": 0.25,
+    "key": "ship_freezer_pv1",
+    "w": 183,
+    "h": 194,
+    "file": "ship_freezer_pv1.png"
+  },
+  {
+    "pilot": "freezer",
+    "bank": 0.72,
+    "key": "ship_freezer_pv0",
+    "w": 183,
+    "h": 194,
+    "file": "ship_freezer_pv0.png"
+  },
+  {
+    "pilot": "juggernaut",
+    "bank": -0.72,
+    "key": "ship_juggernaut_pv0",
+    "w": 200,
+    "h": 205,
+    "file": "ship_juggernaut_pv0.png"
+  },
+  {
+    "pilot": "juggernaut",
+    "bank": -0.25,
+    "key": "ship_juggernaut_pv1",
+    "w": 200,
+    "h": 205,
+    "file": "ship_juggernaut_pv1.png"
+  },
+  {
+    "pilot": "juggernaut",
+    "bank": 0,
+    "key": "ship_juggernaut",
+    "w": 200,
+    "h": 205,
+    "file": "ship_juggernaut.png"
+  },
+  {
+    "pilot": "juggernaut",
+    "bank": 0.25,
+    "key": "ship_juggernaut_pv3",
+    "w": 200,
+    "h": 205,
+    "file": "ship_juggernaut_pv3.png"
+  },
+  {
+    "pilot": "juggernaut",
+    "bank": 0.72,
+    "key": "ship_juggernaut_pv4",
+    "w": 200,
+    "h": 205,
+    "file": "ship_juggernaut_pv4.png"
+  },
+  {
+    "pilot": "yuri",
+    "bank": -0.72,
+    "key": "ship_yuri_pv0",
+    "w": 209,
+    "h": 229,
+    "file": "ship_yuri_pv0.png"
+  },
+  {
+    "pilot": "yuri",
+    "bank": -0.25,
+    "key": "ship_yuri_pv1",
+    "w": 209,
+    "h": 229,
+    "file": "ship_yuri_pv1.png"
+  },
+  {
+    "pilot": "yuri",
+    "bank": 0,
+    "key": "ship_yuri",
+    "w": 209,
+    "h": 229,
+    "file": "ship_yuri.png"
+  },
+  {
+    "pilot": "yuri",
+    "bank": 0.25,
+    "key": "ship_yuri_pv3",
+    "w": 209,
+    "h": 229,
+    "file": "ship_yuri_pv3.png"
+  },
+  {
+    "pilot": "yuri",
+    "bank": 0.72,
+    "key": "ship_yuri_pv4",
+    "w": 209,
+    "h": 229,
+    "file": "ship_yuri_pv4.png"
+  },
+  {
+    "pilot": "lizzie",
+    "bank": -0.72,
+    "key": "ship_lizzie_pv0",
+    "w": 224,
+    "h": 243,
+    "file": "ship_lizzie_pv0.png"
+  },
+  {
+    "pilot": "lizzie",
+    "bank": -0.25,
+    "key": "ship_lizzie_pv1",
+    "w": 224,
+    "h": 243,
+    "file": "ship_lizzie_pv1.png"
+  },
+  {
+    "pilot": "lizzie",
+    "bank": 0,
+    "key": "ship_lizzie",
+    "w": 224,
+    "h": 243,
+    "file": "ship_lizzie.png"
+  },
+  {
+    "pilot": "lizzie",
+    "bank": 0.25,
+    "key": "ship_lizzie_pv3",
+    "w": 224,
+    "h": 243,
+    "file": "ship_lizzie_pv3.png"
+  },
+  {
+    "pilot": "lizzie",
+    "bank": 0.72,
+    "key": "ship_lizzie_pv4",
+    "w": 224,
+    "h": 243,
+    "file": "ship_lizzie_pv4.png"
+  },
+  {
+    "pilot": "falva",
+    "bank": -0.72,
+    "key": "ship_falva_pv0",
+    "w": 204,
+    "h": 238,
+    "file": "ship_falva_pv0.png"
+  },
+  {
+    "pilot": "falva",
+    "bank": -0.25,
+    "key": "ship_falva_pv1",
+    "w": 204,
+    "h": 238,
+    "file": "ship_falva_pv1.png"
+  },
+  {
+    "pilot": "falva",
+    "bank": 0,
+    "key": "ship_falva",
+    "w": 204,
+    "h": 238,
+    "file": "ship_falva.png"
+  },
+  {
+    "pilot": "falva",
+    "bank": 0.25,
+    "key": "ship_falva_pv3",
+    "w": 204,
+    "h": 238,
+    "file": "ship_falva_pv3.png"
+  },
+  {
+    "pilot": "falva",
+    "bank": 0.72,
+    "key": "ship_falva_pv4",
+    "w": 204,
+    "h": 238,
+    "file": "ship_falva_pv4.png"
+  }
+]

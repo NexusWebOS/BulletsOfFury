@@ -1,0 +1,6 @@
+{
+  "file": "assets/game.js",
+  "before": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce",
+  "after": "f5e21404c9da8283f3578a2885a5fe225ead3602f772545e56f63baa107be883",
+  "scope": "Only native controller seat reservation and missing-device key release. Solo first-present mapping remains."
+}

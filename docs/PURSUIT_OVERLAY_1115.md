@@ -1,0 +1,9 @@
+# Selected-card interior overlay - November15
+
+Mike approved the exact original-frame trace and asked for a matching interior flash. The same16 authored green/white phases now wash over the selected card's interior as well. The approved raised plates, side steps and bottom tabs remain byte-identical; arrow and overlay use the same native clock. Only the selected card changes. The wash is baked into opaque source pixels at18–31% strength so the artwork and lettering stay readable; no runtime opacity/blend/filter effect.
+
+Four retained layered912x512 Aseprite-format sources, fixed2x UI density, four even406x326 banks and static origins. All64 frame composites round-trip, approved border pixels match, interior masks exclude the other card/footer, and default source export is byte-exact for pages/registry/sources. Editor GUI/CLI unavailable, no such use claimed.150/150 native menu/GIF/name checks and5/5 actual GIF browser checks pass, no page/console/HTTP errors. Both sides on Hard/Furious and all16 synchronized phases are rendered through the actual menu. Outside-selected-card pixels are byte-identical. Full suite8,969/0/exit0, syntax checks pass, failing-name comparison empty. game.js LF/tests CRLF unchanged.
+
+Sources: _ART_SOURCES/pursuit_overlay_1115; build/capture/finish scripts under _BUILD_SOURCE/pursuit_overlay_1115_*.py. Registry remains assets/pursuit_trace_art_1115.js; native city16Trace registration/input/confirm owners are unchanged this turn. Evidence/GIFs: _shots/pursuit_overlay_1115; durable receipt docs/qa/pursuit_overlay_1115.json. Preview: http://127.0.0.1:8766/_shots/pursuit_overlay_1115/review.html
+
+Earlier exact-frame-only sources remain approved border history; their old registry export would omit the newly requested wash. Use this current overlay builder for shipping exports. No commit/push/release.

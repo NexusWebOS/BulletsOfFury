@@ -1,0 +1,19 @@
+{
+  "prompt": "Create an ORIGINAL production pixel-art UI component sheet for Bullets of Fury, a detailed16-bit arcade military jet shooter with a richly illustrated campaign map. Exactly ONE COLUMN and THREE ROWS of wide empty stage-briefing frames. Each panel is a3.04:1 wide rectangle (design912x300 per panel), same exact geometry/pivot and evenly spaced; overall sheet approximately square. All three complete panels fully visible, no cropping. This is a reusable UI asset, not a menu mockup: NO WORDS, NO LETTERS, NO NUMBERS, NO icon buttons, NO stage progression strip, NO ships, NO scenery. Transparent background outside the three frames and in the gutters. Interior reading surfaces must be opaque nearly-black navy, calm and flat for readable bitmap text. Each frame: strong machined gunmetal/titanium outer shell, tasteful brass insets, recessed rivets, small exposed toothed gears in the two lower corners and upper hinge corners, beveled armored corners, concise conduits, sparse tiny status lamps. Give it intentional engineered construction and a coherent premium classic arcade style, not steampunk clutter. Crisp controlled pixel clusters, sharp dark outlines and authored metallic highlights; no blurry bloom or painterly rendering. The frame must leave a LARGE BLANK horizontal header aperture spanning approximately x80..832,y20..92 of its912x300 design, then a thin separator and ONE generous uninterrupted blank rectangular body reading well approximately x50..862,y110..264. Keep ALL cogs, bolts, cabling and lamps outside those text-safe zones. Do not add a portrait box, sidebars or busy detail inside the reading areas. Common silhouettes and matching proportions for all three panels. Top row: standard mission variant, cold steel with restrained cyan-blue edge lamps. Middle row: priority/contact variant, steel/brass with restrained amber and red warning lamps. Bottom row: completed/reward variant, steel with gold insets and small teal-green confirmation lamps. Variant colors are accents, not giant neon borders. Use clean pixel-art shading suitable for direct export at912x300 and display at456x150 logical pixels. Full source composition with generous transparent outer margins and clear gaps between the three rows. No labels identifying variants.",
+  "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-611751ee-6028-4d2a-ac22-e0b10e53f97c.png",
+  "generator": "built-in image_gen",
+  "variants": [
+    "mission",
+    "priority",
+    "clear"
+  ],
+  "frameSize": [
+    912,
+    300
+  ],
+  "logicalSize": [
+    456,
+    150
+  ],
+  "pixelDensity": 2
+}

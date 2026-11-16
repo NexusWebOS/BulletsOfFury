@@ -1,0 +1,4732 @@
+{
+  "suite": {
+    "passed": 8969,
+    "failed": 0,
+    "exitCode": 0,
+    "newFailureNames": []
+  },
+  "native": {
+    "checks": {
+      "actualTerrainBlitsObserved": true,
+      "allSidesCovered": true,
+      "cameraInsideSource": true,
+      "noTakeoffJump": true,
+      "noErrors": true
+    },
+    "caseCount": 75,
+    "cases": [
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 0,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": 222.44000000000003,
+          "size": 85,
+          "burn": 0.28
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 370.27027027027026,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 240.1081081081081,
+            "bottom": 508
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 0,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -610.5714111328125,
+            "right": 1810.571382522583,
+            "bottom": 742.5714111328125
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.461925,
+        "heat": 0.26104166666666667,
+        "ship": {
+          "x": 64.6293,
+          "y": 207.17646800000006,
+          "size": 94,
+          "burn": 0.32698750000000004
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.461925,
+          "zoom": 1.461925,
+          "viewX": 307.70915060622127,
+          "viewY": 383.50660943618857,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 611.4183012124425,
+            "top": 265.85351505720195,
+            "bottom": 508
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 1.5662500000000001,
+        "rects": [
+          {
+            "left": 12.30459976196289,
+            "top": -753.3157958984375,
+            "right": 2000.5226402282715,
+            "bottom": 743.6954345703125
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.7438500000000001,
+        "heat": 0.5220833333333333,
+        "ship": {
+          "x": 74.77860000000004,
+          "y": 184,
+          "size": 112,
+          "burn": 0.37397500000000006
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.7438500000000001,
+          "zoom": 1.7438500000000001,
+          "viewX": 258.6090546778679,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 3.9999999999999716,
+            "right": 513.2181093557358,
+            "top": 300.7276635031683,
+            "bottom": 503.72677466525215
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 3.1325000000000003,
+        "rects": [
+          {
+            "left": 10.049200057983398,
+            "top": -1024.847900390625,
+            "right": 2381.6851902008057,
+            "bottom": 760.8544921875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 0.7831250000000001,
+        "ship": {
+          "x": 80.39999999999998,
+          "y": 184,
+          "size": 122,
+          "burn": 0.4209625
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 237.6842105263158,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 471.3684210526316,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 4.69875,
+        "rects": [
+          {
+            "left": 8.800000190734863,
+            "top": -1149.5679931640625,
+            "right": 2592.799967765808,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 80.39999999999998,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 237.6842105263158,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 471.3684210526316,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 6.202350000000001,
+        "rects": [
+          {
+            "left": 8.800000190734863,
+            "top": -1149.5679931640625,
+            "right": 2592.799967765808,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 80.39999999999998,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 237.6842105263158,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 471.3684210526316,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 0,
+        "rects": [
+          {
+            "left": 8.800000190734863,
+            "top": -1149.5679931640625,
+            "right": 2592.799967765808,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 80.39999999999998,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 237.6842105263158,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 471.3684210526316,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 1.37375,
+        "rects": [
+          {
+            "left": 8.800000190734863,
+            "top": -1149.5679931640625,
+            "right": 2592.799967765808,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 80.39999999999998,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 237.6842105263158,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 471.3684210526316,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 2.7475,
+        "rects": [
+          {
+            "left": 8.800000190734863,
+            "top": -1149.5679931640625,
+            "right": 2592.799967765808,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 80.39999999999998,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 237.6842105263158,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 471.3684210526316,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 4.12125,
+        "rects": [
+          {
+            "left": 8.800000190734863,
+            "top": -1149.5679931640625,
+            "right": 2592.799967765808,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 80.39999999999998,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 237.6842105263158,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 471.3684210526316,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 5.44005,
+        "rects": [
+          {
+            "left": 8.800000190734863,
+            "top": -1149.5679931640625,
+            "right": 2592.799967765808,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 80.39999999999998,
+          "y": 184,
+          "size": 122,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 237.6842105263158,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 471.3684210526316,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 0,
+        "rects": [
+          {
+            "left": 8.800000190734863,
+            "top": -1149.5679931640625,
+            "right": 2592.799967765808,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": 291.6703296703297,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.263076923076923,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 317.87975051975053,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 187.71758835758837,
+            "bottom": 455.60948024948027
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 1.1500000000000001,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -472.11077880859375,
+            "right": 1810.571382522583,
+            "bottom": 881.0320434570312
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 2.3000000000000003,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 3.45,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 4.554,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 0,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": 232.94642857142858,
+          "size": 92,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 1.15,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": 36.226022119009485,
+          "size": 95,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 2.3,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": -133.5557427155145,
+          "size": 89,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 3.4499999999999997,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": -160,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 4.553999999999999,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0.3,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0.6,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0.8999999999999999,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 40,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 59.571428571428555,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 1.188,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 0,
+        "ship": {
+          "x": 456,
+          "y": 222.44000000000003,
+          "size": 85,
+          "burn": 0.28
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 370.27027027027026,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 240.1081081081081,
+            "bottom": 508
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 0,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -610.5714111328125,
+            "right": 1810.571382522583,
+            "bottom": 742.5714111328125
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.461925,
+        "heat": 0.26104166666666667,
+        "ship": {
+          "x": 456,
+          "y": 207.17646800000006,
+          "size": 94,
+          "burn": 0.32698750000000004
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.461925,
+          "zoom": 1.461925,
+          "viewX": 340,
+          "viewY": 383.50660943618857,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 36.29084939377873,
+            "right": 643.7091506062213,
+            "top": 265.85351505720195,
+            "bottom": 508
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 1.5662500000000001,
+        "rects": [
+          {
+            "left": -82.10900115966797,
+            "top": -753.3157958984375,
+            "right": 1906.1090393066406,
+            "bottom": 743.6954345703125
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.7438500000000001,
+        "heat": 0.5220833333333333,
+        "ship": {
+          "x": 456,
+          "y": 184,
+          "size": 112,
+          "burn": 0.37397500000000006
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.7438500000000001,
+          "zoom": 1.7438500000000001,
+          "viewX": 340,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 85.39094532213207,
+            "right": 594.6090546778679,
+            "top": 300.7276635031683,
+            "bottom": 503.72677466525215
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 3.1325000000000003,
+        "rects": [
+          {
+            "left": -273.8179931640625,
+            "top": -1024.847900390625,
+            "right": 2097.8179969787598,
+            "bottom": 760.8544921875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 0.7831250000000001,
+        "ship": {
+          "x": 456,
+          "y": 184,
+          "size": 122,
+          "burn": 0.4209625
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 340,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 106.31578947368419,
+            "right": 573.6842105263158,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 4.69875,
+        "rects": [
+          {
+            "left": -380,
+            "top": -1149.5679931640625,
+            "right": 2203.9999675750732,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 340,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 106.31578947368419,
+            "right": 573.6842105263158,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 6.202350000000001,
+        "rects": [
+          {
+            "left": -380,
+            "top": -1149.5679931640625,
+            "right": 2203.9999675750732,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 340,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 106.31578947368419,
+            "right": 573.6842105263158,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 0,
+        "rects": [
+          {
+            "left": -380,
+            "top": -1149.5679931640625,
+            "right": 2203.9999675750732,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 340,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 106.31578947368419,
+            "right": 573.6842105263158,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 1.37375,
+        "rects": [
+          {
+            "left": -380,
+            "top": -1149.5679931640625,
+            "right": 2203.9999675750732,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 340,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 106.31578947368419,
+            "right": 573.6842105263158,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 2.7475,
+        "rects": [
+          {
+            "left": -380,
+            "top": -1149.5679931640625,
+            "right": 2203.9999675750732,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 340,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 106.31578947368419,
+            "right": 573.6842105263158,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 4.12125,
+        "rects": [
+          {
+            "left": -380,
+            "top": -1149.5679931640625,
+            "right": 2203.9999675750732,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 340,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 106.31578947368419,
+            "right": 573.6842105263158,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 5.44005,
+        "rects": [
+          {
+            "left": -380,
+            "top": -1149.5679931640625,
+            "right": 2203.9999675750732,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 184,
+          "size": 122,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 340,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 106.31578947368419,
+            "right": 573.6842105263158,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 0,
+        "rects": [
+          {
+            "left": -380,
+            "top": -1149.5679931640625,
+            "right": 2203.9999675750732,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 291.6703296703297,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.263076923076923,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 317.87975051975053,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 187.71758835758837,
+            "bottom": 455.60948024948027
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 1.1500000000000001,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -472.11077880859375,
+            "right": 1810.571382522583,
+            "bottom": 881.0320434570312
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 2.3000000000000003,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 3.45,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 4.554,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 0,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 232.94642857142858,
+          "size": 92,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 1.15,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": 36.226022119009485,
+          "size": 95,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 2.3,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": -133.5557427155145,
+          "size": 89,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 3.4499999999999997,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": -160,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 4.553999999999999,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0.3,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0.6,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0.8999999999999999,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 340,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 456,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 1.188,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 0,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": 222.44000000000003,
+          "size": 85,
+          "burn": 0.28
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 370.27027027027026,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 240.1081081081081,
+            "bottom": 508
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 0,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -610.5714111328125,
+            "right": 1810.571382522583,
+            "bottom": 742.5714111328125
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.461925,
+        "heat": 0.26104166666666667,
+        "ship": {
+          "x": 847.3706999999999,
+          "y": 207.17646800000006,
+          "size": 94,
+          "burn": 0.32698750000000004
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.461925,
+          "zoom": 1.461925,
+          "viewX": 372.29084939377873,
+          "viewY": 383.50660943618857,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 68.58169878755746,
+            "right": 676,
+            "top": 265.85351505720195,
+            "bottom": 508
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 1.5662500000000001,
+        "rects": [
+          {
+            "left": -176.52259826660156,
+            "top": -753.3157958984375,
+            "right": 1811.695442199707,
+            "bottom": 743.6954345703125
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.7438500000000001,
+        "heat": 0.5220833333333333,
+        "ship": {
+          "x": 837.2213999999999,
+          "y": 184,
+          "size": 112,
+          "burn": 0.37397500000000006
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.7438500000000001,
+          "zoom": 1.7438500000000001,
+          "viewX": 421.3909453221321,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 166.78189064426417,
+            "right": 676,
+            "top": 300.7276635031683,
+            "bottom": 503.72677466525215
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 3.1325000000000003,
+        "rects": [
+          {
+            "left": -557.6851806640625,
+            "top": -1024.847900390625,
+            "right": 1813.9508094787598,
+            "bottom": 760.8544921875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 0.7831250000000001,
+        "ship": {
+          "x": 831.6000000000001,
+          "y": 184,
+          "size": 122,
+          "burn": 0.4209625
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 442.31578947368416,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 208.63157894736835,
+            "right": 676,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 4.69875,
+        "rects": [
+          {
+            "left": -768.7999877929688,
+            "top": -1149.5679931640625,
+            "right": 1815.1999797821045,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 831.6000000000001,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 442.31578947368416,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 208.63157894736835,
+            "right": 676,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-06",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "time": 6.202350000000001,
+        "rects": [
+          {
+            "left": -768.7999877929688,
+            "top": -1149.5679931640625,
+            "right": 1815.1999797821045,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 831.6000000000001,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 442.31578947368416,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 208.63157894736835,
+            "right": 676,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 0,
+        "rects": [
+          {
+            "left": -768.7999877929688,
+            "top": -1149.5679931640625,
+            "right": 1815.1999797821045,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 831.6000000000001,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 442.31578947368416,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 208.63157894736835,
+            "right": 676,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 1.37375,
+        "rects": [
+          {
+            "left": -768.7999877929688,
+            "top": -1149.5679931640625,
+            "right": 1815.1999797821045,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 831.6000000000001,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 442.31578947368416,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 208.63157894736835,
+            "right": 676,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 2.7475,
+        "rects": [
+          {
+            "left": -768.7999877929688,
+            "top": -1149.5679931640625,
+            "right": 1815.1999797821045,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 831.6000000000001,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 442.31578947368416,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 208.63157894736835,
+            "right": 676,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 4.12125,
+        "rects": [
+          {
+            "left": -768.7999877929688,
+            "top": -1149.5679931640625,
+            "right": 1815.1999797821045,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "heat",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 831.6000000000001,
+          "y": 184,
+          "size": 122,
+          "burn": 0.46
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 442.31578947368416,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 208.63157894736835,
+            "right": 676,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-07",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "time": 5.44005,
+        "rects": [
+          {
+            "left": -768.7999877929688,
+            "top": -1149.5679931640625,
+            "right": 1815.1999797821045,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.9,
+        "heat": 1,
+        "ship": {
+          "x": 831.6000000000001,
+          "y": 184,
+          "size": 122,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.9,
+          "zoom": 1.9,
+          "viewX": 442.31578947368416,
+          "viewY": 399.36,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 208.63157894736835,
+            "right": 676,
+            "top": 308.8336842105263,
+            "bottom": 495.14947368421053
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 0,
+        "rects": [
+          {
+            "left": -768.7999877929688,
+            "top": -1149.5679931640625,
+            "right": 1815.1999797821045,
+            "bottom": 796.031982421875
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": 291.6703296703297,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.263076923076923,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 317.87975051975053,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 187.71758835758837,
+            "bottom": 455.60948024948027
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 1.1500000000000001,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -472.11077880859375,
+            "right": 1810.571382522583,
+            "bottom": 881.0320434570312
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 2.3000000000000003,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 3.45,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "alert",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 0.7
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-08",
+        "text": "Get out of there. The ground is moving.",
+        "time": 4.554,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": 305.7142857142857,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 0,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": 232.94642857142858,
+          "size": 92,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 1.15,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": 36.226022119009485,
+          "size": 95,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 2.3,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": -133.5557427155145,
+          "size": 89,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 3.4499999999999997,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "takeoff",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": -160,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-09",
+        "text": "",
+        "time": 4.553999999999999,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0.3,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0.6,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 0.8999999999999999,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      },
+      {
+        "mode": "fade",
+        "pilot": "cole",
+        "actors": [
+          "cole"
+        ],
+        "world": {
+          "x": 640,
+          "y": 399.36
+        },
+        "zoom": 1.3214285714285714,
+        "heat": 1,
+        "ship": {
+          "x": 852.4285714285714,
+          "y": -170,
+          "size": 85,
+          "burn": 1
+        },
+        "topDown": true,
+        "backgroundStage": 2,
+        "framing": {
+          "requestedZoom": 1.18,
+          "zoom": 1.3214285714285714,
+          "viewX": 340,
+          "viewY": 307.2518918918919,
+          "terrainW": 680,
+          "terrainH": 512,
+          "inset": 4,
+          "visible": {
+            "left": 4,
+            "right": 676,
+            "top": 177.08972972972973,
+            "bottom": 444.9816216216216
+          },
+          "box": [
+            12,
+            12,
+            888,
+            354
+          ]
+        },
+        "id": "post-2",
+        "shot": "SL2-10",
+        "text": "",
+        "time": 1.188,
+        "rects": [
+          {
+            "left": 13.428571701049805,
+            "top": -444.0228576660156,
+            "right": 1810.571382522583,
+            "bottom": 909.1199645996094
+          }
+        ],
+        "screen": {
+          "left": 24,
+          "right": 1800,
+          "top": 24,
+          "bottom": 732
+        }
+      }
+    ],
+    "continuity": {
+      "before": {
+        "x": 456,
+        "y": 305.7142857142857,
+        "size": 85,
+        "burn": 0.7
+      },
+      "after": {
+        "x": 456,
+        "y": 305.7142857142857,
+        "size": 85,
+        "burn": 1
+      }
+    },
+    "errors": []
+  },
+  "recording": {
+    "seconds": 48.93860000002384,
+    "frames": 3028,
+    "peak": 0.6907733678817749,
+    "stages": [
+      {
+        "at": 0.02010000002384186,
+        "tag": "cutscene:SL2-01:radio"
+      },
+      {
+        "at": 4.770200000017882,
+        "tag": "cutscene:SL2-02:radio"
+      },
+      {
+        "at": 9.891800000011921,
+        "tag": "cutscene:SL2-03:radio"
+      },
+      {
+        "at": 15.843600000023843,
+        "tag": "cutscene:SL2-04:radio"
+      },
+      {
+        "at": 20.45030000001192,
+        "tag": "cutscene:SL2-05:radio"
+      },
+      {
+        "at": 25.09060000002384,
+        "tag": "cutscene:SL2-06:heat"
+      },
+      {
+        "at": 31.442300000011922,
+        "tag": "cutscene:SL2-07:heat"
+      },
+      {
+        "at": 36.946700000017884,
+        "tag": "cutscene:SL2-08:alert"
+      },
+      {
+        "at": 41.55470000001788,
+        "tag": "cutscene:SL2-09:takeoff"
+      },
+      {
+        "at": 46.16280000001192,
+        "tag": "cutscene:SL2-10:fade"
+      },
+      {
+        "at": 47.378,
+        "tag": "stagesel::fade"
+      }
+    ],
+    "last": {
+      "mode": "fade",
+      "pilot": "cole",
+      "actors": [
+        "cole"
+      ],
+      "world": {
+        "x": 340,
+        "y": 399.36
+      },
+      "zoom": 1.3214285714285714,
+      "heat": 1,
+      "ship": {
+        "x": 456,
+        "y": -170,
+        "size": 85,
+        "burn": 1
+      },
+      "topDown": true,
+      "backgroundStage": 2,
+      "framing": {
+        "requestedZoom": 1.18,
+        "zoom": 1.3214285714285714,
+        "viewX": 340,
+        "viewY": 307.2518918918919,
+        "terrainW": 680,
+        "terrainH": 512,
+        "inset": 4,
+        "visible": {
+          "left": 4,
+          "right": 676,
+          "top": 177.08972972972973,
+          "bottom": 444.9816216216216
+        },
+        "box": [
+          12,
+          12,
+          888,
+          354
+        ]
+      },
+      "id": "post-2",
+      "shot": "SL2-10",
+      "text": "",
+      "time": 1.199599999994039
+    },
+    "expected": [
+      {
+        "id": "SL2-01",
+        "who": "COLE",
+        "text": "Decker, what am I looking at?",
+        "duration": 4.76
+      },
+      {
+        "id": "SL2-02",
+        "who": "DECKER",
+        "text": "A service data-link. It's restoring power to our internal relay systems.",
+        "duration": 5.11
+      },
+      {
+        "id": "SL2-03",
+        "who": "DECKER",
+        "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+        "duration": 5.9350000000000005
+      },
+      {
+        "id": "SL2-04",
+        "who": "COLE",
+        "text": "You're a genius, Decker.",
+        "duration": 4.6000000000000005
+      },
+      {
+        "id": "SL2-05",
+        "who": "DECKER",
+        "text": "Hey, I'm just telling you what I know from what we have left.",
+        "duration": 4.633333333333334
+      },
+      {
+        "id": "SL2-06",
+        "who": "DECKER",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "duration": 6.265000000000001
+      },
+      {
+        "id": "SL2-07",
+        "who": "DECKER",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "duration": 5.495
+      },
+      {
+        "id": "SL2-08",
+        "who": "DECKER",
+        "text": "Get out of there. The ground is moving.",
+        "duration": 4.6000000000000005
+      },
+      {
+        "id": "SL2-09",
+        "who": "SYSTEM",
+        "text": "",
+        "duration": 4.6
+      },
+      {
+        "id": "SL2-10",
+        "who": "SYSTEM",
+        "text": "",
+        "duration": 1.2
+      }
+    ],
+    "errors": [],
+    "end": {
+      "state": "stagesel",
+      "returns": 1
+    },
+    "scope": "Native post-Stage-2 scene checkpoint and map continuation, not a campaign clear.",
+    "video": {
+      "file": "service-datalink.mp4",
+      "sha256": "b1869804d4c4c0e2970eaedccd6032f847d7a4aa981178db6cb11ea318fc1cc0",
+      "decodeErrors": [],
+      "inspectedFrames": [
+        {
+          "shot": "SL2-02",
+          "time": 7.770200000017882,
+          "image": "data-link.png"
+        },
+        {
+          "shot": "SL2-04",
+          "time": 17.34360000002384,
+          "image": "genius.png"
+        },
+        {
+          "shot": "SL2-06",
+          "time": 29.29060000002384,
+          "image": "heat-charge.png"
+        },
+        {
+          "shot": "SL2-07",
+          "time": 34.942300000011926,
+          "image": "ice-surprise.png"
+        },
+        {
+          "shot": "SL2-09",
+          "time": 43.35470000001788,
+          "image": "takeoff.png"
+        }
+      ]
+    }
+  }
+}

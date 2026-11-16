@@ -163,7 +163,7 @@ storyPlay=function(n,scene){if(n===6&&scene==='boss'){
   story={key:'P2.S06.HARRIER',when:'combat',lines:rows.filter(q=>!storySpeakerIsPlayer(q[0])),i:0,t:0,typed:0,done:false,fade:1};return true;
  }}return P2_STORY.apply(this,arguments);};
 arcStageCard=function(n,which){if(n===6&&which==='boss_warning'){
- const route=p2Pursuit();if(route==='right')return ['REBEL FURY SQUADRON','FIVE HOSTILE FIGHTERS. STOLEN FURY TECHNOLOGY.'];
+ const route=p2Pursuit();if(route==='right')return ['ROUGH RIDERS','FIVE HOSTILE FIGHTERS. STOLEN FURY TECHNOLOGY.'];
  if(route==='left')return ['HARRIER PURSUIT','DESTROY THE CANNON BANKS. WATCH FOR THE ELITE FIGHTER.'];
  }return P2_STAGE_CARD.apply(this,arguments);};
 const P2_STEALTH=new Map(P2_ART.stealth.map(a=>[a.role+'|'+a.pose,a]));

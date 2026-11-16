@@ -1,0 +1,1470 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "pilot": "cole",
+      "variant": "v1",
+      "source": "_ART_SOURCES/cockpit_talk_1114/cole.png",
+      "prompt": "Use case: identity-preserve. Production game animation sheet, NOT concept art. Edit the approved cockpit/pilot reference into a complete talking animation in the clean 16-bit comic illustration style of the Decker style reference. The cockpit reference defines THIS pilot's identity, clothing, pose, ship interior and colored instrument lighting; the Decker portrait defines ink outlines, simplified cel-shaded pixel clusters and the rendering style ONLY. Never copy Decker's blond hair or facial features onto a different pilot. One fixed camera facing the pilot INSIDE their ship, seated at the controls: full head/hair comfortably below the top of frame, shoulders, chest, both arms/hands in their original pose, black harness and dashboard/control stick foreground. No floating heads. A coherent fully painted cockpit interior behind the pilot, not a portrait pasted over scenery. Keep cabin structure, lighting, head position, identity, torso, hands and console PIXEL-STABLE across frames. Mouth/eyelids are the only animation. Output one sheet in exactly FOUR columns by TWO rows, eight equal landscape cells, each cell aspect ratio 3:2, overall sheet 3:1. Cells fully illustrate the same fixed cockpit composition. Outside/gaps transparent; no baked checkerboard. Eight frames in reading order: 0 closed-mouth neutral eyes open; 1 wide A mouth; 2 E/teeth speaking mouth; 3 rounded O mouth; 4 small pursed U mouth; 5 F/V lip/teeth mouth; 6 small open speaking mouth; 7 closed-mouth blink. No pose change, no head turn, no body sway, no camera movement, no character scale changes, no captions, no lettering, no labels, no dividers, no new characters. Crisp high-quality 16-bit arcade comic art matching the new dialogue portraits, NOT photorealism or 3D. The pilot must look like their reference, including skin tone, hair, beard, glasses, clothing and signature accessories. Preserve generous safe margins around the complete head and hands.\nTHIS PILOT IS COLE: same actual likeness as the seated cockpit reference, blue eyes, short swept brown hair with closely trimmed sides, thick close-trimmed dark beard, broad brow and jaw, olive green flight suit and hood collar, green cockpit lights. His face must remain recognizably the approved cockpit man; avoid a narrow long face, tall cartoon quiff or generic pretty-boy likeness. Hands remain on the controls.",
+      "reference": "assets/game/shared/cinematics/story_1103/cockpit-cole.webp",
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-df942233-172f-4c7a-9c5e-fe2a6e98bb85.png",
+      "sourceSha256": "58f2f17f76187c33511d477cbb32e23e979e471674b70be5f0fffeefa7caa656"
+    },
+    {
+      "pilot": "axel",
+      "variant": "v1",
+      "source": "_ART_SOURCES/cockpit_talk_1114/axel.png",
+      "prompt": "Use case: identity-preserve. Production game animation sheet, NOT concept art. Edit the approved cockpit/pilot reference into a complete talking animation in the clean 16-bit comic illustration style of the Decker style reference. The cockpit reference defines THIS pilot's identity, clothing, pose, ship interior and colored instrument lighting; the Decker portrait defines ink outlines, simplified cel-shaded pixel clusters and the rendering style ONLY. Never copy Decker's blond hair or facial features onto a different pilot. One fixed camera facing the pilot INSIDE their ship, seated at the controls: full head/hair comfortably below the top of frame, shoulders, chest, both arms/hands in their original pose, black harness and dashboard/control stick foreground. No floating heads. A coherent fully painted cockpit interior behind the pilot, not a portrait pasted over scenery. Keep cabin structure, lighting, head position, identity, torso, hands and console PIXEL-STABLE across frames. Mouth/eyelids are the only animation. Output one sheet in exactly FOUR columns by TWO rows, eight equal landscape cells, each cell aspect ratio 3:2, overall sheet 3:1. Cells fully illustrate the same fixed cockpit composition. Outside/gaps transparent; no baked checkerboard. Eight frames in reading order: 0 closed-mouth neutral eyes open; 1 wide A mouth; 2 E/teeth speaking mouth; 3 rounded O mouth; 4 small pursed U mouth; 5 F/V lip/teeth mouth; 6 small open speaking mouth; 7 closed-mouth blink. No pose change, no head turn, no body sway, no camera movement, no character scale changes, no captions, no lettering, no labels, no dividers, no new characters. Crisp high-quality 16-bit arcade comic art matching the new dialogue portraits, NOT photorealism or 3D. The pilot must look like their reference, including skin tone, hair, beard, glasses, clothing and signature accessories. Preserve generous safe margins around the complete head and hands.\nTHIS PILOT IS AXEL: Black man with dark brown skin, short tight curly hair/flat top, full dark beard and gold-rimmed blue mirrored aviator sunglasses, cobalt blue jacket with cream fur collar, black harness, blue cockpit lights. Keep the aviators exactly on him in every frame; blink may simply remain neutral behind the glasses.\nThe third reference (Cole seated in a green cockpit) establishes the shared cockpit framing and final line/shading style for the series. Copy that series framing/style, but use ONLY the first reference pilot's own identity, uniform, pose and cabin-light colors.",
+      "reference": "assets/game/shared/cinematics/story_1103/cockpit-axel.webp",
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-8179317f-9a68-420e-84d4-ee2949e96e69.png",
+      "sourceSha256": "499ce7f65ac7b574784c7dd99f01bda79d69be7e976f962bc681c7c0be1fd7e0"
+    },
+    {
+      "pilot": "freezer",
+      "variant": "v1",
+      "source": "_ART_SOURCES/cockpit_talk_1114/freezer.png",
+      "prompt": "Use case: identity-preserve. Production game animation sheet, NOT concept art. Edit the approved cockpit/pilot reference into a complete talking animation in the clean 16-bit comic illustration style of the Decker style reference. The cockpit reference defines THIS pilot's identity, clothing, pose, ship interior and colored instrument lighting; the Decker portrait defines ink outlines, simplified cel-shaded pixel clusters and the rendering style ONLY. Never copy Decker's blond hair or facial features onto a different pilot. One fixed camera facing the pilot INSIDE their ship, seated at the controls: full head/hair comfortably below the top of frame, shoulders, chest, both arms/hands in their original pose, black harness and dashboard/control stick foreground. No floating heads. A coherent fully painted cockpit interior behind the pilot, not a portrait pasted over scenery. Keep cabin structure, lighting, head position, identity, torso, hands and console PIXEL-STABLE across frames. Mouth/eyelids are the only animation. Output one sheet in exactly FOUR columns by TWO rows, eight equal landscape cells, each cell aspect ratio 3:2, overall sheet 3:1. Cells fully illustrate the same fixed cockpit composition. Outside/gaps transparent; no baked checkerboard. Eight frames in reading order: 0 closed-mouth neutral eyes open; 1 wide A mouth; 2 E/teeth speaking mouth; 3 rounded O mouth; 4 small pursed U mouth; 5 F/V lip/teeth mouth; 6 small open speaking mouth; 7 closed-mouth blink. No pose change, no head turn, no body sway, no camera movement, no character scale changes, no captions, no lettering, no labels, no dividers, no new characters. Crisp high-quality 16-bit arcade comic art matching the new dialogue portraits, NOT photorealism or 3D. The pilot must look like their reference, including skin tone, hair, beard, glasses, clothing and signature accessories. Preserve generous safe margins around the complete head and hands.\nTHIS PILOT IS FREEZER: the brown-skinned muscular man in his own reference, long black hair in a high ponytail tied with purple, heavy black beard, serious brows, purple jacket with cream fur collar, black harness, blue/purple cockpit lights. Keep his ponytail, complexion, beard and outfit.\nThe third reference (Cole seated in a green cockpit) establishes the shared cockpit framing and final line/shading style for the series. Copy that series framing/style, but use ONLY the first reference pilot's own identity, uniform, pose and cabin-light colors.",
+      "reference": "assets/game/shared/cinematics/story_1103/cockpit-freezer.webp",
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-1e99a8a3-0c98-4e6a-b2e6-f840511ad3a1.png",
+      "sourceSha256": "af937d6834a276adbf0221d33a2655583c965e8253d54d45abaf44f09c4df308"
+    },
+    {
+      "pilot": "yuri",
+      "variant": "v1",
+      "source": "_ART_SOURCES/cockpit_talk_1114/yuri.png",
+      "prompt": "Use case: identity-preserve. Production game animation sheet, NOT concept art. Edit the approved cockpit/pilot reference into a complete talking animation in the clean 16-bit comic illustration style of the Decker style reference. The cockpit reference defines THIS pilot's identity, clothing, pose, ship interior and colored instrument lighting; the Decker portrait defines ink outlines, simplified cel-shaded pixel clusters and the rendering style ONLY. Never copy Decker's blond hair or facial features onto a different pilot. One fixed camera facing the pilot INSIDE their ship, seated at the controls: full head/hair comfortably below the top of frame, shoulders, chest, both arms/hands in their original pose, black harness and dashboard/control stick foreground. No floating heads. A coherent fully painted cockpit interior behind the pilot, not a portrait pasted over scenery. Keep cabin structure, lighting, head position, identity, torso, hands and console PIXEL-STABLE across frames. Mouth/eyelids are the only animation. Output one sheet in exactly FOUR columns by TWO rows, eight equal landscape cells, each cell aspect ratio 3:2, overall sheet 3:1. Cells fully illustrate the same fixed cockpit composition. Outside/gaps transparent; no baked checkerboard. Eight frames in reading order: 0 closed-mouth neutral eyes open; 1 wide A mouth; 2 E/teeth speaking mouth; 3 rounded O mouth; 4 small pursed U mouth; 5 F/V lip/teeth mouth; 6 small open speaking mouth; 7 closed-mouth blink. No pose change, no head turn, no body sway, no camera movement, no character scale changes, no captions, no lettering, no labels, no dividers, no new characters. Crisp high-quality 16-bit arcade comic art matching the new dialogue portraits, NOT photorealism or 3D. The pilot must look like their reference, including skin tone, hair, beard, glasses, clothing and signature accessories. Preserve generous safe margins around the complete head and hands.\nTHIS PILOT IS YURI: same mohawk with shaved sides, dark short beard, red flight jacket, thick black scarf, black gloves, one hand at his ear and the other at the stick, red cockpit lights. Preserve his pose and distinctive mohawk.\nThe third reference (Cole seated in a green cockpit) establishes the shared cockpit framing and final line/shading style for the series. Copy that series framing/style, but use ONLY the first reference pilot's own identity, uniform, pose and cabin-light colors.",
+      "reference": "assets/game/shared/cinematics/story_1103/cockpit-yuri.webp",
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-b08f48e7-60fe-45fb-8f7b-a789ea1b2675.png",
+      "sourceSha256": "f1ae0aac23e33369bfacd5f5429163a8e4822fbb1aca82c07589297669b41dda"
+    },
+    {
+      "pilot": "maverick",
+      "variant": "v2",
+      "source": "_ART_SOURCES/cockpit_talk_1114/maverick.png",
+      "prompt": "Use case: identity-preserve. Production game animation sheet, NOT concept art. Edit the approved cockpit/pilot reference into a complete talking animation in the clean 16-bit comic illustration style of the Decker style reference. The cockpit reference defines THIS pilot's identity, clothing, pose, ship interior and colored instrument lighting; the Decker portrait defines ink outlines, simplified cel-shaded pixel clusters and the rendering style ONLY. Never copy Decker's blond hair or facial features onto a different pilot. One fixed camera facing the pilot INSIDE their ship, seated at the controls: full head/hair comfortably below the top of frame, shoulders, chest, both arms/hands in their original pose, black harness and dashboard/control stick foreground. No floating heads. A coherent fully painted cockpit interior behind the pilot, not a portrait pasted over scenery. Keep cabin structure, lighting, head position, identity, torso, hands and console PIXEL-STABLE across frames. Mouth/eyelids are the only animation. Output one sheet in exactly FOUR columns by TWO rows, eight equal landscape cells, each cell aspect ratio 3:2, overall sheet 3:1. Cells fully illustrate the same fixed cockpit composition. Outside/gaps transparent; no baked checkerboard. Eight frames in reading order: 0 closed-mouth neutral eyes open; 1 wide A mouth; 2 E/teeth speaking mouth; 3 rounded O mouth; 4 small pursed U mouth; 5 F/V lip/teeth mouth; 6 small open speaking mouth; 7 closed-mouth blink. No pose change, no head turn, no body sway, no camera movement, no character scale changes, no captions, no lettering, no labels, no dividers, no new characters. Crisp high-quality 16-bit arcade comic art matching the new dialogue portraits, NOT photorealism or 3D. The pilot must look like their reference, including skin tone, hair, beard, glasses, clothing and signature accessories. Preserve generous safe margins around the complete head and hands.\nTHIS PILOT IS MAVERICK: chestnut-brown swept-back hair, close brown beard, green-tinted gold-rimmed aviator sunglasses, teal high-collar flight jacket, black harness, teal cockpit lights. Never remove his aviators. Keep his hand at the control stick.\nThe third reference (Cole seated in a green cockpit) establishes the shared cockpit framing and final line/shading style for the series. Copy that series framing/style, but use ONLY the first reference pilot's own identity, uniform, pose and cabin-light colors.\nCORRECTION TO THE EDIT TARGET: the previous Maverick output has unwanted white paper margins and almost square portrait panels. Remove ALL paper, borders and gutters. Recompose the same Maverick seated at his controls into EIGHT WIDE LANDSCAPE cells EXACTLY matching Cole's supplied 4x2 sheet, each cell 3:2 (576x384), entire sheet 2304x768. This must be a wide 3:1 sprite atlas. Full cockpit width and hands/console foreground visible in each cell. No framing lines. Keep Maverick's green aviators, beard, teal uniform and his face unchanged. Use the eight mouth/blink poses specified. The Cole sheet is a layout/style reference only, never replace Maverick with Cole.",
+      "reference": "assets/game/shared/cinematics/story_1103/cockpit-maverick.webp",
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-aa541479-ec45-46af-93ba-40479776c172.png",
+      "sourceSha256": "fb3f7f24b3d15f949f65671e0c7f8921e09604b275f8f3bcba31036435ce38b4"
+    },
+    {
+      "pilot": "falva",
+      "variant": "v1",
+      "source": "_ART_SOURCES/cockpit_talk_1114/falva.png",
+      "prompt": "Use case: identity-preserve. Production game animation sheet, NOT concept art. Edit the approved cockpit/pilot reference into a complete talking animation in the clean 16-bit comic illustration style of the Decker style reference. The cockpit reference defines THIS pilot's identity, clothing, pose, ship interior and colored instrument lighting; the Decker portrait defines ink outlines, simplified cel-shaded pixel clusters and the rendering style ONLY. Never copy Decker's blond hair or facial features onto a different pilot. One fixed camera facing the pilot INSIDE their ship, seated at the controls: full head/hair comfortably below the top of frame, shoulders, chest, both arms/hands in their original pose, black harness and dashboard/control stick foreground. No floating heads. A coherent fully painted cockpit interior behind the pilot, not a portrait pasted over scenery. Keep cabin structure, lighting, head position, identity, torso, hands and console PIXEL-STABLE across frames. Mouth/eyelids are the only animation. Output one sheet in exactly FOUR columns by TWO rows, eight equal landscape cells, each cell aspect ratio 3:2, overall sheet 3:1. Cells fully illustrate the same fixed cockpit composition. Outside/gaps transparent; no baked checkerboard. Eight frames in reading order: 0 closed-mouth neutral eyes open; 1 wide A mouth; 2 E/teeth speaking mouth; 3 rounded O mouth; 4 small pursed U mouth; 5 F/V lip/teeth mouth; 6 small open speaking mouth; 7 closed-mouth blink. No pose change, no head turn, no body sway, no camera movement, no character scale changes, no captions, no lettering, no labels, no dividers, no new characters. Crisp high-quality 16-bit arcade comic art matching the new dialogue portraits, NOT photorealism or 3D. The pilot must look like their reference, including skin tone, hair, beard, glasses, clothing and signature accessories. Preserve generous safe margins around the complete head and hands.\nTHIS PILOT IS FALVA: the woman with long wavy copper-red hair, black rectangular eyeglasses, magenta/dark purple flight suit, black harness and gloves, magenta cockpit lights. Preserve her glasses, confident face and both hands at the controls.\nThe third reference (Cole seated in a green cockpit) establishes the shared cockpit framing and final line/shading style for the series. Copy that series framing/style, but use ONLY the first reference pilot's own identity, uniform, pose and cabin-light colors.",
+      "reference": "assets/game/shared/cinematics/story_1103/cockpit-falva.webp",
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-7a24a11e-224f-4c95-844d-41ae1e9c4a09.png",
+      "sourceSha256": "98c11fab08ba441bded58714ff54c6f22b6a2d44c2aa09ba83d9532de15200ee"
+    },
+    {
+      "pilot": "lizzie",
+      "variant": "v2",
+      "source": "_ART_SOURCES/cockpit_talk_1114/lizzie.png",
+      "prompt": "Use case: identity-preserve. Production game animation sheet, NOT concept art. Edit the approved cockpit/pilot reference into a complete talking animation in the clean 16-bit comic illustration style of the Decker style reference. The cockpit reference defines THIS pilot's identity, clothing, pose, ship interior and colored instrument lighting; the Decker portrait defines ink outlines, simplified cel-shaded pixel clusters and the rendering style ONLY. Never copy Decker's blond hair or facial features onto a different pilot. One fixed camera facing the pilot INSIDE their ship, seated at the controls: full head/hair comfortably below the top of frame, shoulders, chest, both arms/hands in their original pose, black harness and dashboard/control stick foreground. No floating heads. A coherent fully painted cockpit interior behind the pilot, not a portrait pasted over scenery. Keep cabin structure, lighting, head position, identity, torso, hands and console PIXEL-STABLE across frames. Mouth/eyelids are the only animation. Output one sheet in exactly FOUR columns by TWO rows, eight equal landscape cells, each cell aspect ratio 3:2, overall sheet 3:1. Cells fully illustrate the same fixed cockpit composition. Outside/gaps transparent; no baked checkerboard. Eight frames in reading order: 0 closed-mouth neutral eyes open; 1 wide A mouth; 2 E/teeth speaking mouth; 3 rounded O mouth; 4 small pursed U mouth; 5 F/V lip/teeth mouth; 6 small open speaking mouth; 7 closed-mouth blink. No pose change, no head turn, no body sway, no camera movement, no character scale changes, no captions, no lettering, no labels, no dividers, no new characters. Crisp high-quality 16-bit arcade comic art matching the new dialogue portraits, NOT photorealism or 3D. The pilot must look like their reference, including skin tone, hair, beard, glasses, clothing and signature accessories. Preserve generous safe margins around the complete head and hands.\nTHIS PILOT IS LIZZIE: the woman with long wavy copper/red hair swept over one side, large gold hoop earrings, gold heart necklace, golden-yellow flight jacket, black low-cut inner top, black fingerless gloves, amber/gold cockpit lights. One hand rests against her cheek and the other on her controls; preserve this exact pose.\nThe third reference (Cole seated in a green cockpit) establishes the shared cockpit framing and final line/shading style for the series. Copy that series framing/style, but use ONLY the first reference pilot's own identity, uniform, pose and cabin-light colors.\nLAYOUT CORRECTION: The target sheet is too tightly framed/square. Keep the exact same lizzie identity, pose and outfit, but recompose ALL eight frames into WIDE LANDSCAPE cells matching Cole's supplied sheet EXACTLY. FOUR columns by TWO rows. Each cell 576x384, 3:2 landscape. Overall sheet 2304x768, wide 3:1 aspect. Full cockpit width, head with safe margin, both arms and console foreground visible, same fixed camera in every cell. Remove any blank paper or black borders around the sheet, no gutters. Keep the eight mouth/blink poses, one pilot per cell. Copy Cole's atlas layout and cockpit framing only, do NOT change this pilot into Cole.",
+      "reference": "assets/game/shared/cinematics/story_1103/cockpit-lizzie.webp",
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-84ab649f-3c67-4414-9c49-0f5882849201.png",
+      "sourceSha256": "3de8f5b60b53f2d170d9886353db106900816f10d428de6f98f6406a124fbb00"
+    },
+    {
+      "pilot": "decker",
+      "variant": "v2",
+      "source": "_ART_SOURCES/cockpit_talk_1114/decker.png",
+      "prompt": "Use case: identity-preserve. Production game animation sheet, NOT concept art. Edit the approved cockpit/pilot reference into a complete talking animation in the clean 16-bit comic illustration style of the Decker style reference. The cockpit reference defines THIS pilot's identity, clothing, pose, ship interior and colored instrument lighting; the Decker portrait defines ink outlines, simplified cel-shaded pixel clusters and the rendering style ONLY. Never copy Decker's blond hair or facial features onto a different pilot. One fixed camera facing the pilot INSIDE their ship, seated at the controls: full head/hair comfortably below the top of frame, shoulders, chest, both arms/hands in their original pose, black harness and dashboard/control stick foreground. No floating heads. A coherent fully painted cockpit interior behind the pilot, not a portrait pasted over scenery. Keep cabin structure, lighting, head position, identity, torso, hands and console PIXEL-STABLE across frames. Mouth/eyelids are the only animation. Output one sheet in exactly FOUR columns by TWO rows, eight equal landscape cells, each cell aspect ratio 3:2, overall sheet 3:1. Cells fully illustrate the same fixed cockpit composition. Outside/gaps transparent; no baked checkerboard. Eight frames in reading order: 0 closed-mouth neutral eyes open; 1 wide A mouth; 2 E/teeth speaking mouth; 3 rounded O mouth; 4 small pursed U mouth; 5 F/V lip/teeth mouth; 6 small open speaking mouth; 7 closed-mouth blink. No pose change, no head turn, no body sway, no camera movement, no character scale changes, no captions, no lettering, no labels, no dividers, no new characters. Crisp high-quality 16-bit arcade comic art matching the new dialogue portraits, NOT photorealism or 3D. The pilot must look like their reference, including skin tone, hair, beard, glasses, clothing and signature accessories. Preserve generous safe margins around the complete head and hands.\nTHIS PILOT IS DECKER: same clean-shaven fair-skinned blond engineer, black rectangular glasses, blond swept hair, black technical flight jacket with golden-yellow piping and high collar, black gloves and harness, amber cockpit lights. The style reference is Decker himself; keep his likeness and the seated cockpit pose.\nThe third reference (Cole seated in a green cockpit) establishes the shared cockpit framing and final line/shading style for the series. Copy that series framing/style, but use ONLY the first reference pilot's own identity, uniform, pose and cabin-light colors.\nLAYOUT CORRECTION: The target sheet is too tightly framed/square. Keep the exact same decker identity, pose and outfit, but recompose ALL eight frames into WIDE LANDSCAPE cells matching Cole's supplied sheet EXACTLY. FOUR columns by TWO rows. Each cell 576x384, 3:2 landscape. Overall sheet 2304x768, wide 3:1 aspect. Full cockpit width, head with safe margin, both arms and console foreground visible, same fixed camera in every cell. Remove any blank paper or black borders around the sheet, no gutters. Keep the eight mouth/blink poses, one pilot per cell. Copy Cole's atlas layout and cockpit framing only, do NOT change this pilot into Cole.",
+      "reference": "assets/game/shared/cinematics/story_1103/cockpit-decker.webp",
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-b50a7e10-8bbf-4902-a6e1-9ddb7641f47a.png",
+      "sourceSha256": "71d7a6e6d232b8ce5f0a9f6579e89511ec621bd9bfd47567477b80b1b028f83e"
+    },
+    {
+      "pilot": "juggernaut",
+      "variant": "v2",
+      "source": "_ART_SOURCES/cockpit_talk_1114/juggernaut.png",
+      "prompt": "Use case: identity-preserve. Production game animation sheet, NOT concept art. Edit the approved cockpit/pilot reference into a complete talking animation in the clean 16-bit comic illustration style of the Decker style reference. The cockpit reference defines THIS pilot's identity, clothing, pose, ship interior and colored instrument lighting; the Decker portrait defines ink outlines, simplified cel-shaded pixel clusters and the rendering style ONLY. Never copy Decker's blond hair or facial features onto a different pilot. One fixed camera facing the pilot INSIDE their ship, seated at the controls: full head/hair comfortably below the top of frame, shoulders, chest, both arms/hands in their original pose, black harness and dashboard/control stick foreground. No floating heads. A coherent fully painted cockpit interior behind the pilot, not a portrait pasted over scenery. Keep cabin structure, lighting, head position, identity, torso, hands and console PIXEL-STABLE across frames. Mouth/eyelids are the only animation. Output one sheet in exactly FOUR columns by TWO rows, eight equal landscape cells, each cell aspect ratio 3:2, overall sheet 3:1. Cells fully illustrate the same fixed cockpit composition. Outside/gaps transparent; no baked checkerboard. Eight frames in reading order: 0 closed-mouth neutral eyes open; 1 wide A mouth; 2 E/teeth speaking mouth; 3 rounded O mouth; 4 small pursed U mouth; 5 F/V lip/teeth mouth; 6 small open speaking mouth; 7 closed-mouth blink. No pose change, no head turn, no body sway, no camera movement, no character scale changes, no captions, no lettering, no labels, no dividers, no new characters. Crisp high-quality 16-bit arcade comic art matching the new dialogue portraits, NOT photorealism or 3D. The pilot must look like their reference, including skin tone, hair, beard, glasses, clothing and signature accessories. Preserve generous safe margins around the complete head and hands.\nTHIS PILOT IS JUGGERNAUT: same very muscular brown-skinned man, short swept black hair with shaved sides, thick black beard, black/gold aviator sunglasses, visible tattooed muscular arms, sleeveless black flight gear and black harness, orange cockpit lights. Preserve his crossed-arm pose while seated at the console. Do not add sleeves or make him thin.\nThe third reference (Cole seated in a green cockpit) establishes the shared cockpit framing and final line/shading style for the series. Copy that series framing/style, but use ONLY the first reference pilot's own identity, uniform, pose and cabin-light colors.\nLAYOUT CORRECTION: The target sheet is too tightly framed/square. Keep the exact same juggernaut identity, pose and outfit, but recompose ALL eight frames into WIDE LANDSCAPE cells matching Cole's supplied sheet EXACTLY. FOUR columns by TWO rows. Each cell 576x384, 3:2 landscape. Overall sheet 2304x768, wide 3:1 aspect. Full cockpit width, head with safe margin, both arms and console foreground visible, same fixed camera in every cell. Remove any blank paper or black borders around the sheet, no gutters. Keep the eight mouth/blink poses, one pilot per cell. Copy Cole's atlas layout and cockpit framing only, do NOT change this pilot into Cole.",
+      "reference": "assets/game/shared/cinematics/story_1103/cockpit-juggernaut.webp",
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-b68d1683-73e3-4053-aaab-b59931f6c8e8.png",
+      "sourceSha256": "acbaa1a4c110d1ed1a6fda0996a75a274b5327714a085de1b5b6ab67f289428f"
+    }
+  ],
+  "normalization": "Shared-scale sprite-pipeline normalization, registered upper-face anchor, neutral cabin/body lock outside generated mouth/eye regions.",
+  "packing": [
+    {
+      "pilot": "cole",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "uniqueFrames": 8,
+      "alignment": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "bodyAndCockpitLocked": true,
+      "blink": true
+    },
+    {
+      "pilot": "axel",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "uniqueFrames": 7,
+      "alignment": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "bodyAndCockpitLocked": true,
+      "blink": false
+    },
+    {
+      "pilot": "freezer",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "uniqueFrames": 8,
+      "alignment": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "bodyAndCockpitLocked": true,
+      "blink": true
+    },
+    {
+      "pilot": "yuri",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "uniqueFrames": 8,
+      "alignment": [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          3,
+          -1
+        ],
+        [
+          4,
+          -1
+        ]
+      ],
+      "bodyAndCockpitLocked": true,
+      "blink": true
+    },
+    {
+      "pilot": "maverick",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "uniqueFrames": 7,
+      "alignment": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "bodyAndCockpitLocked": true,
+      "blink": false
+    },
+    {
+      "pilot": "falva",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "uniqueFrames": 8,
+      "alignment": [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "bodyAndCockpitLocked": true,
+      "blink": true
+    },
+    {
+      "pilot": "lizzie",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "uniqueFrames": 8,
+      "alignment": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "bodyAndCockpitLocked": true,
+      "blink": true
+    },
+    {
+      "pilot": "decker",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "uniqueFrames": 8,
+      "alignment": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "bodyAndCockpitLocked": true,
+      "blink": true
+    },
+    {
+      "pilot": "juggernaut",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "uniqueFrames": 7,
+      "alignment": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "bodyAndCockpitLocked": true,
+      "blink": false
+    }
+  ],
+  "runtimeAssets": {
+    "pilots": [
+      "cole",
+      "axel",
+      "freezer",
+      "yuri",
+      "maverick",
+      "falva",
+      "lizzie",
+      "decker",
+      "juggernaut"
+    ],
+    "banks": {
+      "cole": {
+        "key": "cp15_cole",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/cole/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": true,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "1bd37378b9d800cd94fd765323d0cf256ee4c243677d7600b744757e4758367c"
+      },
+      "axel": {
+        "key": "cp15_axel",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/axel/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": false,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "aab50cfdc5a11f6ffb311c447db28101def840b036596220c0537ba8fe502efd"
+      },
+      "freezer": {
+        "key": "cp15_freezer",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/freezer/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": true,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "cc158f8b165b6d59f76898cd0fffeec747abec4b7b75a3b279baaa0e819041d2"
+      },
+      "yuri": {
+        "key": "cp15_yuri",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/yuri/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": true,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "088e375397ece99312db5a3ba386af2f41d9a541a7a4842be6847d478a6d1e68"
+      },
+      "maverick": {
+        "key": "cp15_maverick",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/maverick/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": false,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "883f4ba8cd3f4de0eaefae5d6cb4f88f625bb423a9d8fa00bd6402b252cdaf56"
+      },
+      "falva": {
+        "key": "cp15_falva",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/falva/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": true,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "1fe14151879d417310271beda6a8258f4f0860d9572849df5296d5f8ae046b62"
+      },
+      "lizzie": {
+        "key": "cp15_lizzie",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/lizzie/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": true,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "037202ef4f6f8f63b2357cddb0327fadcc444e5eca85e783839506ee3b54e59c"
+      },
+      "decker": {
+        "key": "cp15_decker",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/decker/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": true,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "c409fd418c82273f34a8ea3454435e9c53a36c030446ba1a4cbc719e301ac98b"
+      },
+      "juggernaut": {
+        "key": "cp15_juggernaut",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/juggernaut/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": false,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "27a20f9ad68137c6847cd0a866a367361d2e6e73eb164ce034b3ba7e87e118eb"
+      }
+    },
+    "minis": {
+      "cole-48": {
+        "key": "cp15_cole_48",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/cole/radio-48.webp",
+        "w": 48,
+        "h": 48,
+        "cols": 1,
+        "frames": 8,
+        "size": 48,
+        "baselines": [
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "sha256": "c408b04c807a651fe3dd9b61f5df1be644cb069389a5a99cf191a3e8a50c2028"
+      },
+      "cole-64": {
+        "key": "cp15_cole_64",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/cole/radio-64.webp",
+        "w": 64,
+        "h": 64,
+        "cols": 1,
+        "frames": 8,
+        "size": 64,
+        "baselines": [
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64
+        ],
+        "sha256": "eb52d7e9d40957d2defb4cbd2b31f70755337bf5607bbfb857ff2b4cf2aca3e3"
+      },
+      "cole-84": {
+        "key": "cp15_cole_84",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/cole/radio-84.webp",
+        "w": 84,
+        "h": 84,
+        "cols": 1,
+        "frames": 8,
+        "size": 84,
+        "baselines": [
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84
+        ],
+        "sha256": "48ffcd431b441613184a2731c31a082417958e6ad6f97ae0edc4853012205916"
+      },
+      "cole-96": {
+        "key": "cp15_cole_96",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/cole/radio-96.webp",
+        "w": 96,
+        "h": 96,
+        "cols": 1,
+        "frames": 8,
+        "size": 96,
+        "baselines": [
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96
+        ],
+        "sha256": "a218539e28b166cea9a4dd2be684718b13f3390d1dc02979e53135c6b78b8811"
+      },
+      "axel-48": {
+        "key": "cp15_axel_48",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/axel/radio-48.webp",
+        "w": 48,
+        "h": 48,
+        "cols": 1,
+        "frames": 8,
+        "size": 48,
+        "baselines": [
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "sha256": "777464387e0060b03a0dc4bd6685511b9a5e04bfd757d75e1687d59bd2130249"
+      },
+      "axel-64": {
+        "key": "cp15_axel_64",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/axel/radio-64.webp",
+        "w": 64,
+        "h": 64,
+        "cols": 1,
+        "frames": 8,
+        "size": 64,
+        "baselines": [
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64
+        ],
+        "sha256": "7e475079fe064b3ea09b575185cc47973f2351a0c6f7ded7029bed56cd349f88"
+      },
+      "axel-84": {
+        "key": "cp15_axel_84",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/axel/radio-84.webp",
+        "w": 84,
+        "h": 84,
+        "cols": 1,
+        "frames": 8,
+        "size": 84,
+        "baselines": [
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84
+        ],
+        "sha256": "eba8be15cbf454421c07056e082da7300388a911d4558e41701a7250966da91b"
+      },
+      "axel-96": {
+        "key": "cp15_axel_96",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/axel/radio-96.webp",
+        "w": 96,
+        "h": 96,
+        "cols": 1,
+        "frames": 8,
+        "size": 96,
+        "baselines": [
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96
+        ],
+        "sha256": "9cd4a8f51d2694cd6b58d0ba14530f6b9ed08ee8eb328243c539edf6900de1d3"
+      },
+      "freezer-48": {
+        "key": "cp15_freezer_48",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/freezer/radio-48.webp",
+        "w": 48,
+        "h": 48,
+        "cols": 1,
+        "frames": 8,
+        "size": 48,
+        "baselines": [
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "sha256": "7d13a42b6529ea61b13b6580b71d4ba841f9b0e4836fc86ee2965dd603f08b84"
+      },
+      "freezer-64": {
+        "key": "cp15_freezer_64",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/freezer/radio-64.webp",
+        "w": 64,
+        "h": 64,
+        "cols": 1,
+        "frames": 8,
+        "size": 64,
+        "baselines": [
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64
+        ],
+        "sha256": "72fdbfb73c8d1f33a9c8c2932db99c0cfefc5df660693e1c6df438af35c38c8c"
+      },
+      "freezer-84": {
+        "key": "cp15_freezer_84",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/freezer/radio-84.webp",
+        "w": 84,
+        "h": 84,
+        "cols": 1,
+        "frames": 8,
+        "size": 84,
+        "baselines": [
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84
+        ],
+        "sha256": "94c98d42560ebab6e63b594e2f6bfb95a45b23321e0008e2edbdf31c1f2e81ff"
+      },
+      "freezer-96": {
+        "key": "cp15_freezer_96",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/freezer/radio-96.webp",
+        "w": 96,
+        "h": 96,
+        "cols": 1,
+        "frames": 8,
+        "size": 96,
+        "baselines": [
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96
+        ],
+        "sha256": "62a866afe5e19c1d7d467331ef720bb87751ba861bf1bc76c2cee942cf54eb38"
+      },
+      "yuri-48": {
+        "key": "cp15_yuri_48",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/yuri/radio-48.webp",
+        "w": 48,
+        "h": 48,
+        "cols": 1,
+        "frames": 8,
+        "size": 48,
+        "baselines": [
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "sha256": "ca933393fdc2be2c3b8fde9b3df9a98c122b29bca71d17609bc2f1006dbe4591"
+      },
+      "yuri-64": {
+        "key": "cp15_yuri_64",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/yuri/radio-64.webp",
+        "w": 64,
+        "h": 64,
+        "cols": 1,
+        "frames": 8,
+        "size": 64,
+        "baselines": [
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64
+        ],
+        "sha256": "5a02bd5392abd467c7c7e45a6af4ccd83dc93f5f01679c397272f03453814d91"
+      },
+      "yuri-84": {
+        "key": "cp15_yuri_84",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/yuri/radio-84.webp",
+        "w": 84,
+        "h": 84,
+        "cols": 1,
+        "frames": 8,
+        "size": 84,
+        "baselines": [
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84
+        ],
+        "sha256": "d558fa14df9f891410c51fd967cb7488b7a5a1790e2309ce20d7d50dc1b2bb09"
+      },
+      "yuri-96": {
+        "key": "cp15_yuri_96",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/yuri/radio-96.webp",
+        "w": 96,
+        "h": 96,
+        "cols": 1,
+        "frames": 8,
+        "size": 96,
+        "baselines": [
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96
+        ],
+        "sha256": "d91b6d8fc1bf80e5fb152a353d1325c54794cb690ea0827e268b203598086b95"
+      },
+      "maverick-48": {
+        "key": "cp15_maverick_48",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/maverick/radio-48.webp",
+        "w": 48,
+        "h": 48,
+        "cols": 1,
+        "frames": 8,
+        "size": 48,
+        "baselines": [
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "sha256": "8ee71dcdd94e1e083af0e449b45a07a7ed18933dedea7a020e4652d3c7808f9d"
+      },
+      "maverick-64": {
+        "key": "cp15_maverick_64",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/maverick/radio-64.webp",
+        "w": 64,
+        "h": 64,
+        "cols": 1,
+        "frames": 8,
+        "size": 64,
+        "baselines": [
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64
+        ],
+        "sha256": "1bc58e4a9a940c91444f095bb7cb9d7b4572e84ffaf7129a84c82a37d6be0769"
+      },
+      "maverick-84": {
+        "key": "cp15_maverick_84",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/maverick/radio-84.webp",
+        "w": 84,
+        "h": 84,
+        "cols": 1,
+        "frames": 8,
+        "size": 84,
+        "baselines": [
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84
+        ],
+        "sha256": "93dff83ac90e4941c454895e12ca901f7d94510c9370252fa32749a213c2438b"
+      },
+      "maverick-96": {
+        "key": "cp15_maverick_96",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/maverick/radio-96.webp",
+        "w": 96,
+        "h": 96,
+        "cols": 1,
+        "frames": 8,
+        "size": 96,
+        "baselines": [
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96
+        ],
+        "sha256": "811785e47ac0aa3a7d97c1176c84191fd6086bf4a2b621a6096de0c10073643d"
+      },
+      "falva-48": {
+        "key": "cp15_falva_48",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/falva/radio-48.webp",
+        "w": 48,
+        "h": 48,
+        "cols": 1,
+        "frames": 8,
+        "size": 48,
+        "baselines": [
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "sha256": "04692065c176c4f8350e408f0e56ecdf6b9120da3c95262807de27f07169a23d"
+      },
+      "falva-64": {
+        "key": "cp15_falva_64",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/falva/radio-64.webp",
+        "w": 64,
+        "h": 64,
+        "cols": 1,
+        "frames": 8,
+        "size": 64,
+        "baselines": [
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64
+        ],
+        "sha256": "6eb18225a134969faa47f35a85d9c28a40e34476319996fed6d3c0f179d19ab2"
+      },
+      "falva-84": {
+        "key": "cp15_falva_84",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/falva/radio-84.webp",
+        "w": 84,
+        "h": 84,
+        "cols": 1,
+        "frames": 8,
+        "size": 84,
+        "baselines": [
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84
+        ],
+        "sha256": "c1aeabd73efc89412ca553756d8dc3c4008568962fd0c71b988825bd3a494f4f"
+      },
+      "falva-96": {
+        "key": "cp15_falva_96",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/falva/radio-96.webp",
+        "w": 96,
+        "h": 96,
+        "cols": 1,
+        "frames": 8,
+        "size": 96,
+        "baselines": [
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96
+        ],
+        "sha256": "7c91b5e45e760d0a51d9d7b98d138a4a05baccc5de7b6c3fce2b81ee3c46b27d"
+      },
+      "lizzie-48": {
+        "key": "cp15_lizzie_48",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/lizzie/radio-48.webp",
+        "w": 48,
+        "h": 48,
+        "cols": 1,
+        "frames": 8,
+        "size": 48,
+        "baselines": [
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "sha256": "b0c135915569ab5df9873b371dbe2c32355da1f72b02f48b98f17ac2d45012cd"
+      },
+      "lizzie-64": {
+        "key": "cp15_lizzie_64",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/lizzie/radio-64.webp",
+        "w": 64,
+        "h": 64,
+        "cols": 1,
+        "frames": 8,
+        "size": 64,
+        "baselines": [
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64
+        ],
+        "sha256": "4850bbc5c220a684178e57caa5adbc4713cc5dea91c93dec60e1ac066cf626be"
+      },
+      "lizzie-84": {
+        "key": "cp15_lizzie_84",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/lizzie/radio-84.webp",
+        "w": 84,
+        "h": 84,
+        "cols": 1,
+        "frames": 8,
+        "size": 84,
+        "baselines": [
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84
+        ],
+        "sha256": "948b8d0668b80c7ac807d84406333f6edf4d4fae1a3ea69b31c97ec4d8ad757f"
+      },
+      "lizzie-96": {
+        "key": "cp15_lizzie_96",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/lizzie/radio-96.webp",
+        "w": 96,
+        "h": 96,
+        "cols": 1,
+        "frames": 8,
+        "size": 96,
+        "baselines": [
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96
+        ],
+        "sha256": "583aeef18986f82e32f9f1461ce7bcb89ef7431a2245de3fb894e41f825fc6b4"
+      },
+      "decker-48": {
+        "key": "cp15_decker_48",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/decker/radio-48.webp",
+        "w": 48,
+        "h": 48,
+        "cols": 1,
+        "frames": 8,
+        "size": 48,
+        "baselines": [
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "sha256": "cabeaaa07796ee33d37176c04981fd0775f3df02983b07e2ae3f1efb6ea5fe2d"
+      },
+      "decker-64": {
+        "key": "cp15_decker_64",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/decker/radio-64.webp",
+        "w": 64,
+        "h": 64,
+        "cols": 1,
+        "frames": 8,
+        "size": 64,
+        "baselines": [
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64
+        ],
+        "sha256": "0cd48a33530ce9e16ab72efcdbdce640faf35f6c74aed7d487086c6f7669e95a"
+      },
+      "decker-84": {
+        "key": "cp15_decker_84",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/decker/radio-84.webp",
+        "w": 84,
+        "h": 84,
+        "cols": 1,
+        "frames": 8,
+        "size": 84,
+        "baselines": [
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84
+        ],
+        "sha256": "ad45c74ae53cd22552cdc380bb8bee4d09314b0afc5d278c4fcad60d85a8482b"
+      },
+      "decker-96": {
+        "key": "cp15_decker_96",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/decker/radio-96.webp",
+        "w": 96,
+        "h": 96,
+        "cols": 1,
+        "frames": 8,
+        "size": 96,
+        "baselines": [
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96
+        ],
+        "sha256": "bef7feea74f0921c934f78e65048cca613c93ba8782720d547a9bf610459be7a"
+      },
+      "juggernaut-48": {
+        "key": "cp15_juggernaut_48",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/juggernaut/radio-48.webp",
+        "w": 48,
+        "h": 48,
+        "cols": 1,
+        "frames": 8,
+        "size": 48,
+        "baselines": [
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "sha256": "ea7a929955c8d25aee95a0a94e0ab0796be77a135f73d148b586c9eb8983038c"
+      },
+      "juggernaut-64": {
+        "key": "cp15_juggernaut_64",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/juggernaut/radio-64.webp",
+        "w": 64,
+        "h": 64,
+        "cols": 1,
+        "frames": 8,
+        "size": 64,
+        "baselines": [
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64,
+          64
+        ],
+        "sha256": "03fa261fe71907f1c5ee87c984acceea1553474e6ce9c50c9a685f41360b85dd"
+      },
+      "juggernaut-84": {
+        "key": "cp15_juggernaut_84",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/juggernaut/radio-84.webp",
+        "w": 84,
+        "h": 84,
+        "cols": 1,
+        "frames": 8,
+        "size": 84,
+        "baselines": [
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84,
+          84
+        ],
+        "sha256": "54dae69ddcd985cdc560fd74c6c28da7f1c2b0ebc28a996afcb4b72d447eebc6"
+      },
+      "juggernaut-96": {
+        "key": "cp15_juggernaut_96",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/juggernaut/radio-96.webp",
+        "w": 96,
+        "h": 96,
+        "cols": 1,
+        "frames": 8,
+        "size": 96,
+        "baselines": [
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96,
+          96
+        ],
+        "sha256": "053daaeb2ddd764f340addad8a914024fd887e543d43f827f8695a855088f1e0"
+      }
+    },
+    "poses": [
+      "idle",
+      "A",
+      "E",
+      "O",
+      "U",
+      "FV",
+      "small",
+      "blink"
+    ],
+    "generator": "built-in image_gen",
+    "normalization": "Shared-scale sprite-pipeline normalization, registered upper-face anchor, neutral cabin/body lock outside generated mouth/eye regions."
+  },
+  "styleReference": "FP5_ART.banks[\"talk-zoom-decker\"] frame 0",
+  "rules": "Approved original cockpit identity, clean newer comic dialogue style; no SpriteCook. Mouth/eyes generated together per full sheet, then aligned to a fixed neutral cabin/body. Three opaque-aviator blink slots intentionally repeat idle."
+}

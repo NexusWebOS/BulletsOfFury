@@ -1,0 +1,3261 @@
+{
+  "date": "2026-11-15",
+  "project": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+  "scope": "Original BOF Stage6 branch/cinematic/map implementation. Native scripted checkpoints and terminal-damage integration, not unassisted campaign wins or difficulty balance certification.",
+  "native": {
+    "checks": [
+      {
+        "name": "all requested source keys exist",
+        "ok": true,
+        "data": []
+      },
+      {
+        "name": "STRM targets Stage6 and BASE4 preserves airbase code",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "both unique medals are in achievement gallery",
+        "ok": true,
+        "data": [
+          {
+            "id": "crossed_fate",
+            "title": "Crossed Fate",
+            "desc": "Defeated the Storm Cannon Boss on Furious Difficulty"
+          },
+          {
+            "id": "road_not_taken",
+            "title": "Road Not Taken",
+            "desc": "Defeated the Rebel Fighters on Furious Difficulty"
+          }
+        ]
+      },
+      {
+        "name": "normal left resolves actual route boss",
+        "ok": true,
+        "data": {
+          "defeated": "harrier",
+          "difficulty": "normal",
+          "target": "rebels",
+          "route": "right",
+          "furious": false,
+          "crash": false,
+          "escape": false,
+          "award": null,
+          "message": ""
+        }
+      },
+      {
+        "name": "normal left dialogue removes stopping-orders plot",
+        "ok": true,
+        "data": [
+          {
+            "id": "B601",
+            "text": "Cole, looks like we toned down the chaos, but we still have Rebel Fighters heading to the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-02",
+            "text": "Good work, Fury Fighters. The skies are clearing. Keep those contacts in sight.",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-03",
+            "text": "Still on your wing. We are ready when you are.",
+            "who": "FREEZER"
+          },
+          {
+            "id": "POST6-04",
+            "text": "Harrier is down. Rebel Fighters is still heading for the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-05",
+            "text": "Mark the city contact. What else is on the radar?",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-06",
+            "text": "A high-level threat under the city. Close to the riverbank. Let me narrow it down.",
+            "who": "DECKER"
+          }
+        ]
+      },
+      {
+        "name": "normal left finale leaves next destination open",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "normal right resolves actual route boss",
+        "ok": true,
+        "data": {
+          "defeated": "rebels",
+          "difficulty": "normal",
+          "target": "harrier",
+          "route": "left",
+          "furious": false,
+          "crash": false,
+          "escape": false,
+          "award": null,
+          "message": ""
+        }
+      },
+      {
+        "name": "normal right dialogue removes stopping-orders plot",
+        "ok": true,
+        "data": [
+          {
+            "id": "B601",
+            "text": "Cole, looks like we toned down the chaos, but we still have Harrier heading to the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-02",
+            "text": "Good work, Fury Fighters. The skies are clearing. Keep those contacts in sight.",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-03",
+            "text": "Still on your wing. We are ready when you are.",
+            "who": "FREEZER"
+          },
+          {
+            "id": "POST6-04",
+            "text": "Rebel Fighters is down. Harrier is still heading for the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-05",
+            "text": "Mark the city contact. What else is on the radar?",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-06",
+            "text": "A high-level threat under the city. Close to the riverbank. Let me narrow it down.",
+            "who": "DECKER"
+          }
+        ]
+      },
+      {
+        "name": "normal right finale leaves next destination open",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard left resolves actual route boss",
+        "ok": true,
+        "data": {
+          "defeated": "harrier",
+          "difficulty": "hard",
+          "target": "rebels",
+          "route": "right",
+          "furious": false,
+          "crash": false,
+          "escape": false,
+          "award": null,
+          "message": ""
+        }
+      },
+      {
+        "name": "hard left dialogue removes stopping-orders plot",
+        "ok": true,
+        "data": [
+          {
+            "id": "B601",
+            "text": "Cole, looks like we toned down the chaos, but we still have Rebel Fighters heading to the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-02",
+            "text": "Good work, Fury Fighters. The skies are clearing. Keep those contacts in sight.",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-03",
+            "text": "Still on your wing. We are ready when you are.",
+            "who": "FREEZER"
+          },
+          {
+            "id": "POST6-04",
+            "text": "Harrier is down. Rebel Fighters is still heading for the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-05",
+            "text": "Mark the city contact. What else is on the radar?",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-06",
+            "text": "A high-level threat under the city. Close to the riverbank. Let me narrow it down.",
+            "who": "DECKER"
+          }
+        ]
+      },
+      {
+        "name": "hard left finale leaves next destination open",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard right resolves actual route boss",
+        "ok": true,
+        "data": {
+          "defeated": "rebels",
+          "difficulty": "hard",
+          "target": "harrier",
+          "route": "left",
+          "furious": false,
+          "crash": false,
+          "escape": false,
+          "award": null,
+          "message": ""
+        }
+      },
+      {
+        "name": "hard right dialogue removes stopping-orders plot",
+        "ok": true,
+        "data": [
+          {
+            "id": "B601",
+            "text": "Cole, looks like we toned down the chaos, but we still have Harrier heading to the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-02",
+            "text": "Good work, Fury Fighters. The skies are clearing. Keep those contacts in sight.",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-03",
+            "text": "Still on your wing. We are ready when you are.",
+            "who": "FREEZER"
+          },
+          {
+            "id": "POST6-04",
+            "text": "Rebel Fighters is down. Harrier is still heading for the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-05",
+            "text": "Mark the city contact. What else is on the radar?",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-06",
+            "text": "A high-level threat under the city. Close to the riverbank. Let me narrow it down.",
+            "who": "DECKER"
+          }
+        ]
+      },
+      {
+        "name": "hard right finale leaves next destination open",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious left resolves actual route boss",
+        "ok": true,
+        "data": {
+          "defeated": "storm",
+          "difficulty": "furious",
+          "target": "rebels",
+          "route": "right",
+          "furious": true,
+          "crash": true,
+          "escape": false,
+          "award": "crossed_fate",
+          "message": "Play Stage 6 via password STRM on hard to face the harrier!"
+        }
+      },
+      {
+        "name": "furious left dialogue removes stopping-orders plot",
+        "ok": true,
+        "data": [
+          {
+            "id": "B601",
+            "text": "Cole, looks like we toned down the chaos, but we still have the Harrier and the Rebel Fighters heading to the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-02",
+            "text": "Good work, Fury Fighters. The skies are clearing. Keep those contacts in sight.",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-03",
+            "text": "Still on your wing. We are ready when you are.",
+            "who": "FREEZER"
+          },
+          {
+            "id": "POST6-04",
+            "text": "Storm Cannon is down. The Harrier is moving fast, and the Rebel Fighters are closing on the city too.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-05",
+            "text": "Mark the city contact. What else is on the radar?",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-06",
+            "text": "A high-level threat under the city. Close to the riverbank. Let me narrow it down.",
+            "who": "DECKER"
+          }
+        ]
+      },
+      {
+        "name": "furious left finale leaves next destination open",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious right resolves actual route boss",
+        "ok": true,
+        "data": {
+          "defeated": "rebels",
+          "difficulty": "furious",
+          "target": "harrier",
+          "route": "left",
+          "furious": true,
+          "crash": false,
+          "escape": true,
+          "award": "road_not_taken",
+          "message": "You let the storm cannon get away! use password STRM on furious for a second chance at redemption!"
+        }
+      },
+      {
+        "name": "furious right dialogue removes stopping-orders plot",
+        "ok": true,
+        "data": [
+          {
+            "id": "B601",
+            "text": "Cole, looks like we toned down the chaos, but we still have Harrier heading to the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-02",
+            "text": "Good work, Fury Fighters. The skies are clearing. Keep those contacts in sight.",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-03",
+            "text": "Still on your wing. We are ready when you are.",
+            "who": "FREEZER"
+          },
+          {
+            "id": "POST6-04",
+            "text": "The Storm Cannon is breaking away to the west. The Harrier is still heading for the city.",
+            "who": "DECKER"
+          },
+          {
+            "id": "POST6-05",
+            "text": "Mark the city contact. What else is on the radar?",
+            "who": "COLE"
+          },
+          {
+            "id": "POST6-06",
+            "text": "A high-level threat under the city. Close to the riverbank. Let me narrow it down.",
+            "who": "DECKER"
+          }
+        ]
+      },
+      {
+        "name": "furious right finale leaves next destination open",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "storm map aftermath completes and unlocks choice",
+        "ok": true,
+        "data": {
+          "state": "stagesel",
+          "boot": 0,
+          "elapsed": 14.333333333332911,
+          "receipt": {
+            "defeated": "storm",
+            "difficulty": "furious",
+            "target": "rebels",
+            "route": "right",
+            "furious": true,
+            "crash": true,
+            "escape": false,
+            "award": "crossed_fate",
+            "message": "Play Stage 6 via password STRM on hard to face the harrier!",
+            "version": 1,
+            "id": "native-probe-storm",
+            "verified": false,
+            "pilot": "cole",
+            "crew": [
+              "cole",
+              "maverick",
+              "freezer",
+              "yuri",
+              "falva"
+            ],
+            "elapsed": 14.333333333332911,
+            "transitSeen": true,
+            "messageSeen": true,
+            "awardNotified": false
+          },
+          "last": {
+            "kind": "map",
+            "time": 8.416666666666556,
+            "defeated": "storm",
+            "target": "rebels",
+            "ships": [
+              {
+                "kind": "harrier",
+                "x": 238.73958333519812,
+                "y": 136.46929906589662,
+                "crashing": true,
+                "age": 3.2166666666665558
+              },
+              {
+                "kind": "rebel",
+                "pilot": "voss_iron_vulture",
+                "x": 214.53958333519813,
+                "y": 91.3692990658966
+              },
+              {
+                "kind": "rebel",
+                "pilot": "nyx_ghostknife",
+                "x": 226.63958333519813,
+                "y": 86.96929906589662
+              },
+              {
+                "kind": "rebel",
+                "pilot": "rook_breachhammer",
+                "x": 238.73958333519812,
+                "y": 82.56929906589662
+              },
+              {
+                "kind": "rebel",
+                "pilot": "kaia_signal_wraith",
+                "x": 250.8395833351981,
+                "y": 86.96929906589662
+              },
+              {
+                "kind": "rebel",
+                "pilot": "jace_razorjack",
+                "x": 262.9395833351981,
+                "y": 91.3692990658966
+              }
+            ],
+            "city": {
+              "x": 238.73958333519812,
+              "y": 105.66929906589662
+            }
+          },
+          "message": {
+            "text": "Play Stage 6 via password STRM on hard to face the harrier!",
+            "shown": 200,
+            "alpha": 0.003016591252539878
+          },
+          "award": null,
+          "cam": {
+            "x": 1142.500102164332,
+            "y": 1345.0000271048232,
+            "z": 0.20508473804217617
+          },
+          "unlocked": false
+        }
+      },
+      {
+        "name": "storm preview cannot grant a real-clear achievement",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "Storm victory visibly sends Harrier into crash",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "Storm route shows requested Hard password message",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "storm receipt survives save/load",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "rebels map aftermath completes and unlocks choice",
+        "ok": true,
+        "data": {
+          "state": "stagesel",
+          "boot": 0,
+          "elapsed": 11.900000000000693,
+          "receipt": {
+            "defeated": "rebels",
+            "difficulty": "furious",
+            "target": "harrier",
+            "route": "left",
+            "furious": true,
+            "crash": false,
+            "escape": true,
+            "award": "road_not_taken",
+            "message": "You let the storm cannon get away! use password STRM on furious for a second chance at redemption!",
+            "version": 1,
+            "id": "native-probe-rebels",
+            "verified": false,
+            "pilot": "cole",
+            "crew": [
+              "cole",
+              "maverick",
+              "freezer",
+              "yuri",
+              "falva"
+            ],
+            "elapsed": 11.900000000000693,
+            "transitSeen": true,
+            "messageSeen": true,
+            "awardNotified": false
+          },
+          "last": {
+            "kind": "map",
+            "time": 4.80000000000034,
+            "defeated": "rebels",
+            "target": "harrier",
+            "ships": [
+              {
+                "pilot": "cole",
+                "x": 217.6296875,
+                "y": 199.19244523066396
+              },
+              {
+                "pilot": "maverick",
+                "x": 230.2796875,
+                "y": 194.79244523066396
+              },
+              {
+                "pilot": "freezer",
+                "x": 242.9296875,
+                "y": 190.39244523066395
+              },
+              {
+                "pilot": "yuri",
+                "x": 255.5796875,
+                "y": 194.79244523066396
+              },
+              {
+                "pilot": "falva",
+                "x": 268.2296875,
+                "y": 199.19244523066396
+              },
+              {
+                "kind": "harrier",
+                "x": 242.9296875,
+                "y": 155.74244523066395
+              }
+            ],
+            "city": {
+              "x": 242.9296875,
+              "y": 165.64244523066395
+            }
+          },
+          "message": {
+            "text": "You let the storm cannon get away! use password STRM on furious for a second chance at redemption!",
+            "shown": 238,
+            "alpha": 0.024132730014023888
+          },
+          "award": null,
+          "cam": {
+            "x": 1142.5000043986054,
+            "y": 1344.9999979809681,
+            "z": 0.2050847449176293
+          },
+          "unlocked": false
+        }
+      },
+      {
+        "name": "rebels preview cannot grant a real-clear achievement",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "Rebel victory sends Storm west and leaves Harrier for city",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "rebels receipt survives save/load",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "harrier map aftermath completes and unlocks choice",
+        "ok": true,
+        "data": {
+          "state": "stagesel",
+          "boot": 0,
+          "elapsed": 4.800000000000223,
+          "receipt": {
+            "defeated": "harrier",
+            "difficulty": "furious",
+            "target": "rebels",
+            "route": "right",
+            "furious": true,
+            "crash": false,
+            "escape": false,
+            "award": null,
+            "message": "",
+            "version": 1,
+            "id": "native-probe-harrier",
+            "verified": false,
+            "pilot": "cole",
+            "crew": [
+              "cole",
+              "maverick",
+              "freezer",
+              "yuri",
+              "falva"
+            ],
+            "elapsed": 4.800000000000223,
+            "transitSeen": true,
+            "messageSeen": true,
+            "awardNotified": false
+          },
+          "last": {
+            "kind": "map",
+            "time": 4.800000000000223,
+            "defeated": "harrier",
+            "target": "rebels",
+            "ships": [
+              {
+                "pilot": "cole",
+                "x": 213.4396055492261,
+                "y": 138.27615471468206
+              },
+              {
+                "pilot": "maverick",
+                "x": 226.0896055492261,
+                "y": 133.87615471468206
+              },
+              {
+                "pilot": "freezer",
+                "x": 238.7396055492261,
+                "y": 129.47615471468205
+              },
+              {
+                "pilot": "yuri",
+                "x": 251.3896055492261,
+                "y": 133.87615471468206
+              },
+              {
+                "pilot": "falva",
+                "x": 264.0396055492261,
+                "y": 138.27615471468206
+              },
+              {
+                "kind": "rebel",
+                "pilot": "voss_iron_vulture",
+                "x": 214.5396055492261,
+                "y": 90.42615471468207
+              },
+              {
+                "kind": "rebel",
+                "pilot": "nyx_ghostknife",
+                "x": 226.6396055492261,
+                "y": 86.02615471468206
+              },
+              {
+                "kind": "rebel",
+                "pilot": "rook_breachhammer",
+                "x": 238.7396055492261,
+                "y": 81.62615471468206
+              },
+              {
+                "kind": "rebel",
+                "pilot": "kaia_signal_wraith",
+                "x": 250.8396055492261,
+                "y": 86.02615471468206
+              },
+              {
+                "kind": "rebel",
+                "pilot": "jace_razorjack",
+                "x": 262.9396055492261,
+                "y": 90.42615471468207
+              }
+            ],
+            "city": {
+              "x": 238.7396055492261,
+              "y": 104.72615471468205
+            }
+          },
+          "message": {
+            "text": "You let the storm cannon get away! use password STRM on furious for a second chance at redemption!",
+            "shown": 238,
+            "alpha": 0.024132730014023888
+          },
+          "award": null,
+          "cam": {
+            "x": 1632.4998764370616,
+            "y": 1474.9987073415698,
+            "z": 0.16805536215843545
+          },
+          "unlocked": false
+        }
+      },
+      {
+        "name": "harrier preview cannot grant a real-clear achievement",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "harrier receipt survives save/load",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "no native browser/console/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "integration": {
+    "checks": [
+      {
+        "name": "native STRM submit enters difficulty selection for Stage6",
+        "ok": true,
+        "data": {
+          "stage": 6,
+          "state": "diff",
+          "passwordDifficulty": true
+        }
+      },
+      {
+        "name": "native BASE4 submit preserves Stage4 access",
+        "ok": true,
+        "data": {
+          "stage": 4,
+          "state": "diff"
+        }
+      },
+      {
+        "name": "Furious left route spawns actual modular Storm Cannon",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "actual protected core resists early damage",
+        "ok": true,
+        "data": {
+          "old": 1522,
+          "after": 1522,
+          "hit": 0
+        }
+      },
+      {
+        "name": "all six native module pools must fall before core opens",
+        "ok": true,
+        "data": {
+          "calls": [
+            {
+              "id": "gun0",
+              "hp": 0,
+              "hits": 2
+            },
+            {
+              "id": "gun1",
+              "hp": 0,
+              "hits": 2
+            },
+            {
+              "id": "gun2",
+              "hp": 0,
+              "hits": 2
+            },
+            {
+              "id": "gun3",
+              "hp": 0,
+              "hits": 2
+            },
+            {
+              "id": "pressure0",
+              "hp": 0,
+              "hits": 2
+            },
+            {
+              "id": "pressure1",
+              "hp": 0,
+              "hits": 2
+            }
+          ],
+          "open": true,
+          "core": 1522,
+          "total": 1522
+        }
+      },
+      {
+        "name": "native core defeat records verified Storm victory exactly once",
+        "ok": true,
+        "data": {
+          "core": 0,
+          "hp": 0,
+          "dead": true,
+          "defeat": {
+            "defeated": "storm",
+            "difficulty": "furious",
+            "verified": true
+          },
+          "events": [
+            {
+              "event": "native-defeat",
+              "kind": "storm",
+              "difficulty": "furious"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Storm achievement stays locked before map arrival",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "native settlement grants its bonus once and creates one receipt",
+        "ok": true,
+        "data": {
+          "score": 12500,
+          "receipt": {
+            "defeated": "storm",
+            "difficulty": "furious",
+            "target": "rebels",
+            "route": "right",
+            "furious": true,
+            "crash": true,
+            "escape": false,
+            "award": "crossed_fate",
+            "message": "Play Stage 6 via password STRM on hard to face the harrier!",
+            "version": 1,
+            "id": "stage6-1794765322753-storm",
+            "verified": true,
+            "pilot": "cole",
+            "crew": [
+              "cole",
+              "decker",
+              "axel",
+              "falva",
+              "yuri"
+            ],
+            "elapsed": 0,
+            "transitSeen": false,
+            "messageSeen": false,
+            "awardNotified": false
+          },
+          "state": "cutscene"
+        }
+      },
+      {
+        "name": "all native post6 beats reach the map without replacing continuation",
+        "ok": true,
+        "data": {
+          "state": "stagesel",
+          "shot": null,
+          "receipt": {
+            "defeated": "storm",
+            "difficulty": "furious",
+            "target": "rebels",
+            "route": "right",
+            "furious": true,
+            "crash": true,
+            "escape": false,
+            "award": "crossed_fate",
+            "message": "Play Stage 6 via password STRM on hard to face the harrier!",
+            "version": 1,
+            "id": "stage6-1794765322753-storm",
+            "verified": true,
+            "pilot": "cole",
+            "crew": [
+              "cole",
+              "decker",
+              "axel",
+              "falva",
+              "yuri"
+            ],
+            "elapsed": 20.816666666672972,
+            "transitSeen": true,
+            "messageSeen": true,
+            "awardNotified": true
+          },
+          "award": {
+            "id": "crossed_fate",
+            "title": "Crossed Fate",
+            "desc": "Defeated the Storm Cannon Boss on Furious Difficulty",
+            "icon": "fate15_crossed_fate",
+            "time": 6.483333333335278
+          },
+          "message": {
+            "text": "Play Stage 6 via password STRM on hard to face the harrier!",
+            "shown": 200,
+            "alpha": 0.003016591245617552
+          }
+        }
+      },
+      {
+        "name": "map displays password then generated Crossed Fate card",
+        "ok": true,
+        "data": {
+          "state": "stagesel",
+          "shot": null,
+          "receipt": {
+            "defeated": "storm",
+            "difficulty": "furious",
+            "target": "rebels",
+            "route": "right",
+            "furious": true,
+            "crash": true,
+            "escape": false,
+            "award": "crossed_fate",
+            "message": "Play Stage 6 via password STRM on hard to face the harrier!",
+            "version": 1,
+            "id": "stage6-1794765322753-storm",
+            "verified": true,
+            "pilot": "cole",
+            "crew": [
+              "cole",
+              "decker",
+              "axel",
+              "falva",
+              "yuri"
+            ],
+            "elapsed": 20.816666666672972,
+            "transitSeen": true,
+            "messageSeen": true,
+            "awardNotified": true
+          },
+          "award": {
+            "id": "crossed_fate",
+            "title": "Crossed Fate",
+            "desc": "Defeated the Storm Cannon Boss on Furious Difficulty",
+            "icon": "fate15_crossed_fate",
+            "time": 6.483333333335278
+          },
+          "message": {
+            "text": "Play Stage 6 via password STRM on hard to face the harrier!",
+            "shown": 200,
+            "alpha": 0.003016591245617552
+          }
+        }
+      },
+      {
+        "name": "route award grants exactly200 points once",
+        "ok": true,
+        "data": {
+          "before": 500,
+          "after": 700
+        }
+      },
+      {
+        "name": "recorded route and map progress persist in native autosave",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "award survives profile reload without duplicate points",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "Furious city left pursuit retains native Harrier",
+        "ok": true,
+        "data": {
+          "state": "play",
+          "stage": 6,
+          "city": "left",
+          "kind": "warhive",
+          "storm": false,
+          "receipt": "storm",
+          "intro": null,
+          "route": null,
+          "ready": false,
+          "scene": null,
+          "load": {
+            "ready": true,
+            "progress": 1,
+            "loaded": 2050,
+            "failed": 0,
+            "total": 2050
+          }
+        }
+      },
+      {
+        "name": "city launch does not rewrite original Stage6 outcome",
+        "ok": true,
+        "data": {
+          "state": "play",
+          "stage": 6,
+          "city": "left",
+          "kind": "warhive",
+          "storm": false,
+          "receipt": "storm",
+          "intro": null,
+          "route": null,
+          "ready": false,
+          "scene": null,
+          "load": {
+            "ready": true,
+            "progress": 1,
+            "loaded": 2050,
+            "failed": 0,
+            "total": 2050
+          }
+        }
+      },
+      {
+        "name": "Furious overflight shows Harrier leading Storm Cannon",
+        "ok": true,
+        "data": {
+          "kind": "overflight",
+          "passes": [
+            {
+              "name": "harrier_nw",
+              "frame": 0,
+              "u": 0.8387096774193549,
+              "x": -10.459188345473649,
+              "y": -135.17910509885564,
+              "w": 648
+            },
+            {
+              "name": "storm_nw",
+              "frame": 7,
+              "u": 0.26976744186046514,
+              "x": 772.4028645970794,
+              "y": 604.6505428664143,
+              "w": 552
+            }
+          ]
+        }
+      },
+      {
+        "name": "no native page/console/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "rebels": {
+    "checks": [
+      {
+        "name": "five native Rebel ships are defeated through damage owner",
+        "ok": true,
+        "data": {
+          "kind": "rebelsquad",
+          "hp": 0,
+          "dead": false,
+          "ships": [
+            {
+              "key": "voss",
+              "hp": 0,
+              "dead": true,
+              "shield": 0,
+              "hits": 1
+            },
+            {
+              "key": "nyx",
+              "hp": 0,
+              "dead": true,
+              "shield": 0,
+              "hits": 1
+            },
+            {
+              "key": "rook",
+              "hp": 0,
+              "dead": true,
+              "shield": 0,
+              "hits": 1
+            },
+            {
+              "key": "kaia",
+              "hp": 0,
+              "dead": true,
+              "shield": 0,
+              "hits": 2
+            },
+            {
+              "key": "jace",
+              "hp": 0,
+              "dead": true,
+              "shield": 0,
+              "hits": 2
+            }
+          ],
+          "scene": null,
+          "defeat": {
+            "defeated": "rebels",
+            "difficulty": "furious",
+            "verified": true
+          },
+          "reveal": [
+            {
+              "event": "retina-reveal",
+              "time": 0.016666666666666666
+            }
+          ]
+        }
+      },
+      {
+        "name": "verified Rebel outcome comes from native terminal callback",
+        "ok": true,
+        "data": {
+          "defeated": "rebels",
+          "difficulty": "furious",
+          "verified": true
+        }
+      },
+      {
+        "name": "Road Not Taken remains locked before the campaign map",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "native result routes Harrier to city and Storm west",
+        "ok": true,
+        "data": {
+          "defeated": "rebels",
+          "difficulty": "furious",
+          "target": "harrier",
+          "route": "left",
+          "furious": true,
+          "crash": false,
+          "escape": true,
+          "award": "road_not_taken",
+          "message": "You let the storm cannon get away! use password STRM on furious for a second chance at redemption!",
+          "version": 1,
+          "id": "stage6-1794765377233-rebels",
+          "verified": true,
+          "pilot": "cole",
+          "crew": [
+            "cole",
+            "decker",
+            "axel",
+            "falva",
+            "yuri"
+          ],
+          "elapsed": 18.333333333338075,
+          "transitSeen": true,
+          "messageSeen": true,
+          "awardNotified": true
+        }
+      },
+      {
+        "name": "exact Furious redemption password is written and faded",
+        "ok": true,
+        "data": {
+          "text": "You let the storm cannon get away! use password STRM on furious for a second chance at redemption!",
+          "shown": 238,
+          "alpha": 0.024132730010807315
+        }
+      },
+      {
+        "name": "generated Rebel victory medal appears only on map",
+        "ok": true,
+        "data": {
+          "id": "road_not_taken",
+          "title": "Road Not Taken",
+          "desc": "Defeated the Rebel Fighters on Furious Difficulty",
+          "icon": "fate15_road_not_taken",
+          "time": 6.483333333335278
+        }
+      },
+      {
+        "name": "only correct route achievement unlocks once",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "west escape and Harrier city target survive load",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "no page console HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "routeInput": {
+    "scope": "Prepared native choice, actual Chromium pointer click, complete native campaign route briefing/callback, then actual boss spawn. No controller hardware claim.",
+    "checks": [
+      {
+        "name": "hard left pursuit label matches difficulty",
+        "ok": true,
+        "data": {
+          "left": "HARRIER",
+          "right": "ROUGH RIDERS",
+          "selected": "left"
+        }
+      },
+      {
+        "name": "hard left real pointer opens the native route briefing",
+        "ok": true,
+        "data": {
+          "route": null,
+          "scene": "route-left",
+          "lines": [
+            "The Harrier is heading left. That carrier can keep launching fighters until we bring it down.",
+            "I am taking the carrier. Keep the rebels on radar.",
+            "If they escape this fight, we can pursue their Stage X contacts at the central core. Choose two wingmen when you go.",
+            "Understood. Fury flight, split formation. Left wing, on me."
+          ]
+        }
+      },
+      {
+        "name": "hard route briefing names actual left boss",
+        "ok": true,
+        "data": {
+          "route": null,
+          "scene": "route-left",
+          "lines": [
+            "The Harrier is heading left. That carrier can keep launching fighters until we bring it down.",
+            "I am taking the carrier. Keep the rebels on radar.",
+            "If they escape this fight, we can pursue their Stage X contacts at the central core. Choose two wingmen when you go.",
+            "Understood. Fury flight, split formation. Left wing, on me."
+          ]
+        }
+      },
+      {
+        "name": "hard left native route spawns correct actual encounter",
+        "ok": true,
+        "data": {
+          "kind": "warhive",
+          "model": null,
+          "rebels": false,
+          "harrier": true,
+          "city": null
+        }
+      },
+      {
+        "name": "hard left briefing callback commits pursuit",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard right pursuit label matches difficulty",
+        "ok": true,
+        "data": {
+          "left": "HARRIER",
+          "right": "ROUGH RIDERS",
+          "selected": "left"
+        }
+      },
+      {
+        "name": "hard right real pointer opens the native route briefing",
+        "ok": true,
+        "data": {
+          "route": null,
+          "scene": "route-right",
+          "lines": [
+            "Right side: Voss and his old unit. They took the gear from our forward depot.",
+            "They called us the Fury crew like we were strangers. What happened to them?",
+            "HotWire and Phoenix warned us before their last mission. Neither has checked in since.",
+            "Then we get answers here. Right wing, on me."
+          ]
+        }
+      },
+      {
+        "name": "hard right native route spawns correct actual encounter",
+        "ok": true,
+        "data": {
+          "kind": "rebelsquad",
+          "model": null,
+          "rebels": true,
+          "harrier": false,
+          "city": null
+        }
+      },
+      {
+        "name": "hard right briefing callback commits pursuit",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious left pursuit label matches difficulty",
+        "ok": true,
+        "data": {
+          "left": "STORM CANNON",
+          "right": "ROUGH RIDERS",
+          "selected": "left"
+        }
+      },
+      {
+        "name": "furious left real pointer opens the native route briefing",
+        "ok": true,
+        "data": {
+          "route": null,
+          "scene": "route-left",
+          "lines": [
+            "The Storm Cannon is breaking left. Its batteries are still active. The Harrier is heading for the city.",
+            "I am taking Storm Cannon. Keep the Harrier and the Rebels on radar.",
+            "We will mark the surviving contacts at the city. Choose two wingmen if you pursue them.",
+            "Fury Fighters, split formation. Left wing, on me."
+          ]
+        }
+      },
+      {
+        "name": "furious route briefing names actual left boss",
+        "ok": true,
+        "data": {
+          "route": null,
+          "scene": "route-left",
+          "lines": [
+            "The Storm Cannon is breaking left. Its batteries are still active. The Harrier is heading for the city.",
+            "I am taking Storm Cannon. Keep the Harrier and the Rebels on radar.",
+            "We will mark the surviving contacts at the city. Choose two wingmen if you pursue them.",
+            "Fury Fighters, split formation. Left wing, on me."
+          ]
+        }
+      },
+      {
+        "name": "furious left native route spawns correct actual encounter",
+        "ok": true,
+        "data": {
+          "kind": "thunderhead",
+          "model": "thunder",
+          "rebels": false,
+          "harrier": false,
+          "city": null
+        }
+      },
+      {
+        "name": "furious left briefing callback commits pursuit",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious right pursuit label matches difficulty",
+        "ok": true,
+        "data": {
+          "left": "STORM CANNON",
+          "right": "ROUGH RIDERS",
+          "selected": "left"
+        }
+      },
+      {
+        "name": "furious right real pointer opens the native route briefing",
+        "ok": true,
+        "data": {
+          "route": null,
+          "scene": "route-right",
+          "lines": [
+            "Right side: Voss and his old unit. They took the gear from our forward depot.",
+            "They called us the Fury crew like we were strangers. What happened to them?",
+            "HotWire and Phoenix warned us before their last mission. Neither has checked in since.",
+            "Then we get answers here. Right wing, on me."
+          ]
+        }
+      },
+      {
+        "name": "furious right native route spawns correct actual encounter",
+        "ok": true,
+        "data": {
+          "kind": "rebelsquad",
+          "model": null,
+          "rebels": true,
+          "harrier": false,
+          "city": null
+        }
+      },
+      {
+        "name": "furious right briefing callback commits pursuit",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "native logical route input has no page/console/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "sourceReproduction": {
+    "checks": [
+      {
+        "name": "storm_nw even cells and stable source pivot",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 0",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 0",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 1",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 1",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 2",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 2",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 3",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 3",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 4",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 4",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 5",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 5",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 6",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 6",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 7",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 7",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 8",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 8",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 9",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 9",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 10",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 10",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 11",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 11",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 12",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 12",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 13",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 13",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 14",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 14",
+        "ok": true
+      },
+      {
+        "name": "storm_nw source cell 15",
+        "ok": true
+      },
+      {
+        "name": "storm_nw registry cell 15",
+        "ok": true
+      },
+      {
+        "name": "fate15_storm_nw_0 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow even cells and stable source pivot",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 0",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 0",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 1",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 1",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 2",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 2",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 3",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 3",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 4",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 4",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 5",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 5",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 6",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 6",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 7",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 7",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 8",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 8",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 9",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 9",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 10",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 10",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 11",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 11",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 12",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 12",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 13",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 13",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 14",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 14",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow source cell 15",
+        "ok": true
+      },
+      {
+        "name": "storm_nw_shadow registry cell 15",
+        "ok": true
+      },
+      {
+        "name": "fate15_storm_nw_shadow_0 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "storm_w even cells and stable source pivot",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 0",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 0",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 1",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 1",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 2",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 2",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 3",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 3",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 4",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 4",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 5",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 5",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 6",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 6",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 7",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 7",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 8",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 8",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 9",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 9",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 10",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 10",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 11",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 11",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 12",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 12",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 13",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 13",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 14",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 14",
+        "ok": true
+      },
+      {
+        "name": "storm_w source cell 15",
+        "ok": true
+      },
+      {
+        "name": "storm_w registry cell 15",
+        "ok": true
+      },
+      {
+        "name": "fate15_storm_w_0 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow even cells and stable source pivot",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 0",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 0",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 1",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 1",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 2",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 2",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 3",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 3",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 4",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 4",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 5",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 5",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 6",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 6",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 7",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 7",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 8",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 8",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 9",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 9",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 10",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 10",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 11",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 11",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 12",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 12",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 13",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 13",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 14",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 14",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow source cell 15",
+        "ok": true
+      },
+      {
+        "name": "storm_w_shadow registry cell 15",
+        "ok": true
+      },
+      {
+        "name": "fate15_storm_w_shadow_0 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "harrier_nw even cells and stable source pivot",
+        "ok": true
+      },
+      {
+        "name": "harrier_nw source cell 0",
+        "ok": true
+      },
+      {
+        "name": "harrier_nw registry cell 0",
+        "ok": true
+      },
+      {
+        "name": "fate15_harrier_nw_0 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "harrier_nw_shadow even cells and stable source pivot",
+        "ok": true
+      },
+      {
+        "name": "harrier_nw_shadow source cell 0",
+        "ok": true
+      },
+      {
+        "name": "harrier_nw_shadow registry cell 0",
+        "ok": true
+      },
+      {
+        "name": "fate15_harrier_nw_shadow_0 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "harrier_north even cells and stable source pivot",
+        "ok": true
+      },
+      {
+        "name": "harrier_north source cell 0",
+        "ok": true
+      },
+      {
+        "name": "harrier_north registry cell 0",
+        "ok": true
+      },
+      {
+        "name": "fate15_harrier_north_0 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "harrier_north_shadow even cells and stable source pivot",
+        "ok": true
+      },
+      {
+        "name": "harrier_north_shadow source cell 0",
+        "ok": true
+      },
+      {
+        "name": "harrier_north_shadow registry cell 0",
+        "ok": true
+      },
+      {
+        "name": "fate15_harrier_north_shadow_0 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash even cells and stable source pivot",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 0",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 0",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 1",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 1",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 2",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 2",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 3",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 3",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 4",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 4",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 5",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 5",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 6",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 6",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 7",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 7",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 8",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 8",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 9",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 9",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 10",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 10",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 11",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 11",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 12",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 12",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 13",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 13",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 14",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 14",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 15",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 15",
+        "ok": true
+      },
+      {
+        "name": "fate15_harrier_crash_0 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 16",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 16",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 17",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 17",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 18",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 18",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 19",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 19",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 20",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 20",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 21",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 21",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 22",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 22",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 23",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 23",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 24",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 24",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 25",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 25",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 26",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 26",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 27",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 27",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 28",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 28",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 29",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 29",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 30",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 30",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 31",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 31",
+        "ok": true
+      },
+      {
+        "name": "fate15_harrier_crash_1 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 32",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 32",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 33",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 33",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 34",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 34",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 35",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 35",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 36",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 36",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 37",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 37",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 38",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 38",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 39",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 39",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 40",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 40",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 41",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 41",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 42",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 42",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 43",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 43",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 44",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 44",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 45",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 45",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 46",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 46",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash source cell 47",
+        "ok": true
+      },
+      {
+        "name": "harrier_crash registry cell 47",
+        "ok": true
+      },
+      {
+        "name": "fate15_harrier_crash_2 byte-for-byte reproduction",
+        "ok": true
+      },
+      {
+        "name": "crossed_fate exact generated-medal reproduction",
+        "ok": true
+      },
+      {
+        "name": "road_not_taken exact generated-medal reproduction",
+        "ok": true
+      },
+      {
+        "name": "registry reproduced byte-for-byte",
+        "ok": true
+      }
+    ],
+    "medalSource": [
+      1774,
+      887
+    ],
+    "medalSharedCrop": [
+      0,
+      4,
+      887,
+      887
+    ]
+  },
+  "moviesBrowser": {
+    "checks": [
+      {
+        "name": "split full geometry/duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 111.24
+        }
+      },
+      {
+        "name": "split: Two overhead aircraft decoded chapter",
+        "ok": true,
+        "data": 0.033333
+      },
+      {
+        "name": "split: Retained Rebel interception dialogue decoded chapter",
+        "ok": true,
+        "data": 4.033333
+      },
+      {
+        "name": "split: Storm Cannon or Rebel Fighters decoded chapter",
+        "ok": true,
+        "data": 91.2
+      },
+      {
+        "name": "split: Storm Cannon pursuit briefing decoded chapter",
+        "ok": true,
+        "data": 92.333333
+      },
+      {
+        "name": "split decoded audio",
+        "ok": true,
+        "data": 0.7509883642196655
+      },
+      {
+        "name": "split byte-range seeking",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "storm full geometry/duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 77.77
+        }
+      },
+      {
+        "name": "storm: The skies are clearing decoded chapter",
+        "ok": true,
+        "data": 0.033333
+      },
+      {
+        "name": "storm: Who escaped toward the city decoded chapter",
+        "ok": true,
+        "data": 16.733333
+      },
+      {
+        "name": "storm: Regroup and choose the next route decoded chapter",
+        "ok": true,
+        "data": 51.533333
+      },
+      {
+        "name": "storm: Harrier and Fury Fighters reach the city decoded chapter",
+        "ok": true,
+        "data": 56.066667
+      },
+      {
+        "name": "storm: Alternate-route password decoded chapter",
+        "ok": true,
+        "data": 64.766667
+      },
+      {
+        "name": "storm: Crossed Fate unlocked decoded chapter",
+        "ok": true,
+        "data": 70.666667
+      },
+      {
+        "name": "storm: Campaign map choices restored decoded chapter",
+        "ok": true,
+        "data": 77.133333
+      },
+      {
+        "name": "storm decoded audio",
+        "ok": true,
+        "data": 0.7353157997131348
+      },
+      {
+        "name": "storm byte-range seeking",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "rebels full geometry/duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 73.56
+        }
+      },
+      {
+        "name": "rebels: The skies are clearing decoded chapter",
+        "ok": true,
+        "data": 0.033333
+      },
+      {
+        "name": "rebels: Who escaped toward the city decoded chapter",
+        "ok": true,
+        "data": 15.233333
+      },
+      {
+        "name": "rebels: Regroup and choose the next route decoded chapter",
+        "ok": true,
+        "data": 49.366667
+      },
+      {
+        "name": "rebels: Storm Cannon escapes west decoded chapter",
+        "ok": true,
+        "data": 53.966667
+      },
+      {
+        "name": "rebels: Alternate-route password decoded chapter",
+        "ok": true,
+        "data": 59.366667
+      },
+      {
+        "name": "rebels: Road Not Taken unlocked decoded chapter",
+        "ok": true,
+        "data": 66.433333
+      },
+      {
+        "name": "rebels: Campaign map choices restored decoded chapter",
+        "ok": true,
+        "data": 72.933333
+      },
+      {
+        "name": "rebels decoded audio",
+        "ok": true,
+        "data": 0.7444781064987183
+      },
+      {
+        "name": "rebels byte-range seeking",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "both generated medals decoded",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "recording source hashes match installed build",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "split records all four native Storm pursuit briefing lines",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "storm all eleven post6 beats recorded",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "storm native map continuation once and right opponent saved",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "rebels all eleven post6 beats recorded",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "rebels native map continuation once and right opponent saved",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "no recording/review page/console/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "fullSuite": {
+    "passed": 8969,
+    "failed": 0,
+    "exitCode": 0,
+    "failingNames": [],
+    "baseline": "_shots/hq_swarm_1115/full-suite-final.log",
+    "baselineFailingNames": [],
+    "addedFailures": [],
+    "resolvedFailures": [],
+    "logSha256": "1d82fa0a288ddbd275f4539fd792c1ebdc4b4c4b62314402726497eecdb3b9de"
+  },
+  "core": {
+    "assets/game.js": {
+      "sha256": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+      "CRLF": 0,
+      "LF": 80366,
+      "loneLF": 80366
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "sha256": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "CRLF": 15900,
+      "LF": 15900,
+      "loneLF": 0
+    }
+  },
+  "recording": {
+    "source": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+    "pilot": "cole",
+    "difficulty": "furious",
+    "scope": "Real native Chromium cinematic checkpoints, not campaign wins. Split begins after the prepared Stage6 prelude. Storm and Rebel films start after scripted damage through the actual native damage/Retina/death owners; result confirmation then plays full post6 dialogue and the map aftermath without skips. Capture composites the visible native playfield and separate HUD canvases.",
+    "coreBefore": {
+      "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+      "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "assets/crossed_fate_1115.js": "9fd697365fba89d8cbfecf3c2c3bf417683ecbdaf5d085f5529086b255bb5159",
+      "assets/crossed_fate_art_1115.js": "e1c2f4e9ea43f10015e9f0acc5f42fa85dc123dc2c01288077cbd5011ed5840e",
+      "index.html": "dfcee927374bb5932f34058c175fc05b4e9fdd4052e50eb1c27a6e2215c11705"
+    },
+    "clips": [
+      {
+        "seconds": 111.42309999999404,
+        "frames": 6483,
+        "peak": 0.7583989500999451,
+        "stages": [
+          {
+            "tag": "play::::flyover",
+            "at": 0.01680000001192093
+          },
+          {
+            "tag": "play::::route-choice",
+            "at": 91.1375
+          },
+          {
+            "tag": "play:route-left:LINE-0::route-choice",
+            "at": 92.32659999999404
+          },
+          {
+            "tag": "play:route-left:LINE-1::route-choice",
+            "at": 97.56859999999403
+          },
+          {
+            "tag": "play:route-left:LINE-2::route-choice",
+            "at": 101.84080000001192
+          },
+          {
+            "tag": "play:route-left:LINE-3::route-choice",
+            "at": 106.65669999998808
+          },
+          {
+            "tag": "play::::route-choice",
+            "at": 110.51540000000595
+          }
+        ],
+        "part": "split",
+        "errors": [],
+        "shots": [
+          {
+            "tag": "play::::flyover",
+            "at": 0.7713000000119209,
+            "file": "split-sample-00.png"
+          },
+          {
+            "tag": "play::::route-choice",
+            "at": 91.88959999999403,
+            "file": "split-sample-01.png"
+          },
+          {
+            "tag": "play:route-left:LINE-0::route-choice",
+            "at": 93.0885,
+            "file": "split-sample-02.png"
+          },
+          {
+            "tag": "play:route-left:LINE-1::route-choice",
+            "at": 98.32130000001192,
+            "file": "split-sample-03.png"
+          },
+          {
+            "tag": "play:route-left:LINE-2::route-choice",
+            "at": 102.59330000001192,
+            "file": "split-sample-04.png"
+          },
+          {
+            "tag": "play:route-left:LINE-3::route-choice",
+            "at": 107.40880000001192,
+            "file": "split-sample-05.png"
+          }
+        ],
+        "end": {
+          "state": "play",
+          "receipt": null,
+          "choice": {
+            "left": "STORM CANNON",
+            "right": "ROUGH RIDERS",
+            "selected": "left"
+          },
+          "events": [
+            {
+              "event": "overflight",
+              "name": "harrier"
+            },
+            {
+              "event": "overflight",
+              "name": "storm"
+            }
+          ],
+          "points": 0
+        }
+      },
+      {
+        "seconds": 77.9115,
+        "frames": 4831,
+        "peak": 0.7135919332504272,
+        "stages": [
+          {
+            "tag": "cutscene:post-6:B601::",
+            "at": 0.018100000023841857
+          },
+          {
+            "tag": "cutscene:post-6:POST6-02::",
+            "at": 7.488200000017882
+          },
+          {
+            "tag": "cutscene:post-6:POST6-03::",
+            "at": 12.99240000000596
+          },
+          {
+            "tag": "cutscene:post-6:POST6-04::",
+            "at": 16.68880000001192
+          },
+          {
+            "tag": "cutscene:post-6:POST6-05::",
+            "at": 23.409600000023843
+          },
+          {
+            "tag": "cutscene:post-6:POST6-06::",
+            "at": 27.265100000023843
+          },
+          {
+            "tag": "cutscene:post-6:POST6-07::",
+            "at": 32.928700000017884
+          },
+          {
+            "tag": "cutscene:post-6:POST6-08::",
+            "at": 36.178
+          },
+          {
+            "tag": "cutscene:post-6:POST6-09::",
+            "at": 40.36870000001788
+          },
+          {
+            "tag": "cutscene:post-6:POST6-10::",
+            "at": 46.03310000002384
+          },
+          {
+            "tag": "cutscene:post-6:POST6-11::",
+            "at": 51.48890000000596
+          },
+          {
+            "tag": "stagesel:::transit:",
+            "at": 56.049
+          },
+          {
+            "tag": "stagesel:::password:",
+            "at": 64.70480000001191
+          },
+          {
+            "tag": "stagesel:::achievement:",
+            "at": 70.60920000001788
+          },
+          {
+            "tag": "stagesel:::choice:",
+            "at": 77.10470000001789
+          }
+        ],
+        "part": "storm",
+        "errors": [],
+        "shots": [
+          {
+            "tag": "cutscene:post-6:B601::",
+            "at": 0.7689000000059605,
+            "file": "storm-sample-00.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-02::",
+            "at": 8.24180000001192,
+            "file": "storm-sample-01.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-03::",
+            "at": 13.74480000001192,
+            "file": "storm-sample-02.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-04::",
+            "at": 17.440600000023842,
+            "file": "storm-sample-03.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-05::",
+            "at": 24.16210000002384,
+            "file": "storm-sample-04.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-06::",
+            "at": 28.018100000023843,
+            "file": "storm-sample-05.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-07::",
+            "at": 33.6805,
+            "file": "storm-sample-06.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-08::",
+            "at": 36.92880000001192,
+            "file": "storm-sample-07.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-09::",
+            "at": 41.1205,
+            "file": "storm-sample-08.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-10::",
+            "at": 46.78520000001788,
+            "file": "storm-sample-09.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-11::",
+            "at": 52.24020000001788,
+            "file": "storm-sample-10.png"
+          },
+          {
+            "tag": "stagesel:::transit:",
+            "at": 56.80040000000596,
+            "file": "storm-sample-11.png"
+          },
+          {
+            "tag": "stagesel:::password:",
+            "at": 65.46030000001193,
+            "file": "storm-sample-12.png"
+          },
+          {
+            "tag": "stagesel:::achievement:",
+            "at": 71.3605,
+            "file": "storm-sample-13.png"
+          }
+        ],
+        "end": {
+          "state": "stagesel",
+          "receipt": {
+            "defeated": "storm",
+            "difficulty": "furious",
+            "target": "rebels",
+            "route": "right",
+            "furious": true,
+            "crash": true,
+            "escape": false,
+            "award": "crossed_fate",
+            "message": "Play Stage 6 via password STRM on hard to face the harrier!",
+            "version": 1,
+            "id": "stage6-1794765346616-storm",
+            "verified": true,
+            "pilot": "cole",
+            "crew": [
+              "cole",
+              "decker",
+              "axel",
+              "falva",
+              "yuri"
+            ],
+            "elapsed": 21.49619999998788,
+            "transitSeen": true,
+            "messageSeen": true,
+            "awardNotified": true
+          },
+          "choice": null,
+          "events": [
+            {
+              "event": "native-defeat",
+              "kind": "storm",
+              "difficulty": "furious"
+            },
+            {
+              "event": "result-routed",
+              "defeated": "storm",
+              "target": "rebels",
+              "verified": true
+            },
+            {
+              "event": "achievement-unlocked",
+              "id": "crossed_fate",
+              "persisted": true
+            },
+            {
+              "event": "map-transit-finished",
+              "defeated": "storm",
+              "target": "rebels"
+            }
+          ],
+          "points": 700
+        }
+      },
+      {
+        "seconds": 73.7155,
+        "frames": 4296,
+        "peak": 0.723509669303894,
+        "stages": [
+          {
+            "tag": "cutscene:post-6:B601::",
+            "at": 0.017200000017881394
+          },
+          {
+            "tag": "cutscene:post-6:POST6-02::",
+            "at": 6.000800000011921
+          },
+          {
+            "tag": "cutscene:post-6:POST6-03::",
+            "at": 11.504300000011922
+          },
+          {
+            "tag": "cutscene:post-6:POST6-04::",
+            "at": 15.18440000000596
+          },
+          {
+            "tag": "cutscene:post-6:POST6-05::",
+            "at": 21.233
+          },
+          {
+            "tag": "cutscene:post-6:POST6-06::",
+            "at": 25.08959999999404
+          },
+          {
+            "tag": "cutscene:post-6:POST6-07::",
+            "at": 30.7525
+          },
+          {
+            "tag": "cutscene:post-6:POST6-08::",
+            "at": 34.00009999999404
+          },
+          {
+            "tag": "cutscene:post-6:POST6-09::",
+            "at": 38.1975
+          },
+          {
+            "tag": "cutscene:post-6:POST6-10::",
+            "at": 43.8745
+          },
+          {
+            "tag": "cutscene:post-6:POST6-11::",
+            "at": 49.32959999999404
+          },
+          {
+            "tag": "stagesel:::transit:",
+            "at": 53.92059999999404
+          },
+          {
+            "tag": "stagesel:::password:",
+            "at": 59.32959999999404
+          },
+          {
+            "tag": "stagesel:::achievement:",
+            "at": 66.38430000001192
+          },
+          {
+            "tag": "stagesel:::choice:",
+            "at": 72.89870000001788
+          }
+        ],
+        "part": "rebels",
+        "errors": [],
+        "shots": [
+          {
+            "tag": "cutscene:post-6:B601::",
+            "at": 0.7685999999940395,
+            "file": "rebels-sample-00.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-02::",
+            "at": 6.75259999999404,
+            "file": "rebels-sample-01.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-03::",
+            "at": 12.256800000011921,
+            "file": "rebels-sample-02.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-04::",
+            "at": 15.936700000017881,
+            "file": "rebels-sample-03.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-05::",
+            "at": 21.984200000017882,
+            "file": "rebels-sample-04.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-06::",
+            "at": 25.841,
+            "file": "rebels-sample-05.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-07::",
+            "at": 31.5045,
+            "file": "rebels-sample-06.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-08::",
+            "at": 34.75520000001788,
+            "file": "rebels-sample-07.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-09::",
+            "at": 38.96059999999404,
+            "file": "rebels-sample-08.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-10::",
+            "at": 44.62480000001192,
+            "file": "rebels-sample-09.png"
+          },
+          {
+            "tag": "cutscene:post-6:POST6-11::",
+            "at": 50.08020000001788,
+            "file": "rebels-sample-10.png"
+          },
+          {
+            "tag": "stagesel:::transit:",
+            "at": 54.67630000001192,
+            "file": "rebels-sample-11.png"
+          },
+          {
+            "tag": "stagesel:::password:",
+            "at": 60.08090000000596,
+            "file": "rebels-sample-12.png"
+          },
+          {
+            "tag": "stagesel:::achievement:",
+            "at": 67.13780000001192,
+            "file": "rebels-sample-13.png"
+          }
+        ],
+        "end": {
+          "state": "stagesel",
+          "receipt": {
+            "defeated": "rebels",
+            "difficulty": "furious",
+            "target": "harrier",
+            "route": "left",
+            "furious": true,
+            "crash": false,
+            "escape": true,
+            "award": "road_not_taken",
+            "message": "You let the storm cannon get away! use password STRM on furious for a second chance at redemption!",
+            "version": 1,
+            "id": "stage6-1794765492450-rebels",
+            "verified": true,
+            "pilot": "cole",
+            "crew": [
+              "cole",
+              "decker",
+              "axel",
+              "falva",
+              "yuri"
+            ],
+            "elapsed": 19.045499999999937,
+            "transitSeen": true,
+            "messageSeen": true,
+            "awardNotified": true
+          },
+          "choice": null,
+          "events": [
+            {
+              "event": "native-defeat",
+              "kind": "rebels",
+              "difficulty": "furious"
+            },
+            {
+              "event": "result-routed",
+              "defeated": "rebels",
+              "target": "harrier",
+              "verified": true
+            },
+            {
+              "event": "achievement-unlocked",
+              "id": "road_not_taken",
+              "persisted": true
+            },
+            {
+              "event": "map-transit-finished",
+              "defeated": "rebels",
+              "target": "harrier"
+            }
+          ],
+          "points": 700
+        }
+      }
+    ],
+    "errors": [],
+    "coreAfter": {
+      "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+      "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "assets/crossed_fate_1115.js": "9fd697365fba89d8cbfecf3c2c3bf417683ecbdaf5d085f5529086b255bb5159",
+      "assets/crossed_fate_art_1115.js": "e1c2f4e9ea43f10015e9f0acc5f42fa85dc123dc2c01288077cbd5011ed5840e",
+      "index.html": "dfcee927374bb5932f34058c175fc05b4e9fdd4052e50eb1c27a6e2215c11705"
+    },
+    "movies": [
+      {
+        "part": "split",
+        "title": "Furious split - Harrier leads, Storm Cannon follows",
+        "file": "split.mp4",
+        "duration": 111.24000000000001,
+        "chapters": [
+          {
+            "start": 0,
+            "title": "Two overhead aircraft"
+          },
+          {
+            "start": 4.0,
+            "title": "Retained Rebel interception dialogue"
+          },
+          {
+            "start": 91.1375,
+            "title": "Storm Cannon or Rebel Fighters"
+          },
+          {
+            "start": 92.32659999999404,
+            "title": "Storm Cannon pursuit briefing"
+          }
+        ],
+        "decodeErrors": [],
+        "audio": [
+          "[Parsed_volumedetect_0 @ 00000202b21c0280] mean_volume: -12.2 dB",
+          "[Parsed_volumedetect_0 @ 00000202b21c0280] max_volume: -0.8 dB"
+        ],
+        "sha256": "c8b1a01d998fad2263a773ff165a7e1ce8093ed5af0db4a71815446a6caf40f2",
+        "scope": "Prepared Cole / Furious native Stage6 split after the carrier prelude. Both real aircraft, retained Rebel dialogue, pursuit choice and full Storm Cannon briefing. The native left route is selected automatically for this cinematic checkpoint; no fight or campaign win is claimed.",
+        "poster": "split-frame-0.png"
+      },
+      {
+        "part": "storm",
+        "title": "Storm Cannon defeated - Crossed Fate",
+        "file": "storm.mp4",
+        "duration": 77.77,
+        "chapters": [
+          {
+            "start": 0,
+            "title": "The skies are clearing"
+          },
+          {
+            "start": 16.68880000001192,
+            "title": "Who escaped toward the city"
+          },
+          {
+            "start": 51.48890000000596,
+            "title": "Regroup and choose the next route"
+          },
+          {
+            "start": 56.049,
+            "title": "Harrier and Fury Fighters reach the city"
+          },
+          {
+            "start": 64.70480000001191,
+            "title": "Alternate-route password"
+          },
+          {
+            "start": 70.60920000001788,
+            "title": "Crossed Fate unlocked"
+          },
+          {
+            "start": 77.10470000001789,
+            "title": "Campaign map choices restored"
+          }
+        ],
+        "decodeErrors": [],
+        "audio": [
+          "[Parsed_volumedetect_0 @ 000001db6e8aed80] mean_volume: -14.8 dB",
+          "[Parsed_volumedetect_0 @ 000001db6e8aed80] max_volume: -2.3 dB"
+        ],
+        "sha256": "144d1ba307216a0d78f8a0e8f0795095379f82954f30a10f706bd7c86c24c446",
+        "scope": "Cole / Furious. Scripted damage goes through the actual native module/core or five-Rebel/Retina/death owners. The verified result then plays every post6 dialogue beat and the map event without skips. This is a cinematic checkpoint, not an unassisted campaign win.",
+        "poster": "storm-frame-0.png"
+      },
+      {
+        "part": "rebels",
+        "title": "Rebel Fighters defeated - Road Not Taken",
+        "file": "rebels.mp4",
+        "duration": 73.56,
+        "chapters": [
+          {
+            "start": 0,
+            "title": "The skies are clearing"
+          },
+          {
+            "start": 15.18440000000596,
+            "title": "Who escaped toward the city"
+          },
+          {
+            "start": 49.32959999999404,
+            "title": "Regroup and choose the next route"
+          },
+          {
+            "start": 53.92059999999404,
+            "title": "Storm Cannon escapes west"
+          },
+          {
+            "start": 59.32959999999404,
+            "title": "Alternate-route password"
+          },
+          {
+            "start": 66.38430000001192,
+            "title": "Road Not Taken unlocked"
+          },
+          {
+            "start": 72.89870000001788,
+            "title": "Campaign map choices restored"
+          }
+        ],
+        "decodeErrors": [],
+        "audio": [
+          "[Parsed_volumedetect_0 @ 0000025c428a6dc0] mean_volume: -14.8 dB",
+          "[Parsed_volumedetect_0 @ 0000025c428a6dc0] max_volume: -2.2 dB"
+        ],
+        "sha256": "7f8224fc9ff203888048ec5f30c9e27a7437eea77c956c6d0531daa726500aaf",
+        "scope": "Cole / Furious. Scripted damage goes through the actual native module/core or five-Rebel/Retina/death owners. The verified result then plays every post6 dialogue beat and the map event without skips. This is a cinematic checkpoint, not an unassisted campaign win.",
+        "poster": "rebels-frame-0.png"
+      }
+    ]
+  },
+  "limitations": [
+    "The native split keeps the existing Rebel interception conversation and now records the full Storm Cannon route briefing. Only the overhead hull passage is sped up.",
+    "Stage7 combat entry/visibility remains outside this pass. The earlier preview omitted separate HUD canvases; the new recorder composites visible native layers, but that is not a fix or certification of the previously observed Stage7 player-visibility issue.",
+    "Normal/Easy native campaign completion at Stage5 remains unchanged. Normal route text is compatibility-tested, not a newly enabled late-game campaign."
+  ]
+}

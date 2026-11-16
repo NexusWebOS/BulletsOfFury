@@ -25,16 +25,20 @@ _levelCfg=function(stage=run.stage){const cfg=LS112.base.cfg.apply(this,argument
   props:[],par:null,skipRows:null,staticMaster:false,loopMaster:a.repeat&&stage!==4,continuousBoss:true,lostAirbase1007:false,layered112:true};};
 function ls112Frame(a,frame,x,y){if(!XART.rdy(a.key))return false;const f=((Math.floor(frame)%a.frames)+a.frames)%a.frames;
  ctx.drawImage(XART.get(a.key),f%a.cols*a.w,Math.floor(f/a.cols)*a.h,a.w,a.h,Math.round(x),Math.round(y),a.w,a.h);return true;}
-function ls112Bed(name,width=worldWidth(),top=viewTopY(),height=viewH()){
+function ls112Bed(name,width=worldWidth(),top=viewTopY(),height=viewH(),travel){
  const a=LS112_ART.materials[name];if(!a||!XART.rdy(a.key))return false;
  const t=Math.max(0,efxClock),f=Math.floor(t*a.fps)%a.frames,x0=Math.floor((camLeftX()*.68)%a.w)-a.w,
-  y0=Math.floor(top+(t*(name==='space'?5:12))%a.h)-a.h;
+  motion=Number.isFinite(travel)?travel:t*(name==='space'?5:12),
+  y0=Math.floor(top+((motion%a.h)+a.h)%a.h)-a.h;
  for(let y=y0;y<top+height;y+=a.h)for(let x=x0;x<width;x+=a.w)ls112Frame(a,f,x,y);
- LS112.clock.bed={name,time:t,frame:f,x:x0,y:y0};ls112Count('bed-'+name);return true;
+ LS112.clock.bed={name,time:t,frame:f,x:x0,y:y0,travel:motion};ls112Count('bed-'+name);return true;
 }
 _liquidFrames=function(key){if(typeof key==='string'&&key.startsWith('ls112:')){if(!LS112.arrays.has(key))LS112.arrays.set(key,Object.assign([null],{ls112:key.slice(6)}));return LS112.arrays.get(key);}return LS112.base.liquid.apply(this,arguments);};
 drawAnimTerrain=function(frames){if(frames?.ls112)return ls112Bed(frames.ls112,arguments[5]||worldWidth());return LS112.base.terrain.apply(this,arguments);};
-connectorSurface=function(stage,joinY,width){if(ls112Live(stage)){const a=LS112_ART.levels[String(stage)];if(a.material&&ls112Bed(a.material,Math.max(width||0,VW),0,VH))return true;}return LS112.base.connector.apply(this,arguments);};
+connectorSurface=function(stage,joinY,width){if(ls112Live(stage)){const a=LS112_ART.levels[String(stage)];// Keep the Stage 2 lava grid on the moving join. The incoming level is
+ // translated by joinY-VH, so both sides meet at the same tile phase.
+ const travel=stage===2&&state===GS.LAUNCH?joinY-VH+Math.max(0,efxClock)*12:undefined;
+ if(a.material&&ls112Bed(a.material,Math.max(width||0,VW),0,VH,travel))return true;}return LS112.base.connector.apply(this,arguments);};
 function ls112Window(a,source,top=viewTopY(),height=viewH(),repeat=false){
  if(!XART.rdy(a.key))return false;const im=XART.get(a.key),H=a.h;let sy=Math.floor(source),dy=Math.round(top),left=Math.ceil(height);
  if(!repeat){if(sy<0){const n=Math.min(left,-sy);sy+=n;dy+=n;left-=n;}left=Math.min(left,H-sy);if(left>0)ctx.drawImage(im,0,sy,a.w,left,0,dy,a.w,left);return true;}

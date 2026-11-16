@@ -1,0 +1,568 @@
+{
+  "recording": {
+    "seconds": 66.86380000001192,
+    "frames": 4102,
+    "peak": 0.7351908683776855,
+    "stages": [
+      {
+        "at": 0.016599999994039535,
+        "tag": "cutscene:post-6:B601:::"
+      },
+      {
+        "at": 4.561099999994039,
+        "tag": "cutscene:post-6:POST6-02:::"
+      },
+      {
+        "at": 8.24109999999404,
+        "tag": "cutscene:post-6:POST6-03:::"
+      },
+      {
+        "at": 10.46420000001788,
+        "tag": "cutscene:post-6:POST6-04:::"
+      },
+      {
+        "at": 13.488700000017882,
+        "tag": "cutscene:post-6:POST6-05:::"
+      },
+      {
+        "at": 15.968599999994039,
+        "tag": "cutscene:post-6:POST6-06:::"
+      },
+      {
+        "at": 21.08909999999404,
+        "tag": "cutscene:post-6:POST6-07:::"
+      },
+      {
+        "at": 23.3925,
+        "tag": "cutscene:post-6:POST6-08:::"
+      },
+      {
+        "at": 25.80880000001192,
+        "tag": "cutscene:post-6:POST6-09:::"
+      },
+      {
+        "at": 30.44890000000596,
+        "tag": "cutscene:post-6:POST6-10:::"
+      },
+      {
+        "at": 35.56840000000596,
+        "tag": "cutscene:post-6:POST6-11:::"
+      },
+      {
+        "at": 39.040599999994036,
+        "tag": "intro:::::"
+      },
+      {
+        "at": 43.47309999999404,
+        "tag": "launch:::::"
+      },
+      {
+        "at": 43.48980000001192,
+        "tag": "cutscene:stage7-approach:A701:::"
+      },
+      {
+        "at": 47.23290000000596,
+        "tag": "cutscene:stage7-approach:ARRIVAL7-02:::"
+      },
+      {
+        "at": 49.82480000001192,
+        "tag": "launch:::::"
+      },
+      {
+        "at": 49.84009999999404,
+        "tag": "launch:::run::"
+      },
+      {
+        "at": 57.23280000001192,
+        "tag": "launch:::brake::"
+      },
+      {
+        "at": 59.8725,
+        "tag": "launch:::settle::"
+      },
+      {
+        "at": 60.33659999999404,
+        "tag": "launch:::cd::"
+      },
+      {
+        "at": 64.19240000000596,
+        "tag": "play:::cd::"
+      }
+    ],
+    "last": {
+      "cinema": {
+        "id": "stage7-approach",
+        "shot": "ARRIVAL7-02",
+        "who": "COLE",
+        "text": "I see it. Going in.",
+        "pilot": "cole",
+        "coOp": [
+          "cole"
+        ],
+        "page": 1,
+        "kind": "dialogue",
+        "bank": null,
+        "frame": 0,
+        "time": 2.5753000000119197,
+        "motion3": true,
+        "readAt": 0.42,
+        "scroll": 0,
+        "known": {},
+        "active": 0,
+        "old": 0,
+        "zoom": 6,
+        "factor": 1.2,
+        "cameraX": -32,
+        "cameraY": 36,
+        "same": false,
+        "reaction": false,
+        "snapshot": false,
+        "visiblePanels": [
+          0
+        ],
+        "faces": [
+          {
+            "pilot": "cole",
+            "frame": 0,
+            "key": "cp15_cole",
+            "box": [
+              81,
+              18,
+              438,
+              322
+            ],
+            "image": [
+              59,
+              18,
+              483,
+              322
+            ],
+            "speaking": false,
+            "family": "talking-cockpit",
+            "fixedCamera": true,
+            "room": "cockpit-tunnel",
+            "channel": "radio",
+            "zoom": 6
+          }
+        ],
+        "boxes": [
+          [
+            81,
+            18,
+            438,
+            322
+          ],
+          [
+            542,
+            18,
+            450,
+            322
+          ]
+        ]
+      },
+      "opening": null,
+      "openingRadioIndex": null
+    },
+    "part": "stage67",
+    "expectedBeats": [
+      {
+        "id": "B601",
+        "who": "DECKER",
+        "text": "Harrier's down. But the other contacts are still out there.",
+        "duration": 4.555
+      },
+      {
+        "id": "POST6-02",
+        "who": "COLE",
+        "text": "Everybody answer me. Need to hear your voices.",
+        "duration": 3.6799999999999997
+      },
+      {
+        "id": "POST6-03",
+        "who": "FREEZER",
+        "text": "Still here.",
+        "duration": 2.21
+      },
+      {
+        "id": "POST6-04",
+        "who": "DECKER",
+        "text": "But the orders haven't stopped.",
+        "duration": 3.015
+      },
+      {
+        "id": "POST6-05",
+        "who": "COLE",
+        "text": "We took out the carrier.",
+        "duration": 2.47
+      },
+      {
+        "id": "POST6-06",
+        "who": "DECKER",
+        "text": "It was passing them along. Something below the city is still talking.",
+        "duration": 5.105
+      },
+      {
+        "id": "POST6-07",
+        "who": "YURI",
+        "text": "Under that bridge?",
+        "duration": 2.3
+      },
+      {
+        "id": "POST6-08",
+        "who": "DECKER",
+        "text": "In the drains. Look.",
+        "duration": 2.41
+      },
+      {
+        "id": "POST6-09",
+        "who": "COLE",
+        "text": "Mark the other contacts. We'll deal with them if we have to.",
+        "duration": 4.640000000000001
+      },
+      {
+        "id": "POST6-10",
+        "who": "DECKER",
+        "text": "Check your gear before you go under. I don't like how narrow that looks.",
+        "duration": 5.11
+      },
+      {
+        "id": "POST6-11",
+        "who": "COLE",
+        "text": "Keep talking to me. All the way in.",
+        "duration": 3.46
+      }
+    ],
+    "errors": [],
+    "shots": [
+      {
+        "tag": "cutscene:post-6:B601:::",
+        "at": 0.672800000011921,
+        "file": "stage67-sample-00.png"
+      },
+      {
+        "tag": "cutscene:post-6:POST6-02:::",
+        "at": 5.2165,
+        "file": "stage67-sample-01.png"
+      },
+      {
+        "tag": "cutscene:post-6:POST6-03:::",
+        "at": 8.89659999999404,
+        "file": "stage67-sample-02.png"
+      },
+      {
+        "tag": "cutscene:post-6:POST6-04:::",
+        "at": 11.120300000011921,
+        "file": "stage67-sample-03.png"
+      },
+      {
+        "tag": "cutscene:post-6:POST6-05:::",
+        "at": 14.144599999994039,
+        "file": "stage67-sample-04.png"
+      },
+      {
+        "tag": "cutscene:post-6:POST6-06:::",
+        "at": 16.6245,
+        "file": "stage67-sample-05.png"
+      },
+      {
+        "tag": "cutscene:post-6:POST6-07:::",
+        "at": 21.745,
+        "file": "stage67-sample-06.png"
+      },
+      {
+        "tag": "cutscene:post-6:POST6-08:::",
+        "at": 24.04809999999404,
+        "file": "stage67-sample-07.png"
+      },
+      {
+        "tag": "cutscene:post-6:POST6-09:::",
+        "at": 26.46430000001192,
+        "file": "stage67-sample-08.png"
+      },
+      {
+        "tag": "cutscene:post-6:POST6-10:::",
+        "at": 31.10430000001192,
+        "file": "stage67-sample-09.png"
+      },
+      {
+        "tag": "cutscene:post-6:POST6-11:::",
+        "at": 36.225,
+        "file": "stage67-sample-10.png"
+      },
+      {
+        "tag": "intro:::::",
+        "at": 39.76290000000596,
+        "file": "stage67-sample-11.png"
+      },
+      {
+        "tag": "cutscene:stage7-approach:A701:::",
+        "at": 44.14440000000596,
+        "file": "stage67-sample-12.png"
+      },
+      {
+        "tag": "cutscene:stage7-approach:ARRIVAL7-02:::",
+        "at": 47.88890000000596,
+        "file": "stage67-sample-13.png"
+      },
+      {
+        "tag": "launch:::run::",
+        "at": 50.49670000001788,
+        "file": "stage67-sample-14.png"
+      },
+      {
+        "tag": "launch:::brake::",
+        "at": 57.888700000017884,
+        "file": "stage67-sample-15.png"
+      },
+      {
+        "tag": "launch:::cd::",
+        "at": 60.992700000017884,
+        "file": "stage67-sample-16.png"
+      },
+      {
+        "tag": "play:::cd::",
+        "at": 64.84840000000597,
+        "file": "stage67-sample-17.png"
+      }
+    ],
+    "end": {
+      "state": "play",
+      "stage": 7,
+      "post6Done": 1,
+      "brief": true,
+      "opening": null,
+      "openingRadioIndex": null
+    },
+    "cues": [
+      {
+        "kind": "cue",
+        "id": "post-6",
+        "shot": "POST6-06",
+        "name": "blip",
+        "at": 0.77
+      },
+      {
+        "kind": "cue",
+        "id": "post-6",
+        "shot": "POST6-06",
+        "name": "blip",
+        "at": 1.47
+      },
+      {
+        "kind": "cue",
+        "id": "post-6",
+        "shot": "POST6-06",
+        "name": "blip",
+        "at": 2.17
+      }
+    ]
+  },
+  "movie": {
+    "part": "stage67",
+    "title": "Stage6 to7 - Harrier aftermath and sewer entry",
+    "file": "stage6-to7-full.mp4",
+    "duration": 66.7,
+    "chapters": [
+      {
+        "start": 0,
+        "title": "Harrier aftermath"
+      },
+      {
+        "start": 15.968599999994039,
+        "title": "Signal below the city"
+      },
+      {
+        "start": 23.3925,
+        "title": "The drains"
+      },
+      {
+        "start": 35.56840000000596,
+        "title": "Keep talking all the way in"
+      },
+      {
+        "start": 39.040599999994036,
+        "title": "Stage7 card"
+      },
+      {
+        "start": 43.48980000001192,
+        "title": "Riverbank and sewer approach"
+      },
+      {
+        "start": 49.84009999999404,
+        "title": "Native underground entry"
+      },
+      {
+        "start": 64.19240000000596,
+        "title": "Stage7 gameplay handoff"
+      }
+    ],
+    "decodeErrors": [],
+    "audio": [
+      "[Parsed_volumedetect_0 @ 000001b138cf0c80] mean_volume: -14.4 dB",
+      "[Parsed_volumedetect_0 @ 000001b138cf0c80] max_volume: -1.7 dB"
+    ],
+    "sha256": "22e33e31be3c6ae745ea9a3e676ebed3a7858a90792d1d8323fda2c96843c8d3",
+    "scope": "Cole / Hard, Harrier branch. Full current post-Stage6 dialogue, Stage7 card, riverbank/sewer approach and native launch to gameplay. The prepared cleared-stage checkpoint connects directly to Stage7, omitting the results, map and gear-menu pauses. No dialogue is skipped.",
+    "poster": "stage67-frame-0.png"
+  },
+  "browserChecks": {
+    "checks": [
+      {
+        "name": "hq5 video geometry and complete duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 43.4
+        }
+      },
+      {
+        "name": "hq5: Faster individual departures decoded chapter",
+        "ok": true,
+        "data": 0.066667
+      },
+      {
+        "name": "hq5: Five quiet seconds decoded chapter",
+        "ok": true,
+        "data": 7.566667
+      },
+      {
+        "name": "hq5: Stealth fighters launch missiles decoded chapter",
+        "ok": true,
+        "data": 12.566667
+      },
+      {
+        "name": "hq5: Rapid ten-ship counterattack decoded chapter",
+        "ok": true,
+        "data": 14.166667
+      },
+      {
+        "name": "hq5: Reinforcements overwhelm the base decoded chapter",
+        "ok": true,
+        "data": 18.333333
+      },
+      {
+        "name": "hq5: Decker somersault and southeast boost decoded chapter",
+        "ok": true,
+        "data": 21.233333
+      },
+      {
+        "name": "hq5: Axel somersault and southwest boost decoded chapter",
+        "ok": true,
+        "data": 22.166667
+      },
+      {
+        "name": "hq5: Native Stage6 opening decoded chapter",
+        "ok": true,
+        "data": 24.566667
+      },
+      {
+        "name": "hq5 media audio decoded and audible",
+        "ok": true,
+        "data": 0.661801278591156
+      },
+      {
+        "name": "hq5 byte-range seeking",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "stage67 video geometry and complete duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 66.7
+        }
+      },
+      {
+        "name": "stage67: Harrier aftermath decoded chapter",
+        "ok": true,
+        "data": 0.066667
+      },
+      {
+        "name": "stage67: Signal below the city decoded chapter",
+        "ok": true,
+        "data": 16.033333
+      },
+      {
+        "name": "stage67: The drains decoded chapter",
+        "ok": true,
+        "data": 23.433333
+      },
+      {
+        "name": "stage67: Keep talking all the way in decoded chapter",
+        "ok": true,
+        "data": 35.6
+      },
+      {
+        "name": "stage67: Stage7 card decoded chapter",
+        "ok": true,
+        "data": 39.1
+      },
+      {
+        "name": "stage67: Riverbank and sewer approach decoded chapter",
+        "ok": true,
+        "data": 43.533333
+      },
+      {
+        "name": "stage67: Native underground entry decoded chapter",
+        "ok": true,
+        "data": 49.866667
+      },
+      {
+        "name": "stage67: Stage7 gameplay handoff decoded chapter",
+        "ok": true,
+        "data": 64.2
+      },
+      {
+        "name": "stage67 media audio decoded and audible",
+        "ok": true,
+        "data": 0.7679727077484131
+      },
+      {
+        "name": "stage67 byte-range seeking",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "both native somersault GIF previews decoded",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "all eleven post6 beats recorded without skips",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "both Stage7 approach panels and continuous native entry recorded",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "post6 completed once and handed to Stage7 gameplay",
+        "ok": true,
+        "data": {
+          "state": "play",
+          "stage": 7,
+          "post6Done": 1,
+          "brief": true,
+          "opening": null,
+          "openingRadioIndex": null
+        }
+      },
+      {
+        "name": "no recording or review browser/page/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "limitations": [
+    "Prepared cinematic checkpoints, not full campaign wins or balance validation.",
+    "Stage6-7 follows the Harrier branch, with results/map/gear-menu pauses omitted. All dialogue and the native Stage7 card, approach and launch play without skips.",
+    "After the Stage7 countdown the prepared checkpoint paints terrain alone: no ship/HUD in the captured first play frames. Native player remains alive at finite coordinates, alpha1, no page/console errors. Preserved as-is; actual campaign-entry investigation remains."
+  ]
+}

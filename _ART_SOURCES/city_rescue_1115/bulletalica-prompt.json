@@ -1,0 +1,8 @@
+{
+  "prompt": "Use case: text-edit. Edit the supplied existing 16-bit pixel-art comic image. Change ONLY the album-cover title lettering from 'BULLETS OF FURY' to exactly 'BULLETALICA' (one word, spelled B U L L E T A L I C A). Render it as an original sharp angular silver/gunmetal heavy-metal wordmark across the upper part of the same matte-black sleeve, following its current slight perspective. It must be very readable. Remove the old title completely. Keep the embossed fighter jet, looping ammunition-belt art, worn album edges, Juggernaut's exact face/mohawk/beard/sunglasses/smile/tattoo, hands, pose, orange-lit cockpit, rural window views, cream comic border, composition, palette and crisp pixel-art style unchanged. Keep the complete landscape 4:3 image with no crop. No other lettering, no added objects or visual redesign. Opaque background.",
+  "tool": "built-in image_gen.imagegen",
+  "transparent_background": false,
+  "generated_file": "exec-709a039d-aec6-480e-bb9f-81a83c72df12.png",
+  "reference": "native_references/album-before-bulletalica.png",
+  "requested_name": "Bulletalica"
+}

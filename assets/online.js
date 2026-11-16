@@ -8,6 +8,7 @@
   let client=null,user=null,channel=null,room=null,peer=null,data=null,stream=null,frame=0;
   let role='',panel=null,statusNode=null,body=null,video=null,keys={},lastSent='',lastSentAt=0,pendingIce=[];
   let topScores=[];
+  let captureAudio=null,started=false,inputFocused=true;
   let submitRun=0,submitted=-1;
   const safe=s=>String(s||'').replace(/[^a-zA-Z0-9 _-]/g,'').slice(0,18);
   const status=s=>{if(statusNode)statusNode.textContent=s;};
@@ -65,6 +66,12 @@
   function closePanel(){if(panel)panel.classList.remove('open');}
   function menu(){
     clear();const bar=el('div','bar');body.append(bar);
+    if(room){
+      body.append(el('p','muted',role==='host'?'YOUR PRIVATE ROOM IS STILL OPEN':'YOUR WINGMAN LINK IS STILL OPEN'));
+      if(role==='host')body.append(button(started?'RESUME GAME':'START TWO-PILOT RUN',startHostedRun));
+      else if(video)body.append(video);
+      body.append(button(role==='host'?'CLOSE ROOM':'LEAVE ROOM',leave));return;
+    }
     bar.append(button('LOCAL CO-OP',()=>{closePanel();if(window.BOFOnlineGameStart)window.BOFOnlineGameStart();}));
     bar.append(button('HOST ONLINE',()=>host()));bar.append(button('JOIN ONLINE',()=>joinForm()));
     bar.append(button('LEADERBOARD',()=>ranks()));bar.append(button('ANNOUNCEMENTS',()=>announcements()));
@@ -100,12 +107,13 @@
     await new Promise((resolve,reject)=>channel.subscribe((s,e)=>s==='SUBSCRIBED'?resolve():['CHANNEL_ERROR','TIMED_OUT','CLOSED'].includes(s)?reject(e||new Error('Room connection failed')):null));
     await channel.track({seat:role==='host'?1:2});
   }
+  function startHostedRun(){closePanel();if(!started){started=true;if(window.BOFOnlineGameStart)window.BOFOnlineGameStart();}startCapture();}
   async function host(){
     clear();body.append(button('BACK',menu));status('CREATING ROOM...');
     try{await connect();const {data,error}=await client.rpc('bof_create_room');if(error)throw error;
       room=data[0];role='host';await subscribe(room.topic);status('ROOM READY — SHARE THE CODE WITH YOUR WINGMAN');
       body.append(el('h2','',room.join_code),el('p','muted','Keep this window open until your wingman joins.'));
-      body.append(button('START TWO-PILOT RUN',()=>{closePanel();if(window.BOFOnlineGameStart)window.BOFOnlineGameStart();startCapture();}));
+      body.append(button('START TWO-PILOT RUN',startHostedRun));
       body.append(button('CLOSE ROOM',()=>leave()));
     }catch(e){status('ROOM ERROR: '+e.message);}
   }
@@ -116,7 +124,7 @@
   async function join(code){
     status('JOINING ROOM...');try{await connect();const {data,error}=await client.rpc('bof_join_room',{p_code:String(code||'').trim().toUpperCase()});if(error)throw error;
       room=data[0];role='guest';await subscribe(room.topic);clear();
-      body.append(button('LEAVE ROOM',leave));video=el('video');video.autoplay=true;video.playsInline=true;video.muted=true;body.append(video);
+      body.append(button('LEAVE ROOM',leave));video=el('video');video.autoplay=true;video.playsInline=true;video.muted=false;body.append(video);
       body.append(el('p','muted','WASD/ARROWS: FLY   SPACE/J: FIRE   K: MISSILE   C: RETINA   SHIFT: CHARGE   ENTER: PAUSE'));
       status('CONNECTED TO ROOM — WAITING FOR THE HOST');await send({kind:'hello'});
     }catch(e){status('JOIN FAILED: '+e.message);}
@@ -126,14 +134,17 @@
     peer=new RTCPeerConnection({iceServers:[{urls:'stun:stun.l.google.com:19302'}]});
     peer.onicecandidate=e=>{if(e.candidate)send({kind:'ice',candidate:e.candidate.toJSON()});};
     peer.onconnectionstatechange=()=>{if(peer&&peer.connectionState==='failed')status('DIRECT CONNECTION FAILED — TRY ANOTHER NETWORK');};
-    if(role==='guest')peer.ontrack=e=>{if(video)video.srcObject=e.streams[0];status('WINGMAN VIEW LIVE');};
+    if(role==='guest')peer.ontrack=e=>{if(video&&video.srcObject!==e.streams[0]){video.srcObject=e.streams[0];video.play().catch(err=>{if(err.name==='NotAllowedError'&&video&&body&&!body.querySelector('[data-online-audio]')){status('PRESS PLAY TO ENABLE WINGMAN AUDIO');const play=button('PLAY GAME AUDIO',()=>video&&video.play());play.dataset.onlineAudio='1';body.append(play);}});}status('WINGMAN VIEW LIVE');};
     return peer;
   }
   async function signal(m){
     if(!m||!room)return;
     try{
       if(m.kind==='hello'&&role==='host'){
-        if(peer)peer.close();newPeer();startCapture();if(stream)for(const track of stream.getTracks())peer.addTrack(track,stream);
+        if(peer)peer.close();newPeer();startCapture();if(stream)for(const track of stream.getTracks()){
+          const sender=peer.addTrack(track,stream);
+          if(track.kind==='video'){track.contentHint='detail';const p=sender.getParameters();p.degradationPreference='maintain-resolution';p.encodings=p.encodings?.length?p.encodings:[{}];p.encodings[0].maxBitrate=6000000;p.encodings[0].maxFramerate=30;p.encodings[0].scaleResolutionDownBy=1;sender.setParameters(p).catch(()=>{});}
+        }
         data=peer.createDataChannel('seat2',{ordered:false,maxRetransmits:0});data.onmessage=onInput;
         const offer=await peer.createOffer();await peer.setLocalDescription(offer);await send({kind:'offer',sdp:offer.sdp});status('WINGMAN JOINED — ESTABLISHING DIRECT LINK');
       }else if(m.kind==='offer'&&role==='guest'){
@@ -148,11 +159,32 @@
     }catch(e){status('CO-OP LINK ERROR: '+e.message);}
   }
   function startCapture(){
-    if(stream)return;const source=document.getElementById('screen'),hud=document.getElementById('hud');if(!source)return;
-    const combined=document.createElement('canvas');combined.width=480;combined.height=574;const c=combined.getContext('2d',{alpha:false});
-    let last=0;function draw(t){frame=requestAnimationFrame(draw);if(t-last<40)return;last=t;
-      c.fillStyle='#020712';c.fillRect(0,0,480,574);if(hud)c.drawImage(hud,0,0,480,62);c.drawImage(source,0,62,480,512);
-    }frame=requestAnimationFrame(draw);stream=combined.captureStream(24);
+    if(stream)return;const source=document.getElementById('screen');if(!source)return;
+    // The current Siege HUD lives on separate visible canvases. Compose the
+    // host's actual layout; the retired hidden #hud is not the player's HUD.
+    const combined=document.createElement('canvas');combined.width=1824;combined.height=1024;
+    const c=combined.getContext('2d',{alpha:false});c.imageSmoothingEnabled=false;
+    const ids=['screen','siege-left','siege-right','siege-compact','hud-top','hud-bot','equipcv','wide-left','wide-right','wide-clock'];
+    let last=0;function draw(t){frame=requestAnimationFrame(draw);if(t-last<1000/30)return;last=t;
+      const layers=ids.map(id=>document.getElementById(id)).filter(Boolean).map(canvas=>{
+        let opacity=1;for(let n=canvas;n;n=n.parentElement){const s=getComputedStyle(n);if(s.display==='none'||s.visibility==='hidden')opacity=0;opacity*=Number(s.opacity);}
+        return{canvas,r:canvas.getBoundingClientRect(),opacity};
+      }).filter(v=>v.opacity>0&&v.r.width>0&&v.r.height>0);
+      c.globalAlpha=1;c.fillStyle='#020712';c.fillRect(0,0,combined.width,combined.height);
+      if(!layers.length)return;
+      const x=Math.min(...layers.map(v=>v.r.left)),y=Math.min(...layers.map(v=>v.r.top)),
+        w=Math.max(...layers.map(v=>v.r.right))-x,h=Math.max(...layers.map(v=>v.r.bottom))-y,
+        k=Math.min(combined.width/w,combined.height/h),ox=(combined.width-w*k)/2,oy=(combined.height-h*k)/2;
+      for(const v of layers){c.globalAlpha=v.opacity;c.drawImage(v.canvas,Math.round(ox+(v.r.left-x)*k),Math.round(oy+(v.r.top-y)*k),Math.round(v.r.width*k),Math.round(v.r.height*k));}c.globalAlpha=1;
+    }draw(performance.now());stream=combined.captureStream(30);
+    // Mirror the existing native mixer, including music, without creating a
+    // second local speaker route or changing the host's volume settings.
+    try{if(typeof Snd!=='undefined'&&typeof aq112Bus==='function'){
+      const ac=Snd._audioCtx(),output=aq112Bus().output,destination=ac.createMediaStreamDestination();
+      output.connect(destination);captureAudio={output,destination};
+      for(const track of destination.stream.getAudioTracks())stream.addTrack(track);
+      ac.resume().catch(()=>{});
+    }}catch(e){console.warn('Online audio capture:',e.message);}
   }
   function onInput(e){
     try{const m=JSON.parse(e.data);if(!m||m.type!=='input')return;
@@ -166,8 +198,14 @@
   const keyAction={a:'left',ArrowLeft:'left',d:'right',ArrowRight:'right',w:'up',ArrowUp:'up',s:'down',ArrowDown:'down',
     j:'fire',' ':'fire',k:'bomb',c:'retina',Shift:'charge',Enter:'start'};
   function inputKey(e,on){if(role!=='guest'||!panel||!panel.classList.contains('open')||!video)return;
-    const a=keyAction[e.key];if(!a)return;e.preventDefault();e.stopImmediatePropagation();keys[a]=on;sendInput();}
+    const native=typeof keybindFor==='function'?actions.find(a=>(keybindFor(1)[a]||[]).includes(String(e.key).toLowerCase())):null;
+    const a=native||keyAction[e.key];if(!a)return;e.preventDefault();e.stopImmediatePropagation();keys[a]=on;sendInput();}
   function padInput(){
+    // Guest pads use the same saved raw-button assignments as local gameplay.
+    if(typeof Input!=='undefined'&&typeof keybindFor==='function'){
+      Input.pollGamepad();const kb=keybindFor(1);
+      return Object.fromEntries(actions.map(a=>[a,(kb[a]||[]).some(k=>k.startsWith('pad_')&&!!Input.keys[k])]));
+    }
     const gp=navigator.getGamepads&&Array.from(navigator.getGamepads()).find(p=>p&&p.connected);
     if(!gp)return {};
     const b=i=>!!(gp.buttons[i]&&gp.buttons[i].pressed),x=gp.axes[0]||0,y=gp.axes[1]||0;
@@ -175,17 +213,21 @@
       fire:b(0)||b(7),bomb:b(1),retina:b(3),charge:b(2),start:b(9)};
   }
   function sendInput(){if(role!=='guest'||!data||data.readyState!=='open')return;
-    const pad=padInput(),m={type:'input'};for(const a of actions)m[a]=!!keys[a]||!!pad[a];const json=JSON.stringify(m);
+    const focused=inputFocused&&!document.hidden,pad=focused?padInput():{},m={type:'input'};for(const a of actions)m[a]=focused&&(!!keys[a]||!!pad[a]);const json=JSON.stringify(m);
     if(json!==lastSent||performance.now()-lastSentAt>120){lastSent=json;lastSentAt=performance.now();data.send(json);}}
   document.addEventListener('keydown',e=>inputKey(e,true),true);document.addEventListener('keyup',e=>inputKey(e,false),true);
   setInterval(()=>{if(role==='guest')sendInput();},80);
+  window.addEventListener('blur',()=>{inputFocused=false;keys={};lastSent='';sendInput();});
+  window.addEventListener('focus',()=>{inputFocused=true;lastSent='';sendInput();});
+  document.addEventListener('visibilitychange',()=>{inputFocused=!document.hidden&&document.hasFocus();if(!inputFocused)keys={};lastSent='';sendInput();});
   async function leave(){
     if(role==='host'&&room&&client)try{await client.rpc('bof_close_room',{p_room:room.room_id});}catch(_){}
     if(role==='guest'&&room&&client)try{await client.rpc('bof_leave_room',{p_room:room.room_id});}catch(_){}
     if(channel&&client)await client.removeChannel(channel);channel=null;
     if(peer)peer.close();peer=null;if(data)data.close();data=null;
+    if(captureAudio){try{captureAudio.output.disconnect(captureAudio.destination);}catch(_){}captureAudio=null;}
     if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;}if(frame)cancelAnimationFrame(frame);frame=0;
-    room=null;role='';video=null;pendingIce=[];remote.hold={};remote.tap={};menu();status('ROOM CLOSED');
+    room=null;role='';started=false;video=null;pendingIce=[];keys={};lastSent='';lastSentAt=0;remote.hold={};remote.tap={};remote.at=0;menu();status('ROOM CLOSED');
   }
   async function refreshTop(){
     try{await connect();const {data,error}=await client.from('bof_scores').select('callsign,score').order('score',{ascending:false}).limit(4);

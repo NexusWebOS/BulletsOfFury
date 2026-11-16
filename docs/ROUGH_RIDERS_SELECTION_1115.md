@@ -1,0 +1,19 @@
+# Rough Riders name and pursuit selector - November15
+
+Mike requested a GIF of the new selection screens' highlight and the canonical name Rough Riders throughout in-game dialogue.
+
+All current player-facing squad references now use Rough Riders, with Rough Rider for an individual. This covers the native radio line, fallback boss title/choice, campaign route briefings, current Stage6 outcome reports, fallback comic/story direction, StageX city report, achievement description, password labels, storyboard titles and enemy-gallery names/descriptions. Plural reports say "The Rough Riders are down" and "The Rough Riders are still heading for the city." Individual Voss/Nyx/Rook/Kaia/Jace names, asset keys, encounter kinds, hit-reason tags, saved route/achievement IDs and existing passwords remain stable. Historical code snapshots, receipts, generation prompts and videos are retained.
+
+The native game.js has exactly three visible-text substitutions; reversing only those substitutions recreates the previous byte hash. It remains LF. Other changes use current text owners, not a global renderer replacement. _BUILD_SOURCE/test_fl.js is byte-identical CRLF. One assertion in test_part2_1010.cjs now expects the approved ROUGH RIDERS stage-card label; it still requires storyPlay to reject the obsolete storm-platform scene and keeps all other conditions.
+
+The new generated pursuit plates retain their artwork and typography. Their selector now uses the existing PM27 green26x26 authored bank: first16 frames, fixed13,13 pivot, native size,16fps on s6Wing.frChoice.t. No runtime selector glow/filter/rotation/opacity/scale effect is used. The asset is preloaded with the Stage6/pursuit art. Native left/right, pointer, confirmation briefing and real encounter dispatch remain owners. Other menus are outside this scoped selector change.
+
+The actual rendered menu was captured in Chromium with real left/right keyboard input. Each four-second GIF switches left/right/left/right; the combined eight-second GIF shows Hard then Furious. The source effect includes all16 authored phases in both captures. GIF export uses a shared256-colour palette per file, no dithering/blur/interpolated frames,912x512 native backing crop and60/60/60/70ms timing. Sampling begins half a simulation tick away from phase boundaries to avoid floating-point capture aliasing; runtime clocks are unchanged.
+
+Evidence: 142 native/GIF/name checks pass, sampling 5166 dialogue lines across all9 pilots, Normal/Hard/Furious and current/fallback providers. A real right-card pointer click plays the Rough Riders briefing and spawns the actual5-member squad with the existing rebelsquad kind. No page/console/HTTP errors. Full suite8,969 passes/0 failures/exit0; final failing-name comparison against the preceding build is empty. Syntax checks pass for all edited JavaScript and the selector owner. These are prepared menu/route checkpoints, not unassisted campaign wins or physical8BitDo testing.
+
+GIFs and native screenshots: _shots/rough_riders_1115. Reproduce with _BUILD_SOURCE/rough_riders_1115_capture.py; source name replacement recipe and exact before/after hashes: _BUILD_SOURCE/rough_riders_1115_apply.py and _shots/rough_riders_1115/rename-changes.json. Durable receipt: docs/qa/rough_riders_1115.json. Current canonical naming rule is also recorded in AGENTS.md. Original D: BOF only; BOFII untouched. No commit/push/installer.
+
+Preview: http://127.0.0.1:8766/_shots/rough_riders_1115/review.html
+
+All3 GIFs also decode/animate in Chromium:5/5 browser checks, no page/console/HTTP errors. Actual composited img screenshots change during playback; Canvas drawImage on an animated GIF is intentionally not used as animation evidence. Changed-rectangle compaction preserves every decoded timing tick pixel-for-pixel; combined GIF837,919 bytes instead of30,707,247. Identical hold images may merge while the16-phase native source and exact4s/8s timing remain.

@@ -1,0 +1,2054 @@
+{
+  "pilot": "cole",
+  "difficulty": "normal",
+  "source": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+  "scope": "Fresh native cinematic checkpoints: complete post-Stage-2 service data-link with lift-off/map handoff, Stage3 arrival, and post-Stage-3 HQ/prototypes. No dialogue skipped; not a campaign playthrough.",
+  "clips": [
+    {
+      "seconds": 48.83310000002384,
+      "frames": 3030,
+      "peak": 0.6907733678817749,
+      "stages": [
+        {
+          "at": 0.017200000017881394,
+          "tag": "cutscene:post-2:SL2-01:radio"
+        },
+        {
+          "at": 4.7686000000238415,
+          "tag": "cutscene:post-2:SL2-02:radio"
+        },
+        {
+          "at": 9.889700000017882,
+          "tag": "cutscene:post-2:SL2-03:radio"
+        },
+        {
+          "at": 15.82480000001192,
+          "tag": "cutscene:post-2:SL2-04:radio"
+        },
+        {
+          "at": 20.43270000001788,
+          "tag": "cutscene:post-2:SL2-05:radio"
+        },
+        {
+          "at": 25.0735,
+          "tag": "cutscene:post-2:SL2-06:heat"
+        },
+        {
+          "at": 31.39260000002384,
+          "tag": "cutscene:post-2:SL2-07:heat"
+        },
+        {
+          "at": 36.897,
+          "tag": "cutscene:post-2:SL2-08:alert"
+        },
+        {
+          "at": 41.50490000000596,
+          "tag": "cutscene:post-2:SL2-09:takeoff"
+        },
+        {
+          "at": 46.11270000001788,
+          "tag": "cutscene:post-2:SL2-10:fade"
+        },
+        {
+          "at": 47.31360000002384,
+          "tag": "stagesel:::fade"
+        }
+      ],
+      "last": {
+        "cinema": {
+          "mode": "fade",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.3214285714285714,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": -170,
+            "size": 85,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "framing": {
+            "requestedZoom": 1.18,
+            "zoom": 1.3214285714285714,
+            "viewX": 340,
+            "viewY": 307.2518918918919,
+            "terrainW": 680,
+            "terrainH": 512,
+            "inset": 4,
+            "visible": {
+              "left": 4,
+              "right": 676,
+              "top": 177.08972972972973,
+              "bottom": 444.9816216216216
+            },
+            "box": [
+              12,
+              12,
+              888,
+              354
+            ]
+          },
+          "id": "post-2",
+          "shot": "SL2-10",
+          "text": "",
+          "time": 1.1839000000059607
+        },
+        "service": {
+          "mode": "fade",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.3214285714285714,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": -170,
+            "size": 85,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "framing": {
+            "requestedZoom": 1.18,
+            "zoom": 1.3214285714285714,
+            "viewX": 340,
+            "viewY": 307.2518918918919,
+            "terrainW": 680,
+            "terrainH": 512,
+            "inset": 4,
+            "visible": {
+              "left": 4,
+              "right": 676,
+              "top": 177.08972972972973,
+              "bottom": 444.9816216216216
+            },
+            "box": [
+              12,
+              12,
+              888,
+              354
+            ]
+          },
+          "id": "post-2",
+          "shot": "SL2-10",
+          "text": "",
+          "time": 1.1839000000059607
+        },
+        "cockpit": {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      },
+      "part": "lead-in",
+      "expectedBeats": [
+        {
+          "id": "SL2-01",
+          "who": "COLE",
+          "text": "Decker, what am I looking at?",
+          "duration": 4.76,
+          "mode": "radio"
+        },
+        {
+          "id": "SL2-02",
+          "who": "DECKER",
+          "text": "A service data-link. It's restoring power to our internal relay systems.",
+          "duration": 5.11,
+          "mode": "radio"
+        },
+        {
+          "id": "SL2-03",
+          "who": "DECKER",
+          "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+          "duration": 5.9350000000000005,
+          "mode": "radio"
+        },
+        {
+          "id": "SL2-04",
+          "who": "COLE",
+          "text": "You're a genius, Decker.",
+          "duration": 4.6000000000000005,
+          "mode": "radio"
+        },
+        {
+          "id": "SL2-05",
+          "who": "DECKER",
+          "text": "Hey, I'm just telling you what I know from what we have left.",
+          "duration": 4.633333333333334,
+          "mode": "radio"
+        },
+        {
+          "id": "SL2-06",
+          "who": "DECKER",
+          "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+          "duration": 6.265000000000001,
+          "mode": "heat"
+        },
+        {
+          "id": "SL2-07",
+          "who": "DECKER",
+          "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+          "duration": 5.495,
+          "mode": "heat"
+        },
+        {
+          "id": "SL2-08",
+          "who": "DECKER",
+          "text": "Get out of there. The ground is moving.",
+          "duration": 4.6000000000000005,
+          "mode": "alert"
+        },
+        {
+          "id": "SL2-09",
+          "who": "SYSTEM",
+          "text": "",
+          "duration": 4.6,
+          "mode": "takeoff"
+        },
+        {
+          "id": "SL2-10",
+          "who": "SYSTEM",
+          "text": "",
+          "duration": 1.2,
+          "mode": "fade"
+        }
+      ],
+      "errors": [],
+      "end": {
+        "state": "stagesel",
+        "stage": 2,
+        "done": true,
+        "returns": 1,
+        "mapFade": 0
+      },
+      "cockpitFrames": [
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 2,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 2,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 3,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 1,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 1,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 2,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 3,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 2,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 1,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 7,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 7,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 7,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 2,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 3,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 4,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 2,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 1,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 2,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 2,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 4,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 2,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 2,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 6,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": true,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 7,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 7,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        },
+        {
+          "pilot": "cole",
+          "frame": 0,
+          "key": "cp15_cole",
+          "box": [
+            12,
+            12,
+            552,
+            354
+          ],
+          "image": [
+            12,
+            12,
+            552,
+            368
+          ],
+          "speaking": false,
+          "family": "talking-cockpit",
+          "fixedCamera": true
+        }
+      ],
+      "newCockpitAsset": {
+        "key": "cp15_cole",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/cole/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": true,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "1bd37378b9d800cd94fd765323d0cf256ee4c243677d7600b744757e4758367c"
+      }
+    },
+    {
+      "seconds": 18.831700000017882,
+      "frames": 1166,
+      "peak": 0.7039072513580322,
+      "stages": [
+        {
+          "at": 0.0165,
+          "tag": "intro:::"
+        },
+        {
+          "at": 3.6004000000059606,
+          "tag": "launch:::"
+        },
+        {
+          "at": 3.6167000000178815,
+          "tag": "launch::run:"
+        },
+        {
+          "at": 10.976300000011921,
+          "tag": "launch::brake:"
+        },
+        {
+          "at": 13.64840000000596,
+          "tag": "launch::settle:"
+        },
+        {
+          "at": 14.112800000011921,
+          "tag": "launch::cd:"
+        },
+        {
+          "at": 17.96940000000596,
+          "tag": "play::cd:"
+        }
+      ],
+      "last": {
+        "cinema": null,
+        "service": null,
+        "cockpit": null
+      },
+      "part": "arrival",
+      "expectedBeats": [],
+      "errors": [],
+      "end": {
+        "state": "play",
+        "stage": 3,
+        "done": false,
+        "returns": 0,
+        "mapFade": 0
+      },
+      "cockpitFrames": [],
+      "newCockpitAsset": {
+        "key": "cp15_cole",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/cole/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": true,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "1bd37378b9d800cd94fd765323d0cf256ee4c243677d7600b744757e4758367c"
+      }
+    },
+    {
+      "seconds": 76.73779999998212,
+      "frames": 4785,
+      "peak": 0.7003216743469238,
+      "stages": [
+        {
+          "at": 0.018099999994039537,
+          "tag": "cutscene:post-3:B301:"
+        },
+        {
+          "at": 3.8410999999940394,
+          "tag": "cutscene:post-3:POST3-02:"
+        },
+        {
+          "at": 8.29,
+          "tag": "cutscene:post-3:POST3-03:"
+        },
+        {
+          "at": 10.35240000000596,
+          "tag": "cutscene:post-3:POST3-04:"
+        },
+        {
+          "at": 17.345,
+          "tag": "cutscene:post-3:POST3-05:"
+        },
+        {
+          "at": 20.225,
+          "tag": "cutscene:post-3:POST3-06:"
+        },
+        {
+          "at": 26.0005,
+          "tag": "cutscene:post-3:POST3-07:"
+        },
+        {
+          "at": 28.225,
+          "tag": "cutscene:post-3:POST3-08:"
+        },
+        {
+          "at": 30.81609999999404,
+          "tag": "cutscene:post-3:POST3-09:"
+        },
+        {
+          "at": 34.57709999999404,
+          "tag": "cutscene:post-3:POST3-10:"
+        },
+        {
+          "at": 37.77659999999404,
+          "tag": "cutscene:post-3:POST3-11:"
+        },
+        {
+          "at": 40.00029999998212,
+          "tag": "cutscene:post-3:POST3-12:"
+        },
+        {
+          "at": 44.945,
+          "tag": "cutscene:post-3:POST3-13:"
+        },
+        {
+          "at": 48.40029999998212,
+          "tag": "cutscene:post-3:POST3-14:"
+        },
+        {
+          "at": 50.769,
+          "tag": "cutscene:post-3:POST3-15:"
+        },
+        {
+          "at": 53.90509999999404,
+          "tag": "cutscene:post-3:POST3-16:"
+        },
+        {
+          "at": 56.57629999998212,
+          "tag": "cutscene:post-3:POST3-17:"
+        },
+        {
+          "at": 59.33,
+          "tag": "cutscene:post-3:POST3-18:"
+        },
+        {
+          "at": 62.193,
+          "tag": "cutscene:post-3:POST3-19:"
+        },
+        {
+          "at": 64.769,
+          "tag": "cutscene:post-3:POST3-20:"
+        },
+        {
+          "at": 67.633,
+          "tag": "cutscene:post-3:POST3-21:"
+        },
+        {
+          "at": 70.22509999999404,
+          "tag": "cutscene:post-3:POST3-22:"
+        },
+        {
+          "at": 74.57659999999404,
+          "tag": "cutscene:post-3:POST3-23:"
+        },
+        {
+          "at": 76.641,
+          "tag": "title:::"
+        }
+      ],
+      "last": {
+        "cinema": {
+          "id": "post-3",
+          "shot": "POST3-23",
+          "who": "COLE",
+          "text": "You've got it.",
+          "pilot": "cole",
+          "coOp": [
+            "cole"
+          ],
+          "page": 0,
+          "kind": "dialogue",
+          "bank": null,
+          "frame": 0,
+          "time": 2.04840000000596,
+          "motion3": true,
+          "readAt": 0.26,
+          "scroll": 0,
+          "known": {},
+          "active": 0,
+          "old": 1,
+          "zoom": 6,
+          "factor": 1.2,
+          "cameraX": -40,
+          "cameraY": 36,
+          "same": true,
+          "reaction": false,
+          "snapshot": false,
+          "visiblePanels": [
+            0,
+            1
+          ],
+          "faces": [
+            {
+              "pilot": "cole",
+              "frame": 0,
+              "zoom": 6,
+              "origin": [
+                147,
+                37
+              ],
+              "baseline": 305,
+              "bottom": 340,
+              "bleed": 2,
+              "room": "workshop",
+              "channel": "in-person",
+              "family": "front-headset-free"
+            },
+            {
+              "pilot": "decker",
+              "frame": 0,
+              "zoom": 6,
+              "origin": [
+                631,
+                36
+              ],
+              "baseline": 307,
+              "bottom": 340,
+              "bleed": 3,
+              "room": "workshop",
+              "channel": "in-person",
+              "family": "front-headset-free"
+            }
+          ],
+          "boxes": [
+            [
+              87,
+              18,
+              427,
+              322
+            ],
+            [
+              573,
+              18,
+              424,
+              322
+            ]
+          ]
+        },
+        "service": null,
+        "cockpit": null
+      },
+      "part": "hq",
+      "expectedBeats": [
+        {
+          "id": "B301",
+          "who": "COLE",
+          "text": "All right. We're home. What did we bring back?",
+          "duration": 3.84,
+          "mode": null
+        },
+        {
+          "id": "POST3-02",
+          "who": "DECKER",
+          "text": "The relay's recorder. Every machine heard the same voice.",
+          "duration": 4.445,
+          "mode": null
+        },
+        {
+          "id": "POST3-03",
+          "who": "COLE",
+          "text": "Whose?",
+          "duration": 2.05,
+          "mode": null
+        },
+        {
+          "id": "POST3-04",
+          "who": "DECKER",
+          "text": "I don't know yet. There's a launch record in here. Same signal. It came from the airfield east of us.",
+          "duration": 6.99,
+          "mode": null
+        },
+        {
+          "id": "POST3-05",
+          "who": "LIZZIE",
+          "text": "So we go to the airfield.",
+          "duration": 2.87,
+          "mode": null
+        },
+        {
+          "id": "POST3-06",
+          "who": "DECKER",
+          "text": "I also need its backup power cell. Without it, we don't get above the atmosphere.",
+          "duration": 5.765000000000001,
+          "mode": null
+        },
+        {
+          "id": "POST3-07",
+          "who": "AXEL",
+          "text": "I'll take point.",
+          "duration": 2.21,
+          "mode": null
+        },
+        {
+          "id": "POST3-08",
+          "who": "FREEZER",
+          "text": "Then I'll watch your tail.",
+          "duration": 2.5799999999999996,
+          "mode": null
+        },
+        {
+          "id": "POST3-09",
+          "who": "MAVERICK",
+          "text": "Try to leave something for the rest of us.",
+          "duration": 3.7600000000000002,
+          "mode": null
+        },
+        {
+          "id": "POST3-10",
+          "who": "JUGGERNAUT",
+          "text": "Everybody gets home. That's the deal.",
+          "duration": 3.185,
+          "mode": null
+        },
+        {
+          "id": "POST3-11",
+          "who": "COLE",
+          "text": "That's the deal.",
+          "duration": 2.21,
+          "mode": null
+        },
+        {
+          "id": "POST3-12",
+          "who": "DECKER",
+          "text": "The ice core's safe. I'll see what we can use before you leave.",
+          "duration": 4.93,
+          "mode": null
+        },
+        {
+          "id": "POST3-13",
+          "who": "CAPTION",
+          "text": "A few minutes later. Decker's workshop.",
+          "duration": 3.455,
+          "mode": null
+        },
+        {
+          "id": "POST3-14",
+          "who": "COLE",
+          "text": "You moved the coil.",
+          "duration": 2.355,
+          "mode": null
+        },
+        {
+          "id": "POST3-15",
+          "who": "DECKER",
+          "text": "Thought you'd spot that. Watch this.",
+          "duration": 3.13,
+          "mode": null
+        },
+        {
+          "id": "POST3-16",
+          "who": "SYSTEM",
+          "text": "",
+          "duration": 2.66,
+          "mode": null
+        },
+        {
+          "id": "POST3-17",
+          "who": "COLE",
+          "text": "That's your Photon Cannon?",
+          "duration": 2.7399999999999998,
+          "mode": null
+        },
+        {
+          "id": "POST3-18",
+          "who": "DECKER",
+          "text": "Ours. You wound half the coils.",
+          "duration": 2.855,
+          "mode": null
+        },
+        {
+          "id": "POST3-19",
+          "who": "COLE",
+          "text": "Come here, you lunatic.",
+          "duration": 2.5749999999999997,
+          "mode": null
+        },
+        {
+          "id": "POST3-20",
+          "who": "DECKER",
+          "text": "Easy! Still need those ribs.",
+          "duration": 2.85,
+          "mode": null
+        },
+        {
+          "id": "POST3-21",
+          "who": "COLE",
+          "text": "When can I fly it?",
+          "duration": 2.58,
+          "mode": null
+        },
+        {
+          "id": "POST3-22",
+          "who": "DECKER",
+          "text": "When it stops melting the stand. Bring me that power cell.",
+          "duration": 4.34,
+          "mode": null
+        },
+        {
+          "id": "POST3-23",
+          "who": "COLE",
+          "text": "You've got it.",
+          "duration": 2.05,
+          "mode": null
+        }
+      ],
+      "errors": [],
+      "end": {
+        "state": "title",
+        "stage": 3,
+        "done": true,
+        "returns": 1,
+        "mapFade": 0
+      },
+      "cockpitFrames": [],
+      "newCockpitAsset": {
+        "key": "cp15_cole",
+        "path": "assets/game/shared/cinematics/cockpit_talk_1114/cole/cockpit.webp",
+        "w": 576,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "blink": true,
+        "pivot": [
+          288,
+          192
+        ],
+        "mouthROI": [
+          202,
+          104,
+          370,
+          198
+        ],
+        "eyeROI": [
+          194,
+          52,
+          382,
+          118
+        ],
+        "sha256": "1bd37378b9d800cd94fd765323d0cf256ee4c243677d7600b744757e4758367c"
+      }
+    }
+  ],
+  "errors": [],
+  "chapters": [
+    {
+      "start": 0,
+      "title": "Service data-link, charge-up and lift-off"
+    },
+    {
+      "start": 25.073,
+      "title": "Top-down heat charge"
+    },
+    {
+      "start": 41.505,
+      "title": "Lift-off"
+    },
+    {
+      "start": 47.314,
+      "title": "Return to the campaign map"
+    },
+    {
+      "start": 48.73,
+      "title": "Stage 3 card and fly-in"
+    },
+    {
+      "start": 67.52,
+      "title": "Stage 3 aftermath \u2014 Fury HQ"
+    },
+    {
+      "start": 112.465,
+      "title": "Decker\u2019s workshop and Photon Cannon prototype"
+    }
+  ],
+  "segments": [
+    {
+      "part": "lead-in",
+      "start": 0,
+      "duration": 48.73,
+      "title": "Service data-link, charge-up and lift-off"
+    },
+    {
+      "part": "arrival",
+      "start": 48.73,
+      "duration": 18.79,
+      "title": "Stage 3 card and fly-in"
+    },
+    {
+      "part": "hq",
+      "start": 67.52,
+      "duration": 76.63,
+      "title": "Stage 3 aftermath \u2014 Fury HQ"
+    }
+  ],
+  "inspectionFrames": [
+    {
+      "time": 1.2172000000178813,
+      "label": "Cole talking in his cockpit",
+      "file": "frame-0.png"
+    },
+    {
+      "time": 6.168600000023842,
+      "label": "Decker restores the service data-link",
+      "file": "frame-1.png"
+    },
+    {
+      "time": 27.6735,
+      "label": "Top-down heat charge",
+      "file": "frame-2.png"
+    },
+    {
+      "time": 42.80490000000596,
+      "label": "Lift-off and animated thrusters",
+      "file": "frame-3.png"
+    },
+    {
+      "time": 48.01360000002384,
+      "label": "Campaign map handoff",
+      "file": "frame-4.png"
+    },
+    {
+      "time": 60.9435,
+      "label": "Stage 3 fly-in",
+      "file": "frame-5.png"
+    },
+    {
+      "time": 72.52,
+      "label": "Fury HQ briefing",
+      "file": "frame-6.png"
+    },
+    {
+      "time": 119.465,
+      "label": "Decker\u2019s workshop",
+      "file": "frame-7.png"
+    },
+    {
+      "time": 123.02509999999404,
+      "label": "Photon Cannon prototype",
+      "file": "frame-8.png"
+    }
+  ],
+  "combined": {
+    "file": "stage3-full-cinematics.mp4",
+    "duration": 144.18,
+    "sha256": "4a013c5aed7f01df196227dabe89abe86eb0ac6fb8902fdadc761e9a10274549",
+    "bytes": 69776548,
+    "decodeErrors": [],
+    "audio": [
+      "[Parsed_volumedetect_0 @ 000001e96d006fc0] mean_volume: -14.5 dB",
+      "[Parsed_volumedetect_0 @ 000001e96d006fc0] max_volume: -1.9 dB"
+    ]
+  },
+  "nativeDialogueSkipped": false,
+  "gameSourceChanged": false,
+  "activeGameJsSha256": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+  "browserPlayback": {
+    "checks": [
+      {
+        "name": "recording dimensions and complete duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 144.181706
+        }
+      },
+      {
+        "name": "Service data-link, charge-up and lift-off chapter playback",
+        "ok": true
+      },
+      {
+        "name": "Top-down heat charge chapter playback",
+        "ok": true
+      },
+      {
+        "name": "Lift-off chapter playback",
+        "ok": true
+      },
+      {
+        "name": "Return to the campaign map chapter playback",
+        "ok": true
+      },
+      {
+        "name": "Stage 3 card and fly-in chapter playback",
+        "ok": true
+      },
+      {
+        "name": "Stage 3 aftermath \u2014 Fury HQ chapter playback",
+        "ok": true
+      },
+      {
+        "name": "Decker\u2019s workshop and Photon Cannon prototype chapter playback",
+        "ok": true
+      },
+      {
+        "name": "no browser/page/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "previewServer": {
+    "port": 8766,
+    "url": "http://127.0.0.1:8766/_shots/stage3_talking_1114/review.html",
+    "root": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+    "supportsByteRanges": true
+  },
+  "previewRangeCheck": {
+    "status": 206,
+    "bytes": 256,
+    "contentRange": "bytes 0-255/69776548",
+    "acceptRanges": "bytes"
+  }
+}

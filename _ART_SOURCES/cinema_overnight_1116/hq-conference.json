@@ -1,0 +1,82 @@
+{
+  "full": {
+    "key": "nq16_hq_conference",
+    "path": "assets/game/shared/cinematics/cinema_overnight_1116/hq-conference.webp",
+    "w": 888,
+    "h": 444,
+    "cols": 2,
+    "frames": 4,
+    "pivot": [
+      444,
+      222
+    ],
+    "durations": [
+      900,
+      900,
+      1100,
+      2000
+    ],
+    "sha256": "fc986850fc4171ba887c0177aa024252a48c93103e03f2d158a779f694d426f1"
+  },
+  "comic": {
+    "key": "nq16_hq_conference_comic",
+    "path": "assets/game/shared/cinematics/cinema_overnight_1116/hq-conference-comic.webp",
+    "w": 754,
+    "h": 270,
+    "cols": 4,
+    "frames": 4,
+    "pivot": [
+      377,
+      135
+    ],
+    "durations": [
+      900,
+      900,
+      1100,
+      2000
+    ],
+    "sha256": "5874a62b6007dd02139de6df2b53b57534e8b13f7a5b29161a19bab04a1630f2",
+    "source": "assets/game/shared/cinematics/cinema_overnight_1116/hq-conference.webp",
+    "sharedCrop": [
+      0,
+      89,
+      888,
+      318
+    ],
+    "directFromMaster": true
+  },
+  "source": "_ART_SOURCES/cinema_overnight_1116/hq-conference-approved.png",
+  "generatedSize": [
+    1774,
+    887
+  ],
+  "sourceRects": [
+    [
+      0,
+      0,
+      887,
+      444
+    ],
+    [
+      887,
+      0,
+      1774,
+      444
+    ],
+    [
+      0,
+      444,
+      887,
+      887
+    ],
+    [
+      887,
+      444,
+      1774,
+      887
+    ]
+  ],
+  "normalization": "Transparent right/bottom padding only; no artwork resampling in the master.",
+  "reference": "_BUILD_SOURCE/front_pilots_1111/masters/juggernaut-master.png",
+  "scope": "Four retained conference poses; approved orange-vest Juggernaut identity correction. Not sixteen new animation poses."
+}

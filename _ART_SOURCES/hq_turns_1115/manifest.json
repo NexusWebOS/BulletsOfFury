@@ -1,0 +1,2787 @@
+{
+  "generator": "Native Chromium export of actual approved banking poses and native animated exhaust; no generated replacement aircraft",
+  "cell": [
+    256,
+    256
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "physicalHullHeight": 104,
+  "fps": 15.384615384615383,
+  "flightDuration": 1.3,
+  "pilots": {
+    "cole": {
+      "key": "hq21_turn_cole",
+      "path": "assets/game/shared/cinematics/hq_turns_1115/cole.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 5,
+      "frames": 20,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "side": "southwest",
+      "sha256": "c36b287d40d8cc2a61e9ab96f0bd0d17a5185e57293e0c052880dc563a8e875b",
+      "poses": [
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 0,
+          "u": 0,
+          "heading": 3.141592653589793,
+          "bank": 0,
+          "sourceKey": "ship_cole",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 1,
+          "u": 0.05263157894736842,
+          "heading": -3.038943690907035,
+          "bank": 0.08789753608508413,
+          "sourceKey": "ship_cole",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 2,
+          "u": 0.10526315789473684,
+          "heading": -2.9238289892206897,
+          "bank": 0.1725558994460691,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 3,
+          "u": 0.15789473684210525,
+          "heading": -2.8017695531033247,
+          "bank": 0.25085528634692844,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 4,
+          "u": 0.21052631578947367,
+          "heading": -2.679924786145746,
+          "bank": 0.3199102320788737,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 5,
+          "u": 0.2631578947368421,
+          "heading": -2.5654331776691492,
+          "bank": 0.3771759452104077,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 6,
+          "u": 0.3157894736842105,
+          "heading": -2.463747749417843,
+          "bank": 0.4205420874514762,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 7,
+          "u": 0.3684210526315789,
+          "heading": -2.3778735960465576,
+          "bank": 0.44841054318526957,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 8,
+          "u": 0.42105263157894735,
+          "heading": -2.3086180893351256,
+          "bank": 0.4597543127290176,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 9,
+          "u": 0.47368421052631576,
+          "heading": -2.2553401760373917,
+          "bank": 0.45415535900760806,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 10,
+          "u": 0.5263157894736842,
+          "heading": -2.216688534728501,
+          "bank": 0.4318200129261567,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 11,
+          "u": 0.5789473684210527,
+          "heading": -2.191108924412782,
+          "bank": 0.39357136972751916,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 12,
+          "u": 0.631578947368421,
+          "heading": -2.177118192971444,
+          "bank": 0.3408189565418176,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 13,
+          "u": 0.6842105263157895,
+          "heading": -2.173417347740909,
+          "bank": 0.2755067889300356,
+          "sourceKey": "ship_cole_pv3",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 14,
+          "u": 0.7368421052631579,
+          "heading": -2.1789133918244534,
+          "bank": -0.20004173062581776,
+          "sourceKey": "ship_cole_pv1",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 15,
+          "u": 0.7894736842105263,
+          "heading": -2.1926963160834787,
+          "bank": -0.1172047965400362,
+          "sourceKey": "ship_cole",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 16,
+          "u": 0.8421052631578947,
+          "heading": -2.213997279991037,
+          "bank": -0.03004866766228065,
+          "sourceKey": "ship_cole",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 17,
+          "u": 0.8947368421052632,
+          "heading": -2.2421412727616343,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_cole",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 18,
+          "u": 0.9473684210526315,
+          "heading": -2.2765009149731443,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_cole",
+          "sourceSize": [
+            193,
+            232
+          ]
+        },
+        {
+          "pilot": "cole",
+          "index": 0,
+          "frame": 19,
+          "u": 1,
+          "heading": -2.3164543967006948,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_cole",
+          "sourceSize": [
+            193,
+            232
+          ]
+        }
+      ]
+    },
+    "maverick": {
+      "key": "hq21_turn_maverick",
+      "path": "assets/game/shared/cinematics/hq_turns_1115/maverick.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 5,
+      "frames": 20,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "side": "southeast",
+      "sha256": "4726aadb9a5053ca733ad9b1241b9fb24b1d66bafbe58b70e5b3f2a65a4458c4",
+      "poses": [
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 0,
+          "u": 0,
+          "heading": 3.141592653589793,
+          "bank": 0,
+          "sourceKey": "ship_maverick",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 1,
+          "u": 0.05263157894736842,
+          "heading": 3.038943690907035,
+          "bank": -0.08789753608508413,
+          "sourceKey": "ship_maverick",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 2,
+          "u": 0.10526315789473684,
+          "heading": 2.9238289892206897,
+          "bank": -0.1725558994460691,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 3,
+          "u": 0.15789473684210525,
+          "heading": 2.8017695531033247,
+          "bank": -0.25085528634692844,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 4,
+          "u": 0.21052631578947367,
+          "heading": 2.679924786145746,
+          "bank": -0.3199102320788737,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 5,
+          "u": 0.2631578947368421,
+          "heading": 2.5654331776691492,
+          "bank": -0.3771759452104077,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 6,
+          "u": 0.3157894736842105,
+          "heading": 2.463747749417843,
+          "bank": -0.4205420874514762,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 7,
+          "u": 0.3684210526315789,
+          "heading": 2.3778735960465576,
+          "bank": -0.44841054318526957,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 8,
+          "u": 0.42105263157894735,
+          "heading": 2.3086180893351256,
+          "bank": -0.4597543127290176,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 9,
+          "u": 0.47368421052631576,
+          "heading": 2.2553401760373917,
+          "bank": -0.45415535900760806,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 10,
+          "u": 0.5263157894736842,
+          "heading": 2.216688534728501,
+          "bank": -0.4318200129261567,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 11,
+          "u": 0.5789473684210527,
+          "heading": 2.1911089244127817,
+          "bank": -0.39357136972751916,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 12,
+          "u": 0.631578947368421,
+          "heading": 2.177118192971444,
+          "bank": -0.3408189565418176,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 13,
+          "u": 0.6842105263157895,
+          "heading": 2.173417347740909,
+          "bank": -0.2755067889300356,
+          "sourceKey": "ship_maverick_pv1",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 14,
+          "u": 0.7368421052631579,
+          "heading": 2.1789133918244534,
+          "bank": 0.20004173062581776,
+          "sourceKey": "ship_maverick_pv3",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 15,
+          "u": 0.7894736842105263,
+          "heading": 2.1926963160834787,
+          "bank": 0.1172047965400362,
+          "sourceKey": "ship_maverick",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 16,
+          "u": 0.8421052631578947,
+          "heading": 2.213997279991037,
+          "bank": 0.03004866766228065,
+          "sourceKey": "ship_maverick",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 17,
+          "u": 0.8947368421052632,
+          "heading": 2.2421412727616343,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_maverick",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 18,
+          "u": 0.9473684210526315,
+          "heading": 2.2765009149731443,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_maverick",
+          "sourceSize": [
+            200,
+            211
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "index": 1,
+          "frame": 19,
+          "u": 1,
+          "heading": 2.3164543967006943,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_maverick",
+          "sourceSize": [
+            200,
+            211
+          ]
+        }
+      ]
+    },
+    "freezer": {
+      "key": "hq21_turn_freezer",
+      "path": "assets/game/shared/cinematics/hq_turns_1115/freezer.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 5,
+      "frames": 20,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "side": "southwest",
+      "sha256": "839004146ba44e14e50558bb87ae629763a3480e08832ce99a40887879b9d06d",
+      "poses": [
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 0,
+          "u": 0,
+          "heading": 3.141592653589793,
+          "bank": 0,
+          "sourceKey": "ship_freezer",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 1,
+          "u": 0.05263157894736842,
+          "heading": -3.038943690907035,
+          "bank": 0.08789753608508413,
+          "sourceKey": "ship_freezer",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 2,
+          "u": 0.10526315789473684,
+          "heading": -2.9238289892206897,
+          "bank": 0.1725558994460691,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 3,
+          "u": 0.15789473684210525,
+          "heading": -2.8017695531033247,
+          "bank": 0.25085528634692844,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 4,
+          "u": 0.21052631578947367,
+          "heading": -2.679924786145746,
+          "bank": 0.3199102320788737,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 5,
+          "u": 0.2631578947368421,
+          "heading": -2.5654331776691492,
+          "bank": 0.3771759452104077,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 6,
+          "u": 0.3157894736842105,
+          "heading": -2.463747749417843,
+          "bank": 0.4205420874514762,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 7,
+          "u": 0.3684210526315789,
+          "heading": -2.3778735960465576,
+          "bank": 0.44841054318526957,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 8,
+          "u": 0.42105263157894735,
+          "heading": -2.3086180893351256,
+          "bank": 0.4597543127290176,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 9,
+          "u": 0.47368421052631576,
+          "heading": -2.2553401760373917,
+          "bank": 0.45415535900760806,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 10,
+          "u": 0.5263157894736842,
+          "heading": -2.216688534728501,
+          "bank": 0.4318200129261567,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 11,
+          "u": 0.5789473684210527,
+          "heading": -2.191108924412782,
+          "bank": 0.39357136972751916,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 12,
+          "u": 0.631578947368421,
+          "heading": -2.177118192971444,
+          "bank": 0.3408189565418176,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 13,
+          "u": 0.6842105263157895,
+          "heading": -2.173417347740909,
+          "bank": 0.2755067889300356,
+          "sourceKey": "ship_freezer_pv1",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 14,
+          "u": 0.7368421052631579,
+          "heading": -2.1789133918244534,
+          "bank": -0.20004173062581776,
+          "sourceKey": "ship_freezer_pv3",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 15,
+          "u": 0.7894736842105263,
+          "heading": -2.1926963160834787,
+          "bank": -0.1172047965400362,
+          "sourceKey": "ship_freezer",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 16,
+          "u": 0.8421052631578947,
+          "heading": -2.213997279991037,
+          "bank": -0.03004866766228065,
+          "sourceKey": "ship_freezer",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 17,
+          "u": 0.8947368421052632,
+          "heading": -2.2421412727616343,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_freezer",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 18,
+          "u": 0.9473684210526315,
+          "heading": -2.2765009149731443,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_freezer",
+          "sourceSize": [
+            183,
+            194
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "index": 2,
+          "frame": 19,
+          "u": 1,
+          "heading": -2.3164543967006948,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_freezer",
+          "sourceSize": [
+            183,
+            194
+          ]
+        }
+      ]
+    },
+    "juggernaut": {
+      "key": "hq21_turn_juggernaut",
+      "path": "assets/game/shared/cinematics/hq_turns_1115/juggernaut.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 5,
+      "frames": 20,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "side": "southeast",
+      "sha256": "cbfcd764ef183e6f4aa590be266071e7849f55879fd58e75f05595be996bedda",
+      "poses": [
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 0,
+          "u": 0,
+          "heading": 3.141592653589793,
+          "bank": 0,
+          "sourceKey": "ship_juggernaut",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 1,
+          "u": 0.05263157894736842,
+          "heading": 3.038943690907035,
+          "bank": -0.08789753608508413,
+          "sourceKey": "ship_juggernaut",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 2,
+          "u": 0.10526315789473684,
+          "heading": 2.9238289892206897,
+          "bank": -0.1725558994460691,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 3,
+          "u": 0.15789473684210525,
+          "heading": 2.8017695531033247,
+          "bank": -0.25085528634692844,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 4,
+          "u": 0.21052631578947367,
+          "heading": 2.679924786145746,
+          "bank": -0.3199102320788737,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 5,
+          "u": 0.2631578947368421,
+          "heading": 2.5654331776691492,
+          "bank": -0.3771759452104077,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 6,
+          "u": 0.3157894736842105,
+          "heading": 2.463747749417843,
+          "bank": -0.4205420874514762,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 7,
+          "u": 0.3684210526315789,
+          "heading": 2.3778735960465576,
+          "bank": -0.44841054318526957,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 8,
+          "u": 0.42105263157894735,
+          "heading": 2.3086180893351256,
+          "bank": -0.4597543127290176,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 9,
+          "u": 0.47368421052631576,
+          "heading": 2.2553401760373917,
+          "bank": -0.45415535900760806,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 10,
+          "u": 0.5263157894736842,
+          "heading": 2.216688534728501,
+          "bank": -0.4318200129261567,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 11,
+          "u": 0.5789473684210527,
+          "heading": 2.1911089244127817,
+          "bank": -0.39357136972751916,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 12,
+          "u": 0.631578947368421,
+          "heading": 2.177118192971444,
+          "bank": -0.3408189565418176,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 13,
+          "u": 0.6842105263157895,
+          "heading": 2.173417347740909,
+          "bank": -0.2755067889300356,
+          "sourceKey": "ship_juggernaut_pv1",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 14,
+          "u": 0.7368421052631579,
+          "heading": 2.1789133918244534,
+          "bank": 0.20004173062581776,
+          "sourceKey": "ship_juggernaut_pv3",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 15,
+          "u": 0.7894736842105263,
+          "heading": 2.1926963160834787,
+          "bank": 0.1172047965400362,
+          "sourceKey": "ship_juggernaut",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 16,
+          "u": 0.8421052631578947,
+          "heading": 2.213997279991037,
+          "bank": 0.03004866766228065,
+          "sourceKey": "ship_juggernaut",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 17,
+          "u": 0.8947368421052632,
+          "heading": 2.2421412727616343,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_juggernaut",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 18,
+          "u": 0.9473684210526315,
+          "heading": 2.2765009149731443,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_juggernaut",
+          "sourceSize": [
+            200,
+            205
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "index": 3,
+          "frame": 19,
+          "u": 1,
+          "heading": 2.3164543967006943,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_juggernaut",
+          "sourceSize": [
+            200,
+            205
+          ]
+        }
+      ]
+    },
+    "yuri": {
+      "key": "hq21_turn_yuri",
+      "path": "assets/game/shared/cinematics/hq_turns_1115/yuri.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 5,
+      "frames": 20,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "side": "southwest",
+      "sha256": "4cb7d144953329f4fe624412fc0be7d82a29947f5eeb76a9c49ce6dfcbdfb14a",
+      "poses": [
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 0,
+          "u": 0,
+          "heading": 3.141592653589793,
+          "bank": 0,
+          "sourceKey": "ship_yuri",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 1,
+          "u": 0.05263157894736842,
+          "heading": -3.038943690907035,
+          "bank": 0.08789753608508413,
+          "sourceKey": "ship_yuri",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 2,
+          "u": 0.10526315789473684,
+          "heading": -2.9238289892206897,
+          "bank": 0.1725558994460691,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 3,
+          "u": 0.15789473684210525,
+          "heading": -2.8017695531033247,
+          "bank": 0.25085528634692844,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 4,
+          "u": 0.21052631578947367,
+          "heading": -2.679924786145746,
+          "bank": 0.3199102320788737,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 5,
+          "u": 0.2631578947368421,
+          "heading": -2.5654331776691492,
+          "bank": 0.3771759452104077,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 6,
+          "u": 0.3157894736842105,
+          "heading": -2.463747749417843,
+          "bank": 0.4205420874514762,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 7,
+          "u": 0.3684210526315789,
+          "heading": -2.3778735960465576,
+          "bank": 0.44841054318526957,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 8,
+          "u": 0.42105263157894735,
+          "heading": -2.3086180893351256,
+          "bank": 0.4597543127290176,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 9,
+          "u": 0.47368421052631576,
+          "heading": -2.2553401760373917,
+          "bank": 0.45415535900760806,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 10,
+          "u": 0.5263157894736842,
+          "heading": -2.216688534728501,
+          "bank": 0.4318200129261567,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 11,
+          "u": 0.5789473684210527,
+          "heading": -2.191108924412782,
+          "bank": 0.39357136972751916,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 12,
+          "u": 0.631578947368421,
+          "heading": -2.177118192971444,
+          "bank": 0.3408189565418176,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 13,
+          "u": 0.6842105263157895,
+          "heading": -2.173417347740909,
+          "bank": 0.2755067889300356,
+          "sourceKey": "ship_yuri_pv3",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 14,
+          "u": 0.7368421052631579,
+          "heading": -2.1789133918244534,
+          "bank": -0.20004173062581776,
+          "sourceKey": "ship_yuri_pv1",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 15,
+          "u": 0.7894736842105263,
+          "heading": -2.1926963160834787,
+          "bank": -0.1172047965400362,
+          "sourceKey": "ship_yuri",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 16,
+          "u": 0.8421052631578947,
+          "heading": -2.213997279991037,
+          "bank": -0.03004866766228065,
+          "sourceKey": "ship_yuri",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 17,
+          "u": 0.8947368421052632,
+          "heading": -2.2421412727616343,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_yuri",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 18,
+          "u": 0.9473684210526315,
+          "heading": -2.2765009149731443,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_yuri",
+          "sourceSize": [
+            209,
+            229
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "index": 4,
+          "frame": 19,
+          "u": 1,
+          "heading": -2.3164543967006948,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_yuri",
+          "sourceSize": [
+            209,
+            229
+          ]
+        }
+      ]
+    },
+    "lizzie": {
+      "key": "hq21_turn_lizzie",
+      "path": "assets/game/shared/cinematics/hq_turns_1115/lizzie.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 5,
+      "frames": 20,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "side": "southeast",
+      "sha256": "73d7f3ffc646ce5d41ba238a2b38a51ca16dc8038711f076dcc9362b97d1da15",
+      "poses": [
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 0,
+          "u": 0,
+          "heading": 3.141592653589793,
+          "bank": 0,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 1,
+          "u": 0.05263157894736842,
+          "heading": 3.038943690907035,
+          "bank": -0.08789753608508413,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 2,
+          "u": 0.10526315789473684,
+          "heading": 2.9238289892206897,
+          "bank": -0.1725558994460691,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 3,
+          "u": 0.15789473684210525,
+          "heading": 2.8017695531033247,
+          "bank": -0.25085528634692844,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 4,
+          "u": 0.21052631578947367,
+          "heading": 2.679924786145746,
+          "bank": -0.3199102320788737,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 5,
+          "u": 0.2631578947368421,
+          "heading": 2.5654331776691492,
+          "bank": -0.3771759452104077,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 6,
+          "u": 0.3157894736842105,
+          "heading": 2.463747749417843,
+          "bank": -0.4205420874514762,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 7,
+          "u": 0.3684210526315789,
+          "heading": 2.3778735960465576,
+          "bank": -0.44841054318526957,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 8,
+          "u": 0.42105263157894735,
+          "heading": 2.3086180893351256,
+          "bank": -0.4597543127290176,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 9,
+          "u": 0.47368421052631576,
+          "heading": 2.2553401760373917,
+          "bank": -0.45415535900760806,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 10,
+          "u": 0.5263157894736842,
+          "heading": 2.216688534728501,
+          "bank": -0.4318200129261567,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 11,
+          "u": 0.5789473684210527,
+          "heading": 2.1911089244127817,
+          "bank": -0.39357136972751916,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 12,
+          "u": 0.631578947368421,
+          "heading": 2.177118192971444,
+          "bank": -0.3408189565418176,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 13,
+          "u": 0.6842105263157895,
+          "heading": 2.173417347740909,
+          "bank": -0.2755067889300356,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 14,
+          "u": 0.7368421052631579,
+          "heading": 2.1789133918244534,
+          "bank": 0.20004173062581776,
+          "sourceKey": "ship_lizzie_pv3",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 15,
+          "u": 0.7894736842105263,
+          "heading": 2.1926963160834787,
+          "bank": 0.1172047965400362,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 16,
+          "u": 0.8421052631578947,
+          "heading": 2.213997279991037,
+          "bank": 0.03004866766228065,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 17,
+          "u": 0.8947368421052632,
+          "heading": 2.2421412727616343,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 18,
+          "u": 0.9473684210526315,
+          "heading": 2.2765009149731443,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "index": 5,
+          "frame": 19,
+          "u": 1,
+          "heading": 2.3164543967006943,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        }
+      ]
+    },
+    "falva": {
+      "key": "hq21_turn_falva",
+      "path": "assets/game/shared/cinematics/hq_turns_1115/falva.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 5,
+      "frames": 20,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "side": "southwest",
+      "sha256": "83172db54709fde89a5fd4dae4b1dc0ad2788d77804aaac3f237648de7154655",
+      "poses": [
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 0,
+          "u": 0,
+          "heading": 3.141592653589793,
+          "bank": 0,
+          "sourceKey": "ship_falva",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 1,
+          "u": 0.05263157894736842,
+          "heading": -3.038943690907035,
+          "bank": 0.08789753608508413,
+          "sourceKey": "ship_falva",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 2,
+          "u": 0.10526315789473684,
+          "heading": -2.9238289892206897,
+          "bank": 0.1725558994460691,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 3,
+          "u": 0.15789473684210525,
+          "heading": -2.8017695531033247,
+          "bank": 0.25085528634692844,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 4,
+          "u": 0.21052631578947367,
+          "heading": -2.679924786145746,
+          "bank": 0.3199102320788737,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 5,
+          "u": 0.2631578947368421,
+          "heading": -2.5654331776691492,
+          "bank": 0.3771759452104077,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 6,
+          "u": 0.3157894736842105,
+          "heading": -2.463747749417843,
+          "bank": 0.4205420874514762,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 7,
+          "u": 0.3684210526315789,
+          "heading": -2.3778735960465576,
+          "bank": 0.44841054318526957,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 8,
+          "u": 0.42105263157894735,
+          "heading": -2.3086180893351256,
+          "bank": 0.4597543127290176,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 9,
+          "u": 0.47368421052631576,
+          "heading": -2.2553401760373917,
+          "bank": 0.45415535900760806,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 10,
+          "u": 0.5263157894736842,
+          "heading": -2.216688534728501,
+          "bank": 0.4318200129261567,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 11,
+          "u": 0.5789473684210527,
+          "heading": -2.191108924412782,
+          "bank": 0.39357136972751916,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 12,
+          "u": 0.631578947368421,
+          "heading": -2.177118192971444,
+          "bank": 0.3408189565418176,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 13,
+          "u": 0.6842105263157895,
+          "heading": -2.173417347740909,
+          "bank": 0.2755067889300356,
+          "sourceKey": "ship_falva_pv3",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 14,
+          "u": 0.7368421052631579,
+          "heading": -2.1789133918244534,
+          "bank": -0.20004173062581776,
+          "sourceKey": "ship_falva_pv1",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 15,
+          "u": 0.7894736842105263,
+          "heading": -2.1926963160834787,
+          "bank": -0.1172047965400362,
+          "sourceKey": "ship_falva",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 16,
+          "u": 0.8421052631578947,
+          "heading": -2.213997279991037,
+          "bank": -0.03004866766228065,
+          "sourceKey": "ship_falva",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 17,
+          "u": 0.8947368421052632,
+          "heading": -2.2421412727616343,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_falva",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 18,
+          "u": 0.9473684210526315,
+          "heading": -2.2765009149731443,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_falva",
+          "sourceSize": [
+            204,
+            238
+          ]
+        },
+        {
+          "pilot": "falva",
+          "index": 6,
+          "frame": 19,
+          "u": 1,
+          "heading": -2.3164543967006948,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_falva",
+          "sourceSize": [
+            204,
+            238
+          ]
+        }
+      ]
+    },
+    "decker": {
+      "key": "hq21_turn_decker",
+      "path": "assets/game/shared/cinematics/hq_turns_1115/decker.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 5,
+      "frames": 20,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "side": "southeast",
+      "sha256": "a21c98308178fec2af9dbde2f1ee38764c2cf7267f8846532d86b5b7d61461a2",
+      "poses": [
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 0,
+          "u": 0,
+          "heading": 0.4911032467441596,
+          "bank": 0,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 1,
+          "u": 0.05263157894736842,
+          "heading": 0.804025415494221,
+          "bank": 0.214990658232297,
+          "sourceKey": "ship_decker_pv1",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 2,
+          "u": 0.10526315789473684,
+          "heading": 1.470086811917223,
+          "bank": 0.38012983426359304,
+          "sourceKey": "ship_decker_pv1",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 3,
+          "u": 0.15789473684210525,
+          "heading": 2.1111334166681974,
+          "bank": 0.45712547967512857,
+          "sourceKey": "ship_decker_pv1",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 4,
+          "u": 0.21052631578947367,
+          "heading": 2.4338907875107694,
+          "bank": 0.4281240417667652,
+          "sourceKey": "ship_decker_pv1",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 5,
+          "u": 0.2631578947368421,
+          "heading": 2.3248148427622968,
+          "bank": -0.29985029954787773,
+          "sourceKey": "ship_decker_pv3",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 6,
+          "u": 0.3157894736842105,
+          "heading": 2.1563131989623776,
+          "bank": -0.10204803923531315,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 7,
+          "u": 0.3684210526315789,
+          "heading": 2.024735647028297,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 8,
+          "u": 0.42105263157894735,
+          "heading": 1.9310785339245693,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 9,
+          "u": 0.47368421052631576,
+          "heading": 1.8706406041669807,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 10,
+          "u": 0.5263157894736842,
+          "heading": 1.8374954947471127,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 11,
+          "u": 0.5789473684210527,
+          "heading": 1.8264056811877203,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 12,
+          "u": 0.631578947368421,
+          "heading": 1.8332232253715222,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 13,
+          "u": 0.6842105263157895,
+          "heading": 1.8547282780185195,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 14,
+          "u": 0.7368421052631579,
+          "heading": 1.8883448728703196,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 15,
+          "u": 0.7894736842105263,
+          "heading": 1.931886129928699,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 16,
+          "u": 0.8421052631578947,
+          "heading": 1.983370117037571,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 17,
+          "u": 0.8947368421052632,
+          "heading": 2.0409121807791357,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 18,
+          "u": 0.9473684210526315,
+          "heading": 2.1026874992362674,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        },
+        {
+          "pilot": "decker",
+          "index": 7,
+          "frame": 19,
+          "u": 1,
+          "heading": 2.1669486049354894,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_decker",
+          "sourceSize": [
+            200,
+            230
+          ]
+        }
+      ]
+    },
+    "axel": {
+      "key": "hq21_turn_axel",
+      "path": "assets/game/shared/cinematics/hq_turns_1115/axel.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 5,
+      "frames": 20,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "side": "southwest",
+      "sha256": "e32195266ee833b654c8e523f0f54d19254607a39381a04f355261165c831040",
+      "poses": [
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 0,
+          "u": 0,
+          "heading": -0.35363142708659057,
+          "bank": 0,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 1,
+          "u": 0.05263157894736842,
+          "heading": -0.683487691001903,
+          "bank": -0.214990658232297,
+          "sourceKey": "ship_axel_pv3",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 2,
+          "u": 0.10526315789473684,
+          "heading": -1.388752677601992,
+          "bank": -0.38012983426359304,
+          "sourceKey": "ship_axel_pv3",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 3,
+          "u": 0.15789473684210525,
+          "heading": -2.073874324563894,
+          "bank": -0.45712547967512857,
+          "sourceKey": "ship_axel_pv3",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 4,
+          "u": 0.21052631578947367,
+          "heading": -2.428180146673233,
+          "bank": -0.4281240417667652,
+          "sourceKey": "ship_axel_pv3",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 5,
+          "u": 0.2631578947368421,
+          "heading": -2.3248148427622977,
+          "bank": 0.29985029954787773,
+          "sourceKey": "ship_axel_pv1",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 6,
+          "u": 0.3157894736842105,
+          "heading": -2.1563131989623767,
+          "bank": 0.10204803923531315,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 7,
+          "u": 0.3684210526315789,
+          "heading": -2.024735647028298,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 8,
+          "u": 0.42105263157894735,
+          "heading": -1.9310785339245684,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 9,
+          "u": 0.47368421052631576,
+          "heading": -1.8706406041669816,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 10,
+          "u": 0.5263157894736842,
+          "heading": -1.8374954947471127,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 11,
+          "u": 0.5789473684210527,
+          "heading": -1.8264056811877212,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 12,
+          "u": 0.631578947368421,
+          "heading": -1.833223225371523,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 13,
+          "u": 0.6842105263157895,
+          "heading": -1.8547282780185195,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 14,
+          "u": 0.7368421052631579,
+          "heading": -1.8883448728703205,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 15,
+          "u": 0.7894736842105263,
+          "heading": -1.931886129928699,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 16,
+          "u": 0.8421052631578947,
+          "heading": -1.9833701170375702,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 17,
+          "u": 0.8947368421052632,
+          "heading": -2.0409121807791366,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 18,
+          "u": 0.9473684210526315,
+          "heading": -2.1026874992362665,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        },
+        {
+          "pilot": "axel",
+          "index": 8,
+          "frame": 19,
+          "u": 1,
+          "heading": -2.1669486049354902,
+          "bank": -5.633375276077825e-17,
+          "sourceKey": "ship_axel",
+          "sourceSize": [
+            190,
+            224
+          ]
+        }
+      ]
+    },
+    "lizzie_b42": {
+      "key": "hq21_turn_lizzie_b42",
+      "path": "assets/game/shared/cinematics/hq_turns_1115/lizzie_b42.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 5,
+      "frames": 20,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "side": "southeast",
+      "sha256": "b45ece5cb1c6f83fc0b143bde030c66a21a5d15753f79589061e815298c26288",
+      "poses": [
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 0,
+          "u": 0,
+          "heading": 3.141592653589793,
+          "bank": 0,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 1,
+          "u": 0.05263157894736842,
+          "heading": 3.038943690907035,
+          "bank": -0.08789753608508413,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 2,
+          "u": 0.10526315789473684,
+          "heading": 2.9238289892206897,
+          "bank": -0.1725558994460691,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 3,
+          "u": 0.15789473684210525,
+          "heading": 2.8017695531033247,
+          "bank": -0.25085528634692844,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 4,
+          "u": 0.21052631578947367,
+          "heading": 2.679924786145746,
+          "bank": -0.3199102320788737,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 5,
+          "u": 0.2631578947368421,
+          "heading": 2.5654331776691492,
+          "bank": -0.3771759452104077,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 6,
+          "u": 0.3157894736842105,
+          "heading": 2.463747749417843,
+          "bank": -0.4205420874514762,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 7,
+          "u": 0.3684210526315789,
+          "heading": 2.3778735960465576,
+          "bank": -0.44841054318526957,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 8,
+          "u": 0.42105263157894735,
+          "heading": 2.3086180893351256,
+          "bank": -0.4597543127290176,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 9,
+          "u": 0.47368421052631576,
+          "heading": 2.2553401760373917,
+          "bank": -0.45415535900760806,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 10,
+          "u": 0.5263157894736842,
+          "heading": 2.216688534728501,
+          "bank": -0.4318200129261567,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 11,
+          "u": 0.5789473684210527,
+          "heading": 2.1911089244127817,
+          "bank": -0.39357136972751916,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 12,
+          "u": 0.631578947368421,
+          "heading": 2.177118192971444,
+          "bank": -0.3408189565418176,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 13,
+          "u": 0.6842105263157895,
+          "heading": 2.173417347740909,
+          "bank": -0.2755067889300356,
+          "sourceKey": "ship_lizzie_pv1",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 14,
+          "u": 0.7368421052631579,
+          "heading": 2.1789133918244534,
+          "bank": 0.20004173062581776,
+          "sourceKey": "ship_lizzie_pv3",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 15,
+          "u": 0.7894736842105263,
+          "heading": 2.1926963160834787,
+          "bank": 0.1172047965400362,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 16,
+          "u": 0.8421052631578947,
+          "heading": 2.213997279991037,
+          "bank": 0.03004866766228065,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 17,
+          "u": 0.8947368421052632,
+          "heading": 2.2421412727616343,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 18,
+          "u": 0.9473684210526315,
+          "heading": 2.2765009149731443,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        },
+        {
+          "pilot": "lizzie_b42",
+          "index": 5,
+          "frame": 19,
+          "u": 1,
+          "heading": 2.3164543967006943,
+          "bank": 5.633375276077825e-17,
+          "sourceKey": "ship_lizzie",
+          "sourceSize": [
+            224,
+            243
+          ]
+        }
+      ],
+      "variant": "actual native applyLizzieSkin(true)"
+    }
+  }
+}

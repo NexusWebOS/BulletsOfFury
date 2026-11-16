@@ -1,0 +1,407 @@
+{
+  "build": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+  "suite": {
+    "passed": 8969,
+    "failed": 0,
+    "exitCode": 0,
+    "failureNamesAdded": []
+  },
+  "syntax": [
+    "assets/opening_fury_1114.js",
+    "assets/cinematic_corrections_1114.js"
+  ],
+  "stage1": {
+    "pilots": [
+      {
+        "kind": "comic-strip",
+        "pilot": "cole",
+        "shot": "orders",
+        "time": 2,
+        "panel": 1,
+        "camera": 940,
+        "wholeCockpit": true,
+        "detachedPortrait": false,
+        "text": "Flight systems, head for that jungle over there, stat!",
+        "keysReady": true
+      },
+      {
+        "kind": "comic-strip",
+        "pilot": "axel",
+        "shot": "orders",
+        "time": 2,
+        "panel": 1,
+        "camera": 940,
+        "wholeCockpit": true,
+        "detachedPortrait": false,
+        "text": "Flight systems, head for that jungle over there, stat!",
+        "keysReady": true
+      },
+      {
+        "kind": "comic-strip",
+        "pilot": "freezer",
+        "shot": "orders",
+        "time": 2,
+        "panel": 1,
+        "camera": 940,
+        "wholeCockpit": true,
+        "detachedPortrait": false,
+        "text": "Flight systems, head for that jungle over there, stat!",
+        "keysReady": true
+      },
+      {
+        "kind": "comic-strip",
+        "pilot": "yuri",
+        "shot": "orders",
+        "time": 2,
+        "panel": 1,
+        "camera": 940,
+        "wholeCockpit": true,
+        "detachedPortrait": false,
+        "text": "Flight systems, head for that jungle over there, stat!",
+        "keysReady": true
+      },
+      {
+        "kind": "comic-strip",
+        "pilot": "maverick",
+        "shot": "orders",
+        "time": 2,
+        "panel": 1,
+        "camera": 940,
+        "wholeCockpit": true,
+        "detachedPortrait": false,
+        "text": "Flight systems, head for that jungle over there, stat!",
+        "keysReady": true
+      },
+      {
+        "kind": "comic-strip",
+        "pilot": "falva",
+        "shot": "orders",
+        "time": 2,
+        "panel": 1,
+        "camera": 940,
+        "wholeCockpit": true,
+        "detachedPortrait": false,
+        "text": "Flight systems, head for that jungle over there, stat!",
+        "keysReady": true
+      },
+      {
+        "kind": "comic-strip",
+        "pilot": "lizzie",
+        "shot": "orders",
+        "time": 2,
+        "panel": 1,
+        "camera": 940,
+        "wholeCockpit": true,
+        "detachedPortrait": false,
+        "text": "Flight systems, head for that jungle over there, stat!",
+        "keysReady": true
+      },
+      {
+        "kind": "comic-strip",
+        "pilot": "decker",
+        "shot": "orders",
+        "time": 2,
+        "panel": 1,
+        "camera": 940,
+        "wholeCockpit": true,
+        "detachedPortrait": false,
+        "text": "Flight systems, head for that jungle over there, stat!",
+        "keysReady": true
+      },
+      {
+        "kind": "comic-strip",
+        "pilot": "juggernaut",
+        "shot": "orders",
+        "time": 2,
+        "panel": 1,
+        "camera": 940,
+        "wholeCockpit": true,
+        "detachedPortrait": false,
+        "text": "Flight systems, head for that jungle over there, stat!",
+        "keysReady": true
+      }
+    ],
+    "boom": {
+      "booms": 1,
+      "last": [
+        "dialogueLetter",
+        "dialogueLetter",
+        "dialogueLetter",
+        "dialogueLetter",
+        "dialogueLetter",
+        "dialogueLetter",
+        "dialogueLetter",
+        "dialogueLetter"
+      ]
+    },
+    "deploy": {
+      "state": "cutscene",
+      "scene": "stage1-lost-comms",
+      "pending": false,
+      "card": false
+    },
+    "skip": {
+      "state": "intro",
+      "scene": null,
+      "stage": 1
+    },
+    "errors": []
+  },
+  "stage5": {
+    "restoredNativeRenderer": true,
+    "phases": [
+      "drain",
+      "pulse",
+      "lock",
+      "missile",
+      "engulf",
+      "burst",
+      "after"
+    ],
+    "result": {
+      "comicDraws": 0,
+      "events": [
+        {
+          "event": "stunned",
+          "x": 340,
+          "y": 158.72,
+          "core": {
+            "x": 338.84615384615387,
+            "y": 178.3353846153846
+          }
+        },
+        {
+          "event": "pulse",
+          "age": 5.616666666666652
+        },
+        {
+          "event": "lock",
+          "age": 7.733333333333311
+        },
+        {
+          "event": "missile",
+          "age": 8.883333333333354
+        },
+        {
+          "event": "shot-fired",
+          "from": {
+            "x": 340,
+            "y": 367.2975
+          },
+          "to": {
+            "x": 338.84615384615387,
+            "y": 178.3353846153846
+          }
+        },
+        {
+          "event": "engulf",
+          "age": 9.350000000000044
+        },
+        {
+          "event": "core-impact",
+          "count": 1,
+          "x": 338.84615384615387,
+          "y": 178.3353846153846
+        },
+        {
+          "event": "cookoff",
+          "t": 1.7166666666666655,
+          "interval": 0.7169761904761907
+        },
+        {
+          "event": "cookoff",
+          "t": 2.449999999999996,
+          "interval": 0.5839285714285721
+        },
+        {
+          "event": "cookoff",
+          "t": 3.049999999999994,
+          "interval": 0.47507142857142964
+        },
+        {
+          "event": "cookoff",
+          "t": 3.5333333333333257,
+          "interval": 0.38738095238095377
+        },
+        {
+          "event": "cookoff",
+          "t": 3.9333333333333242,
+          "interval": 0.31480952380952537
+        },
+        {
+          "event": "cookoff",
+          "t": 4.24999999999999,
+          "interval": 0.2573571428571446
+        },
+        {
+          "event": "cookoff",
+          "t": 4.516666666666656,
+          "interval": 0.20897619047619242
+        },
+        {
+          "event": "cookoff",
+          "t": 4.733333333333322,
+          "interval": 0.16966666666666877
+        },
+        {
+          "event": "cookoff",
+          "t": 4.9166666666666545,
+          "interval": 0.1364047619047641
+        },
+        {
+          "event": "cookoff",
+          "t": 5.066666666666654,
+          "interval": 0.1091904761904785
+        },
+        {
+          "event": "cookoff",
+          "t": 5.18333333333332,
+          "interval": 0.08802380952381192
+        },
+        {
+          "event": "burst",
+          "age": 14.56666666666697
+        },
+        {
+          "event": "massive-blowup",
+          "cookoff": 11
+        },
+        {
+          "event": "armor-release"
+        },
+        {
+          "event": "cutaway"
+        }
+      ],
+      "render": {
+        "phase": "burst",
+        "age": 19.66666666666683,
+        "t": 5.099999999999987,
+        "anchor": {
+          "x": 340,
+          "y": 158.72
+        },
+        "core": {
+          "x": 338.84615384615387,
+          "y": 178.3353846153846
+        },
+        "impacts": 1
+      },
+      "draws": {},
+      "score": 25000
+    },
+    "nativeStageClear": true,
+    "midPan": {
+      "kind": "comic-strip",
+      "pilot": "cole",
+      "shot": "pilot",
+      "time": 0.825,
+      "panel": 1,
+      "camera": 470,
+      "wholeCockpit": true,
+      "detachedPortrait": false,
+      "text": "Dammit, where did everyone go?!"
+    },
+    "errors": [],
+    "screenshots": [
+      "restored-stage5-drain.png",
+      "restored-stage5-pulse.png",
+      "restored-stage5-lock.png",
+      "restored-stage5-missile.png",
+      "restored-stage5-engulf.png",
+      "restored-stage5-burst.png",
+      "restored-stage5-after.png"
+    ],
+    "scope": "Native death checkpoint through normal phase clocks; reentry inspected at a selected time, not a full campaign playthrough."
+  },
+  "recordings": {
+    "clips": [
+      {
+        "seconds": 119.99559999999404,
+        "frames": 7479,
+        "peak": 0.7003216743469238,
+        "stages": [
+          {
+            "at": 0.016299999982118608,
+            "tag": "campaignintro:crawl:"
+          },
+          {
+            "at": 107.82469999998808,
+            "tag": "stagesel:crawl:"
+          }
+        ],
+        "last": {
+          "kind": "crawl",
+          "pilot": "cole",
+          "t": 107.82759999999656,
+          "total": 107.82352941176471,
+          "background": "cin_war_naval_exchange",
+          "lines": [
+            31,
+            32,
+            34,
+            36,
+            37,
+            38
+          ],
+          "closing": true
+        },
+        "part": "opening"
+      },
+      {
+        "part": "stage1",
+        "seconds": 40.54659999999404,
+        "frames": 2507,
+        "peak": 0.7268533706665039,
+        "stages": [
+          {
+            "at": 0.01669999998807907,
+            "tag": "stagesel::"
+          },
+          {
+            "at": 3.1255,
+            "tag": "cutscene::"
+          },
+          {
+            "at": 3.1836999999880793,
+            "tag": "cutscene:comic-strip:flight"
+          },
+          {
+            "at": 9.65,
+            "tag": "cutscene:comic-strip:pilot"
+          },
+          {
+            "at": 15.362,
+            "tag": "cutscene:comic-strip:boom"
+          },
+          {
+            "at": 19.569900000005962,
+            "tag": "cutscene:comic-strip:orders"
+          },
+          {
+            "at": 27.18440000000596,
+            "tag": "cutscene:comic-strip:resolve"
+          },
+          {
+            "at": 33.98540000000596,
+            "tag": "cutscene:comic-strip:fade"
+          },
+          {
+            "at": 35.48830000001192,
+            "tag": "intro:comic-strip:fade"
+          },
+          {
+            "at": 35.71030000001192,
+            "tag": "intro:stage1-card:"
+          },
+          {
+            "at": 39.48809999999404,
+            "tag": "launch:stage1-card:"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "scope": "Native cinematic checkpoints and real-time recordings; not full campaign wins."
+}

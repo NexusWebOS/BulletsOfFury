@@ -66,7 +66,7 @@ function cb112Effects(dt){for(const f of CB112.fx)f.t+=dt;CB112.fx=CB112.fx.filt
 function cb112Warn(e,x,y,angle,progress,width=80,len=900){combatWarningDraw(e,{x,y,ex:x+Math.cos(angle)*len,ey:y+Math.sin(angle)*len,width,progress:clamp(progress,0,1),fieldOnly:true});}
 function cb112Tick(e,dt){if(!cb112Live(e))return;const q=cb112Init(e),A=e._s911;q.age+=dt;q.t+=dt;q.beat-=dt;A.age=q.age;A.t=q.t;A.head=A.head??Math.PI/2;e.shoots=e.armed=false;
  const dark=['grenade-charge','grenades'].includes(q.phase)?.61:0;q.dark+=clamp(dark-q.dark,-dt*1.7,dt*1.7);
- if(bossActive||subBossActive||bossDefeated||q.age>64){if(q.phase!=='retreat'){s911Cancel(e);cb112Set(e,'retreat');}}
+ if(!e._s9PilotOwner&&(bossActive||subBossActive||bossDefeated||q.age>64)){if(q.phase!=='retreat'){s911Cancel(e);cb112Set(e,'retreat');}}
  const cx=(camLeftX()+camRightX())/2,homeY=PLAY.y+150;
  if(q.phase==='entry'){A.head=Math.PI/2;q.entryY+=170*dt;const taper=clamp((homeY-q.entryY)/65,0,1);e.x=q.home+Math.sin(q.age*8)*22*taper;e.y=q.entryY+Math.cos(q.age*8)*11*taper;if(q.entryY>=homeY){e.y=homeY;if(!s911Live(S911.heavy)||S911.heavy===e){S911.heavy=e;cb112Set(e,'transform');cb112Cue(e,'cfComboWater',.5);}}}
  else if(q.phase==='transform'||q.phase==='reform'){if(q.t>(q.phase==='transform'?2.65:1.9)){q.human=A.human=true;cb112Set(e,q.phase==='transform'?'grenade-charge':'tidal-charge');}}

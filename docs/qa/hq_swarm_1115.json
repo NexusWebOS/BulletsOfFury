@@ -1,0 +1,3584 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "full12-beat HQ story with swarm realization",
+        "ok": true,
+        "data": [
+          {
+            "id": "HQ19-LAND",
+            "mode": "land",
+            "duration": 7,
+            "text": ""
+          },
+          {
+            "id": "HQ19-EXIT",
+            "mode": "exit",
+            "duration": 3,
+            "text": ""
+          },
+          {
+            "id": "HQ19-ENTER",
+            "mode": "enter",
+            "duration": 6.6,
+            "text": ""
+          },
+          {
+            "id": "HQ19-CORRIDOR",
+            "mode": "corridor",
+            "duration": 6.6,
+            "text": ""
+          },
+          {
+            "id": "HQ19-WELCOME",
+            "mode": "welcome",
+            "duration": 7,
+            "text": ""
+          },
+          {
+            "id": "HQ19-RADAR",
+            "mode": "radar",
+            "duration": 9,
+            "text": ""
+          },
+          {
+            "id": "HQ19-LAUNCH",
+            "mode": "launch",
+            "duration": 7.5,
+            "text": ""
+          },
+          {
+            "id": "HQ19-QUIET",
+            "mode": "quiet",
+            "duration": 5,
+            "text": ""
+          },
+          {
+            "id": "HQ19-ATTACK",
+            "mode": "attack",
+            "duration": 1.6,
+            "text": ""
+          },
+          {
+            "id": "HQ19-DECKER",
+            "mode": "defend",
+            "duration": 4.2,
+            "text": "Dammit! They made it to our base too!"
+          },
+          {
+            "id": "HQ19-SWARM",
+            "mode": "swarm",
+            "duration": 2.8,
+            "text": "More are coming! We gotta warn the others!"
+          },
+          {
+            "id": "HQ19-AXEL",
+            "mode": "escape",
+            "duration": 3.4,
+            "text": "Punch it! I will warn the team!"
+          }
+        ]
+      },
+      {
+        "name": "every departure now.75s with.9s spacing",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "rapid ten-hit counterattack ends by3.9s",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "guards warn the team before and during escape",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "fast-launch native scene drawn",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "stealth-missiles native scene drawn",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "actual stealth fighters launch visible native missiles",
+        "ok": true,
+        "data": [
+          {
+            "launcher": 0,
+            "role": "stealth_red",
+            "launchAt": 0.55,
+            "life": 0.35,
+            "x": 559.2591406532266,
+            "y": 166.36171951829715,
+            "target": {
+              "x": 376.08000000000004,
+              "y": 130.66028708133973
+            },
+            "impact": false
+          }
+        ]
+      },
+      {
+        "name": "first-hit-flash native scene drawn",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "rapid-counterattack native scene drawn",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "overwhelming-swarm native scene drawn",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "ten destroyed attackers replaced by a larger swarm",
+        "ok": true,
+        "data": {
+          "kills": 10,
+          "enemies": 20,
+          "missiles": 7
+        }
+      },
+      {
+        "name": "decker-somersault native scene drawn",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "decker-somersault uses actual pitch-frame bank",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "decker",
+            "key": "hq22_decker_somersault",
+            "x": 340.56,
+            "y": 366.092610070959,
+            "h": 96,
+            "motion": "somersault",
+            "flipFrame": 2,
+            "progress": 0.3600000000000012,
+            "heading": 0.4911032467441596
+          },
+          {
+            "pilot": "axel",
+            "key": "ship_axel",
+            "x": 571.44,
+            "y": 387.8084593301435,
+            "h": 96,
+            "power": 0.45,
+            "south": false,
+            "heading": 5.517265039658587,
+            "bank": 0,
+            "defending": true,
+            "motion": "defend"
+          }
+        ]
+      },
+      {
+        "name": "decker-boost native scene drawn",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "decker-boost boosts after its somersault",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "decker",
+            "key": "hq21_turn_decker",
+            "x": 388.4017413734403,
+            "y": 445.0094507335485,
+            "h": 126.40000000000008,
+            "power": 0.95,
+            "south": true,
+            "heading": 1.9310785339245693,
+            "bank": -5.633375276077825e-17,
+            "sourceKey": "ship_decker",
+            "turnFrame": 8,
+            "start": 7.6,
+            "duration": 0.75,
+            "side": "southeast",
+            "progress": 0.40000000000000097,
+            "motion": "boost"
+          },
+          {
+            "pilot": "axel",
+            "key": "ship_axel_pv1",
+            "x": 571.44,
+            "y": 387.8084593301435,
+            "h": 96,
+            "power": 0.45,
+            "south": false,
+            "heading": 5.927183077872006,
+            "bank": 0.26230392893481724,
+            "defending": true,
+            "motion": "defend"
+          }
+        ]
+      },
+      {
+        "name": "axel-somersault native scene drawn",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "axel-somersault uses actual pitch-frame bank",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "decker",
+            "key": "hq21_turn_decker",
+            "x": 783.2627918347387,
+            "y": 578.322374540646,
+            "h": 161.8666666666667,
+            "power": 0.95,
+            "south": true,
+            "heading": 2.0409121807791357,
+            "bank": 5.633375276077825e-17,
+            "sourceKey": "ship_decker",
+            "turnFrame": 17,
+            "start": 7.6,
+            "duration": 0.75,
+            "side": "southeast",
+            "progress": 0.8666666666666671,
+            "motion": "boost"
+          },
+          {
+            "pilot": "axel",
+            "key": "hq22_axel_somersault",
+            "x": 571.44,
+            "y": 363.8084593301435,
+            "h": 96,
+            "motion": "somersault",
+            "flipFrame": 4,
+            "progress": 0.5,
+            "heading": -0.35363142708659057
+          }
+        ]
+      },
+      {
+        "name": "axel-boost native scene drawn",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "axel-boost boosts after its somersault",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "axel",
+            "key": "hq21_turn_axel",
+            "x": 523.5982586265596,
+            "y": 445.0094507335485,
+            "h": 126.40000000000008,
+            "power": 0.95,
+            "south": true,
+            "heading": -1.9310785339245684,
+            "bank": 5.633375276077825e-17,
+            "sourceKey": "ship_axel",
+            "turnFrame": 8,
+            "start": 8.5,
+            "duration": 0.75,
+            "side": "southwest",
+            "progress": 0.40000000000000097,
+            "motion": "boost"
+          }
+        ]
+      },
+      {
+        "name": "decker all8 pitch frames selected in order",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "axel all8 pitch frames selected in order",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "name": "all native story beats complete once",
+        "ok": true,
+        "data": [
+          "land",
+          "exit",
+          "enter",
+          "corridor",
+          "welcome",
+          "radar",
+          "launch",
+          "quiet",
+          "attack",
+          "defend",
+          "swarm",
+          "escape"
+        ]
+      },
+      {
+        "name": "all9 leave individually in alternating directions",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "cole",
+            "side": "southwest",
+            "duration": 0.75
+          },
+          {
+            "pilot": "maverick",
+            "side": "southeast",
+            "duration": 0.75
+          },
+          {
+            "pilot": "freezer",
+            "side": "southwest",
+            "duration": 0.75
+          },
+          {
+            "pilot": "juggernaut",
+            "side": "southeast",
+            "duration": 0.75
+          },
+          {
+            "pilot": "yuri",
+            "side": "southwest",
+            "duration": 0.75
+          },
+          {
+            "pilot": "lizzie",
+            "side": "southeast",
+            "duration": 0.75
+          },
+          {
+            "pilot": "falva",
+            "side": "southwest",
+            "duration": 0.75
+          },
+          {
+            "pilot": "decker",
+            "side": "southeast",
+            "duration": 0.75
+          },
+          {
+            "pilot": "axel",
+            "side": "southwest",
+            "duration": 0.75
+          }
+        ]
+      },
+      {
+        "name": "both guards shoot, perform somersaults and defeat ten attackers",
+        "ok": true,
+        "data": {
+          "flips": [
+            "decker",
+            "axel"
+          ],
+          "shooters": [
+            "decker",
+            "axel"
+          ],
+          "kills": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      },
+      {
+        "name": "five-second empty-base pause remains",
+        "ok": true,
+        "data": {
+          "delay": 5.0666666666663716
+        }
+      },
+      {
+        "name": "fast reinforcements and missile volleys visibly swarm the base",
+        "ok": true,
+        "data": {
+          "maxEnemies": 22,
+          "missilePeak": 9
+        }
+      },
+      {
+        "name": "native somersault/boost/missile cues dispatched",
+        "ok": true,
+        "data": [
+          {
+            "name": "jetDash",
+            "shot": "HQ19-LAND",
+            "at": 0.12
+          },
+          {
+            "name": "gravityLock",
+            "shot": "HQ19-LAND",
+            "at": 4.3
+          },
+          {
+            "name": "gd_doorOpen",
+            "shot": "HQ19-EXIT",
+            "at": 0.15
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-ENTER",
+            "at": 0.2
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-ENTER",
+            "at": 0.56
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-ENTER",
+            "at": 0.92
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-ENTER",
+            "at": 1.28
+          },
+          {
+            "name": "gd_doorOpen",
+            "shot": "HQ19-ENTER",
+            "at": 1.5
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-ENTER",
+            "at": 1.6400000000000001
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-ENTER",
+            "at": 2
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-ENTER",
+            "at": 2.36
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-ENTER",
+            "at": 2.7199999999999998
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-ENTER",
+            "at": 3.0799999999999996
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-ENTER",
+            "at": 3.4399999999999995
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-ENTER",
+            "at": 3.7999999999999994
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-ENTER",
+            "at": 4.159999999999999
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-ENTER",
+            "at": 4.52
+          },
+          {
+            "name": "gd_doorOpen",
+            "shot": "HQ19-ENTER",
+            "at": 4.9
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-CORRIDOR",
+            "at": 0.2
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-CORRIDOR",
+            "at": 0.56
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-CORRIDOR",
+            "at": 0.92
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-CORRIDOR",
+            "at": 1.28
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-CORRIDOR",
+            "at": 1.6400000000000001
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-CORRIDOR",
+            "at": 2
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-CORRIDOR",
+            "at": 2.36
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-CORRIDOR",
+            "at": 2.7199999999999998
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-CORRIDOR",
+            "at": 3.0799999999999996
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-CORRIDOR",
+            "at": 3.4399999999999995
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-CORRIDOR",
+            "at": 3.7999999999999994
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-CORRIDOR",
+            "at": 4.159999999999999
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-CORRIDOR",
+            "at": 4.52
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-CORRIDOR",
+            "at": 4.88
+          },
+          {
+            "name": "gd_footstepA",
+            "shot": "HQ19-CORRIDOR",
+            "at": 5.24
+          },
+          {
+            "name": "gd_footstepB",
+            "shot": "HQ19-CORRIDOR",
+            "at": 5.6000000000000005
+          },
+          {
+            "name": "select",
+            "shot": "HQ19-WELCOME",
+            "at": 1.7
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-WELCOME",
+            "at": 3
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 0.3
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 1.15
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 2
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 2.85
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 3.7
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 4.13
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 4.56
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 4.989999999999999
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 5.419999999999999
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 5.849999999999999
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 6.2799999999999985
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 6.709999999999998
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 7.139999999999998
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 7.569999999999998
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 7.999999999999997
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-RADAR",
+            "at": 8.429999999999998
+          },
+          {
+            "name": "gd_doorOpen",
+            "shot": "HQ19-LAUNCH",
+            "at": 0.05
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-LAUNCH",
+            "at": 1.1
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-LAUNCH",
+            "at": 2
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-LAUNCH",
+            "at": 2.9000000000000004
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-LAUNCH",
+            "at": 3.8000000000000003
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-LAUNCH",
+            "at": 4.7
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-LAUNCH",
+            "at": 5.6
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-LAUNCH",
+            "at": 6.5
+          },
+          {
+            "name": "gd_doorOpen",
+            "shot": "HQ19-QUIET",
+            "at": 0.05
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-ATTACK",
+            "at": 0.3
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-ATTACK",
+            "at": 0.55
+          },
+          {
+            "name": "expSmall",
+            "shot": "HQ19-ATTACK",
+            "at": 0.8
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-ATTACK",
+            "at": 1.25
+          },
+          {
+            "name": "gd_doorOpen",
+            "shot": "HQ19-DECKER",
+            "at": 0.05
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-DECKER",
+            "at": 0.2
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-DECKER",
+            "at": 0.65
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-DECKER",
+            "at": 1
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-DECKER",
+            "at": 1
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-DECKER",
+            "at": 1.3
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-DECKER",
+            "at": 1.55
+          },
+          {
+            "name": "expBig",
+            "shot": "HQ19-DECKER",
+            "at": 1.65
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-DECKER",
+            "at": 1.8
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-DECKER",
+            "at": 1.8
+          },
+          {
+            "name": "expSmall",
+            "shot": "HQ19-DECKER",
+            "at": 1.9
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-DECKER",
+            "at": 2.05
+          },
+          {
+            "name": "expBig",
+            "shot": "HQ19-DECKER",
+            "at": 2.15
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-DECKER",
+            "at": 2.3
+          },
+          {
+            "name": "expSmall",
+            "shot": "HQ19-DECKER",
+            "at": 2.4
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-DECKER",
+            "at": 2.55
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-DECKER",
+            "at": 2.6
+          },
+          {
+            "name": "expBig",
+            "shot": "HQ19-DECKER",
+            "at": 2.65
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-DECKER",
+            "at": 2.8
+          },
+          {
+            "name": "expSmall",
+            "shot": "HQ19-DECKER",
+            "at": 2.9
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-DECKER",
+            "at": 3.05
+          },
+          {
+            "name": "expBig",
+            "shot": "HQ19-DECKER",
+            "at": 3.15
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-DECKER",
+            "at": 3.3
+          },
+          {
+            "name": "expSmall",
+            "shot": "HQ19-DECKER",
+            "at": 3.4
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-DECKER",
+            "at": 3.4
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-DECKER",
+            "at": 3.55
+          },
+          {
+            "name": "expBig",
+            "shot": "HQ19-DECKER",
+            "at": 3.65
+          },
+          {
+            "name": "expSmall",
+            "shot": "HQ19-DECKER",
+            "at": 3.9
+          },
+          {
+            "name": "blip",
+            "shot": "HQ19-SWARM",
+            "at": 0.1
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-SWARM",
+            "at": 0.2
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-SWARM",
+            "at": 1
+          },
+          {
+            "name": "expBig",
+            "shot": "HQ19-SWARM",
+            "at": 1.1
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-SWARM",
+            "at": 1.8
+          },
+          {
+            "name": "enemyMachineGunLight",
+            "shot": "HQ19-SWARM",
+            "at": 2.1
+          },
+          {
+            "name": "somersault",
+            "shot": "HQ19-AXEL",
+            "at": 0.1
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-AXEL",
+            "at": 0.15
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-AXEL",
+            "at": 0.6
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-AXEL",
+            "at": 0.9
+          },
+          {
+            "name": "somersault",
+            "shot": "HQ19-AXEL",
+            "at": 1
+          },
+          {
+            "name": "jetDash",
+            "shot": "HQ19-AXEL",
+            "at": 1.5
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-AXEL",
+            "at": 1.8
+          },
+          {
+            "name": "expBig",
+            "shot": "HQ19-AXEL",
+            "at": 2.3
+          },
+          {
+            "name": "gd_doorOpen",
+            "shot": "HQ19-AXEL",
+            "at": 2.4
+          },
+          {
+            "name": "enemyMissile",
+            "shot": "HQ19-AXEL",
+            "at": 2.7
+          }
+        ]
+      },
+      {
+        "name": "somersault decoded through native audio bus",
+        "ok": true,
+        "data": {
+          "key": "somersault",
+          "peak": 0.664027214050293
+        }
+      },
+      {
+        "name": "enemyMissile decoded through native audio bus",
+        "ok": true,
+        "data": {
+          "key": "enemyMissile",
+          "peak": 0.38062572479248047
+        }
+      },
+      {
+        "name": "jetDash decoded through native audio bus",
+        "ok": true,
+        "data": {
+          "key": "jetDash",
+          "peak": 0.4038417339324951
+        }
+      },
+      {
+        "name": "no browser/console/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "rows": [
+      {
+        "id": "HQ19-LAND",
+        "mode": "land",
+        "duration": 7,
+        "text": ""
+      },
+      {
+        "id": "HQ19-EXIT",
+        "mode": "exit",
+        "duration": 3,
+        "text": ""
+      },
+      {
+        "id": "HQ19-ENTER",
+        "mode": "enter",
+        "duration": 6.6,
+        "text": ""
+      },
+      {
+        "id": "HQ19-CORRIDOR",
+        "mode": "corridor",
+        "duration": 6.6,
+        "text": ""
+      },
+      {
+        "id": "HQ19-WELCOME",
+        "mode": "welcome",
+        "duration": 7,
+        "text": ""
+      },
+      {
+        "id": "HQ19-RADAR",
+        "mode": "radar",
+        "duration": 9,
+        "text": ""
+      },
+      {
+        "id": "HQ19-LAUNCH",
+        "mode": "launch",
+        "duration": 7.5,
+        "text": ""
+      },
+      {
+        "id": "HQ19-QUIET",
+        "mode": "quiet",
+        "duration": 5,
+        "text": ""
+      },
+      {
+        "id": "HQ19-ATTACK",
+        "mode": "attack",
+        "duration": 1.6,
+        "text": ""
+      },
+      {
+        "id": "HQ19-DECKER",
+        "mode": "defend",
+        "duration": 4.2,
+        "text": "Dammit! They made it to our base too!"
+      },
+      {
+        "id": "HQ19-SWARM",
+        "mode": "swarm",
+        "duration": 2.8,
+        "text": "More are coming! We gotta warn the others!"
+      },
+      {
+        "id": "HQ19-AXEL",
+        "mode": "escape",
+        "duration": 3.4,
+        "text": "Punch it! I will warn the team!"
+      }
+    ]
+  },
+  "lifecycle": {
+    "checks": [
+      {
+        "name": "native Chronos destruction retained before new return",
+        "ok": true,
+        "data": [
+          "engulf",
+          "missile",
+          "burst",
+          "drain",
+          "pulse",
+          "after",
+          "lock"
+        ]
+      },
+      {
+        "name": "native settlement reached once",
+        "ok": true,
+        "data": "stageclear"
+      },
+      {
+        "name": "retired static dying/orbital/Earth plates never drawn",
+        "ok": true,
+        "data": []
+      },
+      {
+        "name": "Earth image is not drawn before the reveal",
+        "ok": true,
+        "data": [
+          {
+            "time": 2.416666666666663,
+            "y": -385.4937478461976
+          },
+          {
+            "time": 2.4333333333333296,
+            "y": -385.26568285991505
+          },
+          {
+            "time": 2.449999999999996,
+            "y": -384.8881837172539
+          },
+          {
+            "time": 2.466666666666663,
+            "y": -384.3633851918768
+          }
+        ]
+      },
+      {
+        "name": "southbound descent scales continuously down",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "starfield pixels and native scroll stop once Earth settles",
+        "ok": true,
+        "data": [
+          {
+            "hash": 1837765533,
+            "scroll": 1204.8333333333333,
+            "frozen": true
+          },
+          {
+            "hash": 1837765533,
+            "scroll": 1204.8333333333333,
+            "frozen": true
+          },
+          {
+            "hash": 1837765533,
+            "scroll": 1204.8333333333333,
+            "frozen": true
+          },
+          {
+            "hash": 1837765533,
+            "scroll": 1204.8333333333333,
+            "frozen": true
+          },
+          {
+            "hash": 1837765533,
+            "scroll": 1204.8333333333333,
+            "frozen": true
+          },
+          {
+            "hash": 1837765533,
+            "scroll": 1204.8333333333333,
+            "frozen": true
+          }
+        ]
+      },
+      {
+        "name": "all twelve complete HQ beats ran natively",
+        "ok": true,
+        "data": [
+          "land",
+          "exit",
+          "enter",
+          "corridor",
+          "welcome",
+          "radar",
+          "launch",
+          "quiet",
+          "attack",
+          "defend",
+          "swarm",
+          "escape"
+        ]
+      },
+      {
+        "name": "seven pilots launch first and both guards depart later",
+        "ok": true,
+        "data": {
+          "first": [
+            "juggernaut",
+            "falva",
+            "cole",
+            "freezer",
+            "yuri",
+            "maverick",
+            "lizzie"
+          ],
+          "guards": [
+            "axel",
+            "decker"
+          ]
+        }
+      },
+      {
+        "name": "quiet stretch has no enemies or outbound ships",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "at least five seconds before first enemies",
+        "ok": true,
+        "data": {
+          "quietStart": 46.70000000001587,
+          "enemyStart": 51.70000000001772,
+          "delay": 5.000000000001847
+        }
+      },
+      {
+        "name": "Decker and Axel both fire and ten attackers are visibly defeated before escape",
+        "ok": true,
+        "data": {
+          "shooters": [
+            "axel",
+            "decker"
+          ],
+          "kills": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      },
+      {
+        "name": "enemy reinforcements remain after the counterattack",
+        "ok": true,
+        "data": [
+          2,
+          10,
+          15,
+          16,
+          22,
+          22,
+          22
+        ]
+      },
+      {
+        "name": "only one aircraft departs at a time",
+        "ok": true,
+        "data": 1
+      },
+      {
+        "name": "all nine departure directions alternate southwest and southeast",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "cole",
+            "side": "southwest"
+          },
+          {
+            "pilot": "maverick",
+            "side": "southeast"
+          },
+          {
+            "pilot": "freezer",
+            "side": "southwest"
+          },
+          {
+            "pilot": "juggernaut",
+            "side": "southeast"
+          },
+          {
+            "pilot": "yuri",
+            "side": "southwest"
+          },
+          {
+            "pilot": "lizzie",
+            "side": "southeast"
+          },
+          {
+            "pilot": "falva",
+            "side": "southwest"
+          },
+          {
+            "pilot": "decker",
+            "side": "southeast"
+          },
+          {
+            "pilot": "axel",
+            "side": "southwest"
+          }
+        ]
+      },
+      {
+        "name": "escape dialogue keeps framed pilot avatars and one metal size",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "all sixteen actual radar frames are distinct",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "two actual active co-op pilots are retained",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "co-op welcome has all nine pilots exactly once",
+        "ok": true,
+        "data": [
+          {
+            "pilot": "axel",
+            "key": "hq20_axel_performance",
+            "pose": "cheer",
+            "frame": 10,
+            "x": 360,
+            "foot": 414,
+            "height": 205
+          },
+          {
+            "pilot": "maverick",
+            "key": "hq20_maverick_performance",
+            "pose": "cheer",
+            "frame": 11,
+            "x": 457,
+            "foot": 414,
+            "height": 205
+          },
+          {
+            "pilot": "freezer",
+            "key": "hq20_freezer_performance",
+            "pose": "cheer",
+            "frame": 12,
+            "x": 554,
+            "foot": 414,
+            "height": 205
+          },
+          {
+            "pilot": "juggernaut",
+            "key": "hq20_juggernaut_performance",
+            "pose": "cheer",
+            "frame": 13,
+            "x": 651,
+            "foot": 414,
+            "height": 220
+          },
+          {
+            "pilot": "yuri",
+            "key": "hq20_yuri_performance",
+            "pose": "cheer",
+            "frame": 14,
+            "x": 748,
+            "foot": 414,
+            "height": 205
+          },
+          {
+            "pilot": "lizzie",
+            "key": "hq20_lizzie_performance",
+            "pose": "cheer",
+            "frame": 15,
+            "x": 360,
+            "foot": 478,
+            "height": 205
+          },
+          {
+            "pilot": "falva",
+            "key": "hq20_falva_performance",
+            "pose": "cheer",
+            "frame": 8,
+            "x": 457,
+            "foot": 478,
+            "height": 205
+          },
+          {
+            "pilot": "cole",
+            "key": "hq20_cole_performance",
+            "pose": "cheer",
+            "frame": 11,
+            "x": 245,
+            "foot": 467,
+            "height": 220
+          },
+          {
+            "pilot": "decker",
+            "key": "hq20_decker_performance",
+            "pose": "cheer",
+            "frame": 11,
+            "x": 160,
+            "foot": 482,
+            "height": 220
+          }
+        ]
+      },
+      {
+        "name": "gd_doorOpen decoded native audio is audible",
+        "ok": true,
+        "data": {
+          "key": "gd_doorOpen",
+          "peak": 0.32314619421958923
+        }
+      },
+      {
+        "name": "gd_footstepA decoded native audio is audible",
+        "ok": true,
+        "data": {
+          "key": "gd_footstepA",
+          "peak": 0.326026976108551
+        }
+      },
+      {
+        "name": "gd_footstepB decoded native audio is audible",
+        "ok": true,
+        "data": {
+          "key": "gd_footstepB",
+          "peak": 0.34475237131118774
+        }
+      },
+      {
+        "name": "blip decoded native audio is audible",
+        "ok": true,
+        "data": {
+          "key": "blip",
+          "peak": 0.3257277011871338
+        }
+      },
+      {
+        "name": "jetDash decoded native audio is audible",
+        "ok": true,
+        "data": {
+          "key": "jetDash",
+          "peak": 0.37750422954559326
+        }
+      },
+      {
+        "name": "enemyMachineGunLight decoded native audio is audible",
+        "ok": true,
+        "data": {
+          "key": "enemyMachineGunLight",
+          "peak": 0.16870860755443573
+        }
+      },
+      {
+        "name": "expSmall decoded native audio is audible",
+        "ok": true,
+        "data": {
+          "key": "expSmall",
+          "peak": 0.3694601356983185
+        }
+      },
+      {
+        "name": "zero page console HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "earthSamples": [
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 0,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 399.36,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 0.09999999999999999,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 396.8980427856168,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 0.19999999999999998,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 389.77132453345473,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 0.3,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 378.36857532999545,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 0.39999999999999997,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 363.07852526172053,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 0.49999999999999994,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 344.28990441511155,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 0.6000000000000002,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 322.39144287665,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 0.7000000000000005,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 297.7718707328173,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 0.8000000000000008,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 270.81991807009535,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 0.9000000000000011,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 241.92431497496554,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.0000000000000013,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 211.47379153390946,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.100000000000001,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 179.85707783340885,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.2000000000000006,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 147.46290395994512,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.3000000000000003,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 114.67999999999995,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.4,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 81.89709604005463,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.4999999999999996,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 49.502922166590906,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.5999999999999992,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": 17.886208466090352,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.6999999999999988,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": -12.564314974965498,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.7999999999999985,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": -41.45991807009517,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.8999999999999981,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": -68.41187073281702,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 1.9999999999999978,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": -93.03144287664946,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 2.0999999999999974,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": -114.92990441511097,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 2.199999999999997,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": -133.71852526172006,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 2.2999999999999967,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": -149.00857532999498,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "space-departure",
+        "time": 2.3999999999999964,
+        "earthVisible": false,
+        "planetY": -218.88,
+        "ship": {
+          "x": 240,
+          "y": -160.41132453345438,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 2.499999999999996,
+        "earthVisible": true,
+        "planetY": -216.19018518518538,
+        "ship": {
+          "x": 240,
+          "y": -167.53804278561654,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 2.5999999999999956,
+        "earthVisible": true,
+        "planetY": -208.42814814814858,
+        "ship": {
+          "x": 240,
+          "y": -170,
+          "h": 72,
+          "south": false
+        },
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 2.6999999999999953,
+        "earthVisible": true,
+        "planetY": -196.05500000000066,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 2.799999999999995,
+        "earthVisible": true,
+        "planetY": -179.53185185185276,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 2.8999999999999946,
+        "earthVisible": true,
+        "planetY": -159.31981481481597,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 2.9999999999999942,
+        "earthVisible": true,
+        "planetY": -135.8800000000014,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 3.099999999999994,
+        "earthVisible": true,
+        "planetY": -109.67351851852014,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 3.1999999999999935,
+        "earthVisible": true,
+        "planetY": -81.16148148148332,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 3.299999999999993,
+        "earthVisible": true,
+        "planetY": -50.80500000000208,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 3.399999999999993,
+        "earthVisible": true,
+        "planetY": -19.065185185187488,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 3.4999999999999925,
+        "earthVisible": true,
+        "planetY": 13.596851851849408,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 3.599999999999992,
+        "earthVisible": true,
+        "planetY": 46.71999999999741,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 3.6999999999999917,
+        "earthVisible": true,
+        "planetY": 79.84314814814553,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 3.7999999999999914,
+        "earthVisible": true,
+        "planetY": 112.50518518518248,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 3.899999999999991,
+        "earthVisible": true,
+        "planetY": 144.24499999999733,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 3.9999999999999907,
+        "earthVisible": true,
+        "planetY": 174.60148148147886,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 4.099999999999991,
+        "earthVisible": true,
+        "planetY": 203.11351851851612,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 4.19999999999999,
+        "earthVisible": true,
+        "planetY": 229.31999999999772,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 4.29999999999999,
+        "earthVisible": true,
+        "planetY": 252.75981481481273,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 4.39999999999999,
+        "earthVisible": true,
+        "planetY": 272.97185185185003,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 4.499999999999989,
+        "earthVisible": true,
+        "planetY": 289.4949999999986,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 4.599999999999989,
+        "earthVisible": true,
+        "planetY": 301.86814814814716,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 4.699999999999989,
+        "earthVisible": true,
+        "planetY": 309.6301851851846,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-reveal",
+        "time": 4.799999999999988,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": null,
+        "fade": 0,
+        "scrollFrozen": false
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 4.899999999999988,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -89.71725895311795,
+          "h": 71.95150842057352,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 4.999999999999988,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -88.88075564861188,
+          "h": 71.80804369594904,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 5.099999999999987,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -87.50806984069206,
+          "h": 71.57262084660904,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 5.199999999999987,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -85.61678128356878,
+          "h": 71.248254893036,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 5.2999999999999865,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -83.22446973145233,
+          "h": 70.8379608557124,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 5.399999999999986,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -80.348714938553,
+          "h": 70.34475375512069,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 5.499999999999986,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -77.00709665908107,
+          "h": 69.77164861174337,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 5.599999999999985,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -73.21719464724683,
+          "h": 69.12166044606292,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 5.699999999999985,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -68.99658865726056,
+          "h": 68.3978042785618,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 5.799999999999985,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -64.36285844333254,
+          "h": 67.60309512972248,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 5.899999999999984,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -59.33358375967309,
+          "h": 66.74054802002745,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 5.999999999999984,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -53.926344360492465,
+          "h": 65.81317796995918,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 6.099999999999984,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -48.158720000000955,
+          "h": 64.82400000000017,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 6.199999999999983,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -42.04829043240886,
+          "h": 63.77602913063286,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 6.299999999999983,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -35.61263541192647,
+          "h": 62.67228038233974,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 6.399999999999983,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -28.86933469276405,
+          "h": 61.5157687756033,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 6.499999999999982,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -21.83596802913189,
+          "h": 60.309509330905996,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 6.599999999999982,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -14.530115175240297,
+          "h": 59.056517068730315,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 6.6999999999999815,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": -6.969355885299549,
+          "h": 57.75980700955873,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 6.799999999999981,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 0.8287300864800926,
+          "h": 56.42239417387371,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 6.899999999999981,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 8.846562985888312,
+          "h": 55.04729358215775,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 6.9999999999999805,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 17.06656305871482,
+          "h": 53.63752025489332,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 7.09999999999998,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 25.471150550749343,
+          "h": 52.19608921256287,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 7.19999999999998,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 34.042745707781606,
+          "h": 50.72601547564891,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 7.299999999999979,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 42.76376877560131,
+          "h": 49.2303140646339,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 7.399999999999979,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 51.61663999999817,
+          "h": 47.712000000000316,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 7.499999999999979,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 60.58377962676187,
+          "h": 46.17408830223064,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 7.599999999999978,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 69.64760790168216,
+          "h": 44.61959399180735,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 7.699999999999978,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 78.79054507054872,
+          "h": 43.05153208921291,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 7.799999999999978,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 87.99501137915132,
+          "h": 41.4729176149298,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 7.899999999999977,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 97.24342707327963,
+          "h": 39.88676558944051,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 7.999999999999977,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 106.51821239872342,
+          "h": 38.29609103322749,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 8.099999999999982,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 115.80178760127276,
+          "h": 36.70390896677316,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 8.199999999999987,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 125.07657292671706,
+          "h": 35.113234410560054,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 8.299999999999992,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 134.32498862084586,
+          "h": 33.52708238507068,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 8.399999999999997,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 143.529454929449,
+          "h": 31.94846791078748,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 8.500000000000002,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 152.6723920983161,
+          "h": 30.380406008192956,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 8.600000000000007,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 161.73622037323685,
+          "h": 28.825911697769584,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 8.700000000000012,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 170.70336000000106,
+          "h": 27.287999999999812,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 8.800000000000017,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 179.5562312243984,
+          "h": 25.769685935366155,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 8.900000000000022,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 188.27725429221857,
+          "h": 24.273984524351064,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 9.000000000000027,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 196.84884944925125,
+          "h": 22.803910787437026,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 9.100000000000032,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 205.25343694128622,
+          "h": 21.362479745106512,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 9.200000000000037,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 213.4734370141132,
+          "h": 19.952706417841995,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 9.300000000000042,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 221.4912699135217,
+          "h": 18.577605826125975,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 9.400000000000047,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 229.2893558853017,
+          "h": 17.240192990440903,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 9.500000000000052,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 236.85011517524282,
+          "h": 15.943482931269251,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 9.600000000000056,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 244.15596802913467,
+          "h": 14.690490669093528,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 9.700000000000061,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 251.1893346927671,
+          "h": 13.484231224396176,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 9.800000000000066,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 257.93263541192977,
+          "h": 12.327719617659689,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 9.900000000000071,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 264.3682904324123,
+          "h": 11.223970869366546,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 10.000000000000076,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 270.47872000000456,
+          "h": 10.17599999999922,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 10.100000000000081,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 276.2463443604961,
+          "h": 9.18682203004019,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 10.200000000000086,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 281.65358375967674,
+          "h": 8.25945197997192,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 10.300000000000091,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 286.6828584433363,
+          "h": 7.3969048702768845,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 10.400000000000096,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 291.31658865726416,
+          "h": 6.602195721437596,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 10.500000000000101,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 295.5371946472503,
+          "h": 5.878339553936485,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 10.600000000000106,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 299.32709665908436,
+          "h": 5.228351388256058,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 10.700000000000111,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 302.66871493855604,
+          "h": 4.655246244878782,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 10.800000000000116,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 305.5444697314551,
+          "h": 4.162039144287135,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 10.900000000000121,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 307.93678128357107,
+          "h": 3.7517451069635968,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 11.000000000000126,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 309.8280698406939,
+          "h": 3.427379153390632,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 11.100000000000131,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 311.20075564861315,
+          "h": 3.191956304050734,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 11.200000000000136,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.0372589531186,
+          "h": 3.0484915794263685,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 11.300000000000141,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 11.400000000000146,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 11.500000000000151,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 11.600000000000156,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 1.9539925233402755e-13,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 11.700000000000161,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0.12500000000020162,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 11.800000000000166,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0.25000000000020783,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 11.90000000000017,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0.37500000000021405,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 12.000000000000176,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0.5000000000002203,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 12.10000000000018,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0.6250000000002265,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 12.200000000000186,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0.7500000000002327,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 12.30000000000019,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0.8750000000002389,
+        "scrollFrozen": true
+      },
+      {
+        "mode": "earth-return",
+        "phase": "earth-descent",
+        "time": 12.383333333333528,
+        "earthVisible": true,
+        "planetY": 312.32000000000005,
+        "ship": {
+          "x": 240,
+          "y": 312.32,
+          "h": 3,
+          "south": true
+        },
+        "fade": 0.9791666666669108,
+        "scrollFrozen": true
+      }
+    ],
+    "sounds": [
+      {
+        "key": "gd_doorOpen",
+        "peak": 0.32314619421958923
+      },
+      {
+        "key": "gd_footstepA",
+        "peak": 0.326026976108551
+      },
+      {
+        "key": "gd_footstepB",
+        "peak": 0.34475237131118774
+      },
+      {
+        "key": "blip",
+        "peak": 0.3257277011871338
+      },
+      {
+        "key": "jetDash",
+        "peak": 0.37750422954559326
+      },
+      {
+        "key": "enemyMachineGunLight",
+        "peak": 0.16870860755443573
+      },
+      {
+        "key": "expSmall",
+        "peak": 0.3694601356983185
+      }
+    ],
+    "errors": []
+  },
+  "movieBrowser": {
+    "checks": [
+      {
+        "name": "hq5 video geometry and complete duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 43.4
+        }
+      },
+      {
+        "name": "hq5: Faster individual departures decoded chapter",
+        "ok": true,
+        "data": 0.066667
+      },
+      {
+        "name": "hq5: Five quiet seconds decoded chapter",
+        "ok": true,
+        "data": 7.566667
+      },
+      {
+        "name": "hq5: Stealth fighters launch missiles decoded chapter",
+        "ok": true,
+        "data": 12.566667
+      },
+      {
+        "name": "hq5: Rapid ten-ship counterattack decoded chapter",
+        "ok": true,
+        "data": 14.166667
+      },
+      {
+        "name": "hq5: Reinforcements overwhelm the base decoded chapter",
+        "ok": true,
+        "data": 18.333333
+      },
+      {
+        "name": "hq5: Decker somersault and southeast boost decoded chapter",
+        "ok": true,
+        "data": 21.233333
+      },
+      {
+        "name": "hq5: Axel somersault and southwest boost decoded chapter",
+        "ok": true,
+        "data": 22.166667
+      },
+      {
+        "name": "hq5: Native Stage6 opening decoded chapter",
+        "ok": true,
+        "data": 24.566667
+      },
+      {
+        "name": "hq5 media audio decoded and audible",
+        "ok": true,
+        "data": 0.661801278591156
+      },
+      {
+        "name": "hq5 byte-range seeking",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "stage67 video geometry and complete duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 66.7
+        }
+      },
+      {
+        "name": "stage67: Harrier aftermath decoded chapter",
+        "ok": true,
+        "data": 0.066667
+      },
+      {
+        "name": "stage67: Signal below the city decoded chapter",
+        "ok": true,
+        "data": 16.033333
+      },
+      {
+        "name": "stage67: The drains decoded chapter",
+        "ok": true,
+        "data": 23.433333
+      },
+      {
+        "name": "stage67: Keep talking all the way in decoded chapter",
+        "ok": true,
+        "data": 35.6
+      },
+      {
+        "name": "stage67: Stage7 card decoded chapter",
+        "ok": true,
+        "data": 39.1
+      },
+      {
+        "name": "stage67: Riverbank and sewer approach decoded chapter",
+        "ok": true,
+        "data": 43.533333
+      },
+      {
+        "name": "stage67: Native underground entry decoded chapter",
+        "ok": true,
+        "data": 49.866667
+      },
+      {
+        "name": "stage67: Stage7 gameplay handoff decoded chapter",
+        "ok": true,
+        "data": 64.2
+      },
+      {
+        "name": "stage67 media audio decoded and audible",
+        "ok": true,
+        "data": 0.7679727077484131
+      },
+      {
+        "name": "stage67 byte-range seeking",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "both native somersault GIF previews decoded",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "all eleven post6 beats recorded without skips",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "both Stage7 approach panels and continuous native entry recorded",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "post6 completed once and handed to Stage7 gameplay",
+        "ok": true,
+        "data": {
+          "state": "play",
+          "stage": 7,
+          "post6Done": 1,
+          "brief": true,
+          "opening": null,
+          "openingRadioIndex": null
+        }
+      },
+      {
+        "name": "no recording or review browser/page/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "reproduction": {
+    "checks": [
+      {
+        "pilot": "decker",
+        "sha256": "080e94886f0c297b72f24bafcd176388752e4f2f80221d16a7f6c709c7333d73",
+        "exact": true,
+        "evenCells": true,
+        "fixedPivot": [
+          128,
+          128
+        ],
+        "seamlessExitPose": true
+      },
+      {
+        "pilot": "axel",
+        "sha256": "f69386782bdf508bca315f0e69ac4901714d195568446008c21a4b9ec44c3449",
+        "exact": true,
+        "evenCells": true,
+        "fixedPivot": [
+          128,
+          128
+        ],
+        "seamlessExitPose": true
+      }
+    ],
+    "registryExact": true
+  },
+  "integrity": {
+    "gameJs": "unchanged LF",
+    "testFlJs": "unchanged CRLF",
+    "sources": {
+      "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+      "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "index.html": "a4fbb436f810d41d451da0550336a65e8ed33fe7e4ae242723325d5edeb2dfdc",
+      "assets/hq_return_attack_1114.js": "6322f99b8d2cf6f79509eab1880b6e87963f93789f3cd428ee518f492b566346",
+      "assets/hq_turn_art_1115.js": "64ce42b8dd36b789ad89732b0abe16cd7116c508551a9a7a988d7a095e1b6c47",
+      "assets/hq_swarm_art_1115.js": "cfbf1c572bfae0ed8011b60065ada79f7325a5ecb920468cfd9e6f4b08a85123"
+    },
+    "suite": {
+      "exit": 0,
+      "passed": 8969,
+      "failedNames": [],
+      "baselineFailedNames": [],
+      "introducedFailures": [],
+      "finalSummary": [
+        "============================================",
+        "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ===="
+      ],
+      "logSha256": "a1a55da0539ef35349ba375215b780c5081d327f52c7cf83b20025907a053e81"
+    }
+  },
+  "movies": [
+    {
+      "part": "hq5",
+      "title": "Fast evacuation, stealth missiles and guard escape",
+      "file": "hq-fast-swarm.mp4",
+      "duration": 43.4,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Faster individual departures"
+        },
+        {
+          "start": 7.504599999994039,
+          "title": "Five quiet seconds"
+        },
+        {
+          "start": 12.512400000005961,
+          "title": "Stealth fighters launch missiles"
+        },
+        {
+          "start": 14.113,
+          "title": "Rapid ten-ship counterattack"
+        },
+        {
+          "start": 18.320300000011922,
+          "title": "Reinforcements overwhelm the base"
+        },
+        {
+          "start": 21.220800000011923,
+          "title": "Decker somersault and southeast boost"
+        },
+        {
+          "start": 22.120800000011922,
+          "title": "Axel somersault and southwest boost"
+        },
+        {
+          "start": 24.52819999998808,
+          "title": "Native Stage6 opening"
+        }
+      ],
+      "decodeErrors": [],
+      "audio": [
+        "[Parsed_volumedetect_0 @ 000002a729516dc0] mean_volume: -13.4 dB",
+        "[Parsed_volumedetect_0 @ 000002a729516dc0] max_volume: -1.6 dB"
+      ],
+      "sha256": "f55eb7bbb7d8d5251bb858235c2e052eacc6d2ee6f1af97f66fdaffa45ada5cc",
+      "scope": "Cole / Hard. Native checkpoint from HQ evacuation through the retained five-second pause, faster assault, ten guard takedowns, reinforcement swarm and somersault escapes into Stage6. Earlier homecoming is outside this clip.",
+      "poster": "hq5-frame-0.png"
+    },
+    {
+      "part": "stage67",
+      "title": "Stage6 to7 - Harrier aftermath and sewer entry",
+      "file": "stage6-to7-full.mp4",
+      "duration": 66.7,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Harrier aftermath"
+        },
+        {
+          "start": 15.968599999994039,
+          "title": "Signal below the city"
+        },
+        {
+          "start": 23.3925,
+          "title": "The drains"
+        },
+        {
+          "start": 35.56840000000596,
+          "title": "Keep talking all the way in"
+        },
+        {
+          "start": 39.040599999994036,
+          "title": "Stage7 card"
+        },
+        {
+          "start": 43.48980000001192,
+          "title": "Riverbank and sewer approach"
+        },
+        {
+          "start": 49.84009999999404,
+          "title": "Native underground entry"
+        },
+        {
+          "start": 64.19240000000596,
+          "title": "Stage7 gameplay handoff"
+        }
+      ],
+      "decodeErrors": [],
+      "audio": [
+        "[Parsed_volumedetect_0 @ 000001b138cf0c80] mean_volume: -14.4 dB",
+        "[Parsed_volumedetect_0 @ 000001b138cf0c80] max_volume: -1.7 dB"
+      ],
+      "sha256": "22e33e31be3c6ae745ea9a3e676ebed3a7858a90792d1d8323fda2c96843c8d3",
+      "scope": "Cole / Hard, Harrier branch. Full current post-Stage6 dialogue, Stage7 card, riverbank/sewer approach and native launch to gameplay. The prepared cleared-stage checkpoint connects directly to Stage7, omitting the results, map and gear-menu pauses. No dialogue is skipped.",
+      "poster": "stage67-frame-0.png"
+    }
+  ],
+  "limitations": [
+    "Prepared cinematic checkpoints, not full campaign wins or balance validation.",
+    "Stage6-7 follows the Harrier branch, with results/map/gear-menu pauses omitted. All dialogue and the native Stage7 card, approach and launch play without skips.",
+    "After the Stage7 countdown the prepared checkpoint paints terrain alone: no ship/HUD in the captured first play frames. Native player remains alive at finite coordinates, alpha1, no page/console errors. Preserved as-is; actual campaign-entry investigation remains."
+  ]
+}

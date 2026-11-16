@@ -1,0 +1,97 @@
+{
+  "generator": "built-in image_gen",
+  "assets": [
+    {
+      "key": "workshop",
+      "prompt": "Use case: identity-preserve. Create a production SIX-PANEL comic asset for Bullets of Fury, matching the clean detailed 16-bit comic pixel-art style of these approved references. Reference1 is COLE'S ACTUAL IDENTITY: short swept brown hair, trimmed dark beard, blue eyes, olive green hooded flight suit, black harness, fingerless gloves. Reference2 is DECKER: blond hair, rectangular black glasses, clean shaven, black engineer uniform with gold piping and lightning insignia. Use those faces and outfits; do not copy the old exaggerated angular faces in reference3, which is only the workshop room reference. NO HEADSETS in this base scene. One image with exactly 3 columns by 2 rows, six equal landscape cells, each cell 16:9, whole sheet aspect 8:3. Narrow even black gutters, no text, no speech bubbles, no lettering or panel numbers. Same coherent futuristic Fury HQ workshop, teal holographic screens and amber lamps, two men same scale and appearance throughout. Waist-up medium framing with complete hair/heads comfortably inside each cell. Hands/anatomy clear and natural. Keep all important heads/arms in the upper 70 percent so game captions can sit below. Reading order row-major: 1 upper-left Decker proudly gestures at his compact Photon Cannon prototype on the bench, Cole looks impressed; 2 upper-middle Cole grins and reaches with both arms toward Decker, Decker surprised with hands half raised; 3 upper-right Cole embraces Decker in an enthusiastic friendly bear hug, both visibly laughing, clear two distinct arms each; 4 lower-left they separate, Decker amused raises one palm in an easy-now joking gesture, Cole laughs with hands on hips; 5 lower-middle Decker thoughtfully studies the unfinished prototype's exposed coils with a concerned expression, Cole listens with a supportive expression; 6 lower-right Cole reassuringly puts one hand on Decker's shoulder, both smile, Cole turns as if ready to leave. Crisp readable full scene illustrations, consistent faces and outfit silhouettes across all six, no new people, no aircraft, no borders that cut into their heads, no photorealism, no 3D. This is the final game art sheet, not a mockup.",
+      "source": "_ART_SOURCES/cinematic_rework_1114/workshop-source.png",
+      "references": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_shots/cinematic_rework_1114/cole-approved.png",
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_shots/cinematic_rework_1114/decker-approved.png",
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_shots/cinematic_rework_1114/workshop-style-reference.png"
+      ],
+      "accepted": true,
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-0e47abf4-ff8e-4e22-b97c-f9ebe3d98562.png",
+      "sha256": "39391e4ad070d1fe594b64584b2fa6bd237292f5329850d84eec12ec3c4e2ec5"
+    },
+    {
+      "key": "photon",
+      "prompt": "Use case: precise-object-edit. Re-author this Fury HQ Photon Cannon TEST RIG into a much clearer directly TOP-DOWN overhead close-up, as a production 8-frame animation sheet. The reference defines the steel test chamber, cyan monitors, hazard-striped housing, hoses and emitter design; change its view from side elevation to looking vertically DOWN at the bench. No aircraft or pilots in this shot. High-quality clean 16-bit arcade/comic pixel art matching the reference. Exactly FOUR columns by TWO rows, 8 equal LANDSCAPE cells, each cell 16:9, overall sheet 32:9. Identical fixed overhead camera, fixed cannon housing, coils, long firing chamber and far-end target plate in all cells. The cannon emitter sits on the LEFT side of each cell, firing RIGHT along a long straight armored test lane. Show its entire muzzle and target; do not clip the beam. Large close view: most of the panel is actual cannon, its charging coils and the firing lane, not an empty distant room. No text, no labels, no lettering, no grid numbers. Frame0 neutral powered-off blue-gray cannon. Frame1 capacitors begin cyan-violet glow. Frame2 bright purple-white energy gathers visibly in the muzzle and exposed coils. Frame3 a sharp white-violet muzzle flash releases a thick coherent PHOTON BEAM extending toward the target. Frame4 full brilliant white-core violet/cyan beam with bright terminal impact flare on the target plate, lighting reflected on the metal. Frame5 sustained beam, slightly narrower, target emitting sparks. Frame6 beam retracts and fades into violet particles, coils still glowing. Frame7 cooled recovery to the original idle housing. The beam must visibly connect muzzle to target, not be a floating bullet or yellow-orange small projectile. Detailed metal outlines, crisp pixel clusters, consistent rig scale and position. No fire ring, no people, no perspective shot. All frame content stays inside its own cell.",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-0d751bfc-e07f-484f-a001-df999c21ba24.png",
+      "references": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_shots/cinematic_rework_1114/cannon-original-reference.png"
+      ],
+      "accepted": false
+    },
+    {
+      "key": "firewave",
+      "prompt": "Use case: illustration-story. Production 16-bit arcade VOLCANIC FIRE WAVE animation sprite sheet, transparent background with real alpha. Exactly FOUR columns by TWO rows, eight equal landscape cells each 4:1, total sheet aspect 8:1. Each frame depicts a broad continuous horizontal wall/wave of rushing orange-red volcanic flame with hot yellow-white leading tongues, dark red smoke and bright embers, seen from a slightly top-down scrolling-shooter camera. The wave spans nearly the entire cell width, its long leading edge horizontal; no circular shape, no ring, no portal, no ground/environment. One single continuous advancing fire front per cell, not isolated explosions. Fixed footprint and scale, 8 sequential flame motions: low rolling front, higher tongues, curl and billow, strongest crest, crest rolls forward, break into flame fingers, diminishing rolling tails, transition back toward first pose. Keep all smoke and embers inside the cell with generous transparent padding top/bottom. Crisp dark-red outlines and luminous clean pixel clusters matching a detailed 16-bit shooter. No text, numbers, dividers, baked checkerboard or background. This overlays a full-width erupting lava landscape behind a departing jet; it must read clearly as danger approaching from behind, not an aura attached to a ship.",
+      "source": "_ART_SOURCES/cinematic_rework_1114/firewave-source.png",
+      "references": [],
+      "accepted": true,
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-6bd7ba55-0a8e-4d8a-9631-9aeb94efe161.png",
+      "sha256": "7ecdb65badc399621b78a50a38f5693f0f99e4612c5a71a7528abebeb37e04a3"
+    },
+    {
+      "key": "photon",
+      "prompt": "Use case: precise-object-edit. This reference defines the compact Photon Cannon PROTOTYPE on the bench: gray-black cylindrical barrel, metal bracing bands, exposed luminous coils, hazard striping and heavy test mount. Generate its firing demonstration viewed VERTICALLY FROM DIRECTLY OVERHEAD, a TRUE ORTHOGRAPHIC PLAN VIEW like the top-down gameplay, with no visible side faces, no front elevation, no horizon. Do not draw the people. Do not use a side-view glass chamber. The camera looks straight down onto the TOP of this cannon and test bench. It fires toward the TOP of each frame (north), along an armored instrumented lane into an impact plate at the top. Large close-up, cannon occupies the bottom third, its charge aperture and the whole vertical beam path above it fully visible. Same detailed crisp 16-bit arcade-comic style as the reference. One final production 8-frame animation sheet: exactly FOUR columns by TWO rows, each equal LANDSCAPE 3:2 cell, whole sheet aspect3:1. Fixed camera, identical cannon position and scale across every frame. Frame0 neutral uncharged gray cannon and test lane. Frame1 violet-cyan capacitors starting. Frame2 powerful glowing purple-white charge inside muzzle. Frame3 white-violet muzzle burst and beam beginning north. Frame4 full coherent large white-core purple/cyan Photon beam connecting cannon at bottom to target at top, violent terminal sparks. Frame5 sustained beam, changing energy ripples. Frame6 beam retracting/dissipating, residual particles. Frame7 cooled neutral recovery. No yellow bullet or fireball. No text, letters, numbers, speech bubbles, no people, no aircraft. Keep the complete emitter, beam and terminal impact inside each cell, leave small consistent margins all around. Truly top-down, not the old side view.",
+      "source": "_ART_SOURCES/cinematic_rework_1114/photon-source.png",
+      "references": [
+        "new-photon-reference.png"
+      ],
+      "accepted": true,
+      "offline": "Quarter-turn clockwise so the overhead cannon fires east within a wide cinematic panel.",
+      "generationOutput": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0d568-40a4-7b70-97c0-acc501f39d5b\\exec-f27ce3b7-ee3d-4857-9066-4ecf0c95f0bb.png",
+      "sha256": "c5429b962586a869622f3a005d2b6761cd43a90ba9629d891ce2fbdf1007a332"
+    }
+  ],
+  "exports": {
+    "banks": {
+      "workshop": {
+        "key": "cw16_workshop",
+        "path": "assets/game/shared/cinematics/cinematic_rework_1114/workshop.webp",
+        "w": 480,
+        "h": 360,
+        "cols": 3,
+        "frames": 6,
+        "sha256": "3a885093a1cf699adecd33536be2c3e94805750aaacf2e2a046981a61595841b",
+        "sourceSize": [
+          1774,
+          887
+        ],
+        "sharedScale": 0.821917808219178,
+        "offlineQuarterTurn": false
+      },
+      "firewave": {
+        "key": "cw16_firewave",
+        "path": "assets/game/shared/cinematics/cinematic_rework_1114/firewave.webp",
+        "w": 540,
+        "h": 360,
+        "cols": 4,
+        "frames": 8,
+        "sha256": "721612cd79fd1014f9be7e2870b7c23e4d0ece14eee15ba1be8080b68a60421c",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sharedScale": 0.994475138121547,
+        "offlineQuarterTurn": false
+      },
+      "photon": {
+        "key": "cw16_photon",
+        "path": "assets/game/shared/cinematics/cinematic_rework_1114/photon.webp",
+        "w": 512,
+        "h": 384,
+        "cols": 4,
+        "frames": 8,
+        "sha256": "b36b05b4595bcc55f863778d6a93fc780cc72da191f34ed18a9d114fe958627b",
+        "sourceSize": [
+          1536,
+          1024
+        ],
+        "sharedScale": 1.0158730158730158,
+        "offlineQuarterTurn": true
+      }
+    }
+  }
+}
